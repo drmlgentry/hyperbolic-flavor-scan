@@ -1,6 +1,6 @@
-﻿# Core dependencies for hyperbolic-flavor-scan
-# Install via: pip install -r requirements.txt --break-system-packages
-# SnapPy must be installed separately: pip install snappy
+﻿# hyperbolic-flavor-scan dependencies
+# pip install -r requirements.txt --break-system-packages
+# SnapPy must be installed first: pip install snappy
 
 snappy>=3.1
 scipy>=1.11
