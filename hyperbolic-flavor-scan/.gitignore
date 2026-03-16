@@ -5,3 +5,9 @@
 *.tar
 *.7z
 
+
+__pycache__/
+*.pyc
+*.log
+texput.log
+
