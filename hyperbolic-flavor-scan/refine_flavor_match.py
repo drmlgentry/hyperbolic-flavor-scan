@@ -321,3 +321,54 @@ if len(results) > 0:
               " score=" + str(round(r['score'], 4)))
 else:
     print("\nNo valid results found!")
+    import numpy as np
+from scipy.linalg import logm, qr
+
+def compute_axis_overlap_matrix(rho, words, sigma=0.5):
+    """
+    Compute mixing matrix from geodesic axes of given words.
+    
+    Parameters:
+        rho: holonomy function (word -> SL(2,C) matrix)
+        words: list of three strings
+        sigma: width of Gaussian kernel
+    
+    Returns:
+        U: 3x3 mixing matrix (unitary)
+        axes: list of 3 axis vectors (normalized)
+        angles: 3x3 matrix of angles between axes
+    """
+    # Step 1: Compute axis for each word
+    axes = []
+    for w in words:
+        mat = rho(w)
+        # Matrix logarithm
+        L = logm(mat)
+        # Extract rotation axis from the traceless part
+        # We use the imaginary parts of specific entries to form a 3D vector
+        # (this is a standard method; it gives the axis direction up to sign)
+        n = np.array([L[1,0].imag, L[0,1].imag, L[0,0].imag])
+        norm = np.linalg.norm(n)
+        if norm < 1e-12:
+            # Fallback to real part (unlikely for hyperbolic elements)
+            n = np.array([L[1,0].real, L[0,1].real, L[0,0].real])
+            norm = np.linalg.norm(n)
+        axis = n / norm
+        axes.append(axis)
+    
+    # Step 2: Compute angle matrix between axes
+    angles = np.zeros((3,3))
+    for i in range(3):
+        for j in range(3):
+            cos = np.dot(axes[i], axes[j])
+            cos = np.clip(cos, -1, 1)
+            angles[i,j] = np.arccos(cos)
+    
+    # Step 3: Gaussian overlap matrix
+    K = np.exp(- (angles**2) / (2 * sigma**2))
+    
+    # Step 4: QR orthogonalization to get unitary mixing matrix
+    Q, R = qr(K)
+    U = Q  # Q is orthogonal (real) hence unitary
+    
+    return U, axes, angles

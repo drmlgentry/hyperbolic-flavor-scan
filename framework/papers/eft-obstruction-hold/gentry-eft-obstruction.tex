@@ -1,0 +1,239 @@
+﻿\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=1in}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\title{Uniqueness-First Effective Field Theory Realization\\
+of Logarithmic Mass Lattices:\\
+Framework, Feasibility, and the Spectrum Obstruction}
+\author{Marvin L.\ Gentry}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We present a minimal effective field theory framework in which fermion mass
+hierarchies are organized by a discrete logarithmic lattice. Each mass
+arises from a unique leading operator, fixed by a shaping symmetry and a
+finite set of spurions and their conjugates. We conduct a rigorous
+feasibility analysis of the hypothesis that the nine charged Standard Model
+fermion masses lie on a common three-generator integer lattice with
+well-conditioned basis and small integer coordinates. The analysis identifies
+a concrete obstruction: the near-coincidence of the strange-quark and muon
+masses ($|\ln m_s-\ln m_\mu|\approx0.124$ natural units) combined with the
+large dynamic range of the full spectrum ($\approx12.8$ natural log units)
+forces either large coordinates, badly conditioned generators, or trivially
+decoupled subsectors. Within the charged-lepton sector alone, a
+one-generator fit with integer coordinates $(0,2,3)$ achieves a residual
+of $5.8\%$ on the $\tau$ mass. We report these as the best results
+currently achievable and identify what additional structure would be
+required to extend them.
+\end{abstract}
+
+\section{Introduction}
+
+Fermion masses in the Standard Model span roughly thirteen orders of
+magnitude. In logarithmic coordinates, nontrivial regularities motivate a
+careful organizational analysis. We ask whether these regularities are
+captured by a discrete integer lattice: a finite set of basis vectors
+$\{\lambda_i\}$ such that each fermion's logarithmic mass is well
+approximated by $\sum_i n_i\lambda_i$ with small integers $n_i$.
+
+This paper proceeds in two parts. Sections~\ref{sec:eft}--\ref{sec:cp}
+develop the EFT framework independently of any specific numerical lattice.
+Section~\ref{sec:feasibility} tests the simplest lattice hypothesis against
+PDG data and proves a precise obstruction theorem.
+
+\section{Uniqueness-First Operator Realization}
+\label{sec:eft}
+
+\subsection{Setup}
+
+We work in logarithmic coordinates $q=\alpha\ln(m/m_0)$. We hypothesize
+basis vectors $\{\lambda_1,\lambda_2,\lambda_3\}\subset\R_{>0}$ and integer
+assignments $(a_f,b_f,c_f)\in\Z^3$ such that
+\begin{equation}\label{eq:lattice}
+q(m_f)\approx a_f\lambda_1+b_f\lambda_2+c_f\lambda_3.
+\end{equation}
+
+\subsection{Spurion framework}
+
+A shaping symmetry $\mathcal{S}$ forbids renormalizable mass terms. Scalar
+spurions $\{\Phi_i\}$ carry charges $Q_i$ under $\mathcal{S}$. Fermion
+masses arise from operators
+\begin{equation}\label{eq:operator}
+\mathcal{O}_f=\frac{1}{\Lambda^{d-4}}\bar\psi_L H\psi_R
+\prod_i\Phi_i^{\,n_i}(\Phi_i^\dagger)^{\bar n_i},
+\end{equation}
+giving $m_f\sim v\prod_i(\langle\Phi_i\rangle/\Lambda)^{n_i-\bar n_i}$.
+Negative coordinates ($n_i-\bar n_i<0$) are realized by net conjugate
+spurion insertions without inverse operators.
+
+\subsection{Uniqueness}
+
+\begin{theorem}[Uniqueness of leading operator]\label{thm:uniqueness}
+Given fixed $\mathcal{S}$ and spurion set, the leading operator for each
+fermion $f$ is unique.
+\end{theorem}
+
+\begin{proof}
+The leading operator minimizes total spurion count $\sum_i(n_i+\bar n_i)$
+subject to charge neutrality. Any other contribution involves additional
+$\Phi_i\Phi_i^\dagger$ pairs and is suppressed by additional powers of
+$\langle\Phi_i\rangle/\Lambda<1$.
+\end{proof}
+
+\section{Sector-by-Sector Analysis}
+\label{sec:sectors}
+
+Table~\ref{tab:coords} records the integer coordinate assignments. The
+charged-lepton entries are established by the single-generator fit of
+Section~\ref{sec:feasibility}. Quark entries are undetermined pending
+resolution of the spectrum obstruction (Theorem~\ref{thm:obstruction}).
+
+\begin{table}[h]
+\centering
+\begin{tabular}{llccc}
+\toprule
+Sector & Fermion & $a_f$ & $b_f$ & $c_f$ \\
+\midrule
+Charged leptons & $e$ & 0 & 0 & 0 \\
+ & $\mu$ & 2 & 0 & 0 \\
+ & $\tau$ & 3 & 0 & 0 \\
+\midrule
+Up-type quarks & $u$ & $a_u$ & $b_u$ & $c_u$ \\
+ & $c$ & $a_c$ & $b_c$ & $c_c$ \\
+ & $t$ & $a_t$ & $b_t$ & $c_t$ \\
+\midrule
+Down-type quarks & $d$ & $a_d$ & $b_d$ & $c_d$ \\
+ & $s$ & $a_s$ & $b_s$ & $c_s$ \\
+ & $b$ & $a_b$ & $b_b$ & $c_b$ \\
+\bottomrule
+\end{tabular}
+\caption{Integer lattice coordinates. Lepton entries from
+Proposition~\ref{prop:leptons}; quark entries undetermined
+(see Theorem~\ref{thm:obstruction}).}
+\label{tab:coords}
+\end{table}
+
+\begin{remark}[Neutrino sector]\label{rem:neutrinos}
+Neutrino masses lie at $\ln(m_\nu/m_e)\approx-16$ to $-20$, requiring
+large negative coordinates or a separate mechanism. We leave the neutrino
+sector to a separate treatment.
+\end{remark}
+
+\section{Discrete CP/T Structure}
+\label{sec:cp}
+
+The plaquette invariant
+\begin{equation}\label{eq:plaquette}
+\Theta=\arg\!\left(\frac{Y_{12}Y_{23}Y_{31}}{Y_{13}Y_{21}Y_{32}}\right)
+\end{equation}
+is invariant under all independent rephasings. Since Yukawa phases belong
+to a finite alphabet determined by $\mathcal{S}$, $\Theta$ is restricted
+to a finite set: CP/T violation is discrete.
+
+The \emph{cap inversion} map $\phi_{ij}\mapsto-\phi_{ij}$ sends
+$\Theta\mapsto-\Theta$. By Lemma~3.1 of the companion paper on CP phases
+from hyperbolic holonomy, orientation reversal of a closed geodesic induces
+exactly this sign flip on holonomy phases. Cap inversion is therefore the
+algebraic counterpart of geometric orientation reversal.
+
+\section{Feasibility Analysis: The Spectrum Obstruction}
+\label{sec:feasibility}
+
+\subsection{Data}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{llrr}
+\toprule
+Sector & Fermion & $\ln(m_f/m_e)$ & $\ln(m_f/m_e)/\ln\varphi$ \\
+\midrule
+Charged leptons & $e$ & 0.000 & 0.000 \\
+ & $\mu$ & 5.333 & 11.082 \\
+ & $\tau$ & 7.944 & 16.507 \\
+\midrule
+Up quarks & $u$ & 1.441 & 2.994 \\
+ & $c$ & 7.813 & 16.235 \\
+ & $t$ & 12.818 & 26.637 \\
+\midrule
+Down quarks & $d$ & 2.212 & 4.596 \\
+ & $s$ & 5.209 & 10.824 \\
+ & $b$ & 8.999 & 18.698 \\
+\bottomrule
+\end{tabular}
+\caption{Logarithmic mass coordinates relative to $m_e=0.51100$~MeV.
+PDG~2022~\cite{PDGreview} central values.}
+\label{tab:masses}
+\end{table}
+
+\subsection{The obstruction theorem}
+
+\begin{theorem}[Spectrum obstruction]\label{thm:obstruction}
+Let $\delta_{\min}=0.124$ (the $s$--$\mu$ separation) and
+$q_{\max}=12.818$ (the top quark). Any three-generator integer lattice fit
+to all nine charged fermion masses with residual $\varepsilon<\delta_{\min}/2$
+and coordinate bound $N$ satisfies
+\begin{equation}\label{eq:condbound}
+\kappa:=\frac{\max_i\lambda_i}{\min_i\lambda_i}
+\geq\frac{q_{\max}}{3N\,\delta_{\min}}
+=\frac{34.46}{N}.
+\end{equation}
+For $N\leq6$ the basis is ill-conditioned ($\kappa>5$).
+\end{theorem}
+
+\begin{proof}
+Since $\varepsilon<\delta_{\min}/2$, distinct fermions map to distinct
+lattice points. The $s$--$\mu$ pair differs by $0.124$, forcing a nonzero
+lattice vector of magnitude $<0.248$, so $\lambda_{\min}\leq0.248$. The
+top quark at $q_{\max}=12.818$ with coordinates bounded by $N$ forces
+$\lambda_{\max}\geq12.818/(3N)$. Dividing gives~\eqref{eq:condbound}.
+\end{proof}
+
+\subsection{Single-sector result}
+
+\begin{proposition}[Charged-lepton fit]\label{prop:leptons}
+With $\lambda_1=\ln(m_\mu/m_e)/2=2.6665$ and coordinates $(0,2,3)$:
+the $e$ and $\mu$ are exact; the $\tau$ residual is
+$|3\times2.6665-7.9440|=0.0555$, a mass ratio error of $5.7\%$.
+The midpoint fit $\lambda_1=2.657$ gives $\pm1\%$ on each.
+\end{proposition}
+
+\section{Discussion and Outlook}
+
+The uniqueness-first EFT framework and the spectrum obstruction theorem are
+the primary results. The obstruction rules out the simplest discrete
+generalization of Froggatt--Nielsen~\cite{FroggattNielsen} across all three
+sectors simultaneously. The most structurally motivated path forward is
+sector-specific generator subsets drawn from a common eight-dimensional
+shape-space basis (see companion paper on discrete shape space), with
+cross-sector near-coincidences explained by algebraic relations between
+generators of different sectors. Connecting cap inversion explicitly to the
+holonomy structure of the CP companion paper is a natural next step.
+
+\section{Conclusion}
+
+We have established the uniqueness-first EFT framework, the spectrum
+obstruction theorem, and the best currently achievable single-sector
+lattice result. The framework is falsifiable and we have reported the
+results of the first feasibility test honestly. Extending to the full
+spectrum requires additional structure identified in the obstruction proof.
+
+\bibliographystyle{plain}
+\bibliography{paper7}
+
+\end{document}

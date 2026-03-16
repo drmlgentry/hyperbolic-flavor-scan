@@ -1,0 +1,35 @@
+﻿*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.pdf
+*.dvi
+*.ps
+__pycache__/
+*.pyc
+*.pyo
+.vscode/settings.json
+Thumbs.db
+desktop.ini
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+# Session scripts
+fix_*.py
+insert_*.py
+final_polish.py
+preamble_dump.txt
+*.tmp
+# Archives
+*.zip

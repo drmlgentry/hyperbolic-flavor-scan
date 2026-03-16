@@ -1,0 +1,15 @@
+﻿Dear Editors,
+
+I am pleased to submit the manuscript "Discrete Weight Spectra and Coordinate Rigidity in Cocompact Hyperbolic Group Actions" for consideration in Geometriae Dedicata.
+
+This paper establishes three structural results for torsion-free cocompact group actions on hyperbolic 3-space. For a group acting properly discontinuously and cocompactly on hyperbolic 3-space, with logarithmic weights assigned via the displacement function, we prove: (1) each boundary direction admits a unique minimal representative in the group; (2) there is a uniform positive spectral gap proportional to the injectivity radius of the quotient manifold between distinct weight values; (3) integer coordinates defined via the Milnor-Svarc quasi-isometry are stable under bounded deformations. All results follow from hyperbolicity, proper discontinuity, and the classification of isometries; no additional hypotheses are required.
+
+This paper is part of a series on discrete geometric structure in compact hyperbolic manifolds. A companion paper, "Geometric Origin of CP Phases from Hyperbolic Holonomy," has been submitted to the Journal of Geometry and Physics; a second companion, "Discrete Mixing Operators from Boundary Sector Geometry," has also been submitted to the Journal of Geometry and Physics. Each paper is mathematically self-contained.
+
+This manuscript has not been submitted elsewhere. I have no conflicts of interest to declare.
+
+Sincerely,
+Marvin L. Gentry
+Independent Researcher
+ORCID: 0009-0006-4550-2663
+drmlgentry@protonmail.com

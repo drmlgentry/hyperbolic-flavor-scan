@@ -1,0 +1,17 @@
+update JGP to NPB submits
+
+
+The construction developed here provides the theoretical foundation for 
+companion results~\cite{Gentry:CKM,Gentry:PMNS}, where the CKM and PMNS 
+mixing matrices are derived explicitly from the $K$- and $N$-factors of the 
+Iwasawa decomposition of compact hyperbolic 3-manifold holonomy~\cite{Gentry:CKM,Gentry:PMNS}.
+
+
+@article{Gentry:PMNS,
+  author = {Gentry, Marvin L.},
+  title  = {Lepton Mixing from Borel Structure of Hyperbolic Holonomy},
+  journal = {Phys. Rev. D},
+  year   = {2026},
+  note   = {submitted, temporary ID es2026mar13\_942}
+}
+

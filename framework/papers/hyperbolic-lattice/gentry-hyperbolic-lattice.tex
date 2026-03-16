@@ -1,0 +1,173 @@
+﻿\documentclass[12pt]{article}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{authblk}
+\geometry{margin=1in}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}[theorem]{Assumption}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\Hthree}{\mathbb{H}^3}
+\newcommand{\GammaG}{\Gamma}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\bdry}{\partial\mathbb{H}^3}
+
+\title{Uniqueness and Operator Realization\\on Hyperbolic Logarithmic Lattices}
+\date{}
+\author[1]{Marvin L.\ Gentry}
+\affil[1]{Independent Researcher\\
+  \texttt{drmlgentry@protonmail.com}\\
+  ORCID: 0009-0006-4550-2663}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Let $\GammaG$ be a hyperbolic Coxeter group acting properly discontinuously
+and cocompactly on $\mathbb{H}^3$. We assign to each group element $\gamma$
+a logarithmic weight $q(\gamma)=\kappa\,d(0,\gamma\cdot0)$. We prove three
+structural results: (1) each boundary direction $\xi\in\bdry$ admits a
+unique minimal representative in $\GammaG$ (torsion-free case: exactly
+unique); (2) there is a uniform positive gap $\Delta>0$ between any two
+distinct values in the weight spectrum; (3) integer coordinates defined via
+the Milnor--\v{S}varc quasi-isometry are stable under bounded deformations
+of the boundary configuration. All results follow from hyperbolicity, proper
+discontinuity, and the classification of isometries of $\mathbb{H}^3$.
+\end{abstract}
+
+\section{Introduction}
+
+Discrete logarithmic hierarchies appear in warped geometries, renormalization
+group flows, and bulk-boundary correspondences. A physically useful framework
+must explain why each weight supports a unique dominant contribution, why
+subleading contributions are suppressed by a definite amount, and why the
+organization is stable under perturbations. We show all three properties
+follow from the geometry of a cocompact group action on hyperbolic space~\cite{gromov,maskit}.
+
+Our three main results are: \textbf{uniqueness}
+(Theorem~\ref{thm:uniqueness}), \textbf{uniform gap} (Lemma~\ref{lem:gap}),
+and \textbf{coordinate rigidity} (Theorem~\ref{thm:rigidity}).
+
+\section{Geometric Setting}
+
+\begin{assumption}\label{ass:action}
+$\GammaG$ is torsion-free, acting properly discontinuously and cocompactly
+on $\Hthree$ by orientation-preserving isometries. Fix basepoint $0\in\Hthree$.
+\end{assumption}
+
+For $\gamma\in\GammaG$ set $q(\gamma)=\kappa\,d(0,\gamma\cdot0)$, $\kappa>0$.
+
+\begin{definition}[Isometry types]\label{def:types}
+An isometry $\delta\in\mathrm{Isom}(\Hthree)$ is \emph{elliptic} if it
+fixes a point in $\Hthree$; \emph{parabolic} if it fixes exactly one point
+on $\bdry$ and no point in $\Hthree$; \emph{hyperbolic} if it fixes exactly
+two points on $\bdry$ and translates along the geodesic connecting them.
+\end{definition}
+
+\begin{lemma}[Parabolic elements increase distance]\label{lem:parabolic}
+A cocompact group $\GammaG$ contains no parabolic elements~\cite{ratcliffe}.
+\end{lemma}
+
+\section{Boundary Directions and Minimal Representatives}
+
+\begin{definition}[Boundary direction]\label{def:bdrydir}
+A \emph{boundary direction} is a point $\xi\in\bdry\cong\mathbb{S}^2$.
+We say $\gamma\in\GammaG$ \emph{converges to} $\xi$ if the geodesic ray
+from $0$ through $\gamma\cdot0$ has $\xi$ as its ideal endpoint.
+\end{definition}
+
+\begin{definition}[Minimal representative]\label{def:minimal}
+$\gamma\in\GammaG$ is a \emph{minimal representative} for $\xi$ if it
+converges to $\xi$ and $q(\gamma)=\inf\{q(\gamma'):\gamma'\text{ converges to }\xi\}$.
+\end{definition}
+
+\section{Uniqueness of Minimal Representatives}
+
+\begin{theorem}[Uniqueness]\label{thm:uniqueness}
+Let $\gamma_1,\gamma_2\in\GammaG$ be two minimal representatives for
+$\xi\in\bdry$. Then $\delta:=\gamma_1^{-1}\gamma_2$ is elliptic. Since
+$\GammaG$ is torsion-free, $\delta=\mathrm{id}$ and $\gamma_1=\gamma_2$.
+\end{theorem}
+
+\begin{proof}
+Since $\gamma_1$ and $\gamma_2$ both converge to $\xi$, the element
+$\delta=\gamma_1^{-1}\gamma_2$ fixes $\xi\in\bdry$. An isometry fixing a
+boundary point is either elliptic or parabolic. Since $\GammaG$ is cocompact
+it contains no parabolic elements (Lemma~\ref{lem:parabolic}). Hence $\delta$
+is elliptic. Since $\GammaG$ is torsion-free the only elliptic element is
+the identity, so $\delta=\mathrm{id}$ and $\gamma_1=\gamma_2$.
+\end{proof}
+
+\section{The Uniform Suppression Gap}
+
+\begin{lemma}[Uniform gap]\label{lem:gap}
+There exists $\Delta>0$ such that any two distinct elements
+$\gamma,\gamma'\in\GammaG$ satisfy $|q(\gamma)-q(\gamma')|\geq\Delta$.
+\end{lemma}
+
+\begin{proof}
+The orbit $\GammaG\cdot0$ is discrete by proper discontinuity. The systole
+$\Delta_0=\min_{\gamma\neq\mathrm{id}}d(0,\gamma\cdot0)>0$, and
+$\Delta=\kappa\Delta_0$.
+\end{proof}
+
+\begin{corollary}[Uniform suppression]
+Every subleading operator satisfies $q(\gamma')\geq q(\gamma)+\Delta$.
+\end{corollary}
+
+\section{Integer Coordinates and the Milnor--\v{S}varc Quasi-isometry}
+
+\begin{definition}[Integer coordinates]\label{def:intcoords}
+Fix a finite generating set $\mathcal{S}=\{s_1,s_2,s_3\}$ for $\GammaG$.
+The integer coordinates $(a,b,c)\in\Z^3$ of $\gamma$ are the net counts
+of each generator in a reduced word: $a=n_1(\gamma)-n_1^-(\gamma)$, etc.
+\end{definition}
+
+\begin{proposition}[Milnor--\v{S}varc quasi-isometry]
+\label{prop:msvarcqi}
+Since $\GammaG$ acts properly discontinuously and cocompactly on $\Hthree$,
+the orbit map $\gamma\mapsto\gamma\cdot0$ is a quasi-isometry
+$(\GammaG,d_\mathcal{S})\to(\Hthree,d)$~\cite{bridsonhaefliger}.
+\end{proposition}
+
+\section{Coordinate Rigidity under Bounded Deformations}
+
+\begin{definition}[Bounded deformation]\label{def:deform}
+A \emph{bounded deformation of magnitude $\varepsilon$} perturbs each
+boundary direction $\xi(f)$ to $\xi'(f)$ with
+$d_{\mathbb{S}^2}(\xi(f),\xi'(f))\leq\varepsilon$.
+\end{definition}
+
+\begin{theorem}[Coordinate rigidity]\label{thm:rigidity}
+For $\varepsilon\leq\varepsilon_0:=\tfrac12\min_{f\neq f'}
+d_{\mathbb{S}^2}(\xi(f),\xi(f'))$, each minimal representative
+$\gamma_\xi$ and its integer coordinates $(a,b,c)$ are unchanged.
+\end{theorem}
+
+\begin{proof}
+For $\varepsilon\leq\varepsilon_0$, perturbed directions $\xi'(f)$ and
+$\xi'(f')$ remain distinct and each $\xi'(f)$ lies closer to $\xi(f)$
+than to any other direction. Hence the minimal representative for $\xi'(f)$
+equals that for $\xi(f)$.
+\end{proof}
+
+\section{Conclusion}
+
+Hyperbolic logarithmic lattices arising from cocompact group actions on
+$\Hthree$ are rigid in three ways: unique minimal representatives, uniform
+positive gap between weight values, and stable integer coordinates under
+small deformations. These properties hold for any cocompact torsion-free
+group and require no external dynamical assumptions~\cite{bridsonhaefliger,ratcliffe}.
+
+\bibliographystyle{plain}
+\bibliography{gentry-hyperbolic-lattice}
+
+\end{document}

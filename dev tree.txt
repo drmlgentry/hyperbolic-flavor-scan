@@ -1,0 +1,4314 @@
+PS C:\dev> tree
+Folder PATH listing
+Volume serial number is 70BF-6EF1
+C:.
+├───arxiv_submission
+│   └───figures
+├───CKM-Geometry
+│   ├───.venv
+│   │   ├───Include
+│   │   ├───Lib
+│   │   │   └───site-packages
+│   │   │       ├───colorama
+│   │   │       │   ├───tests
+│   │   │       │   │   └───__pycache__
+│   │   │       │   └───__pycache__
+│   │   │       ├───colorama-0.4.6.dist-info
+│   │   │       │   └───licenses
+│   │   │       ├───contourpy
+│   │   │       │   └───util
+│   │   │       ├───contourpy-1.3.3.dist-info
+│   │   │       ├───cycler
+│   │   │       │   └───__pycache__
+│   │   │       ├───cycler-0.12.1.dist-info
+│   │   │       ├───dateutil
+│   │   │       │   ├───parser
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───tz
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───zoneinfo
+│   │   │       │   └───__pycache__
+│   │   │       ├───fontTools
+│   │   │       │   ├───cffLib
+│   │   │       │   ├───colorLib
+│   │   │       │   ├───config
+│   │   │       │   ├───cu2qu
+│   │   │       │   ├───designspaceLib
+│   │   │       │   ├───encodings
+│   │   │       │   ├───feaLib
+│   │   │       │   ├───merge
+│   │   │       │   ├───misc
+│   │   │       │   │   ├───filesystem
+│   │   │       │   │   └───plistlib
+│   │   │       │   ├───mtiLib
+│   │   │       │   ├───otlLib
+│   │   │       │   │   └───optimize
+│   │   │       │   ├───pens
+│   │   │       │   ├───qu2cu
+│   │   │       │   ├───subset
+│   │   │       │   ├───svgLib
+│   │   │       │   │   └───path
+│   │   │       │   ├───t1Lib
+│   │   │       │   ├───ttLib
+│   │   │       │   │   └───tables
+│   │   │       │   ├───ufoLib
+│   │   │       │   ├───unicodedata
+│   │   │       │   ├───varLib
+│   │   │       │   │   ├───avar
+│   │   │       │   │   └───instancer
+│   │   │       │   └───voltLib
+│   │   │       ├───fonttools-4.61.1.dist-info
+│   │   │       │   └───licenses
+│   │   │       ├───kiwisolver
+│   │   │       │   └───__pycache__
+│   │   │       ├───kiwisolver-1.4.9.dist-info
+│   │   │       │   └───licenses
+│   │   │       ├───matplotlib
+│   │   │       │   ├───axes
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───backends
+│   │   │       │   │   ├───qt_editor
+│   │   │       │   │   ├───web_backend
+│   │   │       │   │   │   ├───css
+│   │   │       │   │   │   └───js
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───mpl-data
+│   │   │       │   │   ├───fonts
+│   │   │       │   │   │   ├───afm
+│   │   │       │   │   │   ├───pdfcorefonts
+│   │   │       │   │   │   └───ttf
+│   │   │       │   │   ├───images
+│   │   │       │   │   ├───plot_directive
+│   │   │       │   │   ├───sample_data
+│   │   │       │   │   │   └───axes_grid
+│   │   │       │   │   └───stylelib
+│   │   │       │   ├───projections
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───sphinxext
+│   │   │       │   ├───style
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───testing
+│   │   │       │   │   └───jpl_units
+│   │   │       │   ├───tests
+│   │   │       │   ├───tri
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───_api
+│   │   │       │   │   └───__pycache__
+│   │   │       │   └───__pycache__
+│   │   │       ├───matplotlib-3.10.8.dist-info
+│   │   │       ├───mpl_toolkits
+│   │   │       │   ├───axes_grid1
+│   │   │       │   │   └───tests
+│   │   │       │   ├───axisartist
+│   │   │       │   │   └───tests
+│   │   │       │   └───mplot3d
+│   │   │       │       ├───tests
+│   │   │       │       └───__pycache__
+│   │   │       ├───mpmath
+│   │   │       │   ├───calculus
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───functions
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───libmp
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───matrices
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───tests
+│   │   │       │   └───__pycache__
+│   │   │       ├───mpmath-1.3.0.dist-info
+│   │   │       ├───numpy
+│   │   │       │   ├───char
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───core
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───ctypeslib
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───doc
+│   │   │       │   ├───f2py
+│   │   │       │   │   ├───src
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───src
+│   │   │       │   │   │       ├───abstract_interface
+│   │   │       │   │   │       ├───array_from_pyobj
+│   │   │       │   │   │       ├───assumed_shape
+│   │   │       │   │   │       ├───block_docstring
+│   │   │       │   │   │       ├───callback
+│   │   │       │   │   │       ├───cli
+│   │   │       │   │   │       ├───common
+│   │   │       │   │   │       ├───crackfortran
+│   │   │       │   │   │       ├───f2cmap
+│   │   │       │   │   │       ├───isocintrin
+│   │   │       │   │   │       ├───kind
+│   │   │       │   │   │       ├───mixed
+│   │   │       │   │   │       ├───modules
+│   │   │       │   │   │       │   ├───gh25337
+│   │   │       │   │   │       │   └───gh26920
+│   │   │       │   │   │       ├───negative_bounds
+│   │   │       │   │   │       ├───parameter
+│   │   │       │   │   │       ├───quoted_character
+│   │   │       │   │   │       ├───regression
+│   │   │       │   │   │       ├───return_character
+│   │   │       │   │   │       ├───return_complex
+│   │   │       │   │   │       ├───return_integer
+│   │   │       │   │   │       ├───return_logical
+│   │   │       │   │   │       ├───return_real
+│   │   │       │   │   │       ├───routines
+│   │   │       │   │   │       ├───size
+│   │   │       │   │   │       ├───string
+│   │   │       │   │   │       └───value_attrspec
+│   │   │       │   │   ├───_backends
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───fft
+│   │   │       │   │   ├───tests
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───lib
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───data
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───linalg
+│   │   │       │   │   ├───tests
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───ma
+│   │   │       │   │   ├───tests
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───matrixlib
+│   │   │       │   │   ├───tests
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───polynomial
+│   │   │       │   │   ├───tests
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───random
+│   │   │       │   │   ├───lib
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───data
+│   │   │       │   │   ├───_examples
+│   │   │       │   │   │   ├───cffi
+│   │   │       │   │   │   ├───cython
+│   │   │       │   │   │   └───numba
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───rec
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───strings
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───testing
+│   │   │       │   │   ├───tests
+│   │   │       │   │   ├───_private
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───tests
+│   │   │       │   ├───typing
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───data
+│   │   │       │   │   │       ├───fail
+│   │   │       │   │   │       ├───misc
+│   │   │       │   │   │       ├───pass
+│   │   │       │   │   │       └───reveal
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───_core
+│   │   │       │   │   ├───include
+│   │   │       │   │   │   └───numpy
+│   │   │       │   │   │       └───random
+│   │   │       │   │   ├───lib
+│   │   │       │   │   │   ├───npy-pkg-config
+│   │   │       │   │   │   └───pkgconfig
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   ├───data
+│   │   │       │   │   │   └───examples
+│   │   │       │   │   │       ├───cython
+│   │   │       │   │   │       └───limited_api
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───_pyinstaller
+│   │   │       │   │   └───tests
+│   │   │       │   ├───_typing
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───_utils
+│   │   │       │   │   └───__pycache__
+│   │   │       │   └───__pycache__
+│   │   │       ├───numpy-2.4.2.dist-info
+│   │   │       │   └───licenses
+│   │   │       │       └───numpy
+│   │   │       │           ├───fft
+│   │   │       │           │   └───pocketfft
+│   │   │       │           ├───linalg
+│   │   │       │           │   └───lapack_lite
+│   │   │       │           ├───ma
+│   │   │       │           ├───random
+│   │   │       │           │   └───src
+│   │   │       │           │       ├───distributions
+│   │   │       │           │       ├───mt19937
+│   │   │       │           │       ├───pcg64
+│   │   │       │           │       ├───philox
+│   │   │       │           │       ├───sfc64
+│   │   │       │           │       └───splitmix64
+│   │   │       │           └───_core
+│   │   │       │               ├───include
+│   │   │       │               │   └───numpy
+│   │   │       │               │       └───libdivide
+│   │   │       │               └───src
+│   │   │       │                   ├───common
+│   │   │       │                   │   └───pythoncapi-compat
+│   │   │       │                   ├───highway
+│   │   │       │                   ├───multiarray
+│   │   │       │                   ├───npysort
+│   │   │       │                   │   └───x86-simd-sort
+│   │   │       │                   └───umath
+│   │   │       │                       └───svml
+│   │   │       ├───numpy.libs
+│   │   │       ├───packaging
+│   │   │       │   ├───licenses
+│   │   │       │   └───__pycache__
+│   │   │       ├───packaging-26.0.dist-info
+│   │   │       │   └───licenses
+│   │   │       ├───pandas
+│   │   │       │   ├───api
+│   │   │       │   │   ├───executors
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───extensions
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───indexers
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───interchange
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───types
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───typing
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───arrays
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───compat
+│   │   │       │   │   ├───numpy
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───core
+│   │   │       │   │   ├───arrays
+│   │   │       │   │   │   ├───arrow
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───sparse
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───array_algos
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───computation
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───dtypes
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───groupby
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───indexers
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───indexes
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───interchange
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───internals
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───methods
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───ops
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───reshape
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───sparse
+│   │   │       │   │   ├───strings
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───tools
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───util
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───window
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_numba
+│   │   │       │   │   │   ├───kernels
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───errors
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───io
+│   │   │       │   │   ├───clipboard
+│   │   │       │   │   ├───excel
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───formats
+│   │   │       │   │   │   ├───templates
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───json
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───parsers
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───sas
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───plotting
+│   │   │       │   │   ├───_matplotlib
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───tests
+│   │   │       │   │   ├───api
+│   │   │       │   │   ├───apply
+│   │   │       │   │   ├───arithmetic
+│   │   │       │   │   ├───arrays
+│   │   │       │   │   │   ├───boolean
+│   │   │       │   │   │   ├───categorical
+│   │   │       │   │   │   ├───datetimes
+│   │   │       │   │   │   ├───floating
+│   │   │       │   │   │   ├───integer
+│   │   │       │   │   │   ├───interval
+│   │   │       │   │   │   ├───masked
+│   │   │       │   │   │   ├───numpy_
+│   │   │       │   │   │   ├───period
+│   │   │       │   │   │   ├───sparse
+│   │   │       │   │   │   ├───string_
+│   │   │       │   │   │   └───timedeltas
+│   │   │       │   │   ├───base
+│   │   │       │   │   ├───computation
+│   │   │       │   │   ├───config
+│   │   │       │   │   ├───construction
+│   │   │       │   │   ├───copy_view
+│   │   │       │   │   │   └───index
+│   │   │       │   │   ├───dtypes
+│   │   │       │   │   │   └───cast
+│   │   │       │   │   ├───extension
+│   │   │       │   │   │   ├───array_with_attr
+│   │   │       │   │   │   ├───base
+│   │   │       │   │   │   ├───date
+│   │   │       │   │   │   ├───decimal
+│   │   │       │   │   │   ├───json
+│   │   │       │   │   │   └───list
+│   │   │       │   │   ├───frame
+│   │   │       │   │   │   ├───constructors
+│   │   │       │   │   │   ├───indexing
+│   │   │       │   │   │   └───methods
+│   │   │       │   │   ├───generic
+│   │   │       │   │   ├───groupby
+│   │   │       │   │   │   ├───aggregate
+│   │   │       │   │   │   ├───methods
+│   │   │       │   │   │   └───transform
+│   │   │       │   │   ├───indexes
+│   │   │       │   │   │   ├───base_class
+│   │   │       │   │   │   ├───categorical
+│   │   │       │   │   │   ├───datetimelike_
+│   │   │       │   │   │   ├───datetimes
+│   │   │       │   │   │   │   └───methods
+│   │   │       │   │   │   ├───interval
+│   │   │       │   │   │   ├───multi
+│   │   │       │   │   │   ├───numeric
+│   │   │       │   │   │   ├───object
+│   │   │       │   │   │   ├───period
+│   │   │       │   │   │   │   └───methods
+│   │   │       │   │   │   ├───ranges
+│   │   │       │   │   │   ├───string
+│   │   │       │   │   │   └───timedeltas
+│   │   │       │   │   │       └───methods
+│   │   │       │   │   ├───indexing
+│   │   │       │   │   │   ├───interval
+│   │   │       │   │   │   └───multiindex
+│   │   │       │   │   ├───interchange
+│   │   │       │   │   ├───internals
+│   │   │       │   │   ├───io
+│   │   │       │   │   │   ├───excel
+│   │   │       │   │   │   ├───formats
+│   │   │       │   │   │   │   └───style
+│   │   │       │   │   │   ├───json
+│   │   │       │   │   │   ├───parser
+│   │   │       │   │   │   │   ├───common
+│   │   │       │   │   │   │   ├───dtypes
+│   │   │       │   │   │   │   └───usecols
+│   │   │       │   │   │   ├───pytables
+│   │   │       │   │   │   ├───sas
+│   │   │       │   │   │   └───xml
+│   │   │       │   │   ├───libs
+│   │   │       │   │   ├───plotting
+│   │   │       │   │   │   └───frame
+│   │   │       │   │   ├───reductions
+│   │   │       │   │   ├───resample
+│   │   │       │   │   ├───reshape
+│   │   │       │   │   │   ├───concat
+│   │   │       │   │   │   └───merge
+│   │   │       │   │   ├───scalar
+│   │   │       │   │   │   ├───interval
+│   │   │       │   │   │   ├───period
+│   │   │       │   │   │   ├───timedelta
+│   │   │       │   │   │   │   └───methods
+│   │   │       │   │   │   └───timestamp
+│   │   │       │   │   │       └───methods
+│   │   │       │   │   ├───series
+│   │   │       │   │   │   ├───accessors
+│   │   │       │   │   │   ├───indexing
+│   │   │       │   │   │   └───methods
+│   │   │       │   │   ├───strings
+│   │   │       │   │   ├───tools
+│   │   │       │   │   ├───tseries
+│   │   │       │   │   │   ├───frequencies
+│   │   │       │   │   │   ├───holiday
+│   │   │       │   │   │   └───offsets
+│   │   │       │   │   ├───tslibs
+│   │   │       │   │   ├───util
+│   │   │       │   │   └───window
+│   │   │       │   │       └───moments
+│   │   │       │   ├───tseries
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───util
+│   │   │       │   │   ├───version
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───_config
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───_libs
+│   │   │       │   │   ├───tslibs
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───window
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───_testing
+│   │   │       │   │   └───__pycache__
+│   │   │       │   └───__pycache__
+│   │   │       ├───pandas-3.0.0.dist-info
+│   │   │       ├───pandas.libs
+│   │   │       ├───PIL
+│   │   │       │   └───__pycache__
+│   │   │       ├───pillow-12.1.1.dist-info
+│   │   │       │   └───licenses
+│   │   │       ├───pip
+│   │   │       │   ├───_internal
+│   │   │       │   │   ├───cli
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───commands
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───distributions
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───index
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───locations
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───metadata
+│   │   │       │   │   │   ├───importlib
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───models
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───network
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───operations
+│   │   │       │   │   │   ├───build
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───install
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───req
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───resolution
+│   │   │       │   │   │   ├───legacy
+│   │   │       │   │   │   ├───resolvelib
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───utils
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───vcs
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───_vendor
+│   │   │       │   │   ├───cachecontrol
+│   │   │       │   │   │   ├───caches
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───certifi
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───dependency_groups
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───distlib
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───distro
+│   │   │       │   │   ├───idna
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───msgpack
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───packaging
+│   │   │       │   │   │   ├───licenses
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───pkg_resources
+│   │   │       │   │   ├───platformdirs
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───pygments
+│   │   │       │   │   │   ├───filters
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───formatters
+│   │   │       │   │   │   ├───lexers
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───styles
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───pyproject_hooks
+│   │   │       │   │   │   ├───_in_process
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───requests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───resolvelib
+│   │   │       │   │   │   ├───resolvers
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───rich
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───tomli
+│   │   │       │   │   ├───tomli_w
+│   │   │       │   │   ├───truststore
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───urllib3
+│   │   │       │   │   │   ├───contrib
+│   │   │       │   │   │   │   ├───_securetransport
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───packages
+│   │   │       │   │   │   │   ├───backports
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───util
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   └───__pycache__
+│   │   │       ├───pip-26.0.1.dist-info
+│   │   │       │   └───licenses
+│   │   │       │       └───src
+│   │   │       │           └───pip
+│   │   │       │               └───_vendor
+│   │   │       │                   ├───cachecontrol
+│   │   │       │                   ├───certifi
+│   │   │       │                   ├───dependency_groups
+│   │   │       │                   ├───distlib
+│   │   │       │                   ├───distro
+│   │   │       │                   ├───idna
+│   │   │       │                   ├───msgpack
+│   │   │       │                   ├───packaging
+│   │   │       │                   ├───pkg_resources
+│   │   │       │                   ├───platformdirs
+│   │   │       │                   ├───pygments
+│   │   │       │                   ├───pyproject_hooks
+│   │   │       │                   ├───requests
+│   │   │       │                   ├───resolvelib
+│   │   │       │                   ├───rich
+│   │   │       │                   ├───tomli
+│   │   │       │                   ├───tomli_w
+│   │   │       │                   ├───truststore
+│   │   │       │                   └───urllib3
+│   │   │       ├───pyparsing
+│   │   │       │   ├───ai
+│   │   │       │   │   └───show_best_practices
+│   │   │       │   ├───diagram
+│   │   │       │   ├───tools
+│   │   │       │   └───__pycache__
+│   │   │       ├───pyparsing-3.3.2.dist-info
+│   │   │       │   └───licenses
+│   │   │       ├───python_dateutil-2.9.0.post0.dist-info
+│   │   │       ├───scipy
+│   │   │       │   ├───cluster
+│   │   │       │   │   └───tests
+│   │   │       │   ├───constants
+│   │   │       │   │   ├───tests
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───datasets
+│   │   │       │   │   └───tests
+│   │   │       │   ├───differentiate
+│   │   │       │   │   └───tests
+│   │   │       │   ├───fft
+│   │   │       │   │   ├───tests
+│   │   │       │   │   ├───_pocketfft
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───fftpack
+│   │   │       │   │   └───tests
+│   │   │       │   ├───integrate
+│   │   │       │   │   ├───tests
+│   │   │       │   │   ├───_ivp
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_rules
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───interpolate
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───data
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───io
+│   │   │       │   │   ├───arff
+│   │   │       │   │   │   └───tests
+│   │   │       │   │   │       └───data
+│   │   │       │   │   ├───matlab
+│   │   │       │   │   │   └───tests
+│   │   │       │   │   │       └───data
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───data
+│   │   │       │   │   ├───_fast_matrix_market
+│   │   │       │   │   └───_harwell_boeing
+│   │   │       │   │       └───tests
+│   │   │       │   ├───linalg
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   ├───data
+│   │   │       │   │   │   └───_cython_examples
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───misc
+│   │   │       │   ├───ndimage
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───data
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───odr
+│   │   │       │   │   └───tests
+│   │   │       │   ├───optimize
+│   │   │       │   │   ├───cython_optimize
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───_cython_examples
+│   │   │       │   │   ├───_highspy
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_lsq
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_shgo_lib
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_trlib
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_trustregion_constr
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───signal
+│   │   │       │   │   ├───tests
+│   │   │       │   │   └───windows
+│   │   │       │   ├───sparse
+│   │   │       │   │   ├───csgraph
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───linalg
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   ├───_dsolve
+│   │   │       │   │   │   │   ├───tests
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───_eigen
+│   │   │       │   │   │   │   ├───arpack
+│   │   │       │   │   │   │   │   ├───tests
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   ├───lobpcg
+│   │   │       │   │   │   │   │   ├───tests
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   ├───tests
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───_isolve
+│   │   │       │   │   │   │   ├───tests
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───data
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───spatial
+│   │   │       │   │   ├───qhull_src
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───data
+│   │   │       │   │   ├───transform
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───special
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   ├───data
+│   │   │       │   │   │   └───_cython_examples
+│   │   │       │   │   ├───_precompute
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───stats
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───data
+│   │   │       │   │   │       ├───levy_stable
+│   │   │       │   │   │       ├───nist_anova
+│   │   │       │   │   │       └───nist_linregress
+│   │   │       │   │   ├───_levy_stable
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_rcont
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_unuran
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───_lib
+│   │   │       │   │   ├───array_api_compat
+│   │   │       │   │   │   ├───common
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───cupy
+│   │   │       │   │   │   ├───dask
+│   │   │       │   │   │   │   └───array
+│   │   │       │   │   │   ├───numpy
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───torch
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───array_api_extra
+│   │   │       │   │   │   ├───_lib
+│   │   │       │   │   │   │   ├───_utils
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───cobyqa
+│   │   │       │   │   │   ├───subsolvers
+│   │   │       │   │   │   └───utils
+│   │   │       │   │   ├───pyprima
+│   │   │       │   │   │   ├───cobyla
+│   │   │       │   │   │   └───common
+│   │   │       │   │   ├───tests
+│   │   │       │   │   ├───_uarray
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   └───__pycache__
+│   │   │       ├───scipy-1.17.0.dist-info
+│   │   │       ├───scipy.libs
+│   │   │       ├───six-1.17.0.dist-info
+│   │   │       ├───tqdm
+│   │   │       │   ├───contrib
+│   │   │       │   │   └───__pycache__
+│   │   │       │   └───__pycache__
+│   │   │       ├───tqdm-4.67.3.dist-info
+│   │   │       │   └───licenses
+│   │   │       ├───tzdata
+│   │   │       │   └───zoneinfo
+│   │   │       │       ├───Africa
+│   │   │       │       ├───America
+│   │   │       │       │   ├───Argentina
+│   │   │       │       │   ├───Indiana
+│   │   │       │       │   ├───Kentucky
+│   │   │       │       │   └───North_Dakota
+│   │   │       │       ├───Antarctica
+│   │   │       │       ├───Arctic
+│   │   │       │       ├───Asia
+│   │   │       │       ├───Atlantic
+│   │   │       │       ├───Australia
+│   │   │       │       ├───Brazil
+│   │   │       │       ├───Canada
+│   │   │       │       ├───Chile
+│   │   │       │       ├───Etc
+│   │   │       │       ├───Europe
+│   │   │       │       ├───Indian
+│   │   │       │       ├───Mexico
+│   │   │       │       ├───Pacific
+│   │   │       │       └───US
+│   │   │       ├───tzdata-2025.3.dist-info
+│   │   │       │   └───licenses
+│   │   │       │       └───licenses
+│   │   │       └───__pycache__
+│   │   ├───Scripts
+│   │   └───share
+│   │       └───man
+│   │           └───man1
+│   ├───analysis
+│   ├───archive
+│   │   ├───2026-02-15_025724
+│   │   ├───freeze_20260214_191019
+│   │   │   ├───checkpoints
+│   │   │   ├───data
+│   │   │   ├───figures
+│   │   │   ├───results
+│   │   │   ├───scripts
+│   │   │   └───tables
+│   │   └───SEQUESTER_2026-02-16_112210
+│   │       ├───PIPELINE_A_SPARSE_CANONICAL
+│   │       ├───PIPELINE_B_DENSE_CONTROL
+│   │       └───PIPELINE_C_GPT2_QUARANTINE
+│   ├───checkpoints
+│   ├───data
+│   ├───figures
+│   ├───hyperfold.egg-info
+│   ├───paper
+│   │   └───figures
+│   ├───results
+│   │   └───ladder_alpha_map_filtered.csv
+│   │       └───sections
+│   ├───scripts
+│   │   └───__pycache__
+│   ├───tables
+│   └───__pycache__
+├───cp-admission-prd
+│   ├───output
+│   ├───paper
+│   └───scripts
+├───framework
+│   ├───.vscode
+│   ├───code
+│   └───papers
+│       ├───eft-obstruction-hold
+│       ├───flavor-mixing
+│       ├───holonomy-cp
+│       ├───hyperbolic-lattice
+│       ├───regulator-lattice
+│       └───shape-space
+├───golden_unification
+│   ├───code
+│   ├───data
+│   │   ├───derived
+│   │   └───pdg
+│   ├───dist
+│   ├───figures
+│   ├───math
+│   ├───notes
+│   ├───papers
+│   │   ├───paper_II
+│   │   │   └───sections
+│   │   ├───sections
+│   │   │   └───_retired
+│   │   └───_V_EPJC.tex.locked
+│   ├───results
+│   ├───scripts
+│   └───shared
+├───hyperbolic-log-lattice-flavor
+│   ├───.venv
+│   │   ├───Include
+│   │   ├───Lib
+│   │   │   └───site-packages
+│   │   │       ├───dateutil
+│   │   │       │   ├───parser
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───tz
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───zoneinfo
+│   │   │       │   │   └───__pycache__
+│   │   │       │   └───__pycache__
+│   │   │       ├───jinja2
+│   │   │       │   └───__pycache__
+│   │   │       ├───jinja2-3.1.6.dist-info
+│   │   │       │   └───licenses
+│   │   │       ├───markupsafe
+│   │   │       │   └───__pycache__
+│   │   │       ├───markupsafe-3.0.3.dist-info
+│   │   │       │   └───licenses
+│   │   │       ├───mpmath
+│   │   │       │   ├───calculus
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───functions
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───libmp
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───matrices
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───tests
+│   │   │       │   │   └───__pycache__
+│   │   │       │   └───__pycache__
+│   │   │       ├───mpmath-1.3.0.dist-info
+│   │   │       ├───numpy
+│   │   │       │   ├───char
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───core
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───ctypeslib
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───doc
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───f2py
+│   │   │       │   │   ├───src
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   ├───src
+│   │   │       │   │   │   │   ├───abstract_interface
+│   │   │       │   │   │   │   ├───array_from_pyobj
+│   │   │       │   │   │   │   ├───assumed_shape
+│   │   │       │   │   │   │   ├───block_docstring
+│   │   │       │   │   │   │   ├───callback
+│   │   │       │   │   │   │   ├───cli
+│   │   │       │   │   │   │   ├───common
+│   │   │       │   │   │   │   ├───crackfortran
+│   │   │       │   │   │   │   ├───f2cmap
+│   │   │       │   │   │   │   ├───isocintrin
+│   │   │       │   │   │   │   ├───kind
+│   │   │       │   │   │   │   ├───mixed
+│   │   │       │   │   │   │   ├───modules
+│   │   │       │   │   │   │   │   ├───gh25337
+│   │   │       │   │   │   │   │   └───gh26920
+│   │   │       │   │   │   │   ├───negative_bounds
+│   │   │       │   │   │   │   ├───parameter
+│   │   │       │   │   │   │   ├───quoted_character
+│   │   │       │   │   │   │   ├───regression
+│   │   │       │   │   │   │   ├───return_character
+│   │   │       │   │   │   │   ├───return_complex
+│   │   │       │   │   │   │   ├───return_integer
+│   │   │       │   │   │   │   ├───return_logical
+│   │   │       │   │   │   │   ├───return_real
+│   │   │       │   │   │   │   ├───routines
+│   │   │       │   │   │   │   ├───size
+│   │   │       │   │   │   │   ├───string
+│   │   │       │   │   │   │   └───value_attrspec
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_backends
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───fft
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───lib
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   ├───data
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───linalg
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───ma
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───matrixlib
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───polynomial
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───random
+│   │   │       │   │   ├───lib
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   ├───data
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_examples
+│   │   │       │   │   │   ├───cffi
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───cython
+│   │   │       │   │   │   └───numba
+│   │   │       │   │   │       └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───rec
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───strings
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───testing
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_private
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───tests
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───typing
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   ├───data
+│   │   │       │   │   │   │   ├───fail
+│   │   │       │   │   │   │   ├───misc
+│   │   │       │   │   │   │   ├───pass
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   └───reveal
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───_core
+│   │   │       │   │   ├───include
+│   │   │       │   │   │   └───numpy
+│   │   │       │   │   │       └───random
+│   │   │       │   │   ├───lib
+│   │   │       │   │   │   ├───npy-pkg-config
+│   │   │       │   │   │   └───pkgconfig
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   ├───data
+│   │   │       │   │   │   ├───examples
+│   │   │       │   │   │   │   ├───cython
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   └───limited_api
+│   │   │       │   │   │   │       └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───_pyinstaller
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───_typing
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───_utils
+│   │   │       │   │   └───__pycache__
+│   │   │       │   └───__pycache__
+│   │   │       ├───numpy-2.4.2.dist-info
+│   │   │       │   └───licenses
+│   │   │       │       └───numpy
+│   │   │       │           ├───fft
+│   │   │       │           │   └───pocketfft
+│   │   │       │           ├───linalg
+│   │   │       │           │   └───lapack_lite
+│   │   │       │           ├───ma
+│   │   │       │           ├───random
+│   │   │       │           │   └───src
+│   │   │       │           │       ├───distributions
+│   │   │       │           │       ├───mt19937
+│   │   │       │           │       ├───pcg64
+│   │   │       │           │       ├───philox
+│   │   │       │           │       ├───sfc64
+│   │   │       │           │       └───splitmix64
+│   │   │       │           └───_core
+│   │   │       │               ├───include
+│   │   │       │               │   └───numpy
+│   │   │       │               │       └───libdivide
+│   │   │       │               └───src
+│   │   │       │                   ├───common
+│   │   │       │                   │   └───pythoncapi-compat
+│   │   │       │                   ├───highway
+│   │   │       │                   ├───multiarray
+│   │   │       │                   ├───npysort
+│   │   │       │                   │   └───x86-simd-sort
+│   │   │       │                   └───umath
+│   │   │       │                       └───svml
+│   │   │       ├───numpy.libs
+│   │   │       ├───pandas
+│   │   │       │   ├───api
+│   │   │       │   │   ├───executors
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───extensions
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───indexers
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───interchange
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───types
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───typing
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───arrays
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───compat
+│   │   │       │   │   ├───numpy
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───core
+│   │   │       │   │   ├───arrays
+│   │   │       │   │   │   ├───arrow
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───sparse
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───array_algos
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───computation
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───dtypes
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───groupby
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───indexers
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───indexes
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───interchange
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───internals
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───methods
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───ops
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───reshape
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───sparse
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───strings
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───tools
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───util
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───window
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_numba
+│   │   │       │   │   │   ├───kernels
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───errors
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───io
+│   │   │       │   │   ├───clipboard
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───excel
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───formats
+│   │   │       │   │   │   ├───templates
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───json
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───parsers
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───sas
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───plotting
+│   │   │       │   │   ├───_matplotlib
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───tests
+│   │   │       │   │   ├───api
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───apply
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───arithmetic
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───arrays
+│   │   │       │   │   │   ├───boolean
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───categorical
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───datetimes
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───floating
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───integer
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───interval
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───masked
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───numpy_
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───period
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───sparse
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───string_
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───timedeltas
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───base
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───computation
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───config
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───construction
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───copy_view
+│   │   │       │   │   │   ├───index
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───dtypes
+│   │   │       │   │   │   ├───cast
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───extension
+│   │   │       │   │   │   ├───array_with_attr
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───base
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───date
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───decimal
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───json
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───list
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───frame
+│   │   │       │   │   │   ├───constructors
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───indexing
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───methods
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───generic
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───groupby
+│   │   │       │   │   │   ├───aggregate
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───methods
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───transform
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───indexes
+│   │   │       │   │   │   ├───base_class
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───categorical
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───datetimelike_
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───datetimes
+│   │   │       │   │   │   │   ├───methods
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───interval
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───multi
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───numeric
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───object
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───period
+│   │   │       │   │   │   │   ├───methods
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───ranges
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───string
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───timedeltas
+│   │   │       │   │   │   │   ├───methods
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───indexing
+│   │   │       │   │   │   ├───interval
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───multiindex
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───interchange
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───internals
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───io
+│   │   │       │   │   │   ├───excel
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───formats
+│   │   │       │   │   │   │   ├───style
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───json
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───parser
+│   │   │       │   │   │   │   ├───common
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   ├───dtypes
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   ├───usecols
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───pytables
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───sas
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───xml
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───libs
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───plotting
+│   │   │       │   │   │   ├───frame
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───reductions
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───resample
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───reshape
+│   │   │       │   │   │   ├───concat
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───merge
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───scalar
+│   │   │       │   │   │   ├───interval
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───period
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───timedelta
+│   │   │       │   │   │   │   ├───methods
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───timestamp
+│   │   │       │   │   │   │   ├───methods
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───series
+│   │   │       │   │   │   ├───accessors
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───indexing
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───methods
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───strings
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───tools
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───tseries
+│   │   │       │   │   │   ├───frequencies
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───holiday
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───offsets
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───tslibs
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───util
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───window
+│   │   │       │   │   │   ├───moments
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───tseries
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───util
+│   │   │       │   │   ├───version
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───_config
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───_libs
+│   │   │       │   │   ├───tslibs
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───window
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───_testing
+│   │   │       │   │   └───__pycache__
+│   │   │       │   └───__pycache__
+│   │   │       ├───pandas-3.0.0.dist-info
+│   │   │       ├───pandas.libs
+│   │   │       ├───pip
+│   │   │       │   ├───_internal
+│   │   │       │   │   ├───cli
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───commands
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───distributions
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───index
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───locations
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───metadata
+│   │   │       │   │   │   ├───importlib
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───models
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───network
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───operations
+│   │   │       │   │   │   ├───build
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───install
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───req
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───resolution
+│   │   │       │   │   │   ├───legacy
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───resolvelib
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───utils
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───vcs
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───_vendor
+│   │   │       │   │   ├───cachecontrol
+│   │   │       │   │   │   ├───caches
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───certifi
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───dependency_groups
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───distlib
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───distro
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───idna
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───msgpack
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───packaging
+│   │   │       │   │   │   ├───licenses
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───pkg_resources
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───platformdirs
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───pygments
+│   │   │       │   │   │   ├───filters
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───formatters
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───lexers
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───styles
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───pyproject_hooks
+│   │   │       │   │   │   ├───_in_process
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───requests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───resolvelib
+│   │   │       │   │   │   ├───resolvers
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───rich
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───tomli
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───tomli_w
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───truststore
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───urllib3
+│   │   │       │   │   │   ├───contrib
+│   │   │       │   │   │   │   ├───_securetransport
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───packages
+│   │   │       │   │   │   │   ├───backports
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───util
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   └───__pycache__
+│   │   │       ├───pip-26.0.1.dist-info
+│   │   │       │   └───licenses
+│   │   │       │       └───src
+│   │   │       │           └───pip
+│   │   │       │               └───_vendor
+│   │   │       │                   ├───cachecontrol
+│   │   │       │                   ├───certifi
+│   │   │       │                   ├───dependency_groups
+│   │   │       │                   ├───distlib
+│   │   │       │                   ├───distro
+│   │   │       │                   ├───idna
+│   │   │       │                   ├───msgpack
+│   │   │       │                   ├───packaging
+│   │   │       │                   ├───pkg_resources
+│   │   │       │                   ├───platformdirs
+│   │   │       │                   ├───pygments
+│   │   │       │                   ├───pyproject_hooks
+│   │   │       │                   ├───requests
+│   │   │       │                   ├───resolvelib
+│   │   │       │                   ├───rich
+│   │   │       │                   ├───tomli
+│   │   │       │                   ├───tomli_w
+│   │   │       │                   ├───truststore
+│   │   │       │                   └───urllib3
+│   │   │       ├───python_dateutil-2.9.0.post0.dist-info
+│   │   │       ├───scipy
+│   │   │       │   ├───cluster
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───constants
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───datasets
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───differentiate
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───fft
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_pocketfft
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───fftpack
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───integrate
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_ivp
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_rules
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───interpolate
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   ├───data
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───io
+│   │   │       │   │   ├───arff
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   │   ├───data
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───matlab
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   │   ├───data
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   ├───data
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_fast_matrix_market
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_harwell_boeing
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───linalg
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   ├───data
+│   │   │       │   │   │   ├───_cython_examples
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───misc
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───ndimage
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   ├───data
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───odr
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───optimize
+│   │   │       │   │   ├───cython_optimize
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   ├───_cython_examples
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_highspy
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_lsq
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_shgo_lib
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_trlib
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_trustregion_constr
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───signal
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───windows
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───sparse
+│   │   │       │   │   ├───csgraph
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───linalg
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───_dsolve
+│   │   │       │   │   │   │   ├───tests
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───_eigen
+│   │   │       │   │   │   │   ├───arpack
+│   │   │       │   │   │   │   │   ├───tests
+│   │   │       │   │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   ├───lobpcg
+│   │   │       │   │   │   │   │   ├───tests
+│   │   │       │   │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   ├───tests
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───_isolve
+│   │   │       │   │   │   │   ├───tests
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   ├───data
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───spatial
+│   │   │       │   │   ├───qhull_src
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   ├───data
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───transform
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───special
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   ├───data
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───_cython_examples
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_precompute
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───stats
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   ├───data
+│   │   │       │   │   │   │   ├───levy_stable
+│   │   │       │   │   │   │   ├───nist_anova
+│   │   │       │   │   │   │   ├───nist_linregress
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_levy_stable
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_rcont
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_unuran
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───_lib
+│   │   │       │   │   ├───array_api_compat
+│   │   │       │   │   │   ├───common
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───cupy
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───dask
+│   │   │       │   │   │   │   ├───array
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───numpy
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───torch
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───array_api_extra
+│   │   │       │   │   │   ├───_lib
+│   │   │       │   │   │   │   ├───_utils
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───cobyqa
+│   │   │       │   │   │   ├───subsolvers
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───utils
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───pyprima
+│   │   │       │   │   │   ├───cobyla
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───common
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_uarray
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   └───__pycache__
+│   │   │       ├───scipy-1.17.0.dist-info
+│   │   │       ├───scipy.libs
+│   │   │       ├───six-1.17.0.dist-info
+│   │   │       ├───sympy
+│   │   │       │   ├───algebras
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───assumptions
+│   │   │       │   │   ├───handlers
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───predicates
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───relation
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───benchmarks
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───calculus
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───categories
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───codegen
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───combinatorics
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───concrete
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───core
+│   │   │       │   │   ├───benchmarks
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───crypto
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───diffgeom
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───discrete
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───external
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───functions
+│   │   │       │   │   ├───combinatorial
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───elementary
+│   │   │       │   │   │   ├───benchmarks
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───special
+│   │   │       │   │   │   ├───benchmarks
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───geometry
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───holonomic
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───integrals
+│   │   │       │   │   ├───benchmarks
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───interactive
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───liealgebras
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───logic
+│   │   │       │   │   ├───algorithms
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───utilities
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───matrices
+│   │   │       │   │   ├───benchmarks
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───expressions
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───multipledispatch
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───ntheory
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───parsing
+│   │   │       │   │   ├───autolev
+│   │   │       │   │   │   ├───test-examples
+│   │   │       │   │   │   │   ├───pydy-example-repo
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───_antlr
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───c
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───fortran
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───latex
+│   │   │       │   │   │   ├───lark
+│   │   │       │   │   │   │   ├───grammar
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───_antlr
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───physics
+│   │   │       │   │   ├───biomechanics
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───continuum_mechanics
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───control
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───hep
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───mechanics
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───optics
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───quantum
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───units
+│   │   │       │   │   │   ├───definitions
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───systems
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───vector
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───plotting
+│   │   │       │   │   ├───backends
+│   │   │       │   │   │   ├───matplotlibbackend
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───textbackend
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───intervalmath
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───pygletplot
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───polys
+│   │   │       │   │   ├───agca
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───benchmarks
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───domains
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───matrices
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───numberfields
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───printing
+│   │   │       │   │   ├───pretty
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───sandbox
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───series
+│   │   │       │   │   ├───benchmarks
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───sets
+│   │   │       │   │   ├───handlers
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───simplify
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───solvers
+│   │   │       │   │   ├───benchmarks
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───diophantine
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───ode
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───stats
+│   │   │       │   │   ├───sampling
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───strategies
+│   │   │       │   │   ├───branch
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───tensor
+│   │   │       │   │   ├───array
+│   │   │       │   │   │   ├───expressions
+│   │   │       │   │   │   │   ├───tests
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───testing
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───unify
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───utilities
+│   │   │       │   │   ├───mathml
+│   │   │       │   │   │   ├───data
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_compilation
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───vector
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   └───__pycache__
+│   │   │       ├───sympy-1.14.0.dist-info
+│   │   │       │   └───licenses
+│   │   │       ├───tzdata
+│   │   │       │   ├───zoneinfo
+│   │   │       │   │   ├───Africa
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───America
+│   │   │       │   │   │   ├───Argentina
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───Indiana
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───Kentucky
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───North_Dakota
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───Antarctica
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───Arctic
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───Asia
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───Atlantic
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───Australia
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───Brazil
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───Canada
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───Chile
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───Etc
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───Europe
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───Indian
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───Mexico
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───Pacific
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───US
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   └───__pycache__
+│   │   │       ├───tzdata-2025.3.dist-info
+│   │   │       │   └───licenses
+│   │   │       │       └───licenses
+│   │   │       └───__pycache__
+│   │   ├───Scripts
+│   │   └───share
+│   │       └───man
+│   │           └───man1
+│   ├───archive
+│   │   ├───SEQUESTER_2026-02-16_104112
+│   │   │   ├───PIPELINE_A_SPARSE_CANONICAL
+│   │   │   ├───PIPELINE_B_DENSE_CONTROL
+│   │   │   └───PIPELINE_C_GPT2_INFERIOR
+│   │   └───SEQUESTER_2026-02-16_105325
+│   │       ├───PIPELINE_A_SPARSE_CANONICAL
+│   │       ├───PIPELINE_B_DENSE_CONTROL
+│   │       └───PIPELINE_C_GPT2_INFERIOR
+│   ├───audit-foundation
+│   │   ├───code
+│   │   ├───notes
+│   │   ├───paper
+│   │   │   └───sections
+│   │   └───scaffold
+│   ├───build
+│   │   ├───compile
+│   │   │   ├───appendices
+│   │   │   ├───figures
+│   │   │   └───sections
+│   │   └───figures
+│   ├───checkpoints
+│   │   └───archive
+│   ├───data
+│   │   ├───archive
+│   │   │   └───20260214_0640_baseline
+│   │   ├───runs
+│   │   ├───snapshots
+│   │   │   └───snapshot_20260210_221905
+│   │   └───__pycache__
+│   ├───environment
+│   ├───figures
+│   ├───geometry
+│   │   └───__pycache__
+│   ├───internal
+│   │   └───lemmas
+│   ├───lattice
+│   │   └───__pycache__
+│   ├───manuscript
+│   │   ├───appendices
+│   │   ├───figures
+│   │   └───sections
+│   ├───notebooks
+│   ├───out
+│   │   └───logs
+│   ├───paper
+│   │   ├───appendix
+│   │   ├───bib
+│   │   ├───build
+│   │   ├───figures
+│   │   ├───paper
+│   │   │   ├───appendix
+│   │   │   ├───bib
+│   │   │   ├───build
+│   │   │   ├───figures
+│   │   │   └───sections
+│   │   └───sections
+│   ├───papers
+│   │   ├───internal_synthesis
+│   │   ├───paper1
+│   │   ├───paper2
+│   │   │   ├───figures
+│   │   │   └───sections
+│   │   └───paper3
+│   │       └───sections
+│   ├───results
+│   │   └───archive
+│   ├───scripts
+│   │   ├───archive
+│   │   └───__pycache__
+│   ├───submission_zip
+│   │   └───manuscript
+│   │       ├───appendices
+│   │       ├───figures
+│   │       └───sections
+│   ├───tables
+│   ├───tests
+│   │   └───__pycache__
+│   ├───transport
+│   │   └───__pycache__
+│   ├───visualization
+│   │   └───__pycache__
+│   └───__pycache__
+├───hyperbolic-transport-audit
+│   ├───code
+│   ├───notes
+│   ├───paper
+│   │   └───sections
+│   └───scaffold
+├───hyperfold-crypto
+│   ├───.venv
+│   │   ├───Include
+│   │   ├───Lib
+│   │   │   └───site-packages
+│   │   │       ├───contourpy
+│   │   │       │   ├───util
+│   │   │       │   │   └───__pycache__
+│   │   │       │   └───__pycache__
+│   │   │       ├───contourpy-1.3.3.dist-info
+│   │   │       ├───cycler
+│   │   │       │   └───__pycache__
+│   │   │       ├───cycler-0.12.1.dist-info
+│   │   │       ├───dateutil
+│   │   │       │   ├───parser
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───tz
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───zoneinfo
+│   │   │       │   │   └───__pycache__
+│   │   │       │   └───__pycache__
+│   │   │       ├───fontTools
+│   │   │       │   ├───cffLib
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───colorLib
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───config
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───cu2qu
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───designspaceLib
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───encodings
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───feaLib
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───merge
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───misc
+│   │   │       │   │   ├───filesystem
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───plistlib
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───mtiLib
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───otlLib
+│   │   │       │   │   ├───optimize
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───pens
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───qu2cu
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───subset
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───svgLib
+│   │   │       │   │   ├───path
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───t1Lib
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───ttLib
+│   │   │       │   │   ├───tables
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───ufoLib
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───unicodedata
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───varLib
+│   │   │       │   │   ├───avar
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───instancer
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───voltLib
+│   │   │       │   │   └───__pycache__
+│   │   │       │   └───__pycache__
+│   │   │       ├───fonttools-4.61.1.dist-info
+│   │   │       │   └───licenses
+│   │   │       ├───hyperfold-0.1.0.dist-info
+│   │   │       ├───kiwisolver
+│   │   │       │   └───__pycache__
+│   │   │       ├───kiwisolver-1.4.9.dist-info
+│   │   │       │   └───licenses
+│   │   │       ├───matplotlib
+│   │   │       │   ├───axes
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───backends
+│   │   │       │   │   ├───qt_editor
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───web_backend
+│   │   │       │   │   │   ├───css
+│   │   │       │   │   │   └───js
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───mpl-data
+│   │   │       │   │   ├───fonts
+│   │   │       │   │   │   ├───afm
+│   │   │       │   │   │   ├───pdfcorefonts
+│   │   │       │   │   │   └───ttf
+│   │   │       │   │   ├───images
+│   │   │       │   │   ├───plot_directive
+│   │   │       │   │   ├───sample_data
+│   │   │       │   │   │   └───axes_grid
+│   │   │       │   │   └───stylelib
+│   │   │       │   ├───projections
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───sphinxext
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───style
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───testing
+│   │   │       │   │   ├───jpl_units
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───tests
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───tri
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───_api
+│   │   │       │   │   └───__pycache__
+│   │   │       │   └───__pycache__
+│   │   │       ├───matplotlib-3.10.8.dist-info
+│   │   │       ├───mpl_toolkits
+│   │   │       │   ├───axes_grid1
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───axisartist
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   └───mplot3d
+│   │   │       │       ├───tests
+│   │   │       │       │   └───__pycache__
+│   │   │       │       └───__pycache__
+│   │   │       ├───mpmath
+│   │   │       │   ├───calculus
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───functions
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───libmp
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───matrices
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───tests
+│   │   │       │   │   └───__pycache__
+│   │   │       │   └───__pycache__
+│   │   │       ├───mpmath-1.3.0.dist-info
+│   │   │       ├───numpy
+│   │   │       │   ├───char
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───core
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───ctypeslib
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───doc
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───f2py
+│   │   │       │   │   ├───src
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   ├───src
+│   │   │       │   │   │   │   ├───abstract_interface
+│   │   │       │   │   │   │   ├───array_from_pyobj
+│   │   │       │   │   │   │   ├───assumed_shape
+│   │   │       │   │   │   │   ├───block_docstring
+│   │   │       │   │   │   │   ├───callback
+│   │   │       │   │   │   │   ├───cli
+│   │   │       │   │   │   │   ├───common
+│   │   │       │   │   │   │   ├───crackfortran
+│   │   │       │   │   │   │   ├───f2cmap
+│   │   │       │   │   │   │   ├───isocintrin
+│   │   │       │   │   │   │   ├───kind
+│   │   │       │   │   │   │   ├───mixed
+│   │   │       │   │   │   │   ├───modules
+│   │   │       │   │   │   │   │   ├───gh25337
+│   │   │       │   │   │   │   │   └───gh26920
+│   │   │       │   │   │   │   ├───negative_bounds
+│   │   │       │   │   │   │   ├───parameter
+│   │   │       │   │   │   │   ├───quoted_character
+│   │   │       │   │   │   │   ├───regression
+│   │   │       │   │   │   │   ├───return_character
+│   │   │       │   │   │   │   ├───return_complex
+│   │   │       │   │   │   │   ├───return_integer
+│   │   │       │   │   │   │   ├───return_logical
+│   │   │       │   │   │   │   ├───return_real
+│   │   │       │   │   │   │   ├───routines
+│   │   │       │   │   │   │   ├───size
+│   │   │       │   │   │   │   ├───string
+│   │   │       │   │   │   │   └───value_attrspec
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_backends
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───fft
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───lib
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   ├───data
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───linalg
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───ma
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───matrixlib
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───polynomial
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───random
+│   │   │       │   │   ├───lib
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   ├───data
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_examples
+│   │   │       │   │   │   ├───cffi
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───cython
+│   │   │       │   │   │   └───numba
+│   │   │       │   │   │       └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───rec
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───strings
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───testing
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_private
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───tests
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───typing
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   ├───data
+│   │   │       │   │   │   │   ├───fail
+│   │   │       │   │   │   │   ├───misc
+│   │   │       │   │   │   │   ├───pass
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   └───reveal
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───_core
+│   │   │       │   │   ├───include
+│   │   │       │   │   │   └───numpy
+│   │   │       │   │   │       └───random
+│   │   │       │   │   ├───lib
+│   │   │       │   │   │   ├───npy-pkg-config
+│   │   │       │   │   │   └───pkgconfig
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   ├───data
+│   │   │       │   │   │   ├───examples
+│   │   │       │   │   │   │   ├───cython
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   └───limited_api
+│   │   │       │   │   │   │       └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───_pyinstaller
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───_typing
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───_utils
+│   │   │       │   │   └───__pycache__
+│   │   │       │   └───__pycache__
+│   │   │       ├───numpy-2.4.2.dist-info
+│   │   │       │   └───licenses
+│   │   │       │       └───numpy
+│   │   │       │           ├───fft
+│   │   │       │           │   └───pocketfft
+│   │   │       │           ├───linalg
+│   │   │       │           │   └───lapack_lite
+│   │   │       │           ├───ma
+│   │   │       │           ├───random
+│   │   │       │           │   └───src
+│   │   │       │           │       ├───distributions
+│   │   │       │           │       ├───mt19937
+│   │   │       │           │       ├───pcg64
+│   │   │       │           │       ├───philox
+│   │   │       │           │       ├───sfc64
+│   │   │       │           │       └───splitmix64
+│   │   │       │           └───_core
+│   │   │       │               ├───include
+│   │   │       │               │   └───numpy
+│   │   │       │               │       └───libdivide
+│   │   │       │               └───src
+│   │   │       │                   ├───common
+│   │   │       │                   │   └───pythoncapi-compat
+│   │   │       │                   ├───highway
+│   │   │       │                   ├───multiarray
+│   │   │       │                   ├───npysort
+│   │   │       │                   │   └───x86-simd-sort
+│   │   │       │                   └───umath
+│   │   │       │                       └───svml
+│   │   │       ├───numpy.libs
+│   │   │       ├───packaging
+│   │   │       │   ├───licenses
+│   │   │       │   │   └───__pycache__
+│   │   │       │   └───__pycache__
+│   │   │       ├───packaging-26.0.dist-info
+│   │   │       │   └───licenses
+│   │   │       ├───pandas
+│   │   │       │   ├───api
+│   │   │       │   │   ├───executors
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───extensions
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───indexers
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───interchange
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───types
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───typing
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───arrays
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───compat
+│   │   │       │   │   ├───numpy
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───core
+│   │   │       │   │   ├───arrays
+│   │   │       │   │   │   ├───arrow
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───sparse
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───array_algos
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───computation
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───dtypes
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───groupby
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───indexers
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───indexes
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───interchange
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───internals
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───methods
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───ops
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───reshape
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───sparse
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───strings
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───tools
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───util
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───window
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_numba
+│   │   │       │   │   │   ├───kernels
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───errors
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───io
+│   │   │       │   │   ├───clipboard
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───excel
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───formats
+│   │   │       │   │   │   ├───templates
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───json
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───parsers
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───sas
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───plotting
+│   │   │       │   │   ├───_matplotlib
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───tests
+│   │   │       │   │   ├───api
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───apply
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───arithmetic
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───arrays
+│   │   │       │   │   │   ├───boolean
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───categorical
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───datetimes
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───floating
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───integer
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───interval
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───masked
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───numpy_
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───period
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───sparse
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───string_
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───timedeltas
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───base
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───computation
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───config
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───construction
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───copy_view
+│   │   │       │   │   │   ├───index
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───dtypes
+│   │   │       │   │   │   ├───cast
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───extension
+│   │   │       │   │   │   ├───array_with_attr
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───base
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───date
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───decimal
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───json
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───list
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───uuid
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───frame
+│   │   │       │   │   │   ├───constructors
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───indexing
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───methods
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───generic
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───groupby
+│   │   │       │   │   │   ├───aggregate
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───methods
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───transform
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───indexes
+│   │   │       │   │   │   ├───base_class
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───categorical
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───datetimelike_
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───datetimes
+│   │   │       │   │   │   │   ├───methods
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───interval
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───multi
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───numeric
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───object
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───period
+│   │   │       │   │   │   │   ├───methods
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───ranges
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───string
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───timedeltas
+│   │   │       │   │   │   │   ├───methods
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───indexing
+│   │   │       │   │   │   ├───interval
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───multiindex
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───interchange
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───internals
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───io
+│   │   │       │   │   │   ├───excel
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───formats
+│   │   │       │   │   │   │   ├───style
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───json
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───parser
+│   │   │       │   │   │   │   ├───common
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   ├───dtypes
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   ├───usecols
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───pytables
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───sas
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───xml
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───libs
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───plotting
+│   │   │       │   │   │   ├───frame
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───reductions
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───resample
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───reshape
+│   │   │       │   │   │   ├───concat
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───merge
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───scalar
+│   │   │       │   │   │   ├───interval
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───period
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───timedelta
+│   │   │       │   │   │   │   ├───methods
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───timestamp
+│   │   │       │   │   │   │   ├───methods
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───series
+│   │   │       │   │   │   ├───accessors
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───indexing
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───methods
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───strings
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───tools
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───tseries
+│   │   │       │   │   │   ├───frequencies
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───holiday
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───offsets
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───tslibs
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───util
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───window
+│   │   │       │   │   │   ├───moments
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───tseries
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───util
+│   │   │       │   │   ├───version
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───_config
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───_libs
+│   │   │       │   │   ├───tslibs
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───window
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───_testing
+│   │   │       │   │   └───__pycache__
+│   │   │       │   └───__pycache__
+│   │   │       ├───pandas-3.0.1.dist-info
+│   │   │       ├───pandas.libs
+│   │   │       ├───PIL
+│   │   │       │   └───__pycache__
+│   │   │       ├───pillow-12.1.1.dist-info
+│   │   │       │   └───licenses
+│   │   │       ├───pip
+│   │   │       │   ├───_internal
+│   │   │       │   │   ├───cli
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───commands
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───distributions
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───index
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───locations
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───metadata
+│   │   │       │   │   │   ├───importlib
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───models
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───network
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───operations
+│   │   │       │   │   │   ├───build
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───install
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───req
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───resolution
+│   │   │       │   │   │   ├───legacy
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───resolvelib
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───utils
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───vcs
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───_vendor
+│   │   │       │   │   ├───cachecontrol
+│   │   │       │   │   │   ├───caches
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───certifi
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───dependency_groups
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───distlib
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───distro
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───idna
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───msgpack
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───packaging
+│   │   │       │   │   │   ├───licenses
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───pkg_resources
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───platformdirs
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───pygments
+│   │   │       │   │   │   ├───filters
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───formatters
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───lexers
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───styles
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───pyproject_hooks
+│   │   │       │   │   │   ├───_in_process
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───requests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───resolvelib
+│   │   │       │   │   │   ├───resolvers
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───rich
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───tomli
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───tomli_w
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───truststore
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───urllib3
+│   │   │       │   │   │   ├───contrib
+│   │   │       │   │   │   │   ├───_securetransport
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───packages
+│   │   │       │   │   │   │   ├───backports
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───util
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   └───__pycache__
+│   │   │       ├───pip-25.3.dist-info
+│   │   │       │   └───licenses
+│   │   │       │       └───src
+│   │   │       │           └───pip
+│   │   │       │               └───_vendor
+│   │   │       │                   ├───cachecontrol
+│   │   │       │                   ├───certifi
+│   │   │       │                   ├───dependency_groups
+│   │   │       │                   ├───distlib
+│   │   │       │                   ├───distro
+│   │   │       │                   ├───idna
+│   │   │       │                   ├───msgpack
+│   │   │       │                   ├───packaging
+│   │   │       │                   ├───pkg_resources
+│   │   │       │                   ├───platformdirs
+│   │   │       │                   ├───pygments
+│   │   │       │                   ├───pyproject_hooks
+│   │   │       │                   ├───requests
+│   │   │       │                   ├───resolvelib
+│   │   │       │                   ├───rich
+│   │   │       │                   ├───tomli
+│   │   │       │                   ├───tomli_w
+│   │   │       │                   ├───truststore
+│   │   │       │                   └───urllib3
+│   │   │       ├───pyparsing
+│   │   │       │   ├───ai
+│   │   │       │   │   ├───show_best_practices
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───diagram
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───tools
+│   │   │       │   │   └───__pycache__
+│   │   │       │   └───__pycache__
+│   │   │       ├───pyparsing-3.3.2.dist-info
+│   │   │       │   └───licenses
+│   │   │       ├───python_dateutil-2.9.0.post0.dist-info
+│   │   │       ├───scipy
+│   │   │       │   ├───cluster
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───constants
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───datasets
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───differentiate
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───fft
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_pocketfft
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───fftpack
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───integrate
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_ivp
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_rules
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───interpolate
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   ├───data
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───io
+│   │   │       │   │   ├───arff
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   │   ├───data
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───matlab
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   │   ├───data
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   ├───data
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_fast_matrix_market
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_harwell_boeing
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───linalg
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   ├───data
+│   │   │       │   │   │   ├───_cython_examples
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───misc
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───ndimage
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   ├───data
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───odr
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───optimize
+│   │   │       │   │   ├───cython_optimize
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   ├───_cython_examples
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_highspy
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_lsq
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_shgo_lib
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_trlib
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_trustregion_constr
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───signal
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───windows
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───sparse
+│   │   │       │   │   ├───csgraph
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───linalg
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───_dsolve
+│   │   │       │   │   │   │   ├───tests
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───_eigen
+│   │   │       │   │   │   │   ├───arpack
+│   │   │       │   │   │   │   │   ├───tests
+│   │   │       │   │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   ├───lobpcg
+│   │   │       │   │   │   │   │   ├───tests
+│   │   │       │   │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   ├───tests
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───_isolve
+│   │   │       │   │   │   │   ├───tests
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   ├───data
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───spatial
+│   │   │       │   │   ├───qhull_src
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   ├───data
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───transform
+│   │   │       │   │   │   ├───tests
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───special
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   ├───data
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───_cython_examples
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_precompute
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───stats
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   ├───data
+│   │   │       │   │   │   │   ├───levy_stable
+│   │   │       │   │   │   │   ├───nist_anova
+│   │   │       │   │   │   │   ├───nist_linregress
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_levy_stable
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_rcont
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_unuran
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   ├───_lib
+│   │   │       │   │   ├───array_api_compat
+│   │   │       │   │   │   ├───common
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───cupy
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───dask
+│   │   │       │   │   │   │   ├───array
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───numpy
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───torch
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───array_api_extra
+│   │   │       │   │   │   ├───_lib
+│   │   │       │   │   │   │   ├───_utils
+│   │   │       │   │   │   │   │   └───__pycache__
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───cobyqa
+│   │   │       │   │   │   ├───subsolvers
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───utils
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───pyprima
+│   │   │       │   │   │   ├───cobyla
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───common
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───tests
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───_uarray
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   └───__pycache__
+│   │   │       ├───scipy-1.17.0.dist-info
+│   │   │       ├───scipy.libs
+│   │   │       ├───six-1.17.0.dist-info
+│   │   │       ├───tzdata
+│   │   │       │   ├───zoneinfo
+│   │   │       │   │   ├───Africa
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───America
+│   │   │       │   │   │   ├───Argentina
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───Indiana
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───Kentucky
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   ├───North_Dakota
+│   │   │       │   │   │   │   └───__pycache__
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───Antarctica
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───Arctic
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───Asia
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───Atlantic
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───Australia
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───Brazil
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───Canada
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───Chile
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───Etc
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───Europe
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───Indian
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───Mexico
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───Pacific
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   ├───US
+│   │   │       │   │   │   └───__pycache__
+│   │   │       │   │   └───__pycache__
+│   │   │       │   └───__pycache__
+│   │   │       ├───tzdata-2025.3.dist-info
+│   │   │       │   └───licenses
+│   │   │       │       └───licenses
+│   │   │       └───__pycache__
+│   │   ├───Scripts
+│   │   └───share
+│   │       └───man
+│   │           └───man1
+│   ├───results
+│   └───__pycache__
+├───hyperfold-series
+│   ├───docs
+│   ├───imports
+│   │   ├───CKM-Geometry
+│   │   │   ├───analysis
+│   │   │   ├───archive
+│   │   │   │   ├───2026-02-15_025724
+│   │   │   │   ├───freeze_20260214_191019
+│   │   │   │   │   └───checkpoints
+│   │   │   │   └───SEQUESTER_2026-02-16_112210
+│   │   │   │       ├───PIPELINE_A_SPARSE_CANONICAL
+│   │   │   │       ├───PIPELINE_B_DENSE_CONTROL
+│   │   │   │       └───PIPELINE_C_GPT2_QUARANTINE
+│   │   │   ├───checkpoints
+│   │   │   ├───data
+│   │   │   ├───figures
+│   │   │   ├───hyperfold.egg-info
+│   │   │   └───paper
+│   │   │       └───figures
+│   │   ├───cp-admission-prd
+│   │   │   ├───output
+│   │   │   └───paper
+│   │   ├───Geometric_Particle_Physics
+│   │   │   ├───data
+│   │   │   │   └───pdg
+│   │   │   ├───models
+│   │   │   │   └───a5
+│   │   │   ├───paper
+│   │   │   │   ├───figures
+│   │   │   │   └───sections
+│   │   │   ├───scan_cache
+│   │   │   │   └───github
+│   │   │   │       ├───geometric-particle-physics
+│   │   │   │       │   └───paper
+│   │   │   │       │       ├───figures
+│   │   │   │       │       └───sections
+│   │   │   │       ├───GoldenRatioModularFlavor
+│   │   │   │       │   └───paper
+│   │   │   │       └───hyperbolic-funhouse
+│   │   │   │           ├───figures
+│   │   │   │           └───paper
+│   │   │   │               └───figures
+│   │   │   ├───scan_output
+│   │   │   └───scripts
+│   │   ├───golden_unification
+│   │   │   ├───code
+│   │   │   ├───data
+│   │   │   │   ├───derived
+│   │   │   │   └───pdg
+│   │   │   ├───math
+│   │   │   ├───notes
+│   │   │   ├───papers
+│   │   │   │   ├───paper_II
+│   │   │   │   │   └───sections
+│   │   │   │   ├───sections
+│   │   │   │   │   └───_retired
+│   │   │   │   └───_V_EPJC.tex.locked
+│   │   │   └───shared
+│   │   ├───hyperbolic-log-lattice-flavor
+│   │   │   ├───archive
+│   │   │   │   ├───SEQUESTER_2026-02-16_104112
+│   │   │   │   │   ├───PIPELINE_A_SPARSE_CANONICAL
+│   │   │   │   │   ├───PIPELINE_B_DENSE_CONTROL
+│   │   │   │   │   └───PIPELINE_C_GPT2_INFERIOR
+│   │   │   │   └───SEQUESTER_2026-02-16_105325
+│   │   │   │       ├───PIPELINE_A_SPARSE_CANONICAL
+│   │   │   │       ├───PIPELINE_B_DENSE_CONTROL
+│   │   │   │       └───PIPELINE_C_GPT2_INFERIOR
+│   │   │   ├───checkpoints
+│   │   │   ├───data
+│   │   │   │   ├───archive
+│   │   │   │   │   └───20260214_0640_baseline
+│   │   │   │   └───snapshots
+│   │   │   │       └───snapshot_20260210_221905
+│   │   │   ├───figures
+│   │   │   ├───internal
+│   │   │   │   └───lemmas
+│   │   │   ├───lattice
+│   │   │   ├───manuscript
+│   │   │   │   ├───appendices
+│   │   │   │   └───sections
+│   │   │   ├───out
+│   │   │   │   └───logs
+│   │   │   ├───paper
+│   │   │   │   ├───paper
+│   │   │   │   │   └───sections
+│   │   │   │   └───sections
+│   │   │   ├───papers
+│   │   │   │   ├───internal_synthesis
+│   │   │   │   ├───paper2
+│   │   │   │   │   ├───figures
+│   │   │   │   │   └───sections
+│   │   │   │   └───paper3
+│   │   │   │       └───sections
+│   │   │   ├───submission_zip
+│   │   │   │   └───manuscript
+│   │   │   │       ├───appendices
+│   │   │   │       └───sections
+│   │   │   ├───tables
+│   │   │   ├───transport
+│   │   │   └───visualization
+│   │   ├───hyperbolic-transport-audit
+│   │   │   ├───paper
+│   │   │   │   └───sections
+│   │   │   └───scaffold
+│   │   ├───log-lattice-series
+│   │   │   ├───framework_jhep
+│   │   │   ├───geometry_symmetry
+│   │   │   ├───phenomenology_prd
+│   │   │   ├───scripts
+│   │   │   └───uv_completion_series
+│   │   │       ├───paper_A_geometry_symmetry
+│   │   │       ├───paper_B_mapping_uniqueness
+│   │   │       ├───paper_C_uv_phenomenology
+│   │   │       └───shared
+│   │   ├───paper-ii-transport-certification
+│   │   │   └───paper
+│   │   │       ├───appendix
+│   │   │       ├───bib
+│   │   │       └───sections
+│   │   │           └───_staging
+│   │   ├───paper-ii-transport-certification-jmp
+│   │   │   ├───output
+│   │   │   └───paper
+│   │   │       ├───appendix
+│   │   │       ├───bib
+│   │   │       ├───sections
+│   │   │       │   └───_staging
+│   │   │       ├───_bak_20260205_063218
+│   │   │       ├───_patch_backup_20260205_232245
+│   │   │       └───_staging
+│   │   │           ├───backup_20260205_120531
+│   │   │           │   ├───appendix
+│   │   │           │   └───sections
+│   │   │           ├───backup_20260205_120913
+│   │   │           ├───backup_apply_template_20260205_224425
+│   │   │           ├───backup_fixpack_20260205_210150
+│   │   │           │   ├───appendix
+│   │   │           │   └───sections
+│   │   │           │       └───_staging
+│   │   │           ├───backup_fixpack_20260205_225517
+│   │   │           ├───backup_fix_20260205_122036
+│   │   │           ├───backup_labelaliases_20260205_230820
+│   │   │           └───backup_substitute_20260205_223706
+│   │   │               ├───appendix
+│   │   │               └───sections
+│   │   │                   └───_staging
+│   │   ├───scaffold-uv-series
+│   │   │   ├───paper_A_geometry_symmetry
+│   │   │   ├───paper_B_mapping_uniqueness
+│   │   │   ├───paper_C_uv_phenomenology
+│   │   │   ├───paper_D_boundary_misalignment
+│   │   │   ├───paper_E_uv_completion
+│   │   │   ├───paper_F_string_embedding
+│   │   │   ├───paper_G_series_synthesis
+│   │   │   ├───paper_H_de_dm_bridge
+│   │   │   ├───paper_H_rephasing_invariant_decoupling
+│   │   │   ├───paper_H_spectral_rigidity
+│   │   │   ├───paper_I_de_dm_bridge
+│   │   │   ├───paper_I_rephasing_classification
+│   │   │   ├───paper_J_gap_topology_deformations
+│   │   │   ├───paper_J_spectral_gap_rigidity
+│   │   │   ├───paper_K_rephasing_invariant_decoupling
+│   │   │   ├───paper_K_series_synthesis
+│   │   │   ├───paper_L_dark_sector_consequences
+│   │   │   ├───paper_L_phenomenology_cosmology
+│   │   │   └───paper_M_series_synthesis
+│   │   └───transport-ladders
+│   │       ├───docs
+│   │       ├───output
+│   │       │   └───scan
+│   │       ├───paper
+│   │       │   ├───appendix
+│   │       │   └───sections
+│   │       ├───src
+│   │       │   └───transport_ladders.egg-info
+│   │       ├───submissions
+│   │       │   └───sigma_20260207_204926
+│   │       │       ├───artifacts_baseline_scan
+│   │       │       ├───IIIa_source
+│   │       │       │   └───sections
+│   │       │       └───IIIb_source
+│   │       │           ├───appendix
+│   │       │           └───sections
+│   │       ├───_sent_SIGMA_20260207_2217
+│   │       └───_submission_SIGMA_20260207_2111
+│   │           ├───output
+│   │           │   └───scan
+│   │           └───paper
+│   │               ├───appendix
+│   │               └───sections
+│   ├───papers
+│   │   ├───paper1_geometry
+│   │   │   ├───paper1
+│   │   │   │   └───sections
+│   │   │   └───sources
+│   │   │       └───log-lattice-series
+│   │   ├───paper2_certification
+│   │   │   ├───paper2
+│   │   │   │   └───sections
+│   │   │   └───sources
+│   │   │       └───paper-ii-transport-certification
+│   │   ├───paper3_phenomenology
+│   │   │   └───sources
+│   │   ├───paper4_overlap_framework
+│   │   │   └───sources
+│   │   └───paper5_dark_sector_optional
+│   │       └───sources
+│   ├───scripts
+│   └───spine
+├───log-lattice-series
+│   ├───dist
+│   ├───framework_jhep
+│   │   └───build
+│   ├───geometry_symmetry
+│   │   └───build
+│   ├───phenomenology_prd
+│   │   └───build
+│   ├───scripts
+│   └───uv_completion_series
+│       ├───dist
+│       ├───paper_A_geometry_symmetry
+│       │   ├───build
+│       │   └───figs
+│       ├───paper_B_mapping_uniqueness
+│       │   ├───build
+│       │   └───figs
+│       ├───paper_C_uv_phenomenology
+│       │   ├───build
+│       │   └───figs
+│       ├───scripts
+│       └───shared
+├───paper-ii-transport-certification
+│   ├───paper
+│   │   ├───appendix
+│   │   ├───bib
+│   │   └───sections
+│   │       └───_staging
+│   └───scripts
+│       └───scripts
+├───paper-ii-transport-certification-jmp
+│   ├───output
+│   ├───paper
+│   │   ├───appendix
+│   │   ├───bib
+│   │   ├───sections
+│   │   │   └───_staging
+│   │   ├───_bak_20260205_063218
+│   │   ├───_patch_backup_20260205_232245
+│   │   └───_staging
+│   │       ├───backup_20260205_120531
+│   │       │   ├───appendix
+│   │       │   └───sections
+│   │       ├───backup_20260205_120913
+│   │       ├───backup_apply_template_20260205_224425
+│   │       ├───backup_fixpack_20260205_210150
+│   │       │   ├───appendix
+│   │       │   └───sections
+│   │       │       └───_staging
+│   │       ├───backup_fixpack_20260205_225517
+│   │       ├───backup_fix_20260205_122036
+│   │       ├───backup_labelaliases_20260205_230820
+│   │       └───backup_substitute_20260205_223706
+│   │           ├───appendix
+│   │           └───sections
+│   │               └───_staging
+│   └───scripts
+├───scaffold-uv-series
+│   ├───dist
+│   ├───paper_A_geometry_symmetry
+│   │   └───build
+│   ├───paper_B_mapping_uniqueness
+│   │   └───build
+│   ├───paper_C_uv_phenomenology
+│   │   └───build
+│   ├───paper_D_boundary_misalignment
+│   │   └───build
+│   ├───paper_E_uv_completion
+│   │   └───build
+│   ├───paper_F_string_embedding
+│   │   └───build
+│   ├───paper_G_series_synthesis
+│   │   └───build
+│   ├───paper_H_de_dm_bridge
+│   │   └───build
+│   ├───paper_H_rephasing_invariant_decoupling
+│   │   └───build
+│   ├───paper_H_spectral_rigidity
+│   │   └───build
+│   ├───paper_I_de_dm_bridge
+│   │   └───build
+│   ├───paper_I_rephasing_classification
+│   │   └───build
+│   ├───paper_J_gap_topology_deformations
+│   │   └───build
+│   ├───paper_J_spectral_gap_rigidity
+│   │   └───build
+│   ├───paper_K_rephasing_invariant_decoupling
+│   │   └───build
+│   ├───paper_K_series_synthesis
+│   │   └───build
+│   ├───paper_L_dark_sector_consequences
+│   │   └───build
+│   ├───paper_L_phenomenology_cosmology
+│   │   └───build
+│   ├───paper_M_series_synthesis
+│   │   └───build
+│   └───scripts
+├───test-clone
+│   └───__pycache__
+└───transport-ladders
+    ├───.venv
+    │   ├───Include
+    │   ├───Lib
+    │   │   └───site-packages
+    │   │       ├───mpmath
+    │   │       │   ├───calculus
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───functions
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───libmp
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───matrices
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───tests
+    │   │       │   │   └───__pycache__
+    │   │       │   └───__pycache__
+    │   │       ├───mpmath-1.3.0.dist-info
+    │   │       ├───numpy
+    │   │       │   ├───char
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───core
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───ctypeslib
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───doc
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───f2py
+    │   │       │   │   ├───src
+    │   │       │   │   ├───tests
+    │   │       │   │   │   ├───src
+    │   │       │   │   │   │   ├───abstract_interface
+    │   │       │   │   │   │   ├───array_from_pyobj
+    │   │       │   │   │   │   ├───assumed_shape
+    │   │       │   │   │   │   ├───block_docstring
+    │   │       │   │   │   │   ├───callback
+    │   │       │   │   │   │   ├───cli
+    │   │       │   │   │   │   ├───common
+    │   │       │   │   │   │   ├───crackfortran
+    │   │       │   │   │   │   ├───f2cmap
+    │   │       │   │   │   │   ├───isocintrin
+    │   │       │   │   │   │   ├───kind
+    │   │       │   │   │   │   ├───mixed
+    │   │       │   │   │   │   ├───modules
+    │   │       │   │   │   │   │   ├───gh25337
+    │   │       │   │   │   │   │   └───gh26920
+    │   │       │   │   │   │   ├───negative_bounds
+    │   │       │   │   │   │   ├───parameter
+    │   │       │   │   │   │   ├───quoted_character
+    │   │       │   │   │   │   ├───regression
+    │   │       │   │   │   │   ├───return_character
+    │   │       │   │   │   │   ├───return_complex
+    │   │       │   │   │   │   ├───return_integer
+    │   │       │   │   │   │   ├───return_logical
+    │   │       │   │   │   │   ├───return_real
+    │   │       │   │   │   │   ├───routines
+    │   │       │   │   │   │   ├───size
+    │   │       │   │   │   │   ├───string
+    │   │       │   │   │   │   └───value_attrspec
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───_backends
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───fft
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───lib
+    │   │       │   │   ├───tests
+    │   │       │   │   │   ├───data
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───linalg
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───ma
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───matrixlib
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───polynomial
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───random
+    │   │       │   │   ├───lib
+    │   │       │   │   ├───tests
+    │   │       │   │   │   ├───data
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───_examples
+    │   │       │   │   │   ├───cffi
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   ├───cython
+    │   │       │   │   │   └───numba
+    │   │       │   │   │       └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───rec
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───strings
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───testing
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───_private
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───tests
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───typing
+    │   │       │   │   ├───tests
+    │   │       │   │   │   ├───data
+    │   │       │   │   │   │   ├───fail
+    │   │       │   │   │   │   ├───misc
+    │   │       │   │   │   │   ├───pass
+    │   │       │   │   │   │   │   └───__pycache__
+    │   │       │   │   │   │   └───reveal
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───_core
+    │   │       │   │   ├───include
+    │   │       │   │   │   └───numpy
+    │   │       │   │   │       └───random
+    │   │       │   │   ├───lib
+    │   │       │   │   │   ├───npy-pkg-config
+    │   │       │   │   │   └───pkgconfig
+    │   │       │   │   ├───tests
+    │   │       │   │   │   ├───data
+    │   │       │   │   │   ├───examples
+    │   │       │   │   │   │   ├───cython
+    │   │       │   │   │   │   │   └───__pycache__
+    │   │       │   │   │   │   └───limited_api
+    │   │       │   │   │   │       └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───_pyinstaller
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───_typing
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───_utils
+    │   │       │   │   └───__pycache__
+    │   │       │   └───__pycache__
+    │   │       ├───numpy-2.4.2.dist-info
+    │   │       │   └───licenses
+    │   │       │       └───numpy
+    │   │       │           ├───fft
+    │   │       │           │   └───pocketfft
+    │   │       │           ├───linalg
+    │   │       │           │   └───lapack_lite
+    │   │       │           ├───ma
+    │   │       │           ├───random
+    │   │       │           │   └───src
+    │   │       │           │       ├───distributions
+    │   │       │           │       ├───mt19937
+    │   │       │           │       ├───pcg64
+    │   │       │           │       ├───philox
+    │   │       │           │       ├───sfc64
+    │   │       │           │       └───splitmix64
+    │   │       │           └───_core
+    │   │       │               ├───include
+    │   │       │               │   └───numpy
+    │   │       │               │       └───libdivide
+    │   │       │               └───src
+    │   │       │                   ├───common
+    │   │       │                   │   └───pythoncapi-compat
+    │   │       │                   ├───highway
+    │   │       │                   ├───multiarray
+    │   │       │                   ├───npysort
+    │   │       │                   │   └───x86-simd-sort
+    │   │       │                   └───umath
+    │   │       │                       └───svml
+    │   │       ├───numpy.libs
+    │   │       ├───pip
+    │   │       │   ├───_internal
+    │   │       │   │   ├───cli
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───commands
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───distributions
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───index
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───locations
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───metadata
+    │   │       │   │   │   ├───importlib
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───models
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───network
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───operations
+    │   │       │   │   │   ├───build
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   ├───install
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───req
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───resolution
+    │   │       │   │   │   ├───legacy
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   ├───resolvelib
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───utils
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───vcs
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───_vendor
+    │   │       │   │   ├───cachecontrol
+    │   │       │   │   │   ├───caches
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───certifi
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───dependency_groups
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───distlib
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───distro
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───idna
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───msgpack
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───packaging
+    │   │       │   │   │   ├───licenses
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───pkg_resources
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───platformdirs
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───pygments
+    │   │       │   │   │   ├───filters
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   ├───formatters
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   ├───lexers
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   ├───styles
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───pyproject_hooks
+    │   │       │   │   │   ├───_in_process
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───requests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───resolvelib
+    │   │       │   │   │   ├───resolvers
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───rich
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───tomli
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───tomli_w
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───truststore
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───urllib3
+    │   │       │   │   │   ├───contrib
+    │   │       │   │   │   │   ├───_securetransport
+    │   │       │   │   │   │   │   └───__pycache__
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   ├───packages
+    │   │       │   │   │   │   ├───backports
+    │   │       │   │   │   │   │   └───__pycache__
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   ├───util
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   └───__pycache__
+    │   │       ├───pip-26.0.1.dist-info
+    │   │       │   └───licenses
+    │   │       │       └───src
+    │   │       │           └───pip
+    │   │       │               └───_vendor
+    │   │       │                   ├───cachecontrol
+    │   │       │                   ├───certifi
+    │   │       │                   ├───dependency_groups
+    │   │       │                   ├───distlib
+    │   │       │                   ├───distro
+    │   │       │                   ├───idna
+    │   │       │                   ├───msgpack
+    │   │       │                   ├───packaging
+    │   │       │                   ├───pkg_resources
+    │   │       │                   ├───platformdirs
+    │   │       │                   ├───pygments
+    │   │       │                   ├───pyproject_hooks
+    │   │       │                   ├───requests
+    │   │       │                   ├───resolvelib
+    │   │       │                   ├───rich
+    │   │       │                   ├───tomli
+    │   │       │                   ├───tomli_w
+    │   │       │                   ├───truststore
+    │   │       │                   └───urllib3
+    │   │       ├───pkg_resources
+    │   │       │   ├───tests
+    │   │       │   │   ├───data
+    │   │       │   │   │   ├───my-test-package-source
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   ├───my-test-package-zip
+    │   │       │   │   │   ├───my-test-package_unpacked-egg
+    │   │       │   │   │   │   └───my_test_package-1.0-py3.7.egg
+    │   │       │   │   │   │       └───EGG-INFO
+    │   │       │   │   │   └───my-test-package_zipped-egg
+    │   │       │   │   └───__pycache__
+    │   │       │   └───__pycache__
+    │   │       ├───setuptools
+    │   │       │   ├───command
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───compat
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───config
+    │   │       │   │   ├───_validate_pyproject
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───tests
+    │   │       │   │   ├───compat
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───config
+    │   │       │   │   │   ├───downloads
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───indexes
+    │   │       │   │   │   └───test_links_priority
+    │   │       │   │   │       └───simple
+    │   │       │   │   │           └───foobar
+    │   │       │   │   ├───integration
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───_distutils
+    │   │       │   │   ├───command
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───compat
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───compilers
+    │   │       │   │   │   └───C
+    │   │       │   │   │       ├───tests
+    │   │       │   │   │       │   └───__pycache__
+    │   │       │   │   │       └───__pycache__
+    │   │       │   │   ├───tests
+    │   │       │   │   │   ├───compat
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───_vendor
+    │   │       │   │   ├───autocommand
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───autocommand-2.2.2.dist-info
+    │   │       │   │   ├───backports
+    │   │       │   │   │   ├───tarfile
+    │   │       │   │   │   │   ├───compat
+    │   │       │   │   │   │   │   └───__pycache__
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───backports.tarfile-1.2.0.dist-info
+    │   │       │   │   ├───importlib_metadata
+    │   │       │   │   │   ├───compat
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───importlib_metadata-8.7.1.dist-info
+    │   │       │   │   │   └───licenses
+    │   │       │   │   ├───jaraco
+    │   │       │   │   │   ├───context
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   ├───functools
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───text
+    │   │       │   │   │       └───__pycache__
+    │   │       │   │   ├───jaraco.text-4.0.0.dist-info
+    │   │       │   │   ├───jaraco_context-6.1.0.dist-info
+    │   │       │   │   │   └───licenses
+    │   │       │   │   ├───jaraco_functools-4.4.0.dist-info
+    │   │       │   │   │   └───licenses
+    │   │       │   │   ├───more_itertools
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───more_itertools-10.8.0.dist-info
+    │   │       │   │   │   └───licenses
+    │   │       │   │   ├───packaging
+    │   │       │   │   │   ├───licenses
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───packaging-26.0.dist-info
+    │   │       │   │   │   └───licenses
+    │   │       │   │   ├───platformdirs
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───platformdirs-4.4.0.dist-info
+    │   │       │   │   │   └───licenses
+    │   │       │   │   ├───tomli
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───tomli-2.4.0.dist-info
+    │   │       │   │   │   └───licenses
+    │   │       │   │   ├───wheel
+    │   │       │   │   │   ├───_commands
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───wheel-0.46.3.dist-info
+    │   │       │   │   │   └───licenses
+    │   │       │   │   ├───zipp
+    │   │       │   │   │   ├───compat
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───zipp-3.23.0.dist-info
+    │   │       │   │       └───licenses
+    │   │       │   └───__pycache__
+    │   │       ├───setuptools-81.0.0.dist-info
+    │   │       │   └───licenses
+    │   │       ├───sympy
+    │   │       │   ├───algebras
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───assumptions
+    │   │       │   │   ├───handlers
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───predicates
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───relation
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───benchmarks
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───calculus
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───categories
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───codegen
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───combinatorics
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───concrete
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───core
+    │   │       │   │   ├───benchmarks
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───crypto
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───diffgeom
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───discrete
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───external
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───functions
+    │   │       │   │   ├───combinatorial
+    │   │       │   │   │   ├───tests
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───elementary
+    │   │       │   │   │   ├───benchmarks
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   ├───tests
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───special
+    │   │       │   │   │   ├───benchmarks
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   ├───tests
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───geometry
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───holonomic
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───integrals
+    │   │       │   │   ├───benchmarks
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───interactive
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───liealgebras
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───logic
+    │   │       │   │   ├───algorithms
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───utilities
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───matrices
+    │   │       │   │   ├───benchmarks
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───expressions
+    │   │       │   │   │   ├───tests
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───multipledispatch
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───ntheory
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───parsing
+    │   │       │   │   ├───autolev
+    │   │       │   │   │   ├───test-examples
+    │   │       │   │   │   │   ├───pydy-example-repo
+    │   │       │   │   │   │   │   └───__pycache__
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   ├───_antlr
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───c
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───fortran
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───latex
+    │   │       │   │   │   ├───lark
+    │   │       │   │   │   │   ├───grammar
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   ├───_antlr
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───physics
+    │   │       │   │   ├───biomechanics
+    │   │       │   │   │   ├───tests
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───continuum_mechanics
+    │   │       │   │   │   ├───tests
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───control
+    │   │       │   │   │   ├───tests
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───hep
+    │   │       │   │   │   ├───tests
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───mechanics
+    │   │       │   │   │   ├───tests
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───optics
+    │   │       │   │   │   ├───tests
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───quantum
+    │   │       │   │   │   ├───tests
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───units
+    │   │       │   │   │   ├───definitions
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   ├───systems
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   ├───tests
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───vector
+    │   │       │   │   │   ├───tests
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───plotting
+    │   │       │   │   ├───backends
+    │   │       │   │   │   ├───matplotlibbackend
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   ├───textbackend
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───intervalmath
+    │   │       │   │   │   ├───tests
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───pygletplot
+    │   │       │   │   │   ├───tests
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───polys
+    │   │       │   │   ├───agca
+    │   │       │   │   │   ├───tests
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───benchmarks
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───domains
+    │   │       │   │   │   ├───tests
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───matrices
+    │   │       │   │   │   ├───tests
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───numberfields
+    │   │       │   │   │   ├───tests
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───printing
+    │   │       │   │   ├───pretty
+    │   │       │   │   │   ├───tests
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───sandbox
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───series
+    │   │       │   │   ├───benchmarks
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───sets
+    │   │       │   │   ├───handlers
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───simplify
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───solvers
+    │   │       │   │   ├───benchmarks
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───diophantine
+    │   │       │   │   │   ├───tests
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───ode
+    │   │       │   │   │   ├───tests
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───stats
+    │   │       │   │   ├───sampling
+    │   │       │   │   │   ├───tests
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───strategies
+    │   │       │   │   ├───branch
+    │   │       │   │   │   ├───tests
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───tensor
+    │   │       │   │   ├───array
+    │   │       │   │   │   ├───expressions
+    │   │       │   │   │   │   ├───tests
+    │   │       │   │   │   │   │   └───__pycache__
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   ├───tests
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───testing
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───unify
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───utilities
+    │   │       │   │   ├───mathml
+    │   │       │   │   │   ├───data
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   ├───_compilation
+    │   │       │   │   │   ├───tests
+    │   │       │   │   │   │   └───__pycache__
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   ├───vector
+    │   │       │   │   ├───tests
+    │   │       │   │   │   └───__pycache__
+    │   │       │   │   └───__pycache__
+    │   │       │   └───__pycache__
+    │   │       ├───sympy-1.14.0.dist-info
+    │   │       │   └───licenses
+    │   │       ├───transport_ladders-0.0.1.dist-info
+    │   │       ├───_distutils_hack
+    │   │       │   └───__pycache__
+    │   │       └───__pycache__
+    │   ├───Scripts
+    │   └───share
+    │       └───man
+    │           └───man1
+    ├───docs
+    ├───output
+    │   └───scan
+    ├───paper
+    │   ├───appendix
+    │   └───sections
+    ├───scripts
+    ├───src
+    │   ├───transport_ladders
+    │   │   └───__pycache__
+    │   └───transport_ladders.egg-info
+    ├───submissions
+    │   └───sigma_20260207_204926
+    │       ├───artifacts_baseline_scan
+    │       ├───IIIa_source
+    │       │   └───sections
+    │       └───IIIb_source
+    │           ├───appendix
+    │           └───sections
+    ├───tests
+    │   └───__pycache__
+    ├───_sent_SIGMA_20260207_2217
+    └───_submission_SIGMA_20260207_2111
+        ├───output
+        │   └───scan
+        └───paper
+            ├───appendix
+            └───sections
+PS C:\dev>

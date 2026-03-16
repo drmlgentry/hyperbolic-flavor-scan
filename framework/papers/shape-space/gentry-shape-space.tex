@@ -1,0 +1,746 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{authblk}
+\geometry{margin=1in}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\SL}{\mathrm{SL}}
+\newcommand{\SO}{\mathrm{SO}}
+\newcommand{\GL}{\mathrm{GL}}
+\newcommand{\Sym}{\mathrm{Sym}}
+\newcommand{\Symp}{\mathrm{Sym}^{+}}
+\newcommand{\Symz}{\mathrm{Sym}_{0}}
+\newcommand{\Diagz}{\mathrm{Diag}_{0}}
+\newcommand{\calM}{\mathcal{S}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\ad}{\operatorname{ad}}
+
+\title{Scale-Free Quadratic Forms, Symmetric Space Geometry,\\
+and Arithmetic Logarithmic Lattices}
+\author[1]{Marvin L.\ Gentry}
+\affil[1]{Independent Researcher\\
+  \texttt{drmlgentry@protonmail.com}\\
+  ORCID: \href{https://orcid.org/0009-0006-4550-2663}{0009-0006-4550-2663}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The space of positive definite quadratic forms modulo overall scaling
+arises naturally whenever only ratios of quantities carry intrinsic
+meaning.
+We prove that this scale-free moduli space $\calM_n$ is canonically
+diffeomorphic to the Riemannian symmetric space $\SL(n,\R)/\SO(n)$,
+a complete simply connected manifold of nonpositive sectional curvature.
+Its tangent space at the identity consists of traceless symmetric
+matrices of dimension $\frac{n(n+1)}{2}-1$.
+We clarify the distinction between quadratic deformations
+and arbitrary linear endomorphisms:
+the latter yield $n^2-1$, while quadratic data admit only symmetric
+deformations.
+We develop the Riemannian geometry of $\calM_n$:
+Cartan decomposition, sectional curvature,
+geodesics, Weyl chambers, and maximal flats.
+Arithmetic logarithmic unit lattices of totally real
+number fields embed discretely into maximal totally geodesic flats,
+and the Dirichlet regulator is identified with Euclidean covolume.
+A flat rigidity theorem shows that maximal flats are uniquely
+determined by their tangent Cartan subalgebras.
+Explicit examples illustrate the theory.
+\end{abstract}
+
+%--------------------------------------------------
+\section{Introduction}
+\label{sec:intro}
+%--------------------------------------------------
+
+Many geometric and arithmetic quantities are inherently multiplicative:
+mass ratios, eigenvalue ratios, regulator volumes, and Gram matrix
+determinants all carry meaning only through their ratios, not their
+absolute values.
+Passing to logarithmic coordinates converts multiplicative structure
+to additive structure, but introduces a redundancy: an overall additive
+shift corresponds to simultaneous rescaling of all quantities.
+Factoring out this redundancy yields a \emph{scale-free} moduli space
+that captures only the intrinsic shape of the data.
+
+For data organized as a positive definite quadratic form of rank $n$,
+the appropriate scale-free space is the quotient $\calM_n$ of positive
+definite symmetric matrices by positive scalar multiples.
+A natural question is: what is the correct geometric structure of
+$\calM_n$, and in particular, how many independent scale-free
+deformation directions does it admit?
+
+A common answer in the literature is $n^2 - 1$, arising from the
+dimension of the space of traceless linear endomorphisms
+$\mathrm{End}_{\tr=0}(V)$.
+This count applies to general linear deformations of a vector
+space, but it does not apply in the quadratic setting.
+Quadratic forms are symmetric bilinear objects, and their infinitesimal
+deformations must preserve symmetry.
+The correct space of scale-free deformation directions is therefore
+the space of traceless \emph{symmetric} matrices $\Symz(n,\R)$, of
+dimension
+\[
+  \frac{n(n+1)}{2} - 1.
+\]
+For $n = 3, 4, 5$ this gives $5, 9, 14$ respectively, not $8, 15, 24$.
+
+The purpose of this paper is threefold.
+First, we prove rigorously that $\calM_n \cong \SL(n,\R)/\SO(n)$
+and that its tangent space is $\Symz(n,\R)$.
+Second, we develop the complete Riemannian geometry of this symmetric
+space: Cartan decomposition, curvature, geodesics, Weyl chambers, and
+maximal flats.
+Third, we embed arithmetic logarithmic unit lattices of totally real
+number fields as discrete subsets of maximal flats, identifying the
+Dirichlet regulator as a Euclidean covolume.
+This provides a geometric interpretation of classical arithmetic
+invariants and a foundation for further arithmetic-geometric
+investigations.
+
+The paper is organized as follows.
+Sections~\ref{sec:forms}--\ref{sec:scale} establish the symmetric
+space identification.
+Section~\ref{sec:tangent} computes the tangent space and corrects
+the dimensional count.
+Sections~\ref{sec:cartan}--\ref{sec:weyl} develop the Riemannian
+geometry.
+Sections~\ref{sec:lattice}--\ref{sec:flats} embed arithmetic unit
+lattices and prove the flat rigidity theorem.
+Section~\ref{sec:examples} works out explicit examples.
+Section~\ref{sec:conclusion} summarizes the results.
+
+The geometric construction developed here provides the theoretical
+foundation for the companion results in~\cite{Gentry:CKM,Gentry:PMNS},
+where the CKM and PMNS mixing matrices are derived explicitly from the
+$K$- and $N$-factors of the Iwasawa decomposition of compact hyperbolic
+3-manifold holonomy~\cite{Gentry:CKM,Gentry:PMNS}.
+
+%--------------------------------------------------
+\section{Positive Definite Quadratic Forms}
+\label{sec:forms}
+%--------------------------------------------------
+
+Let $V$ be a real vector space of dimension $n$.
+A \emph{positive definite quadratic form} on $V$ is a symmetric
+bilinear map $Q : V \times V \to \R$ satisfying $Q(v,v) > 0$ for
+all nonzero $v \in V$.
+In a chosen basis, $Q$ is represented by a matrix in
+\[
+  \Symp(n,\R)
+  = \{G \in M_n(\R) : G = G^T,\; v^T G v > 0\ \forall v \neq 0\},
+\]
+the open cone of positive definite symmetric matrices.
+
+The group $\GL(n,\R)$ acts transitively on $\Symp(n,\R)$ by
+\[
+  g \cdot G = g G g^T.
+\]
+
+\begin{proposition}
+\label{prop:homogeneous}
+$\Symp(n,\R)$ is a smooth homogeneous manifold diffeomorphic to
+$\GL(n,\R)/\mathrm{O}(n)$.
+\end{proposition}
+
+\begin{proof}
+Every $G \in \Symp(n,\R)$ admits a unique Cholesky decomposition
+$G = \ell\ell^T$ with $\ell$ lower triangular and positive diagonal
+entries.
+The map $g \mapsto g g^T$ is surjective from $\GL(n,\R)$ onto
+$\Symp(n,\R)$.
+The stabilizer of the identity $I$ under the action
+$g \cdot G = gGg^T$ is $\{g : gg^T = I\} = \mathrm{O}(n)$.
+\end{proof}
+
+The tangent space of $\Symp(n,\R)$ at $I$ is all of $\Sym(n,\R)$,
+the space of symmetric matrices, of dimension $\frac{n(n+1)}{2}$.
+
+%--------------------------------------------------
+\section{Scale Quotient and Symmetric Space Identification}
+\label{sec:scale}
+%--------------------------------------------------
+
+Overall scaling acts on $\Symp(n,\R)$ by $G \mapsto \lambda G$ for
+$\lambda > 0$.
+Two forms that differ by a positive scalar factor represent the same
+shape.
+
+\begin{definition}[Scale-free quadratic moduli space]
+The \emph{shape space} of rank $n$ is
+\[
+  \calM_n = \Symp(n,\R)/\R_{>0}.
+\]
+\end{definition}
+
+\begin{proposition}
+\label{prop:det1slice}
+The map $G \mapsto (\det G)^{-1/n} G$ identifies $\calM_n$
+diffeomorphically with the determinant-one slice
+\[
+  \Symp_1(n,\R)
+  = \{G \in \Symp(n,\R) : \det G = 1\}.
+\]
+Each equivalence class in $\calM_n$ contains a unique representative
+in $\Symp_1(n,\R)$.
+\end{proposition}
+
+\begin{proof}
+For any $G \in \Symp(n,\R)$, set $\lambda = (\det G)^{1/n} > 0$.
+Then $\det(\lambda^{-1} G) = \lambda^{-n} \det G = 1$, so
+$\lambda^{-1} G \in \Symp_1(n,\R)$.
+Two matrices $G, G'$ lie in the same class iff $G' = \mu G$ for some
+$\mu > 0$; their normalized representatives coincide iff
+$(\det G')^{-1/n} G' = (\det G)^{-1/n} G$, which holds iff $G' = \mu G$.
+\end{proof}
+
+\begin{theorem}
+\label{thm:symspace}
+There is a canonical $\SL(n,\R)$-equivariant diffeomorphism
+\[
+  \calM_n \;\cong\; \SL(n,\R)/\SO(n).
+\]
+\end{theorem}
+
+\begin{proof}
+The group $\SL(n,\R)$ acts on $\Symp_1(n,\R)$ by $g \cdot G = gGg^T$;
+this preserves $\det G = 1$ since $\det(gGg^T) = (\det g)^2 \det G = 1$.
+The action is transitive: given $G \in \Symp_1(n,\R)$, write
+$G = \ell \ell^T$ by Cholesky with $\det\ell = 1$ (adjusting the
+diagonal entry); then $g = \ell$ satisfies $g \cdot I = G$.
+The stabilizer of $I$ is $\{g \in \SL(n,\R) : gg^T = I\} = \SO(n)$.
+By the orbit-stabilizer theorem, $\Symp_1(n,\R) \cong \SL(n,\R)/\SO(n)$
+as smooth manifolds.
+\end{proof}
+
+The space $\SL(n,\R)/\SO(n)$ is a classical Riemannian symmetric space
+of noncompact type.
+It is complete, simply connected, and has nonpositive sectional
+curvature~\cite{Helgason}.
+
+%--------------------------------------------------
+\section{Tangent Space and Deformation Directions}
+\label{sec:tangent}
+%--------------------------------------------------
+
+\begin{proposition}
+\label{prop:tangent}
+The tangent space of $\calM_n$ at the basepoint $[I]$ is
+\[
+  T_{[I]}\calM_n \;\cong\; \Symz(n,\R)
+  = \{X \in \Sym(n,\R) : \tr X = 0\}.
+\]
+\end{proposition}
+
+\begin{proof}
+A smooth curve in $\calM_n$ through $[I]$ is represented by a smooth
+curve $G(t) \in \Symp_1(n,\R)$ with $G(0) = I$.
+The constraint $\det G(t) = 1$ gives, upon differentiation at $t=0$,
+\[
+  0 = \frac{d}{dt}\det G(t)\big|_{t=0}
+    = \tr\!\bigl(G(0)^{-1}\dot{G}(0)\bigr)
+    = \tr \dot{G}(0).
+\]
+Since $G(t)$ is symmetric, $\dot{G}(0)$ is symmetric.
+Hence $\dot{G}(0) \in \Symz(n,\R)$.
+Conversely, for any $X \in \Symz(n,\R)$, the curve
+$G(t) = (\det(I + tX))^{-1/n}(I + tX)$ lies in $\Symp_1(n,\R)$
+for small $t$ and has $\dot{G}(0) = X$.
+\end{proof}
+
+\begin{corollary}
+\label{cor:dim}
+\[
+  \dim \calM_n = \dim \Symz(n,\R) = \frac{n(n+1)}{2} - 1.
+\]
+For $n = 2, 3, 4, 5$ this gives $2, 5, 9, 14$.
+\end{corollary}
+
+\begin{remark}[Correction of a common error]
+\label{rem:correction}
+It is tempting to argue that the space of scale-free deformation
+directions has dimension $n^2-1$, arising from the traceless
+endomorphism space $\mathrm{End}_{\tr=0}(V)$.
+This argument is incorrect for quadratic forms.
+Linear endomorphisms of $V$ deform arbitrary linear maps, including
+non-symmetric ones.
+Quadratic forms are symmetric bilinear objects; their infinitesimal
+deformations must preserve symmetry.
+The correct deformation space is $\Symz(n,\R)$, not
+$\mathrm{End}_{\tr=0}(V)$.
+The dimension $n^2-1$ counts deformations of a linear map
+(e.g., a connection or a representation); the dimension
+$\frac{n(n+1)}{2}-1$ counts deformations of a quadratic form.
+These are distinct geometric settings and must not be conflated.
+\end{remark}
+
+%--------------------------------------------------
+\section{Cartan Decomposition and Maximal Flats}
+\label{sec:cartan}
+%--------------------------------------------------
+
+The Lie algebra of $\SL(n,\R)$ is
+\[
+  \mathfrak{sl}(n,\R) = \{A \in M_n(\R) : \tr A = 0\}.
+\]
+It admits the \emph{Cartan decomposition}
+\[
+  \mathfrak{sl}(n,\R) = \mathfrak{k} \oplus \mathfrak{p},
+\]
+where
+\[
+  \mathfrak{k} = \mathfrak{so}(n)
+    = \{A : A + A^T = 0\},
+  \qquad
+  \mathfrak{p} = \Symz(n,\R)
+    = \{A : A = A^T,\; \tr A = 0\}.
+\]
+This decomposition satisfies
+\[
+  [\mathfrak{k},\mathfrak{k}] \subset \mathfrak{k},\quad
+  [\mathfrak{k},\mathfrak{p}] \subset \mathfrak{p},\quad
+  [\mathfrak{p},\mathfrak{p}] \subset \mathfrak{k},
+\]
+confirming that $\SL(n,\R)/\SO(n)$ is a symmetric space.
+The tangent space $T_{[I]}\calM_n$ is identified with $\mathfrak{p}$.
+
+\begin{definition}[Cartan subalgebra]
+A \emph{Cartan subalgebra} of $\mathfrak{p}$ is a maximal abelian
+subspace consisting of simultaneously diagonalizable elements.
+The standard Cartan subalgebra is
+\[
+  \mathfrak{a} = \Diagz(n,\R)
+  = \{\diag(x_1,\ldots,x_n) : x_i \in \R,\; \textstyle\sum x_i = 0\},
+\]
+of dimension $n-1$.
+\end{definition}
+
+\begin{proposition}
+\label{prop:flat}
+The exponential image
+\[
+  F_0 = \exp(\mathfrak{a})
+  = \{\diag(e^{x_1},\ldots,e^{x_n}) : \textstyle\sum x_i = 0\}
+\]
+is a maximal totally geodesic flat submanifold of $\calM_n$,
+isometric to $\R^{n-1}$ with the Euclidean metric induced by
+$\langle X, Y\rangle = \tr(XY)$.
+\end{proposition}
+
+\begin{proof}
+Elements of $\mathfrak{a}$ commute; hence the exponential map
+restricts to a homomorphism from $(\mathfrak{a}, +)$ into $\calM_n$.
+Since $\mathfrak{a}$ consists of simultaneously diagonalizable
+real-symmetric matrices (hence with real eigenvalues), the image
+$F_0$ is a flat submanifold.
+Maximality follows because $\mathfrak{a}$ is a maximal abelian
+subspace of $\mathfrak{p}$~\cite[Ch.~V]{Helgason}.
+The induced metric on $F_0$ pulls back to $\tr(XY)$ on $\mathfrak{a}$,
+which is Euclidean.
+\end{proof}
+
+Every maximal flat in $\calM_n$ is of the form $g \cdot F_0$ for some
+$g \in \SL(n,\R)$.
+The rank of $\calM_n$ is $\dim \mathfrak{a} = n-1$.
+
+%--------------------------------------------------
+\section{Sectional Curvature}
+\label{sec:curvature}
+%--------------------------------------------------
+
+The $\SL(n,\R)$-invariant Riemannian metric on $\calM_n$ is induced
+by the Killing form of $\mathfrak{sl}(n,\R)$.
+At the basepoint $[I]$, for $X, Y \in \mathfrak{p} = \Symz(n,\R)$,
+the inner product is
+\[
+  \langle X, Y \rangle = \tr(XY).
+\]
+This is positive definite on $\mathfrak{p}$ (since $\tr(X^2) > 0$
+for nonzero symmetric $X$) and $\SO(n)$-invariant.
+
+\begin{proposition}[Sectional curvature]
+\label{prop:curvature}
+For linearly independent $X, Y \in \mathfrak{p}$, the sectional
+curvature of $\calM_n$ in the plane spanned by $X$ and $Y$ is
+\[
+  K(X,Y) = -\frac{\|[X,Y]\|^2}{\|X\|^2\|Y\|^2 - \langle X,Y\rangle^2},
+\]
+and norms are taken with respect to $\langle\cdot,\cdot\rangle$.
+Since $[X,Y] \in \mathfrak{so}(n)$ is skew-symmetric,
+$\tr([X,Y]^2) \leq 0$, so $\|[X,Y]\|^2 := -\tr([X,Y]^2) \geq 0$.
+In particular, $K(X,Y) \leq 0$ with equality if and only if
+$[X,Y] = 0$.
+\end{proposition}
+
+\begin{proof}
+The curvature tensor of a symmetric space $G/K$ at the identity coset
+is $R(X,Y)Z = -[[X,Y],Z]$ for $X,Y,Z \in \mathfrak{p}$~\cite[Ch.~IV]{Helgason}.
+The sectional curvature in the plane $\{X,Y\}$ is
+$K(X,Y) = \langle R(X,Y)Y, X\rangle / (\|X\|^2\|Y\|^2 - \langle X,Y\rangle^2)
+= \langle [[X,Y],Y], X\rangle / (\cdots)$.
+Since $[X,Y] \in \mathfrak{k} = \mathfrak{so}(n)$, one computes
+$\langle [[X,Y],Y],X\rangle = -\tr([[X,Y],Y]X) = -\tr([X,Y][Y,X])
+= \tr([X,Y]^2) \cdot (-1) \leq 0$,
+with equality iff $[X,Y] = 0$.
+\end{proof}
+
+\begin{corollary}
+$\calM_n \cong \SL(n,\R)/\SO(n)$ is a Hadamard manifold: complete,
+simply connected, with sectional curvature $K \leq 0$ everywhere.
+Curvature vanishes exactly on maximal flats, where $[X,Y]=0$.
+\end{corollary}
+
+%--------------------------------------------------
+\section{Geodesics and Weyl Chambers}
+\label{sec:weyl}
+%--------------------------------------------------
+
+\subsection{Geodesics}
+
+Geodesics through the basepoint $[I]$ in $\calM_n$ are the orbits
+of one-parameter subgroups generated by elements of $\mathfrak{p}$:
+\[
+  \gamma_X(t) = [\exp(tX)], \qquad X \in \Symz(n,\R).
+\]
+If $X = k D k^{-1}$ with $D = \diag(x_1,\ldots,x_n)$ and
+$k \in \SO(n)$, then
+\[
+  \gamma_X(t) = \bigl[k\,\diag(e^{tx_1},\ldots,e^{tx_n})\,k^{-1}\bigr].
+\]
+The geodesic distance from $[I]$ to $\gamma_X(t)$ is
+$|t|\,\|X\| = |t|\sqrt{\tr(X^2)}$.
+
+\begin{proposition}
+The exponential map $\exp_{[I]} : \mathfrak{p} \to \calM_n$,
+$X \mapsto [\exp X]$, is a diffeomorphism.
+\end{proposition}
+
+\begin{proof}
+This is a standard consequence of the Cartan--Hadamard theorem applied
+to the nonpositively curved simply connected manifold $\calM_n$.
+\end{proof}
+
+\subsection{Weyl chambers}
+
+The Weyl group of $(\mathfrak{sl}(n,\R), \mathfrak{a})$ is
+$W \cong S_n$, acting by permuting diagonal entries.
+
+\begin{definition}[Positive Weyl chamber]
+\[
+  \mathfrak{a}^+ = \{\diag(x_1,\ldots,x_n) \in \mathfrak{a} :
+    x_1 \geq x_2 \geq \cdots \geq x_n\}.
+\]
+\end{definition}
+
+\begin{proposition}
+Every point of $\calM_n$ is $\SO(n)$-conjugate to a unique point
+in $\exp(\mathfrak{a}^+)$.
+The geodesic distance from $[I]$ to $[G]$ equals
+$\|\log G_D\|$ where $G_D$ is the unique diagonal representative of
+$[G]$ in $\exp(\mathfrak{a}^+)$.
+\end{proposition}
+
+\begin{proof}
+Every positive definite symmetric matrix is orthogonally diagonalizable
+with positive eigenvalues.
+Ordering the eigenvalues $e^{x_1} \geq \cdots \geq e^{x_n}$ gives the
+unique representative in $\exp(\mathfrak{a}^+)$~\cite[Ch.~V]{Helgason}.
+Distance from $[I]$ equals $\sqrt{\sum_i x_i^2} = \|\diag(x_i)\|$.
+\end{proof}
+
+Thus the geometry of $\calM_n$ is completely controlled by ordered
+logarithmic eigenvalue data.
+
+%--------------------------------------------------
+\section{Arithmetic Logarithmic Lattices}
+\label{sec:lattice}
+%--------------------------------------------------
+
+\subsection{Totally real fields and Dirichlet's theorem}
+
+Let $K$ be a totally real number field of degree $r = [K:\Q]$.
+Denote its real embeddings by $\sigma_1,\ldots,\sigma_r : K \hookrightarrow \R$.
+The ring of integers $\mathcal{O}_K$ has unit group $\mathcal{O}_K^\times$.
+By Dirichlet's unit theorem~\cite{Neukirch},
+\[
+  \mathcal{O}_K^\times \cong \mu(K) \times \Z^{r-1},
+\]
+where $\mu(K) = \{\pm 1\}$ for totally real fields with $r \geq 2$.
+Fix a system of fundamental units $\varepsilon_1,\ldots,\varepsilon_{r-1}$.
+
+\subsection{Logarithmic embedding}
+
+Define the \emph{logarithmic embedding}
+\[
+  \Lambda : \mathcal{O}_K^\times \to \R^r, \qquad
+  \Lambda(\varepsilon) =
+  \bigl(\log|\sigma_1(\varepsilon)|,\ldots,\log|\sigma_r(\varepsilon)|\bigr).
+\]
+Since $|N_{K/\Q}(\varepsilon)| = \prod_i |\sigma_i(\varepsilon)| = 1$,
+the image lies in the hyperplane
+\[
+  H = \Bigl\{x \in \R^r : \sum_{i=1}^r x_i = 0\Bigr\}.
+\]
+By Dirichlet's theorem, $\Lambda_K := \Lambda(\mathcal{O}_K^\times)$ is
+a lattice of rank $r-1$ in $H$.
+
+\begin{definition}[Regulator]
+The \emph{regulator} $R_K$ of $K$ is the covolume of $\Lambda_K$ in
+$H$ with respect to the standard Euclidean metric on $\R^r$:
+\[
+  R_K = \bigl|\det(\Lambda(\varepsilon_j))_{i,j=1}^{r-1}\bigr|,
+\]
+where the $(i,j)$-entry is $\log|\sigma_i(\varepsilon_j)|$
+(omitting one row by the sum-zero constraint).
+\end{definition}
+
+\subsection{Embedding into shape space}
+
+Identify $H$ with $\Diagz(r,\R) \subset \mathfrak{a}$ via
+\[
+  x = (x_1,\ldots,x_r) \;\mapsto\; X = \diag(x_1,\ldots,x_r).
+\]
+This is an isometry: $\langle X, Y\rangle = \tr(XY) = \sum_i x_i y_i$,
+the standard inner product on $H \subset \R^r$.
+
+For each unit $\varepsilon \in \mathcal{O}_K^\times$, define
+\[
+  A_\varepsilon = \exp\!\bigl(\diag(\Lambda(\varepsilon))\bigr)
+  = \diag\!\bigl(|\sigma_1(\varepsilon)|,\ldots,|\sigma_r(\varepsilon)|\bigr)
+  \in \Symp_1(r,\R).
+\]
+
+\begin{definition}[Arithmetic lattice in shape space]
+The \emph{arithmetic lattice} associated with $K$ is
+\[
+  \Gamma_K = \{[A_\varepsilon] : \varepsilon \in \mathcal{O}_K^\times\}
+  \subset \calM_r.
+\]
+\end{definition}
+
+%--------------------------------------------------
+\section{Discrete Flats and Regulator Geometry}
+\label{sec:flats}
+%--------------------------------------------------
+
+\begin{theorem}[Arithmetic flat embedding]
+\label{thm:flatembedding}
+$\Gamma_K$ is a discrete subset of the maximal flat
+$F_0 = \exp(\Diagz(r,\R)) \subset \calM_r$.
+The flat $F_0$ is isometric to $\bigl(\R^{r-1},\,\langle\cdot,\cdot\rangle\bigr)$
+where $\langle X,Y\rangle = \tr(XY)$,
+and under this isometry the regulator satisfies
+\[
+  R_K = \mathrm{vol}(\Lambda_K) = \mathrm{covol}(\Gamma_K \text{ in } F_0).
+\]
+\end{theorem}
+
+\begin{proof}
+By construction, $[A_\varepsilon] = [\exp(\diag(\Lambda(\varepsilon)))]
+\in F_0$ for every $\varepsilon$.
+The map $\varepsilon \mapsto [A_\varepsilon]$ is the composition of
+$\Lambda$ (injective modulo torsion) with the exponential map
+(a diffeomorphism on $\Diagz(r,\R)$); hence $\Gamma_K$ is discrete.
+The isometry $F_0 \cong \R^{r-1}$ preserves the inner product
+$\tr(XY)$, which restricts to the standard Euclidean inner product on
+$\Diagz(r,\R) \cong H$.
+Covolume is preserved under isometries, so
+$\mathrm{covol}(\Gamma_K) = \mathrm{covol}(\Lambda_K) = R_K$.
+\end{proof}
+
+\begin{theorem}[Flat rigidity]
+\label{thm:rigidity}
+Let $F_1$ and $F_2$ be maximal totally geodesic flats in $\calM_r$.
+If $F_1 \cap F_2$ contains an open set, then $F_1 = F_2$.
+Consequently, the arithmetic flat $F_0$ is uniquely determined by the
+tangent Cartan subalgebra $\mathfrak{a} = \Diagz(r,\R)$.
+\end{theorem}
+
+\begin{proof}
+Maximal flats correspond to maximal abelian subspaces
+of $\mathfrak{p} = \Symz(r,\R)$
+under the $\SO(r)$-action.
+If $F_1$ and $F_2$ share an open subset,
+their tangent spaces coincide at some interior point.
+Two maximal abelian subspaces of $\mathfrak{p}$ that agree on
+an open set in their exponential images must coincide:
+any element of a maximal abelian subspace $\mathfrak{a}$
+is determined by its action on a neighborhood of the identity
+via the exponential map, and a maximal abelian subspace containing
+a given regular element is unique~\cite[Ch.~V, Thm.~6.2]{Helgason}.
+Hence the tangent subspaces of $F_1$ and $F_2$ agree globally,
+so $F_1 = F_2$.
+\end{proof}
+
+\begin{remark}
+Theorem~\ref{thm:rigidity} ensures that distinct totally real fields
+of the same degree, if non-isomorphic, give rise to distinct arithmetic
+flats inside $\calM_r$ (up to the $\SL(r,\R)$-action).
+This makes the geometric data of the flat — its shape, covolume, and
+position — an arithmetic invariant of the field.
+\end{remark}
+
+%--------------------------------------------------
+\section{Explicit Examples}
+\label{sec:examples}
+%--------------------------------------------------
+
+\subsection{Real quadratic fields ($r = 2$)}
+
+For $r = 2$, the symmetric space is $\calM_2 \cong \SL(2,\R)/\SO(2)$,
+the hyperbolic plane.
+The Cartan subalgebra $\mathfrak{a} = \Diagz(2,\R)$ is one-dimensional,
+spanned by $\diag(1,-1)$.
+The corresponding flat $F_0$ is a single geodesic.
+
+Let $K = \Q(\sqrt{d})$ with $d > 0$ squarefree, and let
+$\varepsilon > 1$ be the fundamental unit.
+The logarithmic embedding gives
+$\Lambda(\varepsilon) = (\log\varepsilon, -\log\varepsilon) \in H \cong \R$.
+The arithmetic lattice $\Gamma_K \subset F_0$ is generated by
+\[
+  [A_\varepsilon] = \bigl[\diag(\varepsilon, \varepsilon^{-1})\bigr],
+\]
+at distance $\sqrt{2}\log\varepsilon$ from $[I]$ along the geodesic.
+The regulator is $R_K = \log\varepsilon$.
+
+\subsection{The golden ratio ($K = \Q(\sqrt{5})$)}
+
+The field $\Q(\sqrt{5})$ has discriminant $5$ and fundamental unit
+$\varphi = \frac{1+\sqrt{5}}{2}$, satisfying $\varphi^2 = \varphi + 1$.
+Its conjugate is $\hat\varphi = \frac{1-\sqrt{5}}{2}$, with
+$\varphi\hat\varphi = -1$, so $|\hat\varphi| = \varphi^{-1}$.
+
+The logarithmic embedding gives
+$\Lambda(\varphi) = (\log\varphi, -\log\varphi)$,
+and the arithmetic lattice is generated by
+\[
+  [A_\varphi] = \bigl[\diag(\varphi, \varphi^{-1})\bigr]
+  \in F_0 \subset \calM_2.
+\]
+The translation length is $\sqrt{2}\log\varphi \approx 0.6624$,
+and the regulator is $R_{\Q(\sqrt{5})} = \log\varphi$.
+
+Thus the golden ratio $\varphi$ appears as the generator of a geodesic
+translation in the hyperbolic plane $\SL(2,\R)/\SO(2)$.
+This is not a coincidence of numerology but a structural consequence:
+$\varphi$ is the fundamental unit of $\Q(\sqrt{5})$, and the
+hyperbolic plane is the shape space of rank-$2$ quadratic forms.
+
+\subsection{Totally real cubic fields ($r = 3$)}
+
+For $r = 3$, the symmetric space is $\calM_3 \cong \SL(3,\R)/\SO(3)$
+of dimension $5$ and rank $2$.
+A totally real cubic field $K$ has two fundamental units
+$\varepsilon_1, \varepsilon_2$, giving logarithmic vectors
+$\mathbf{x}_j = \Lambda(\varepsilon_j) \in H \subset \R^3$ for $j=1,2$.
+These generate a rank-$2$ lattice in the two-dimensional flat $F_0$,
+with regulator
+\[
+  R_K = \bigl|\det\begin{pmatrix}
+    \log|\sigma_1(\varepsilon_1)| & \log|\sigma_1(\varepsilon_2)| \\
+    \log|\sigma_2(\varepsilon_1)| & \log|\sigma_2(\varepsilon_2)|
+  \end{pmatrix}\bigr|.
+\]
+The arithmetic lattice $\Gamma_K$ is a two-dimensional discrete set
+inside the flat $F_0 \cong \R^2$, with covolume $R_K$.
+The shape (aspect ratio) of the lattice encodes arithmetic properties
+of $K$ beyond the regulator itself.
+
+%--------------------------------------------------
+\section{Conclusion}
+\label{sec:conclusion}
+%--------------------------------------------------
+
+We have established the following results for scale-free quadratic
+moduli space $\calM_n = \Symp(n,\R)/\R_{>0}$:
+
+\begin{enumerate}
+\item \emph{Symmetric space identification:}
+      $\calM_n \cong \SL(n,\R)/\SO(n)$, proved via the transitive
+      $\SL(n,\R)$-action on the determinant-one slice and the
+      orbit-stabilizer theorem.
+
+\item \emph{Correct tangent space:} $T_{[I]}\calM_n \cong \Symz(n,\R)$,
+      of dimension $\frac{n(n+1)}{2}-1$.
+      The incorrect dimension $n^2-1$, arising from traceless linear
+      endomorphisms, is explicitly excluded: quadratic forms admit
+      only symmetric deformations.
+
+\item \emph{Riemannian geometry:} The trace metric $\langle X,Y\rangle
+      = \tr(XY)$ makes $\calM_n$ a Hadamard manifold with sectional
+      curvature $K(X,Y) = -\|[X,Y]\|^2/\|X\wedge Y\|^2 \leq 0$.
+      Geodesics are one-parameter subgroups; Weyl chambers encode
+      eigenvalue ordering.
+
+\item \emph{Arithmetic flat embedding:} For a totally real field $K$
+      of degree $r$, the logarithmic unit lattice embeds as a discrete
+      subset $\Gamma_K$ of the maximal flat $F_0 \subset \calM_r$,
+      with regulator $R_K$ equal to the Euclidean covolume.
+
+\item \emph{Flat rigidity:} The arithmetic flat $F_0$ is uniquely
+      determined by its tangent Cartan subalgebra $\Diagz(r,\R)$.
+
+\item \emph{Golden ratio example:} The fundamental unit $\varphi$ of
+      $\Q(\sqrt{5})$ generates a geodesic translation of length
+      $\sqrt{2}\log\varphi$ in $\calM_2 \cong \SL(2,\R)/\SO(2)$.
+\end{enumerate}
+
+\bibliographystyle{plain}
+\begin{thebibliography}{99}
+
+\bibitem{Helgason}
+S.~Helgason,
+\emph{Differential Geometry, Lie Groups, and Symmetric Spaces},
+Academic Press, 1978.
+
+\bibitem{Neukirch}
+J.~Neukirch,
+\emph{Algebraic Number Theory},
+Springer, 1999.
+
+\bibitem{BridsonHaefliger}
+M.~R.~Bridson and A.~Haefliger,
+\emph{Metric Spaces of Non-Positive Curvature},
+Springer, 1999.
+
+\bibitem{Ratcliffe}
+J.~G.~Ratcliffe,
+\emph{Foundations of Hyperbolic Manifolds},
+Springer, 2006.
+
+\bibitem{Eberlein}
+P.~B.~Eberlein,
+\emph{Geometry of Nonpositively Curved Manifolds},
+University of Chicago Press, 1996.
+
+
+\bibitem{Gentry:CKM}
+M.~L. Gentry,
+\newblock {CKM} quark mixing from geodesic axes of hyperbolic 3-manifold holonomy,
+\newblock \emph{Phys. Rev. D} (2026), submitted March 2026, temporary {ID} es2026mar11\_966.
+
+\bibitem{Gentry:PMNS}
+M.~L. Gentry,
+\newblock Lepton mixing from Borel structure of hyperbolic holonomy,
+\newblock \emph{Phys. Rev. D} (2026), submitted March 2026, temporary {ID} es2026mar13\_942.
+\end{thebibliography}
+
+\end{document}
