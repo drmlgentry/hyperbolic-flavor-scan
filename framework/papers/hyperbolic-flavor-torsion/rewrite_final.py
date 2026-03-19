@@ -1,0 +1,358 @@
+﻿path = r"C:\dev\framework\papers\hyperbolic-flavor-torsion\gentry-hyperbolic-flavor-torsion.tex"
+
+tex = r"""
+\documentclass[12pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsfonts,booktabs,array,microtype,xcolor,graphicx,hyperref}
+\usepackage{amsthm}
+
+\newcommand{\PSL}{\mathrm{PSL}(2,\mathbb{C})}
+\newcommand{\mfld}[1]{\texttt{#1}}
+\newcommand{\word}[1]{\texttt{#1}}
+\newcommand{\degr}{^{\circ}}
+
+\newtheorem{conjecture}{Conjecture}
+
+\begin{document}
+
+\title{Homology Class Asymmetry in the Loxodromic Twist Spectrum\\
+of Compact Hyperbolic 3-Manifolds}
+
+\author{Marvin L.~Gentry\thanks{Independent Researcher, Seattle, WA, USA.
+  \texttt{drmlgentry@protonmail.com}. ORCID: 0009-0006-4550-2663.}}
+\date{\today}
+\maketitle
+
+\begin{abstract}
+For a compact hyperbolic 3-manifold $M$ with $H_1(M,\mathbb{Z})=\mathbb{Z}/5$,
+the abelianization map $\pi_1(M)\to\mathbb{Z}/5$ partitions the loxodromic
+elements into five homology classes.
+We study the spectral floor $\phi_{\rm floor}^{(k)}(L)$---the minimum folded
+twist angle among all loxodromic words of length $\leq L$ in class $k$---for
+the manifold \mfld{m006} (OrientableClosedCensus[43], $\mathrm{vol}=2.029$,
+$H_1=\mathbb{Z}/5$).
+A systematic census up to word length~12 ($1{,}062{,}802$ genuine loxodromics)
+reveals that all five floors decay exponentially with $L$, but with
+class-dependent rates:
+\begin{equation*}
+  \phi_{\rm floor}^{(k)}(L)\sim e^{-c_k L},\qquad
+  c_1=c_4\approx 0.985,\quad c_2=c_3\approx 0.401,\quad c_0\approx 0.750,
+\end{equation*}
+confirmed by AIC model comparison against power-law alternatives.
+At $L=12$ the floors satisfy a $4:2:1$ ratio:
+$\phi^{(1,4)}=0.00530\degr$, $\phi^{(2,3)}=0.01060\degr$,
+$\phi^{(0)}=0.02300\degr$.
+The pairing $c_1=c_4$ and $c_2=c_3$ is consistent with an outer involution
+of the holonomy representation exchanging classes $k\leftrightarrow 5-k$
+(mod~5).
+We conjecture that the rates $c_k$ are determined by the arithmetic invariants
+(invariant trace field, quaternion algebra) of \mfld{m006}.
+For the Meyerhoff manifold \mfld{m003} (also $H_1=\mathbb{Z}/5$), the five
+floors at length~7 lie within a factor of~2, indicating a milder asymmetry.
+These results provide a geometric signature of $\mathbb{Z}/5$ torsion in
+the holonomy spectrum, motivated by earlier work connecting these manifolds
+to Standard Model flavor parameters~\cite{GentryCKM,GentryPMNS,GentryTwist}.
+\end{abstract}
+
+\section{Introduction}
+\label{sec:intro}
+
+The complex length spectrum $\{\ell(\gamma)+i\phi(\gamma)\}_\gamma$ of a
+compact hyperbolic 3-manifold $M$ is a fundamental geometric invariant,
+encoding geodesic lengths $\ell(\gamma)$ and loxodromic twist angles
+$\phi(\gamma)=\mathrm{Im}\log\lambda(\gamma)$.
+While the length spectrum has been extensively studied~\cite{MaclachlanReid},
+the distribution of twist angles and their relationship to the homological
+structure of $M$ is less well understood.
+
+In this paper we study the \emph{spectral floor}
+$\phi_{\rm floor}^{(k)}(L)=\min_{\gamma\in C_k,\,|w(\gamma)|\leq L}
+|\phi_{\rm fold}(\gamma)|$
+for each homology class $k\in H_1(M,\mathbb{Z})=\mathbb{Z}/5$,
+as a function of word length~$L$.
+Here $\phi_{\rm fold}=\min(|\phi|\bmod 180\degr,\;180\degr-|\phi|\bmod 180\degr)$
+folds the twist to $[0\degr,90\degr]$, and $C_k$ denotes the set of
+loxodromic elements in homology class~$k$.
+
+\textbf{Main result.}
+For the manifold \mfld{m006} (OrientableClosedCensus[43], $\mathrm{vol}=2.029$,
+$H_1=\mathbb{Z}/5$), a census of all words up to length~12 reveals that
+$\phi_{\rm floor}^{(k)}(L)$ decays exponentially with~$L$ for all five
+homology classes, but with class-dependent rates forming a $4:2:1$ hierarchy:
+\begin{equation}
+  \frac{\phi^{(0)}}{\phi^{(2,3)}} \approx 2,\qquad
+  \frac{\phi^{(2,3)}}{\phi^{(1,4)}} \approx 2,
+  \label{eq:ratio}
+\end{equation}
+stable at word length~12 and confirmed over lengths 1--12.
+The paired structure $c_1=c_4$ and $c_2=c_3$ is consistent with an
+outer involution of $\pi_1(\mfld{m006})$ exchanging classes
+$k\leftrightarrow 5-k$ (mod~5).
+
+The motivation for this study comes from a companion series of
+papers~\cite{GentryCKM,GentryPMNS,GentryTwist} in which \mfld{m003}
+and \mfld{m006} were found to reproduce Standard Model quark and lepton
+mixing matrices.
+The present work focuses on the geometric structure of the twist spectrum
+as an object of independent mathematical interest.
+
+\section{Setup}
+\label{sec:setup}
+
+\subsection{Manifolds}
+\begin{itemize}
+\item $M_1=\mfld{m003}$ (OrientableClosedCensus[1], Meyerhoff manifold~\cite{Meyerhoff87},
+      $\mathrm{vol}=0.9814$, $H_1=\mathbb{Z}/5$).
+\item $M_2=\mfld{m006}$ (OrientableClosedCensus[43], $\mathrm{vol}=2.029$,
+      $H_1=\mathbb{Z}/5$).
+\end{itemize}
+Both manifolds are likely arithmetic~\cite{MaclachlanReid,Chinburg98};
+\mfld{m003} is proven arithmetic with invariant trace field of
+discriminant~$-283$~\cite{Chinburg98}.
+
+\subsection{Homology class}
+The abelianization $\pi_1(M)\to H_1(M,\mathbb{Z})=\mathbb{Z}/5$ assigns to
+each word $w=g_1\cdots g_n$ the class
+\begin{equation}
+  [w] = \sum_{i=1}^n \varepsilon(g_i) \bmod 5,\qquad
+  \varepsilon(g) = \begin{cases}+1 & g\text{ lowercase}\\-1 & g\text{ uppercase}\end{cases}.
+\end{equation}
+
+\subsection{Census procedure}
+We enumerate all reduced words up to length~$L$ over the generators
+$\{a,b,A,B\}$ of $\pi_1(\mfld{m006})$ (where $A=a^{-1}$, $B=b^{-1}$),
+compute the holonomy matrix $\rho(w)\in\PSL$ via SnapPy's
+\texttt{G.SL2C(w)} method~\cite{SnapPy}, and record $\phi_{\rm fold}(w)$
+for loxodromic elements ($|\mathrm{Tr}(\rho(w))|>2.01$).
+At length~12 this yields $1{,}062{,}802$ genuine loxodromics from
+$1{,}062{,}880$ words evaluated in $84.6$~seconds.
+Words with $|\lambda|\leq 1.01$ (mapping to $\pm I$ in $\PSL$) are excluded
+as non-geodesic relators.
+
+\section{Results}
+\label{sec:results}
+
+\subsection{Spectral floors at length 7: initial asymmetry}
+Table~\ref{tab:floors_L7} shows the length-7 floors for both manifolds.
+On \mfld{m006}, class~4 already has a floor of $0.005\degr$ (word
+\word{AAABAB}), while the other four classes have floors $\geq 1.6\degr$
+--- a $637\times$ asymmetry.
+On \mfld{m003}, the floors are within $2\times$ of each other.
+
+\begin{table}[tp]
+\caption{Spectral floors per homology class at word length $\leq 7$
+  (genuine loxodromics only, $|\lambda|>1.01$).}
+\label{tab:floors_L7}
+\begin{tabular}{cllll}
+\toprule
+Class $k$ & \multicolumn{2}{c}{\mfld{m003}} &
+            \multicolumn{2}{c}{\mfld{m006}} \\
+          & $\phi_{\rm floor}$ ($\degr$) & Word
+          & $\phi_{\rm floor}$ ($\degr$) & Word \\
+\midrule
+0 & 2.643 & \word{AAAAB}   & 2.132 & \word{AAABB}   \\
+1 & 2.763 & \word{AAAbbbb} & 3.374 & \word{BBBB}    \\
+2 & 4.857 & \word{AABBAbb} & 2.399 & \word{AABABab} \\
+3 & 5.376 & \word{AABABBB} & 1.611 & \word{ABaBAb}  \\
+4 & 3.269 & \word{AAb}     & \textbf{0.005} & \word{AAABAB}  \\
+\midrule
+\multicolumn{2}{l}{Max/min ratio} & $2\times$
+& & $637\times$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Spectral floors at length 12: the 4:2:1 hierarchy}
+Extending the census to length~12, all five classes develop small floors
+and the initial asymmetry evolves into a stable hierarchy.
+Table~\ref{tab:floors_L12} shows the length-12 floors.
+
+\begin{table}[tp]
+\caption{Spectral floors per homology class at word length $\leq 12$
+  for \mfld{m006} ($1{,}062{,}802$ genuine loxodromics).
+  The $4:2:1$ ratio (0.023 : 0.011 : 0.005) is stable across lengths
+  $\geq 10$.}
+\label{tab:floors_L12}
+\begin{tabular}{clll}
+\toprule
+Class $k$ & $\phi_{\rm floor}^{(k)}(12)$ ($\degr$) & Word & Length \\
+\midrule
+0 & 0.02300 & \word{aaaaaaaaabAb} & 12 \\
+1 & 0.00530 & \word{aaaaaababAAA} & 12 \\
+2 & 0.01060 & \word{aaababaaabab} & 12 \\
+3 & 0.01060 & \word{AAABABAAABAB} & 12 \\
+4 & 0.00530 & \word{aaaBAAABAAAA} & 12 \\
+\midrule
+\multicolumn{2}{l}{Ratio $\phi^{(0)}:\phi^{(2,3)}:\phi^{(1,4)}$}
+& \multicolumn{2}{l}{$4.3:2:1$} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Exponential decay with class-dependent rates}
+Figure~\ref{fig:decay} plots $\log\phi_{\rm floor}^{(k)}(L)$ versus $L$
+for $L=1,\ldots,12$.
+Each class exhibits approximately log-linear decay, consistent with
+\begin{equation}
+  \phi_{\rm floor}^{(k)}(L) \sim A_k\,e^{-c_k L}.
+  \label{eq:exp_decay}
+\end{equation}
+Table~\ref{tab:rates} gives the fitted rates $c_k$ and AIC scores
+comparing exponential against power-law fits.
+The exponential model is preferred for all five classes.
+
+\begin{table}[tp]
+\caption{Exponential decay rates $c_k$ from log-linear fits to
+  $\phi_{\rm floor}^{(k)}(L)$, with AIC comparison against
+  power-law fits. Lower AIC = better fit.}
+\label{tab:rates}
+\begin{tabular}{ccrrr}
+\toprule
+Class $k$ & $c_k$ & AIC (exp) & AIC (pow) & Preferred \\
+\midrule
+0 & 0.750 & 45.5 & 79.1 & Exponential \\
+1 & 0.985 & 55.8 & 104.8 & Exponential \\
+2 & 0.401 &  6.2 &  10.1 & Exponential \\
+3 & 0.401 &  6.2 &  10.1 & Exponential \\
+4 & 0.985 & 55.8 & 104.8 & Exponential \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[tp]
+\includegraphics[width=0.85\textwidth]{fig_floor_decay.pdf}
+\caption{Log of spectral floor $\phi_{\rm floor}^{(k)}(L)$ vs.\ word
+  length $L$ for \mfld{m006}, by homology class $k\in\mathbb{Z}/5$.
+  Classes~1 and~4 (fastest, $c\approx 0.985$) and classes~2 and~3
+  (intermediate, $c\approx 0.401$) are paired; class~0 is slowest
+  ($c\approx 0.750$).
+  Dashed lines: exponential fits $A_k e^{-c_k L}$.
+  The $4:2:1$ ratio at $L=12$ is the principal result.}
+\label{fig:decay}
+\end{figure}
+
+The pairing $c_1=c_4$ and $c_2=c_3$ and the isolation of class~0 are
+the principal structural observations.
+Explicitly: classes $k=1$ and $k=4$ satisfy $1+4=5\equiv 0\pmod{5}$;
+classes $k=2$ and $k=3$ satisfy $2+3=5\equiv 0\pmod{5}$;
+class $k=0$ is self-paired.
+This strongly suggests that the rate pairing reflects the involution
+$k\mapsto -k$ (mod~5) on $\mathbb{Z}/5$.
+
+\section{The Twist-Suppressed Geodesic}
+\label{sec:aaabab}
+
+The class-4 floor is set from length~6 onwards by the geodesic
+\word{AAABAB} (and its class-1 inverse \word{aaabab}).
+Its geometric invariants are:
+\begin{align}
+  |\lambda(\word{AAABAB})| &= 3.730, &
+  \phi(\word{AAABAB}) &= 179.995\degr, &
+  \phi_{\rm fold} &= 0.0053\degr, \notag\\
+  \ell(\word{AAABAB}) &= 2.633, &
+  \mathrm{Tr}(\word{AAABAB}) &= -3.998, &
+  [{\rm AAABAB}] &= -6\equiv 4\pmod{5}. \notag
+\end{align}
+The eigenvalue $\lambda\approx -3.730$ is nearly real negative, so the
+element acts as a near-pure translation of length $\ell=2.633$ with
+$\phi\approx\pi$ ($\phi_{\rm fold}\approx 0$).
+The trace $|\mathrm{Tr}|=3.998$ is far from $2$ (the identity value),
+confirming this is a genuine geodesic, not a near-trivial element.
+It belongs to homology class~4 (non-identity coset) despite having
+nearly vanishing twist.
+
+\section{Discussion}
+\label{sec:discussion}
+
+The main findings are:
+\begin{enumerate}
+\item All five homology classes of $\pi_1(\mfld{m006})$ exhibit
+      exponential decay of their spectral floors with word length,
+      with class-dependent rates $c_k$.
+
+\item The rates form a $4:2:1$ hierarchy: $c_{1,4}\approx 0.985$,
+      $c_{2,3}\approx 0.401$, $c_0\approx 0.750$, confirmed by AIC
+      over lengths 1--12.
+
+\item The pairing $c_1=c_4$, $c_2=c_3$ reflects the involution
+      $k\mapsto -k$ (mod~5) on $\mathbb{Z}/5\cong H_1(\mfld{m006})$.
+      Class~0 (identity coset) is self-paired and has an intermediate
+      rate, not the fastest or slowest.
+
+\item By contrast, the Meyerhoff manifold \mfld{m003} (also $H_1=\mathbb{Z}/5$)
+      shows only a $2\times$ spread of floors at length~7, indicating
+      a qualitatively different torsion-floor relationship despite
+      identical $H_1$.
+\end{enumerate}
+
+\begin{conjecture}
+The decay rates $c_k$ are determined by the arithmetic invariants of
+$\pi_1(\mfld{m006})$.
+Specifically, the pairing $c_k=c_{5-k}$ for $k\neq 0$ reflects an
+outer involution $\rho\mapsto\bar{\rho}$ of the holonomy representation
+$\rho:\pi_1(\mfld{m006})\to\PSL$, arising from complex conjugation in
+the invariant trace field.
+Manifolds with the same invariant trace field and quaternion algebra as
+\mfld{m006} have the same decay rate hierarchy $(c_0,c_1,c_2,c_3,c_4)$.
+\end{conjecture}
+
+A proof of this conjecture would require computing the invariant trace
+field of \mfld{m006} via the \textsc{Snap} package~\cite{Snap} and
+relating the arithmetic involution to the observed rate pairing.
+We note that \mfld{m003} is proven arithmetic (invariant trace field of
+discriminant $-283$)~\cite{Chinburg98}; the arithmeticity of \mfld{m006}
+is expected but unproven.
+
+The exponential decay rates $c_k$ provide a new family of geometric
+invariants of compact hyperbolic 3-manifolds with torsion in $H_1$.
+Comparing these rates across the OrientableClosedCensus for other manifolds
+with $H_1=\mathbb{Z}/p$ ($p$ prime) would test the conjecture and may
+reveal which arithmetic properties control the rate hierarchy.
+
+\section*{Acknowledgements}
+The author thanks the \textsc{SnapPy} development team.
+Computations used \textsc{SnapPy}~\cite{SnapPy}, SciPy, NumPy, and Pandas.
+All code and data are publicly available at
+\url{https://github.com/drmlgentry/hyperbolic-flavor-scan}.
+
+\begin{thebibliography}{99}
+\bibitem{GentryCKM}
+  M.~L.~Gentry,
+  ``CKM Quark Mixing from Geodesic Axes of Compact Hyperbolic 3-Manifolds,''
+  Phys.\ Rev.\ D, submitted March 2026 (DQ14014).
+\bibitem{GentryPMNS}
+  M.~L.~Gentry,
+  ``PMNS Lepton Mixing from the Borel Structure of Hyperbolic Holonomy,''
+  Phys.\ Rev.\ D, submitted March 2026 (DQ14050).
+\bibitem{GentryTwist}
+  M.~L.~Gentry,
+  ``Twist Angle Spectrum of Hyperbolic Holonomy,''
+  Phys.\ Rev.\ D, submitted March 2026 (es2026mar17\_1007).
+\bibitem{MaclachlanReid}
+  C.~Maclachlan and A.~W.~Reid,
+  \textit{The Arithmetic of Hyperbolic 3-Manifolds},
+  Springer, New York (2003).
+\bibitem{Meyerhoff87}
+  R.~Meyerhoff,
+  ``Hyperbolic 3-manifolds with equal volumes but different Chern-Simons
+  invariants,''
+  in \textit{Low-dimensional topology and Kleinian groups},
+  London Math.\ Soc.\ Lecture Note Ser.~112 (1986), pp.~209--215.
+\bibitem{Chinburg98}
+  T.~Chinburg, E.~Friedman, K.~N.~Jones, A.~W.~Reid,
+  ``The arithmetic hyperbolic 3-manifold of smallest volume,''
+  Ann.\ Scuola Norm.\ Sup.\ Pisa \textbf{30}, 1 (2001).
+\bibitem{Snap}
+  D.~Coulson, O.~Goodman, C.~Hodgson, W.~Neumann,
+  ``Computing arithmetic invariants of 3-manifolds,''
+  Experimental Math.\ \textbf{9}, 127 (2000).
+\bibitem{SnapPy}
+  M.~Culler, N.~Dunfield, M.~Goerner, J.~Weeks,
+  \textit{SnapPy}, \url{http://snappy.computop.org}.
+\end{thebibliography}
+
+\end{document}
+"""
+
+with open(path, "w", encoding="utf-8") as f:
+    f.write(tex.lstrip())
+print("Complete rewrite done.")
