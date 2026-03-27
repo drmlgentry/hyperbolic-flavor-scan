@@ -1,0 +1,30 @@
+﻿DOUBLE COVER ANALYSIS — KEY RESULTS
+=====================================
+Date: 26 March 2026
+
+m003 (index 1, PMNS manifold):
+  Volume:    0.981369
+  H1:        Z/5
+  Cover:     index 39, vol=1.962738, H1=Z/55=Z/5xZ/11
+  Vol ratio: 2.0000000000 (exact)
+  Shared geodesics: 10 (len<3.0), 4 (len<2.0)
+  Status:    GENUINE degree-2 cover confirmed
+
+m006 (index 43, CKM manifold):
+  Volume:    2.028853
+  H1:        Z/5
+  Cover:     index 1275, vol=4.057706, H1=Z/3
+  Vol ratio: 2.0000000000 (exact volume match only)
+  Shared geodesics: 0
+  Status:    VOLUME COINCIDENCE — not a covering space
+
+Physical interpretation:
+  m003 is geometrically decomposable — has covering hierarchy
+  m006 is geometrically irreducible at degree 2
+  Lepton sector (PMNS/m003) descends from cover idx39 with H1=Z/55
+  Quark sector (CKM/m006) is primitive — no covering parent in census
+  
+  Cosmological implication: lepton and quark sectors have
+  different geometric origins in the covering hierarchy.
+  The Z/11 factor in idx39 decouples below compactification
+  scale, leaving Z/5 as the effective flavor torsion.
