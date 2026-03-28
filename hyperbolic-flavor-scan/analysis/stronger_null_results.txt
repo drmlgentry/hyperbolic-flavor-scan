@@ -1,0 +1,20 @@
+STRONGER NULL TEST RESULTS
+Hyperbolic Flavor Geometry framework
+Date: March 2026 · n_trials=50000
+============================================================
+Haar-random unitary (CKM): p=0.0000 (SIGNIFICANT)
+Haar-random unitary (PMNS): p=0.0002 (SIGNIFICANT)
+Log-normal null (mass lattice): p=0.1353 (not significant)
+PDG bootstrap (mass lattice): p=0.3045 (not significant)
+Trials correction (Bonferroni): p=1.0000 (not significant)
+Trials correction (Holm): p=1.0000 (not significant)
+
+INTERPRETATION:
+The Haar-random unitary null tests whether the mixing matrix
+fitness is better than a random unitary. If p < 0.05 here,
+the result is genuinely non-trivial. If not, the geometric
+construction does not outperform random unitaries.
+
+The trials correction is critical for the mass lattice claim.
+If p_Bonferroni > 0.05, the reported p-values in the papers
+are not corrected for the search and should be revised.
