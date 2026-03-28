@@ -1,0 +1,2 @@
+p_logunif_prior_fixed,p_lognorm_prior_fixed,p_sector_anchor,obs_rms,q_labels,neutrino_q_range
+0.1355,0.13316,0.16726,0.05482458846952809,"[0, 44, 68, 12, 65, 106, 18, 43, 75]","[-147, -129]"
