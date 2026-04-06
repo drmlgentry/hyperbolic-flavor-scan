@@ -1,0 +1,16 @@
+{
+  "m003": {
+    "volume": 0.9813688288922323,
+    "cs_cusped": 0.2500000000000001,
+    "cs_rational": "1/4",
+    "h1": "Z/5",
+    "arithmetic": true
+  },
+  "m006": {
+    "volume": 2.028853091474923,
+    "cs_cusped": -0.11413665304027383,
+    "cs_rational": null,
+    "h1": "Z/5",
+    "arithmetic": false
+  }
+}
