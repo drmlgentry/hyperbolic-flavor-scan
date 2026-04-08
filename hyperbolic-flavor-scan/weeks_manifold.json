@@ -1,0 +1,28 @@
+﻿{
+  "weeks_manifold": {
+    "census_index": 0,
+    "volume": 0.94270736,
+    "H1": "Z/5 + Z/5",
+    "isometry_group": "D6",
+    "CS_cusped_ancestor": 0.25,
+    "dehn_filling": "(2,1) of cusped m003",
+    "length_spectrum_multiplicities": 3,
+    "arithmetic": true
+  },
+  "pmns_manifold": {
+    "census_index": 1,
+    "volume": 0.98136883,
+    "H1": "Z/5",
+    "isometry_group": "Z/2 + Z/2",
+    "dehn_filling": "(-2,3) of cusped m003",
+    "length_spectrum_multiplicities": "1 and 2"
+  },
+  "hierarchy": {
+    "shared_cusped_ancestor": "m003 (cusped)",
+    "CS_ancestor": "1/4 exactly",
+    "Dedekind_sum_2_1": 0,
+    "H1_reduction": "Z/5+Z/5 -> Z/5 under (-2,3) surgery",
+    "symmetry_reduction": "D6 -> Z/2+Z/2",
+    "multiplicity_reduction": "3 -> 1,2"
+  }
+}
