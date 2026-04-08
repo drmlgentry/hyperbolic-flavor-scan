@@ -1,0 +1,26 @@
+﻿{
+  "semiclassical_k5": {
+    "Weeks": {"Re_Z": 10.8553, "arg_over_pi": 0.000365, "nearly_real": true},
+    "PMNS":  {"Re_Z": 10.8670, "arg_over_pi": 0.061897},
+    "CKM":   {"Re_Z": 15.3250, "arg_over_pi": 0.087653}
+  },
+  "ratios_k5": {
+    "abs_Weeks_over_PMNS": 0.980104,
+    "sqrt_vol_W_over_P":   0.980085,
+    "match_sigfigs": 5,
+    "abs_PMNS_over_CKM":   0.695490,
+    "sqrt_vol_P_over_C":   0.695493,
+    "match_sigfigs_2": 6
+  },
+  "k4_constructive": {
+    "Weeks_phase": "+1 exactly (CS=1/4, arithmetic)",
+    "PMNS_phase":  "+1 exactly (CS=1/4, arithmetic)",
+    "CKM_phase":   "-0.963-0.270i (non-arithmetic, destructive)"
+  },
+  "phase_PMNS_minus_Weeks_deg": 11.0757,
+  "interpretation": {
+    "Weeks_dominant_vacuum": "arg/pi~0 at k=5, largest Re(Z)",
+    "arithmetic_coherence": "Weeks+PMNS add constructively at k=4, CKM does not",
+    "volume_ratio_exact": "amplitude ratios = sqrt(vol ratios) to 6 sig figs"
+  }
+}
