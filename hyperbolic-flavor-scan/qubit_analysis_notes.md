@@ -35,3 +35,17 @@ bA-bba angle = 6.3 deg). PMNS requires N-factor/Borel construction.
 
 PMNS axis angles: ab-bA=36.8, ab-bba=32.7, bA-bba=6.3 deg (degenerate)
 CKM axis angles:  aaB-AbA=48.2, aaB-AAb=77.5, AbA-AAb=68.4 deg (well-separated)
+
+## Covering tower mixing matrix scan
+
+Gaussian/QR method, sigma=0.488 (CKM) or 0.500 (PMNS):
+  m006 base (CKM, idx=43):   fitness=0.01673  -- EXCELLENT
+  m003 base (PMNS, idx=1):   fitness=0.13299  -- POOR
+  m003 deg-2 (idx=39):       fitness=0.16730  -- WORSE
+  m003 deg-3 (idx=238):      fitness=0.13036  -- MARGINAL
+
+Conclusions:
+1. Covers do not improve PMNS fit -- no generation correspondence here
+2. Gaussian/QR wrong construction for PMNS regardless of manifold
+3. CKM result (0.017) is robust -- also found with {bAA,AbA,AAb}
+4. The two sectors genuinely require different geometric constructions
