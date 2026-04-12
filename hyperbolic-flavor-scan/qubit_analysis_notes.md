@@ -23,3 +23,15 @@
 - Is sigma = log(phi) exact or approximate?
 - Current answer: approximate (1.4% off), not a theorem
 - Physical interpretation: coherence length ~ mass lattice spacing
+
+## sigma = l2 result: CKM only
+
+CKM: sigma_opt = 0.488, l2(m006) = 0.491, ratio = 1.005 -- CONFIRMED
+PMNS: sigma_opt = 0.500, l2(m003) = 0.722, ratio = 1.44 -- NO MATCH
+
+The l2 = sigma derivation is specific to CKM sector.
+PMNS Gaussian method is wrong construction (word axes nearly degenerate:
+bA-bba angle = 6.3 deg). PMNS requires N-factor/Borel construction.
+
+PMNS axis angles: ab-bA=36.8, ab-bba=32.7, bA-bba=6.3 deg (degenerate)
+CKM axis angles:  aaB-AbA=48.2, aaB-AAb=77.5, AbA-AAb=68.4 deg (well-separated)
