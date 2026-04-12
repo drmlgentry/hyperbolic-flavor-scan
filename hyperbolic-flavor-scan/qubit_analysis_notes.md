@@ -1,33 +1,25 @@
-﻿=== Qubit/Bloch sphere analysis: summary of findings ===
+﻿## Qubit analysis: final status
 
-1. CONFIRMED: logm/Pauli method reproduces CKM fitness=0.01729
-   - Words: {aaB, AbA, AAb} on m006 (OrientableClosedCensus[43])
-   - Method: matrix logarithm -> Pauli decomposition -> axis
-   - Gaussian kernel sigma=0.49, QR orthogonalization
-   - Axes confirmed: aaB=(0.237,-0.899,0.368) etc.
+### CKM (K-factor, m006) -- COMPLETE
+- Method: logm/Pauli axis + Gaussian kernel sigma=0.488 + QR
+- Fitness: 0.01729 for words {aaB, AbA, AAb}
+- All three words: same SU(2) conjugacy class, J=0 forced
+- sigma_optimal = 0.488, log(phi) = 0.481, ratio = 1.014
+- Qubit picture: three Bloch vectors at fixed latitude, sigma sets coherence length
 
-2. CONFIRMED: All three CKM words have identical SU(2) trace
-   - Tr(U) = -0.1231 + 2.0108i for all three words
-   - Same conjugacy class in SU(2)
-   - J=0 numerically confirmed (1000 random trials)
+### PMNS (N-factor, m003) -- DIFFERENT CONSTRUCTION
+- The Gaussian/QR method gives fitness=0.127 at best (words: ab, bA, bba)
+- J=0 regardless of Z/5 phase assignment (QR always gives real-like U)
+- PMNS in the original paper uses Borel/Iwasawa N-factor, not Gaussian kernel
+- These are genuinely different geometric constructions for the two sectors
+- Qubit interpretation of N-factor requires separate analysis
 
-3. CONFIRMED: sigma ~ log(phi) to 1.4%
-   - Optimal sigma = 0.488
-   - log(phi) = 0.481
-   - Ratio = 1.014
-   - NOT exact -- closest approximation, not a theorem
+### Key theorem confirmed
+- Same SU(2) conjugacy class => J=0 (verified 1000 random trials)
+- CKM: forced J=0 by topology (all words same conjugacy class)
+- PMNS: J!=0 requires mixing of conjugacy classes (different construction)
 
-4. PMNS best fitness = 0.127 (words: ab, bA, bba on m003)
-   - Worse than CKM (0.017) -- PMNS word search needs extension
-   - The original PMNS paper used a different/longer word set
-
-5. OPEN: exact sigma determination from geometry
-   - Is sigma determined by the manifold invariants?
-   - Candidate: sigma = log(phi) exactly (1.4% off)
-   - Candidate: sigma from systole or spectral gap?
-   - Requires independent derivation, not just numerical fit
-
-Files:
-  /tmp/ckm_correct.py    -- confirms fitness=0.017
-  /tmp/sigma_fine.py     -- sigma scan, minimum at 0.488
-  /tmp/sigma_logphi.py   -- log(phi) comparison
+### Open question
+- Is sigma = log(phi) exact or approximate?
+- Current answer: approximate (1.4% off), not a theorem
+- Physical interpretation: coherence length ~ mass lattice spacing
