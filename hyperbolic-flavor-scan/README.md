@@ -77,3 +77,18 @@ python scans/verify_all.py
 ## Author
 
 Marvin L. Gentry | drmlgentry@protonmail.com | ORCID: 0009-0006-4550-2663
+
+## Status (April 2026)
+
+Papers using this code:
+- CKM paper: Results in Physics RINP-D-26-00327 (with editor)
+- PMNS paper: Results in Physics RINP-D-26-00328 (with editor)
+- CP A-factor: Results in Physics RINP-D-26-00329 (with editor)
+- Twist Spectrum: Results in Physics RINP-D-26-00330 (with editor)
+- Homology Class Asymmetry: Annales de l Institut Fourier 2026120 (submitted)
+
+## New results (April 2026 session)
+- sigma = l2(m006) to 0.5%: Gaussian coherence length = second geodesic of CKM manifold
+- Conjugacy class theorem: J=0 in CKM sector is topologically forced
+- PMNS Borel construction confirmed: fitness=0.01897 = theoretical minimum
+- Key scripts: scans/ckm_correct.py, scans/pmns_borel_confirmed.py, scans/sigma_l2.py
