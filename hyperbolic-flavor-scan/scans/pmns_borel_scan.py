@@ -1,199 +1,163 @@
-import numpy as np
-from scipy.linalg import qr, logm
-from itertools import permutations
 import snappy
-import pandas as pd
-import time
+import numpy as np
+from scipy.linalg import logm, qr
+from itertools import product as iproduct, combinations
 
-PMNS = np.array([[0.821,0.550,0.148],[0.357,0.339,0.871],[0.442,0.762,0.471]])
-
-PERMS = list(permutations([0,1,2]))
-
-def fitness(U):
-    # Best over all column permutations and sign flips
-    best = 1e9
-    for perm in PERMS:
-        Up = U[:, perm]
-        best = min(best, float(np.linalg.norm(Up - PMNS, 'fro')))
-    return best
-
-def to_numpy(m):
-    return np.array([[complex(m[0,0]), complex(m[0,1])],
-                     [complex(m[1,0]), complex(m[1,1])]])
-
-def axis_from_matrix(M):
+def get_axis(rho, word):
     try:
-        L = logm(M)
-    except:
-        return None
-    nx = L[0,1].real + L[1,0].real
-    ny = (L[1,0].imag - L[0,1].imag)
-    nz = (L[0,0] - L[1,1]).real
-    n = np.array([nx, ny, nz])
-    norm = np.linalg.norm(n)
-    if norm < 1e-10: return None
-    return n / norm
-
-def U_from_L(L):
-    try:
-        if not np.all(np.isfinite(L)): return None
-        U, _ = qr(L)
-        for i in range(3):
-            if U[i,i] < 0: U[:,i] *= -1
-        return np.abs(U)
+        mat = np.array(rho(word), dtype=complex)
+        mat = mat / np.sqrt(np.linalg.det(mat))
+        # Check condition before logm
+        eigs = np.linalg.eigvals(mat)
+        if any(abs(e.real) > 1e6 for e in eigs):
+            return None
+        L = logm(mat)
+        if not np.all(np.isfinite(L)):
+            return None
+        x = float(np.real(L[0,1]+L[1,0]))/2
+        y = float(np.imag(L[1,0]-L[0,1]))/2
+        z = float(np.real(L[0,0]-L[1,1]))/2
+        v = np.array([x,y,z])
+        n = np.linalg.norm(v)
+        return v/n if n>1e-10 else None
     except:
         return None
 
-def generate_words(gens, length):
-    from itertools import product as iproduct
-    letters = list(gens) + [g.upper() for g in gens]
-    for combo in iproduct(letters, repeat=length):
-        valid = True
-        for k in range(len(combo)-1):
-            if combo[k].lower() == combo[k+1].lower() and combo[k] != combo[k+1]:
-                valid = False
-                break
-        if valid:
-            yield ''.join(combo)
+def borel_fitness(n1, n2, n3, target):
+    best = 999.
+    best_params = None
+    for lam in np.linspace(0.1, 5.0, 50):
+        for s21 in [1,-1]:
+            for s31 in [1,-1]:
+                for s32 in [1,-1]:
+                    l21 = lam*s21*np.dot(n1,n2)
+                    l31 = lam*s31*np.dot(n1,n3)
+                    l32 = lam*s32*np.dot(n2,n3)
+                    Lm = np.array([[1.,0.,0.],
+                                   [l21,1.,0.],
+                                   [l31,l32,1.]])
+                    Q,_ = qr(Lm)
+                    Qabs = np.abs(Q)
+                    for perm in [[0,1,2],[0,2,1],[1,0,2],
+                                 [1,2,0],[2,0,1],[2,1,0]]:
+                        f = np.linalg.norm(Qabs[:,perm]-target,'fro')
+                        if f < best:
+                            best = f
+                            best_params = (lam,(s21,s31,s32),
+                                          l21,l31,l32,perm)
+    return best, best_params
 
-print('PMNS Borel/Triangular Construction Scan (permutation-aware)')
-print('='*60)
-print('Target L lower triangle: l21=0.443, l31=0.530, l32=-0.381')
-print('Benchmark: 0.018968')
+PMNS = np.array([[0.821,0.550,0.148],
+                 [0.357,0.339,0.871],
+                 [0.442,0.762,0.471]])
+
+# ── First establish theoretical minimum ──────────────────────
+print("=== Theoretical minimum of Borel construction ===")
+from scipy.optimize import minimize
+
+def neg_fitness(params):
+    l21,l31,l32 = params
+    Lm = np.array([[1.,0.,0.],[l21,1.,0.],[l31,l32,1.]])
+    Q,_ = qr(Lm)
+    Qabs = np.abs(Q)
+    return min(np.linalg.norm(Qabs[:,p]-PMNS,'fro')
+               for p in [[0,1,2],[0,2,1],[1,0,2],
+                         [1,2,0],[2,0,1],[2,1,0]])
+
+best_th = 999.
+best_th_params = None
+np.random.seed(42)
+for _ in range(200):
+    x0 = np.random.uniform(-3,3,3)
+    res = minimize(neg_fitness, x0, method='Nelder-Mead',
+                   options={'xatol':1e-9,'fatol':1e-9,'maxiter':10000})
+    if res.fun < best_th:
+        best_th = res.fun
+        best_th_params = res.x
+
+print(f"Theoretical minimum: {best_th:.5f}")
+print(f"Optimal (l21,l31,l32) = {best_th_params}")
+print(f"Paper reports: 0.01897")
 print()
 
-# Verify L_TARGET with permutation-aware fitness
-L_TARGET = np.array([[1.0,   0.0,   0.0],
-                     [0.443, 1.0,   0.0],
-                     [0.530,-0.381, 1.0]])
+# ── Scan closed OrientableClosedCensus[1] ────────────────────
+print("=== Scanning closed m003 (OrientableClosedCensus[1]) ===")
+M = snappy.OrientableClosedCensus[1]
+rho = M.polished_holonomy()
+G = M.fundamental_group()
+print(f"vol={float(M.volume()):.4f} H1={M.homology()}")
+print(f"Generators: {G.generators()}")
+print()
 
-print('Verification: U_QR(L_TARGET) vs PMNS (permutation-aware)')
-U_check = U_from_L(L_TARGET)
-if U_check is not None:
-    f_raw = float(np.linalg.norm(U_check - PMNS, 'fro'))
-    f_perm = fitness(U_check)
-    print(f'  raw fitness = {f_raw:.6f}')
-    print(f'  perm fitness = {f_perm:.6f}')
-    # Find best permutation
-    for perm in PERMS:
-        Up = U_check[:, perm]
-        f = float(np.linalg.norm(Up - PMNS, 'fro'))
-        if abs(f - f_perm) < 1e-6:
-            print(f'  best perm: {perm}')
-            for row, trow in zip(Up, PMNS):
-                print(f'  [{row[0]:.3f} {row[1]:.3f} {row[2]:.3f}]  target [{trow[0]:.3f} {trow[1]:.3f} {trow[2]:.3f}]')
+letters = ['a','b','A','B']
+hyp = []
+for L in range(1,5):  # up to length 4
+    for w in [''.join(p) for p in iproduct(letters,repeat=L)]:
+        try:
+            mat = np.array(rho(w), dtype=complex)
+            tr = abs(float(abs(np.trace(mat))))
+            if tr > 2.01:
+                n = get_axis(rho, w)
+                if n is not None:
+                    hyp.append((w,n))
+        except: pass
+    if L == 2:
+        print(f"  Hyperbolic words len<={L}: {len(hyp)}")
+
+print(f"  Hyperbolic words len<=4: {len(hyp)}")
+print()
+
+# Deduplicate by axis direction
+unique = []
+seen_axes = []
+for w, n in hyp:
+    is_dup = False
+    for n2 in seen_axes:
+        if abs(np.dot(n,n2)) > 0.9999:
+            is_dup = True
             break
+    if not is_dup:
+        unique.append((w,n))
+        seen_axes.append(n)
+
+print(f"  Unique axis directions: {len(unique)}")
 print()
 
-scales = np.linspace(0.1, 5.0, 50)
-signs = [(1,1,1),(1,1,-1),(1,-1,1),(-1,1,1),(1,-1,-1),(-1,1,-1),(-1,-1,1),(-1,-1,-1)]
+# Scan triples
+print("Scanning triples (this may take a minute)...")
+best_f = 999.
+best_triple = None
+best_U = None
+count = 0
+for (w1,n1),(w2,n2),(w3,n3) in combinations(unique[:50], 3):
+    f, params = borel_fitness(n1, n2, n3, PMNS)
+    count += 1
+    if f < best_f:
+        best_f = f
+        best_triple = (w1,w2,w3)
+        best_params_found = params
+    if count % 500 == 0:
+        print(f"  {count} triples... best so far: {best_f:.5f}")
 
-census = snappy.OrientableClosedCensus
-N_manifolds = 100
-results = []
-t0 = time.time()
-
-for mi in range(N_manifolds):
-    mfld = census[mi]
-    mname = mfld.name()
-    try:
-        G = mfld.fundamental_group()
-        gens = G.generators()
-    except:
-        continue
-
-    axes, mats, words = [], [], []
-    for wlen in [2, 3]:
-        for word in generate_words(gens, wlen):
-            try:
-                mat = to_numpy(G.SL2C(word))
-            except:
-                continue
-            ax = axis_from_matrix(mat)
-            if ax is None: continue
-            axes.append(ax)
-            mats.append(mat)
-            words.append(word)
-            if len(axes) >= 40: break
-        if len(axes) >= 40: break
-
-    if len(axes) < 3: continue
-
-    best_f = 1e9
-    best_row = None
-    na = len(axes)
-
-    for i in range(na):
-        for j in range(i+1, na):
-            for k in range(j+1, na):
-                ax3 = [axes[i], axes[j], axes[k]]
-
-                for scale in scales:
-                    for s1,s2,s3 in signs:
-                        L = np.array([[1.0, 0.0, 0.0],
-                                      [s1*scale*np.dot(ax3[1], ax3[0]), 1.0, 0.0],
-                                      [s2*scale*np.dot(ax3[2], ax3[0]),
-                                       s3*scale*np.dot(ax3[2], ax3[1]), 1.0]])
-                        U = U_from_L(L)
-                        if U is None: continue
-                        f = fitness(U)
-                        if f < best_f:
-                            best_f = f
-                            best_row = {
-                                'manifold': mname,
-                                'words': f'{words[i]}/{words[j]}/{words[k]}',
-                                'scale': round(scale,3),
-                                'signs': f'{s1},{s2},{s3}',
-                                'fitness': round(f,6),
-                                'l21': round(L[1,0],4),
-                                'l31': round(L[2,0],4),
-                                'l32': round(L[2,1],4),
-                                'U': U.copy()
-                            }
-
-    if best_row:
-        results.append(best_row)
-        if best_f < 0.08:
-            elapsed = time.time() - t0
-            U = best_row['U']
-            print(f'[{mi:3d} | {elapsed:5.1f}s] {mname}  fit={best_f:.6f}  scale={best_row["scale"]}  {best_row["words"]}')
-            print(f'  L: l21={best_row["l21"]}  l31={best_row["l31"]}  l32={best_row["l32"]}')
-            print(f'  tgt:   0.443         0.530         -0.381')
-            # show best permutation
-            for perm in PERMS:
-                Up = U[:, perm]
-                f = float(np.linalg.norm(Up - PMNS, 'fro'))
-                if abs(f - best_f) < 1e-6:
-                    print(f'  best perm {perm}:')
-                    for row, trow in zip(Up, PMNS):
-                        print(f'    [{row[0]:.3f} {row[1]:.3f} {row[2]:.3f}]  target [{trow[0]:.3f} {trow[1]:.3f} {trow[2]:.3f}]')
-                    break
-            print()
-
-    if (mi+1) % 10 == 0:
-        elapsed = time.time() - t0
-        top = sorted(results, key=lambda x: x['fitness'])[:3]
-        print(f'--- [{mi+1:3d}/{N_manifolds} | {elapsed:.0f}s] top3: ' +
-              ' | '.join(f'{r["manifold"]}={r["fitness"]:.4f}' for r in top) + ' ---')
-
+lam,s,l21,l31,l32,perm = best_params_found
 print()
-print('='*60)
-print('TOP 20')
-print('='*60)
-top20 = sorted(results, key=lambda x: x['fitness'])[:20]
-for r in top20:
-    U = r['U']
-    print(f'{r["manifold"]:10s}  fit={r["fitness"]:.6f}  scale={r["scale"]}  signs={r["signs"]}  {r["words"]}')
-    print(f'  L: l21={r["l21"]}  l31={r["l31"]}  l32={r["l32"]}  (target: 0.443 / 0.530 / -0.381)')
-    for perm in PERMS:
-        Up = U[:, perm]
-        f = float(np.linalg.norm(Up - PMNS, 'fro'))
-        if abs(f - r["fitness"]) < 1e-6:
-            for row, trow in zip(Up, PMNS):
-                print(f'  [{row[0]:.3f} {row[1]:.3f} {row[2]:.3f}]  target [{trow[0]:.3f} {trow[1]:.3f} {trow[2]:.3f}]')
-            break
-
-df = pd.DataFrame([{k:v for k,v in r.items() if k != 'U'} for r in results])
-df.to_csv('pmns_borel_scan_results.csv', index=False)
+print(f"Best triple: {best_triple}")
+print(f"Fitness: {best_f:.5f}")
+print(f"lambda={lam:.3f} signs={s}")
+print(f"l21={l21:.4f} l31={l31:.4f} l32={l32:.4f}")
 print()
-print('Saved: pmns_borel_scan_results.csv')
+
+# Show matrix
+Lm = np.array([[1.,0.,0.],[l21,1.,0.],[l31,l32,1.]])
+Q,_ = qr(Lm)
+print(f"|U_geom| (col perm {perm}):")
+for row in np.abs(Q)[:,perm]:
+    print('  '+'  '.join(f'{x:.4f}' for x in row))
+print()
+print("PDG PMNS:")
+for row in PMNS:
+    print('  '+'  '.join(f'{x:.4f}' for x in row))
+print()
+print(f"Theoretical min: {best_th:.5f}")
+print(f"Achieved:        {best_f:.5f}")
+print(f"Ratio:           {best_f/best_th:.4f}")

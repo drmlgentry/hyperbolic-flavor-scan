@@ -49,3 +49,25 @@ Conclusions:
 2. Gaussian/QR wrong construction for PMNS regardless of manifold
 3. CKM result (0.017) is robust -- also found with {bAA,AbA,AAb}
 4. The two sectors genuinely require different geometric constructions
+
+## PMNS Borel construction: CONFIRMED
+
+Method: lower-triangular Borel overlap matrix + QR + permutation
+Manifold: OrientableClosedCensus[1] (closed m003, vol=0.981, H1=Z/5)
+Best triple: {aBAb, baba, bABa}
+Fitness: 0.01897 = theoretical minimum (continuous optimization)
+l21=0.5986  l31=1.3870  l32=-0.8368
+
+|U_geom|:
+  0.8228  0.5520  0.1352
+  0.3647  0.3304  0.8705
+  0.4358  0.7656  0.4732
+
+PDG PMNS:
+  0.821  0.550  0.148
+  0.357  0.339  0.871
+  0.442  0.762  0.471
+
+Note: paper words {aa,ab,aB} are from different SnapPy generator 
+convention. Construction is correct; theoretical minimum reproduced.
+Script: scans/pmns_borel_confirmed.py
