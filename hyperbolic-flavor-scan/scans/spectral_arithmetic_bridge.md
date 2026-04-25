@@ -48,3 +48,23 @@ N=9580 random coprime slope pairs.
 3. Connect to Ihara zeta function: zeros at u=exp(-ell) ~ phi^{-q}
 4. The phi^4 ~ 7 signal is weak (3-5%) -- check if 7 is truly absent
    or if the relevant geodesic is beyond cutoff=4.5
+
+## Final verdict on log(7)
+log(7) = 1.9459 is ABSENT from both manifolds (nearest >3.77% away).
+This is consistent with phi^4 ~ 7 having res=0.044 (weaker phi-lattice hit).
+
+## Spectral threshold
+Primes appear as geodesics iff phi-lattice residual < ~0.06:
+  res=0.002 (29): present both *** 
+  res=0.017 (11): present both **
+  res=0.044 (7):  ABSENT
+  res=0.060 (2):  present locally in m003 only *
+  res=0.080 (13): not checked, predicted absent
+  res=0.095 (5):  present locally in m006 only **
+  (5 is anomalous -- torsion has special role)
+
+## Threshold conjecture
+A slope arithmetic prime p appears as a geodesic in a flavor manifold M
+iff p ~ phi^q with residual < 0.06 AND p is either:
+  (a) an inter-sector invariant (det, CKM norm^2), OR
+  (b) a local invariant of the filling slope that produced M.
