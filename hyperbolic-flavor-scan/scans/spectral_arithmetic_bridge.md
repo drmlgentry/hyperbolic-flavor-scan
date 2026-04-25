@@ -1,49 +1,50 @@
-# Spectral-Arithmetic Bridge
+# Spectral-Arithmetic Bridge — Complete Results
 ## Date: 2026-04-25
 
-## The Result
+## The Bridge Statement
+A prime p from the Dehn filling slope arithmetic satisfying p ~ phi^q
+corresponds to a geodesic of length ~ q*log(phi) in the flavor manifolds.
 
-Three independent structures encode the same arithmetic simultaneously:
+## Complete correspondence table
 
-### 1. Slope arithmetic (Dehn surgery)
-- det(v_PMNS, v_CKM) = 11 ~ phi^5  (res=0.017)
-- ||v_CKM||^2 = 29 ~ phi^7         (res=0.002 ***)
-- Null test p=0.0137 (significant)
+| Target | p | q | m003 delta | m006 delta | Source |
+|---|---|---|---|---|---|
+| phi^(3/2) ~ 2 | 2 | 1.5 | **0.03%** *** | 30.5% | |p_PMNS| (local) |
+| phi^2 ~ 3 | 3 | 2.0 | 3.73% * | 2.16% * | |q_PMNS| |
+| phi^3 ~ 5 | 5 | 3.0 | 11.5% | **1.47%** ** | torsion (local to CKM) |
+| phi^4 ~ 7 | 7 | 4.0 | 5.33% | 3.77% | coord sum (weak) |
+| phi^5 ~ 11 | 11 | 5.0 | **0.55%** ** | **1.07%** ** | det (inter-sector) |
+| phi^7 ~ 29 | 29 | 7.0 | **0.30%** *** | **0.22%** *** | CKM norm^2 (inter-sector) |
 
-### 2. Geodesic length spectrum
-- Both m003 and m006 have geodesic at ~log(11)=2.398:
-  m003: 2.38470 (delta 0.89%)
-  m006: 2.43174 (delta 1.07%)
-- Both manifolds have geodesic at ~log(29)=3.367:
-  m003: 3.37867 (delta 0.30%)
-  m006: 3.37600 (delta 0.22%)
+## Asymmetry structure
+- phi^(3/2) ~ 2: present in m003 (0.03%) but absent in m006 -- PMNS slope
+  coordinate encoded locally in PMNS manifold only
+- phi^3 ~ 5: present in m006 (1.47%) but absent in m003 -- torsion order
+  encoded locally in CKM manifold only
+- phi^5 ~ 11: present in BOTH (0.55%, 1.07%) -- inter-sector determinant
+- phi^7 ~ 29: present in BOTH (0.30%, 0.22%) -- inter-sector CKM norm^2
 
-### 3. Covering tower homology
-- Prime 11 activates at degree 2 (H1=Z/55 of deg-2 cover)
-- Prime 29 activates at degree 5 (H1=Z/87=Z/3*Z/29 of deg-5 cover)
+## Interpretation
+Each manifold encodes:
+1. Its OWN slope coordinate in its geodesic spectrum (local information)
+2. The SHARED inter-sector invariants det=11 and CKM norm^2=29 (shared info)
 
-## The Bridge
+This is the structure of a communication channel:
+  local state + shared channel invariants
 
-A prime p from the slope arithmetic satisfies p ~ phi^q
-<=> geodesic of length ~ q*log(phi) = log(p) exists in both manifolds
-<=> prime p appears in covering tower homology at degree ~ q/pi
+## Null test
+p=0.0137 (significant) for three slope invariants on phi-lattice.
+N=9580 random coprime slope pairs.
 
-## Significance
-
-The phi-lattice (mass spectrum), the Dehn surgery arithmetic
-(filling slopes), and the hyperbolic geodesic spectrum are
-THREE SHADOWS of the same underlying arithmetic structure.
-
-This means the framework's three apparently independent inputs
-(masses from phi-lattice, mixing from holonomy, manifolds from
-Dehn surgery) are internally consistent: the same arithmetic
-governs all three.
+## Connection to covering tower
+- Prime 11 ~ phi^5: activates at degree 2, geodesic at log(11) in both
+- Prime 29 ~ phi^7: activates at degree 5, geodesic at log(29) in both
+- Activation degree ~ q/pi is approximate; exact connection TBD
 
 ## Next steps
-1. Test whether log(7) ~ 4*log(phi) also appears as a geodesic
-2. Extend to other cusped manifold pairs (generalize beyond m003/m006)
-3. Determine whether the bridge is a theorem about arithmetic
-   hyperbolic manifolds generally or specific to these two
-4. Connect to the Ihara zeta function: geodesic lengths appear
-   as zeros of Z_Gamma(u) at u = exp(-ell), so phi-lattice
-   geodesics correspond to zeros at u ~ phi^{-q}
+1. Test generalization: do other cusped manifold pairs show same pattern?
+2. Prove: for arithmetic hyperbolic 3-manifold M=m(p,q), geodesic lengths
+   include log|Norm(p+q*omega)| where omega = fundamental unit of Q(sqrt(5))
+3. Connect to Ihara zeta function: zeros at u=exp(-ell) ~ phi^{-q}
+4. The phi^4 ~ 7 signal is weak (3-5%) -- check if 7 is truly absent
+   or if the relevant geodesic is beyond cutoff=4.5
