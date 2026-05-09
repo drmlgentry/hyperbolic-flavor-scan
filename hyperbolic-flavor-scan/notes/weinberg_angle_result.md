@@ -172,3 +172,22 @@ METHOD B (Weinberg/xz-plane tests): axis_imlogm()
 ### What remains valid
 All published fitness values used Method A (polished_holonomy + Re(logm))
 These are confirmed correct and unaffected by Method B issues.
+
+## FINAL CONCLUSION ON WEINBERG ANGLE — May 8, 2026
+
+Method A (polished_holonomy + Re(logm)) also tested.
+Best hits: m006 abbA/Baaa=28.177 deg, m003 bAAA/ABab=28.181 deg.
+
+Triangulation independence test:
+  m006 abbA/Baaa: std=13.3 deg across 20 triangulations -- FAILS
+  m006 aBBA/Baaa: std=23.8 deg -- FAILS
+  m003 bAAA/ABab: std=19.6 deg -- FAILS
+  m003 ABB/baba:  std=21.2 deg -- FAILS
+
+FINAL VERDICT: The Weinberg angle does NOT appear as a stable
+geometric invariant of m006 or m003 in pairwise holonomy axis angles.
+Both Method A and Method B tested. Both fail triangulation independence.
+The apparent hits were triangulation-dependent accidents in both cases.
+
+Do not pursue this direction further without a theoretically motivated
+reason to expect theta_W in a specific conjugacy-invariant quantity.
