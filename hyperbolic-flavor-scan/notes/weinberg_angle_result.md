@@ -102,3 +102,44 @@ What to investigate instead:
 - The character variety chi(pi_1(m006)) -> C is intrinsic
 - Trace functions tr(rho(g)) are conjugacy-invariant
 - Could theta_W appear as a ratio of trace lengths or eigenvalues?
+
+## SECOND RETRACTION: xz-plane invariance — May 8, 2026
+
+The y=0 result was a mathematical tautology, not a geometric theorem.
+
+BUG: In axis_imlogm_v1, ny is computed as:
+  imL = L.imag          # imL is a real-valued matrix
+  ny = (1j*(imL[1,0] - imL[0,1])).real
+
+Since imL[1,0] and imL[0,1] are real numbers,
+  1j * (real - real) = purely imaginary number
+  .real = 0  ALWAYS
+
+This is a mathematical identity -- ny=0 for ANY matrix, ANY manifold.
+The "xz-plane invariance theorem" was a tautology built into the formula.
+
+The correct ny formula is:
+  ny = (1j*(L[1,0] - L[0,1])).real   # L is the full complex logm
+This gives non-zero y-components as confirmed by the second computation.
+
+## SUMMARY OF RETRACTIONS TODAY
+
+1. Weinberg angle result: triangulation-dependent artifact
+2. xz-plane invariance: mathematical tautology in axis formula
+
+## WHAT REMAINS VALID
+
+All results that do NOT use the imlogm axis formula:
+- CKM/PMNS fitness (0.017, 0.019) -- uses pairwise angles between axes
+  but the FITNESS VALUE is computed from mixing matrix entries, not
+  raw axis dot products. Need to check if fitness is also affected.
+- Covering tower, Lucas structure, CS invariants -- do not use axes
+- Volume ratios, partition functions -- do not use axes
+
+## IMMEDIATE ACTION NEEDED
+
+Verify that the CKM and PMNS FITNESS COMPUTATIONS are not affected
+by the v1 formula bug. The fitness uses QR decomposition of the
+overlap matrix, which depends on the axis vectors. If the axis
+vectors have wrong y-components due to the bug, the fitness values
+may be artifacts too.
