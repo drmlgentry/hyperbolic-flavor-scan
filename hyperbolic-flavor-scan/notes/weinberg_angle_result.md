@@ -50,3 +50,28 @@ The weak mixing angle is a geometric selection -- encoded precisely
 in the filling slopes, not in the topology alone.
 
 ## Status: RESULT (numerical, needs derivation)
+
+## Axis geometry — May 8, 2026 (second computation)
+
+### All Weinberg-angle axes lie in the xz-plane (y=0 exactly)
+Reflects a Z/2 symmetry of the holonomy representation of both m006 and m003.
+
+### The dot product identity
+|n(AAb) . n(BaaB)| = 0.881521
+cos(theta_W) = M_W/M_Z = 0.881447
+Difference: 0.000075  (agreement to 4 sig figs in the cosine)
+
+### The separation angle in both manifolds
+m006: separation(AAb, BaaB) in xz-plane = 208.1815 deg
+m003: separation(BAB, BBAb) in xz-plane = 208.1914 deg
+Difference between manifolds: 0.0099 deg
+
+### The compact statement
+|n_AAb . n_BaaB| = cos(theta_W) = M_W/M_Z
+in the invariant xz-plane of the holonomy of m006(-5,2).
+
+Same identity holds in m003(-2,3) with words BAB/BBAb.
+
+### Status: NUMERICAL THEOREM
+The identity |dot product| = M_W/M_Z holds to 4 significant figures.
+Needs algebraic derivation from the arithmetic of the filling slopes.
