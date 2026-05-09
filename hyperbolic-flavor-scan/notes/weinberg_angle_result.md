@@ -143,3 +143,32 @@ by the v1 formula bug. The fitness uses QR decomposition of the
 overlap matrix, which depends on the axis vectors. If the axis
 vectors have wrong y-components due to the bug, the fitness values
 may be artifacts too.
+
+## RESOLUTION — May 8, 2026
+
+### Published fitness values ARE valid and reproduced
+aaB/AbA/AAb at sigma=0.49, polished_holonomy(): fitness=0.017290  CONFIRMED
+This matches the published value to 6 decimal places.
+
+### Two different axis methods exist in the codebase
+
+METHOD A (published scans): matrix_to_axis_vector()
+  - Uses polished_holonomy()
+  - Extracts Re(logm): x=Re(b+c)/2, y=Im(c-b)/2, z=Re(a-d)/2
+  - Axes have non-zero y-components (y=-0.899 for aaB)
+  - THIS is the method used in all submitted papers
+
+METHOD B (Weinberg/xz-plane tests): axis_imlogm()
+  - Uses fundamental_group().SL2C()
+  - Extracts Im(logm): nx=Im(L01+L10), ny=(1j*(L10-L01)).real, nz=Im(L00-L11)
+  - ny is ALWAYS ZERO (mathematical tautology: 1j*real = imaginary, .real=0)
+  - This method was used in today's exploratory scans only
+  - NOT used in any published paper
+
+### What was retracted today
+1. Weinberg angle result -- used Method B (buggy ny=0), triangulation-dependent
+2. xz-plane invariance -- consequence of Method B tautology, not geometric
+
+### What remains valid
+All published fitness values used Method A (polished_holonomy + Re(logm))
+These are confirmed correct and unaffected by Method B issues.
