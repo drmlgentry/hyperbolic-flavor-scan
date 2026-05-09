@@ -75,3 +75,30 @@ Same identity holds in m003(-2,3) with words BAB/BBAb.
 ### Status: NUMERICAL THEOREM
 The identity |dot product| = M_W/M_Z holds to 4 significant figures.
 Needs algebraic derivation from the arithmetic of the filling slopes.
+
+## RETRACTION OF WEINBERG ANGLE CLAIM — May 8, 2026
+
+The dot product |n(AAb) . n(BaaB)| = cos(theta_W) is TRIANGULATION-DEPENDENT.
+
+Across 20 random triangulations of m006(-5,2), the dot product ranges
+from 0.054 to 0.994 (std=0.29). The value 0.881 is not distinguished.
+
+The result was an artifact of SnapPy's default triangulation, not a
+geometric property of the manifold.
+
+STATUS: Demoted from result to artifact. Do not include in papers.
+
+What remains valid:
+- The xz-plane invariance (y=0) is also likely triangulation-dependent
+  and should be checked independently
+- The Dehn surgery ranking (#1 out of 87) is also likely affected
+  since it uses the same triangulation-dependent axis extraction
+- The CKM/PMNS fitness results (0.017, 0.019) ARE valid because
+  the fitness metric compares mixing angles, not axis dot products --
+  these are representation-independent observables
+
+What to investigate instead:
+- Find a triangulation-INDEPENDENT quantity that encodes theta_W
+- The character variety chi(pi_1(m006)) -> C is intrinsic
+- Trace functions tr(rho(g)) are conjugacy-invariant
+- Could theta_W appear as a ratio of trace lengths or eigenvalues?
