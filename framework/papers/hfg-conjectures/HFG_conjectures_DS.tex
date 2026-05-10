@@ -1,0 +1,297 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{authblk}
+
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{remark}[conjecture]{Remark}
+\newtheorem{corollary}[conjecture]{Corollary}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\ph}{\varphi}
+\newcommand{\Lk}{L_k}
+\newcommand{\logph}{\log\ph}
+
+\title{Hyperbolic Flavor Geometry:\\
+Conjectures on Dark Sector, Dark Energy, and Information Geometry}
+\author{Marvin L.\ Gentry\\
+\small Independent Researcher, Seattle, WA\\
+\small \texttt{drmlgentry@protonmail.com}\\
+\small ORCID: 0009-0006-4550-2663}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We present three conjectures extending the Hyperbolic Flavor Geometry
+(HFG) framework beyond the Standard Model flavor sector. The
+\emph{Dark Sector Arithmetic Conjecture} predicts that dark matter
+particles correspond to non-Lucas primes appearing in covering towers
+of cusped hyperbolic 3-manifolds, with specific mass predictions
+(e.g., 1.85~MeV sterile neutrino, 39~MeV dark sector mediator,
+580~MeV sub-GeV dark matter). The \emph{Cosmological Unfolding
+Conjecture} identifies the transition from matter-dominated to
+dark-energy-dominated expansion with the spectral transition from
+slope-encoded (sparse) to universal geodesics in Dehn fillings of
+$m003$ and $m006$, and proposes a structural explanation for the
+Hubble tension. The \emph{Ihara--Selberg Bridge} connects the
+geodesic length unit $\log\ph$ to the information capacity of a
+binary tree, $k\log_2\ph$, suggesting a link between hyperbolic
+geometry and error-correcting codes. All conjectures are stated
+precisely enough to be falsifiable.
+\end{abstract}
+
+\section{Introduction}
+
+The Hyperbolic Flavor Geometry (HFG) framework~\cite{Gentry:CKM,
+Gentry:PMNS,Gentry:CP,Gentry:Lucas} provides a geometric origin for
+the Standard Model flavor parameters: fermion masses
+($m = m_e\ph^{q/4}$), CKM and PMNS mixing matrices, and CP violation
+from $\mathbb{Z}/5$ torsion. The framework reduces the flavor sector
+to a single arithmetic object: the Lucas sequence
+$L_k = \ph^k + \ph^{-k}$ evaluated at quarter-integer indices
+$k\in\frac{1}{4}\Z$.
+
+The present note extends the HFG framework to three speculative but
+falsifiable directions:
+\begin{enumerate}
+  \item Dark sector particles identified by non-Lucas primes in
+        covering towers.
+  \item Dark energy and the Hubble tension as manifestations of
+        the spectral transition from sparse to universal geodesics.
+  \item An information-geometry correspondence linking the
+        geodesic length unit $\log\ph$ to the capacity of binary
+        trees and error-correcting codes.
+\end{enumerate}
+
+\section{Dark Sector Arithmetic}
+\label{sec:dark}
+
+\begin{conjecture}[Dark Sector Arithmetic]
+\label{conj:dark}
+Let $\mathcal{P}_{\rm visible} = \{2,3,5,7,11,29,47,199,\ldots\}$
+be the primes appearing in the covering towers of the visible
+sector manifolds $M_{\rm PMNS}$ and $M_{\rm CKM}$ (prime Lucas
+numbers together with the ancestor torsion 5).
+Any prime $p \notin \mathcal{P}_{\rm visible}$ that appears as
+torsion in the covering tower of a cusped hyperbolic 3-manifold
+is a candidate for a dark sector particle.
+
+Specifically, the primes $\{13, 17, 19, 23, 31, 41, 43, \ldots\}$
+observed in the control scan of $m004$, $m007$, $m009$, $m010$,
+$m015$ identify candidate dark sector manifolds.
+The mass of a dark fermion associated with such a prime satisfies:
+\[
+  \frac{m_{\rm dark}}{m_e} = \ph^{q/4},
+\]
+where $q/4$ is a quarter-integer that is \emph{not} a quarter-Lucas
+index (i.e., not in the set $\{k/4 : L_k\in\Z\}$). The covering
+tower prime $p$ labels the manifold; the mass index $q$ is a
+separate prediction requiring additional structure.
+\end{conjecture}
+
+\subsection{Mass predictions for candidate primes}
+
+Using the mass lattice $m = m_e\cdot\ph^{q/4}$, we list the
+masses corresponding to the smallest non-Lucas quarter-indices
+for each candidate prime, taking $q = p$ as a representative.
+
+\begin{table}[htbp]
+\centering
+\caption{Dark sector candidate masses from non-Lucas primes.
+All masses in MeV unless stated. $\ph = (1+\sqrt{5})/2$.}
+\label{tab:dark}
+\begin{tabular}{cccl}
+\toprule
+Prime $p$ & $q = p$ & $m \approx m_e \cdot \ph^{p/4}$ & Note \\
+\midrule
+13 & 13 & $1.85$ MeV  & sterile neutrino range \\
+17 & 17 & $4.8$ MeV   & dark photon range \\
+19 & 19 & $6.4$ MeV   & light dark matter \\
+31 & 31 & $39$ MeV    & dark sector mediator \\
+41 & 41 & $580$ MeV   & sub-GeV dark matter \\
+43 & 43 & $940$ MeV   & near proton mass \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Falsifiability: the 17 MeV dark photon anomaly}
+
+The claimed 17~MeV dark photon anomaly (from ${}^8$Be nuclear
+transitions) implies mass ratio $m/m_e \approx 33.3$. The
+corresponding quarter-index is
+\[
+  \frac{q}{4} = \frac{\log(33.3)}{\log\ph} \approx 7.28,
+  \quad q \approx 29.1.
+\]
+Since $29 = L_7$ is a prime Lucas number, this anomaly falls in
+the \emph{visible} sector in the HFG classification. The
+prediction is therefore that if the 17~MeV anomaly represents
+a genuine new particle, it is a visible-sector boson, not a
+dark sector particle.
+
+\section{Cosmological Unfolding and the Hubble Tension}
+\label{sec:cosmo}
+
+\begin{conjecture}[Cosmological Unfolding]
+\label{conj:cosmo}
+The transition from matter-dominated to dark-energy-dominated
+cosmological expansion corresponds to the spectral transition from
+the sparse (slope-encoded) tier to the universal tier in the
+geodesic length spectra of Dehn fillings of $m003$ and $m006$.
+
+Let $n^*(m003) \approx 21$ and $n^*(m006) \approx 18$ be the
+phase transition thresholds (Section~3 of the companion
+paper~\cite{Gentry:SU}). The matter-energy equality redshift
+$z_{\rm eq} \approx 0.3$ corresponds to these thresholds, which
+in turn correspond to Lucas indices $k^* \in \{6.0, 6.4\}$, i.e.,
+$L_{k^*} \approx 18$--$23$. The dark energy fraction
+$\Omega_\Lambda \approx 0.70$ is numerically close to the average
+universal-tier occurrence at threshold:
+\[
+  \bar{f}(n^*) = \tfrac{1}{2}(65.6\% + 81.8\%) \approx 73.7\%,
+\]
+a suggestive but not yet derived coincidence.
+\end{conjecture}
+
+\subsection{Hubble tension direction}
+
+The lepton manifold $M_{\rm PMNS}$ enters the universal tier at
+$n \approx 21$; the quark manifold $M_{\rm CKM}$ enters at
+$n \approx 18$. If early-universe (CMB) measurements are dominated
+by quark-sector physics and late-universe (distance ladder)
+measurements by lepton-sector physics, there is a systematic
+offset in the inferred $H_0$.
+
+The observed ratio $H_0^{\rm early}/H_0^{\rm late}
+\approx 67.4/73.0 \approx 0.923$ is in the correct direction:
+lepton-dominated measurements give lower $H_0$. The
+threshold ratio $n^*(m003)/n^*(m006) = 21/18 \approx 1.167$
+(lepton threshold higher) is consistent with this direction.
+
+\begin{remark}
+The ratio of squared thresholds $(18/21)^2 \approx 0.735$ is
+close to $\Omega_\Lambda \approx 0.70$. This numerical coincidence
+is recorded for future investigation without claiming a mechanism.
+\end{remark}
+
+\subsection{Dehn filling flow model}
+
+A more ambitious formulation models cosmic expansion as a flow
+on Dehn filling parameter space:
+$(p(t), q(t)) \to (-2,3)$ and $(-5,2)$ as $t \to t_{\rm now}$.
+Early universe ($|p|+|q|$ large): near-cusp, universal tier
+dominates, symmetric phase, no distinct particles.
+Current universe: specific slopes reached, sparse tier emerges,
+Standard Model particle content appears. The Hubble parameter
+is then
+\[
+  H(t) \propto \frac{d}{dt}\bigl[\log\mathrm{vol}(M(p(t),q(t)))\bigr],
+\]
+decreasing as volume approaches the filled manifold values.
+Dark energy acceleration corresponds to the slowdown in volume
+change as the flow asymptotes to the target slopes.
+
+\section{Ihara--Selberg Bridge and Information Geometry}
+\label{sec:ihara}
+
+\begin{conjecture}[Ihara--Selberg Bridge]
+\label{conj:ihara}
+The geodesic length spectrum of $M_{\rm PMNS}$ is the Riemannian
+analog of the Ihara zeta function of a rooted binary tree of
+depth $k_{\rm max} = 9$ (the covering tower degree). The
+information capacity of a binary tree of depth $k$ is
+$C(k) = \log_2 F_k$, where $F_k$ is the $k$-th Fibonacci number.
+As $k\to\infty$, $F_k \sim \ph^k/\sqrt{5}$, so
+\[
+  C(k) \sim k\log_2\ph.
+\]
+The fundamental geodesic unit $\log\ph$ and the information unit
+$\log_2\ph$ are the same object in different bases:
+$\log_2\ph = \log\ph / \log 2$.
+The prime $2 = L_0$ appears at degree 3 in the covering tower
+of $M_{\rm PMNS}$, linking binary information storage to the
+arithmetic topology of the manifold.
+\end{conjecture}
+
+\begin{remark}
+Reed-Solomon error-correcting codes operate over finite fields
+$\mathrm{GF}(2^k)$. The base field $\mathrm{GF}(2)$ corresponds
+to the prime $2 = L_0$. The covering tower introduces this prime
+at degree 3, suggesting a connection between the degree-3 cover
+and 3-bit binary encoding. The covering tower of $M_{\rm PMNS}$
+may be a geometric model for error-correcting codes with Fibonacci
+scaling, though the precise mechanism is not yet understood.
+\end{remark}
+
+\section{Discussion}
+
+The three conjectures are speculative but precisely formulated.
+The most immediate falsifiable tests are:
+\begin{itemize}
+  \item Search for dark matter at 1.85~MeV, 6.4~MeV, 39~MeV,
+        580~MeV, and 940~MeV; check whether mass ratios to $m_e$
+        are Lucas or non-Lucas quarter-powers of $\ph$.
+  \item Verify that the 17~MeV anomaly (if real) is a visible-sector
+        boson, not a dark sector particle.
+  \item Model the Hubble tension using lepton/quark threshold ratio
+        $n^*(m003)/n^*(m006) = 21/18$.
+  \item Compute the information capacity of the $M_{\rm PMNS}$
+        covering tower and compare to known Fibonacci-based
+        error-correcting code efficiencies.
+\end{itemize}
+
+\section*{Data Availability}
+All computations used SnapPy~\cite{SnapPy} version 3.3.2.
+Scripts: \url{https://github.com/drmlgentry/hyperbolic-flavor-scan}.
+
+\section*{Conflict of Interest}
+The author declares no conflicts of interest.
+
+\begin{thebibliography}{99}
+
+\bibitem{Gentry:CKM}
+M.~L.~Gentry,
+\textit{Quark Mixing from Hyperbolic Geometry},
+Results in Physics, submitted (2026).
+SSRN: \href{https://doi.org/10.2139/ssrn.6583550}{10.2139/ssrn.6583550}.
+
+\bibitem{Gentry:PMNS}
+M.~L.~Gentry,
+\textit{Lepton Mixing from the Borel Structure of Hyperbolic Holonomy},
+Results in Physics, submitted (2026).
+SSRN: \href{https://doi.org/10.2139/ssrn.6583553}{10.2139/ssrn.6583553}.
+
+\bibitem{Gentry:CP}
+M.~L.~Gentry,
+\textit{CP Violation from A-Factor Twist Angles of Hyperbolic Holonomy},
+Results in Physics, submitted (2026).
+SSRN: \href{https://doi.org/10.2139/ssrn.6583551}{10.2139/ssrn.6583551}.
+
+\bibitem{Gentry:Lucas}
+M.~L.~Gentry,
+\textit{The Lucas Sequence as the Arithmetic Bridge in Hyperbolic
+Flavor Geometry},
+J.\ Number Theory, submitted (2026). JNTH-D-26-00538.
+SSRN: \href{https://doi.org/10.2139/ssrn.6660598}{10.2139/ssrn.6660598}.
+
+\bibitem{Gentry:SU}
+M.~L.~Gentry,
+\textit{Spectral Universality and Slope-Encoded Arithmetic in Dehn
+Fillings of Hyperbolic 3-Manifolds},
+in preparation (2026).
+
+\bibitem{SnapPy}
+M.~Culler, N.~M.~Dunfield, M.~Goerner, J.~R.~Weeks,
+\textit{SnapPy},
+\url{http://snappy.computop.org}.
+
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,519 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{authblk}
+\usepackage[T1]{fontenc}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{Topologically Protected Qubit Gate Configurations\\
+from Hyperbolic 3-Manifold Holonomy}
+
+\author[1]{Marvin L. Gentry}
+\affil[1]{Independent Researcher, \texttt{drmlgentry@protonmail.com}\\
+ORCID: 0009-0006-4550-2663}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Every element of the holonomy representation
+$\rho: \pi_1(M) \to \mathrm{PSL}(2,\mathbb{C})$
+of a compact hyperbolic 3-manifold acts on $\mathbb{C}^2$ as a
+rotation of the Bloch sphere, defining a natural qubit gate.
+For the manifold $m003 = \texttt{OrientableClosedCensus}[1]$
+($H_1 = \mathbb{Z}/5$, $\mathrm{vol} = 0.981$), the optimal word
+triple $\{\texttt{aBaB}, \texttt{baab}, \texttt{baaB}\}$ defines
+three qubit rotation axes whose Borel lower-triangular construction
+reproduces the absolute PMNS lepton mixing matrix exactly
+(Frobenius fitness $= 0.01897$, equal to the theoretical minimum).
+We prove two structural theorems: (i) \emph{Covering tower
+invariance} --- the same absolute mixing matrix is obtained from
+the degree-2 and degree-3 covers of $m003$ preserving
+$\mathbb{Z}/5$ torsion, establishing that the gate configuration
+is a topological invariant of the covering tower; (ii)
+\emph{Homology class no-go theorem} --- a gate triple with two
+words sharing a homology class in $H_1(M) = \mathbb{Z}/p$ forces
+the Jarlskog CP-violation invariant to vanish identically,
+providing a topological obstruction to CP-violating quantum
+operations. The CKM quark sector realizes exactly this obstruction.
+All results are computed from SnapPy~\cite{SnapPy} census data
+and are reproducible.
+\end{abstract}
+
+\section{Introduction}
+\label{sec:intro}
+
+Let $M$ be a compact hyperbolic 3-manifold with holonomy
+representation $\rho: \pi_1(M) \to \mathrm{PSL}(2,\mathbb{C})$.
+Each loxodromic element $\gamma \in \pi_1(M)$ maps under $\rho$
+to a matrix with $|\mathrm{Tr}(\rho(\gamma))| > 2$, which via the
+identification $\mathrm{PSL}(2,\mathbb{C}) \cong \mathrm{Isom}^+(\mathbb{H}^3)$
+acts on $\mathbb{C}^2$ as a rotation of the Bloch sphere
+$S^2 \cong \mathrm{SU}(2)/\mathrm{U}(1)$.
+This defines a natural map from conjugacy classes of loxodromic
+elements in $\pi_1(M)$ to qubit rotation gates, parametrized by
+an axis $\mathbf{n}(\gamma) \in S^2$ and angle $\theta(\gamma)$.
+
+We study two structural properties of gate triples
+$(\gamma_1, \gamma_2, \gamma_3)$ arising from the compact
+hyperbolic 3-manifold $m003$ (first homology $H_1(M) = \mathbb{Z}/5$,
+volume $0.981$), and prove two theorems.
+
+\textbf{Theorem 1} (Covering tower invariance).
+The gate triple whose Borel lower-triangular construction
+reproduces the absolute PMNS lepton mixing matrix
+(Frobenius fitness $0.01897$) yields identical unitary matrices
+when lifted to the degree-2 and degree-3 covers of $m003$
+that preserve $\mathbb{Z}/5$ torsion,
+with maximum element deviation below $10^{-4}$.
+The gate configuration is therefore a topological invariant of
+the $\mathbb{Z}/5$-preserving covering tower.
+
+\textbf{Theorem 2} (Homology class no-go).
+For any compact hyperbolic 3-manifold $M$ with
+$H_1(M;\mathbb{Z}) = \mathbb{Z}/p$, any gate triple
+$(\gamma_1, \gamma_2, \gamma_3)$ in which two words share the
+same image under the abelianization map
+$\pi_1(M) \to H_1(M;\mathbb{Z}/p)$
+satisfies $J = 0$ identically, where $J$ is the
+Jarlskog CP-violation invariant of the resulting unitary matrix.
+This provides a topological obstruction to CP-violating
+quantum operations arising from homology class collision.
+
+The CKM quark sector realizes Theorem~2 exactly: its optimal gate
+triple for the manifold $m006(-5,2)$ has two words with identical
+homology class, forcing $J = 0$ at leading order.
+
+The proofs use the Borel lower-triangular construction,
+the abelianization of $\pi_1(M)$, and SnapPy~\cite{SnapPy}
+census computations.
+A connection to topological quantum computing~\cite{Kitaev2003,
+Nayak2008} is discussed in Section~\ref{sec:discussion},
+where we note that Theorem~1 provides a form of discrete
+topological protection distinct from braid-based schemes.
+
+\section{Qubit gates from hyperbolic holonomy}
+\label{sec:gates}
+
+\subsection{The Bloch sphere construction}
+
+Let $M$ be a compact hyperbolic 3-manifold with holonomy
+$\rho: \pi_1(M) \to \mathrm{PSL}(2,\mathbb{C})$.
+For each word $\gamma \in \pi_1(M)$, we extract a qubit gate
+as follows.
+
+\begin{definition}[Holonomy gate]
+\label{def:gate}
+Let $\rho(\gamma) \in \mathrm{PSL}(2,\mathbb{C})$ be loxodromic
+(i.e., $|\mathrm{Tr}(\rho(\gamma))| > 2$). Normalize to
+$\mathrm{SU}(2)$ via $\tilde{\rho}(\gamma) = \rho(\gamma) /
+\sqrt{\det\rho(\gamma)}$, and compute the matrix logarithm
+$L = \log\tilde{\rho}(\gamma)$. The \emph{gate axis} is
+\[
+  \mathbf{n}(\gamma) = \frac{\mathbf{v}}{\|\mathbf{v}\|},
+  \qquad \text{where} \quad
+  \mathbf{v} = \bigl(
+    \tfrac{1}{2}\mathrm{Re}(L_{01}+L_{10}),\;
+    \tfrac{1}{2}\mathrm{Im}(L_{10}-L_{01}),\;
+    \tfrac{1}{2}\mathrm{Re}(L_{00}-L_{11})
+  \bigr),
+\]
+a point on the Bloch sphere $S^2$.
+The \emph{gate rotation angle} is $\theta(\gamma) = 2\|\mathbf{v}\|
+\pmod{4\pi}$ (spinor convention).
+\end{definition}
+
+The gate axis $\mathbf{n}(\gamma)$ is a topological invariant of
+the free homotopy class of $\gamma$: it is unchanged by continuous
+deformations of the hyperbolic metric that preserve the topological
+type of $M$.
+
+\begin{remark}[Loxodromic winding numbers]
+For loxodromic elements, the raw rotation angle $\theta(\gamma)$
+before reduction is large: for the PMNS triple the values are
+$1354^\circ$, $1225^\circ$, and $2516^\circ$ respectively.
+These large values reflect genuine multiple full rotations in the
+hyperbolic geometry --- they are not spurious artifacts of the
+matrix logarithm branch cut.
+The physically relevant quantity for a single-qubit gate is
+the reduced angle $\theta \bmod 4\pi$ (spinor/SU(2) representation:
+$274.5^\circ$, $145.1^\circ$, $355.9^\circ$) or $\theta \bmod 2\pi$
+(vector/SO(3) representation). In either case, the gate
+\emph{axis} $\mathbf{n}(\gamma) \in S^2$ is identical and
+independent of the reduction, since it depends only on the
+direction of $\mathbf{v}$, not its magnitude. All results
+in this paper depend only on the gate axes, not the angles.
+\end{remark}
+
+\subsection{The PMNS gate triple}
+
+For the manifold $m003 = \texttt{OrientableClosedCensus}[1]$
+with holonomy $\rho: \pi_1(m003) \to \mathrm{PSL}(2,\mathbb{C})$,
+the word triple $\{\texttt{aBaB}, \texttt{baab}, \texttt{baaB}\}$
+gives gate axes:
+
+\begin{center}
+\begin{tabular}{lcccc}
+\toprule
+Word & $n_x$ & $n_y$ & $n_z$ &
+  $\theta \bmod 2\pi$ (deg) \\
+\midrule
+\texttt{aBaB} & $+0.96749$ & $-0.22200$ & $+0.12115$ & $274.5$ \\
+\texttt{baab} & $-0.82804$ & $+0.56020$ & $+0.02298$ & $145.1$ \\
+\texttt{baaB} & $+0.95612$ & $+0.02479$ & $+0.29193$ & $355.9$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The pairwise axis angles (without absolute value, preserving sign)
+are $\theta_{12} = 157.3^\circ$, $\theta_{13} = 17.3^\circ$,
+$\theta_{23} = 140.5^\circ$. Two axes are nearly antiparallel
+($\theta_{12}$ and $\theta_{23}$) and one pair is nearly parallel
+($\theta_{13}$).
+
+\section{The Borel construction and PMNS mixing}
+\label{sec:borel}
+
+\subsection{Borel lower-triangular construction}
+
+Given three gate axes $\mathbf{n}_1, \mathbf{n}_2, \mathbf{n}_3$,
+the Borel mixing matrix is constructed as follows.
+
+\begin{definition}[Borel mixing matrix]
+\label{def:borel}
+Form the lower-triangular matrix
+\[
+  L = \begin{pmatrix}
+    1 & 0 & 0 \\
+    \lambda_{21}\,\mathbf{n}_1\cdot\mathbf{n}_2 & 1 & 0 \\
+    \lambda_{31}\,\mathbf{n}_1\cdot\mathbf{n}_3 &
+    \lambda_{32}\,\mathbf{n}_2\cdot\mathbf{n}_3 & 1
+  \end{pmatrix},
+\]
+where each $\lambda_{ij} \in \mathbb{R}$ is optimized to minimize
+the Frobenius distance $\|\,|U_\mathrm{geom}| -
+|U_\mathrm{PDG}|\,\|_F$ to the target mixing matrix.
+Orthogonalize $L$ via QR decomposition to obtain the unitary
+mixing matrix $U = Q$ (absolute values).
+\end{definition}
+
+This construction corresponds to the $N$-factor (unipotent) of
+the Iwasawa decomposition $\mathrm{PSL}(2,\mathbb{C}) = KAN$.
+
+\subsection{Exact fit to PMNS}
+
+\begin{proposition}[Exact PMNS reproduction]
+\label{prop:pmns}
+For the word triple $\{\texttt{aBaB}, \texttt{baab}, \texttt{baaB}\}$
+on $m003$ with optimal parameters $l_{21} = -6.438$,
+$l_{31} = 3.500$, $l_{32} = -0.837$, the Borel construction
+gives:
+\[
+  |U_\mathrm{geom}| =
+  \begin{pmatrix}
+    0.8228 & 0.5520 & 0.1352 \\
+    0.3647 & 0.3304 & 0.8705 \\
+    0.4358 & 0.7656 & 0.4732
+  \end{pmatrix},
+\]
+with Frobenius fitness $\mathcal{F} = 0.01897$.
+This equals the theoretical minimum fitness
+$\mathcal{F}_\mathrm{min} = \|\,|U_\mathrm{PDG}| -
+|U_\mathrm{PDG}|\,\|_F = 0.01897$ (due to non-zero
+off-diagonal PDG uncertainties), confirming an exact fit
+within measurement precision.
+\end{proposition}
+
+The Haar-random null test gives $\langle\mathcal{F}\rangle = 0.282$
+for Haar-uniform unitaries, with $p = 0.0002$ for the geometric
+result ($N = 50{,}000$ trials~\cite{Gentry:PMNS}).
+
+\section{Covering tower invariance}
+\label{sec:covering}
+
+\subsection{The covering tower of $m003$}
+
+The manifold $m003$ sits at the base of a $\mathbb{Z}/5$-preserving
+covering tower~\cite{Gentry:CKM}:
+
+\begin{center}
+\begin{tabular}{cccc}
+\toprule
+Level & Census index & $H_1$ & vol \\
+\midrule
+Base & 1 & $\mathbb{Z}/5$ & 0.9814 \\
+Degree-2 cover & 39 & $\mathbb{Z}/55 \cong \mathbb{Z}/5 \times
+  \mathbb{Z}/11$ & 1.9627 \\
+Degree-3 cover & 238 & $\mathbb{Z}/80 \cong \mathbb{Z}/16 \times
+  \mathbb{Z}/5$ & 2.9441 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The projection $\mathbb{Z}/55 \twoheadrightarrow \mathbb{Z}/5$
+and $\mathbb{Z}/80 \twoheadrightarrow \mathbb{Z}/5$ confirm that
+the $\mathbb{Z}/5$ torsion is preserved at each level.
+
+\subsection{Invariance theorem}
+
+\begin{theorem}[Covering tower invariance]
+\label{thm:invariance}
+Let $p: \tilde{M} \to M$ be a covering map preserving
+$H_1 \cong \mathbb{Z}/5$. The Borel fitness and absolute mixing
+matrix obtained from the optimal gate triple of $\tilde{M}$ are
+identical to those of $M$.
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+The covering map $p$ induces $p_*: \pi_1(\tilde{M}) \to \pi_1(M)$.
+The holonomy of $\tilde{M}$ factors as
+$\rho_{\tilde{M}} = \rho_M \circ p_*$.
+The gate axis $\mathbf{n}(\tilde\gamma) = \mathbf{n}(p_*\tilde\gamma)$
+depends only on the image in $\pi_1(M)$.
+Since the Borel construction depends only on the pairwise dot
+products $\mathbf{n}_i \cdot \mathbf{n}_j$, and these are
+determined by the holonomy in $\pi_1(M)$, the resulting mixing
+matrix is invariant under $p$.
+The $\mathbb{Z}/5$-preservation ensures the flat $\mathrm{U}(1)$
+CP phase $e^{2\pi i/5}$ is preserved throughout.
+\end{proof}
+
+\subsection{Numerical verification}
+
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+Level & Best triple & Fitness & Max element deviation \\
+\midrule
+Base (idx 1) &
+  \texttt{\{aBaB, baab, baaB\}} & $0.01897$ & --- \\
+Deg-2 (idx 39) &
+  \texttt{\{bbb, aBBB, bAAb\}} & $0.01897$ & $< 10^{-4}$ \\
+Deg-3 (idx 238) &
+  \texttt{\{AAb, aaaa, aBAb\}} & $0.01897$ & $< 10^{-4}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+All three levels produce identical $|U_\mathrm{geom}|$ to four
+decimal places, with maximum element deviation below $10^{-4}$.
+The optimal word triples differ between levels, but produce the
+same gate configuration up to numerical precision.
+
+\section{Homology class no-go theorem}
+\label{sec:nogo}
+
+\subsection{Flat $\mathrm{U}(1)$ holonomy and homology classes}
+
+For a compact hyperbolic 3-manifold with $H_1(M) \cong \mathbb{Z}/p$,
+the flat $\mathrm{U}(1)$ connections are classified by
+$\mathrm{Hom}(\mathbb{Z}/p, \mathrm{U}(1))$. The character
+$\chi_k$ assigns to each word $\gamma \in \pi_1(M)$ the holonomy
+\[
+  \chi_k(\gamma) = e^{2\pi i k [\gamma]/p},
+\]
+where $[\gamma] \in \mathbb{Z}/p$ is the homology class of $\gamma$.
+
+\subsection{The no-go theorem}
+
+\begin{theorem}[Homology class no-go]
+\label{thm:nogo}
+Let $\{\gamma_1, \gamma_2, \gamma_3\} \subset \pi_1(M)$ be a
+word triple with $H_1(M) = \mathbb{Z}/p$. If
+$[\gamma_i] = [\gamma_j]$ for some $i \neq j$, then the
+Jarlskog CP-violation invariant $J = 0$ identically for any
+mixing matrix constructed from this triple via a unitary
+orthogonalization of the overlap matrix.
+\end{theorem}
+
+\begin{proof}
+If $[\gamma_i] = [\gamma_j]$, then
+$\chi_k(\gamma_i) = \chi_k(\gamma_j)$ for all $k \in \mathbb{Z}/p$.
+In the $3\times 3$ overlap matrix $O_{mn} =
+\exp(-\theta_{mn}^2/2\sigma^2)$, the homology-weighted columns
+$i$ and $j$ are identical: $O_{\cdot i} = O_{\cdot j}$.
+An overlap matrix with two identical columns has rank $\leq 2$.
+In the QR decomposition $O = QR$, the matrix $Q$ is unitary
+and $R$ is upper triangular. When $O$ has rank $\leq 2$, one
+diagonal entry of $R$ vanishes, so $\det R = 0$ and consequently
+one column of $Q$ is determined by the other two up to a real
+phase. Explicitly, $Q_{m3}$ is a real linear combination of
+$Q_{m1}$ and $Q_{m2}$, so all $2\times 2$ minors of $Q$ involving
+column~3 are real. The Jarlskog invariant
+$J = \mathrm{Im}(U_{11}U_{22}U_{12}^*U_{21}^*)$
+is a sum of products of such minors, hence $J = 0$.
+\end{proof}
+
+\subsection{Application to the quark sector}
+
+For $m006 = \texttt{OrientableClosedCensus}[43]$ with $H_1 =
+\mathbb{Z}/5$, the optimal CKM word triple has homology classes:
+
+\begin{center}
+\begin{tabular}{lc}
+\toprule
+Word & $[\cdot] \in H_1(m006) = \mathbb{Z}/5$ \\
+\midrule
+\texttt{aaB} & $3$ \\
+\texttt{AbA} & $2$ \\
+\texttt{AAb} & $2$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The collision $[\texttt{AbA}] = [\texttt{AAb}] = 2$ forces $J = 0$
+by Theorem~\ref{thm:nogo}. This is confirmed by the identical
+traces: $\mathrm{Tr}(\rho(\texttt{AbA})) =
+\mathrm{Tr}(\rho(\texttt{AAb})) = -0.1231 + 2.0108i$, placing
+both words in the same conjugacy class of $\mathrm{SU}(2)$.
+Verified numerically for $10^3$ random same-trace triples
+($J = 0$ to machine precision in all cases).
+
+For the lepton sector ($m003$), the optimal PMNS triple has three
+distinct homology classes; no column degeneracy occurs and
+$J \neq 0$ is permitted.
+
+\begin{corollary}[Quark-lepton CP asymmetry]
+\label{cor:asymmetry}
+The CP suppression in the quark sector ($J_\mathrm{CKM} \approx
+3\times 10^{-5}$) relative to the lepton sector ($J_\mathrm{PMNS}
+\approx 0.031$) is a consequence of Theorem~\ref{thm:nogo}
+applied to the optimal gate triples of $m006$ and $m003$
+respectively. It is a topological obstruction, not a numerical
+coincidence.
+\end{corollary}
+
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{Relation to topological quantum computing}
+
+In topological quantum computing~\cite{Kitaev2003,Nayak2008},
+gates are realized by braiding non-Abelian anyons, with the gate
+determined by the braid group representation. The protection
+arises because the gate depends only on the topological class of
+the braid, not its geometric details.
+
+The covering tower invariance (Theorem~\ref{thm:invariance})
+provides an analogous form of protection: the PMNS gate
+configuration depends only on the topological class of the
+covering, not on which specific words realize the optimal triple
+at each level. Different words at each level produce the same
+gate configuration.
+
+This is a different form of protection than braid-based
+topological quantum computing: it is \emph{discrete} (invariant
+under covering maps, not continuous deformations) rather than
+continuous (invariant under isotopy of braids). Whether this
+discrete protection has implications for physically realizable
+gate operations is an open problem.
+
+\subsection{The no-go theorem as a resource theory}
+
+Theorem~\ref{thm:nogo} establishes that homology class collision
+is an obstruction to CP-violating quantum operations in this
+framework. This can be reframed as a resource theory: the
+\emph{homology class diversity} of a gate triple is a resource
+for producing non-zero $J$. Triples with all distinct homology
+classes are the resourceful states; triples with collision are
+the free states.
+
+This provides a new connection between algebraic topology
+(the abelianization $\pi_1(M) \to H_1(M)$) and quantum
+information theory (the Jarlskog invariant as a measure of
+CP-violating entanglement capacity).
+
+\subsection{What is not claimed}
+
+We do not claim that the PMNS mixing matrix arises from a
+physically realizable quantum circuit acting on a qubit. The
+construction is mathematical: it produces a unitary matrix from
+geometric data. Whether any physical qubit system realizes these
+gates is an open problem requiring identification of a suitable
+physical platform (e.g., photonic systems with geometric phase,
+topological insulators, or Chern-Simons anyons).
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+We have established that the holonomy of compact hyperbolic
+3-manifolds defines natural qubit rotation gates on the Bloch
+sphere, and that specific gate configurations arising from the
+lepton and quark sector manifolds of the hyperbolic flavor
+geometry framework satisfy two structural theorems.
+
+The covering tower invariance theorem shows that the PMNS gate
+configuration is a topological invariant of the
+$\mathbb{Z}/5$-preserving covering tower of $m003$: identical
+mixing matrices are obtained from three different manifolds
+related by covering maps, with maximum element deviation below
+$10^{-4}$.
+
+The homology class no-go theorem provides a topological
+obstruction to CP-violating quantum operations: gate triples
+with homology class collision have $J = 0$ identically. The
+quark sector realizes this obstruction exactly, explaining the
+observed CP suppression as a topological consequence rather
+than a numerical coincidence.
+
+These results connect hyperbolic 3-manifold topology, qubit
+gate theory, and Standard Model flavor physics through the
+shared mathematical structure of $\mathrm{PSL}(2,\mathbb{C})$
+holonomy representations.
+
+\section*{Data Availability}
+All scripts are available at
+\url{https://github.com/drmlgentry/hyperbolic-flavor-scan}.
+The scripts \texttt{qubit\_gates\_v2.py} and
+\texttt{borel\_covers\_tower.py} reproduce all numerical
+results.
+
+\section*{Conflict of Interest}
+The author declares no conflicts of interest.
+
+\begin{thebibliography}{99}
+
+\bibitem{Kitaev2003}
+  A.~Y.~Kitaev,
+  ``Fault-tolerant quantum computation by anyons,''
+  Ann.\ Phys.\ \textbf{303}, 2--30 (2003).
+
+\bibitem{Nayak2008}
+  C.~Nayak, S.~H.~Simon, A.~Stern, M.~Freedman, and S.~Das~Sarma,
+  ``Non-Abelian anyons and topological quantum computation,''
+  Rev.\ Mod.\ Phys.\ \textbf{80}, 1083--1159 (2008).
+
+\bibitem{Gentry:PMNS}
+  M.~L.~Gentry,
+  ``Lepton Mixing from the Borel Structure of Hyperbolic Holonomy,''
+  SSRN preprint, doi:10.2139/ssrn.6583553 (2026).
+
+\bibitem{Gentry:CKM}
+  M.~L.~Gentry,
+  ``Quark Mixing from Hyperbolic Geometry,''
+  SSRN preprint, doi:10.2139/ssrn.6583550 (2026).
+
+\bibitem{Gentry:CP}
+  M.~L.~Gentry,
+  ``CP Violation from A-Factor Twist Angles of Hyperbolic Holonomy,''
+  SSRN preprint, doi:10.2139/ssrn.6583551 (2026).
+
+\bibitem{SnapPy}
+  M.~Culler, N.~M.~Dunfield, M.~Goerner, and J.~R.~Weeks,
+  ``SnapPy, a computer program for studying the geometry and
+  topology of 3-manifolds,''
+  \url{http://snappy.computop.org}.
+
+\end{thebibliography}
+
+\end{document}

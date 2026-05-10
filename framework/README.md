@@ -1,62 +1,123 @@
-﻿# Hyperbolic Flavor Geometry
+# Hyperbolic Flavor Geometry — Framework Repository
 
-A research program deriving Standard Model flavor parameters from the geometry
-of compact hyperbolic 3-manifolds via the Iwasawa decomposition PSL(2,C) = KAN.
+LaTeX sources and code for the Hyperbolic Flavor Geometry (HFG) research
+program: a geometric explanation of Standard Model flavor structure using
+compact hyperbolic 3-manifolds.
 
-## Core Result
+**Program overview:** The HFG framework derives fermion masses, CKM/PMNS
+mixing matrices, and CP violation from the hyperbolic geometry of two
+closed manifolds M_PMNS = m003(-2,3) and M_CKM = m006(-5,2), via
+holonomy representations and Gaussian kernel overlap matrices on S².
 
-The Iwasawa decomposition distributes SM flavor structure across two manifolds:
-- **K-factor** → CKM quark mixing | manifold **m006** (vol=2.029, H1=Z/5) | fitness F=0.01729
-- **N-factor** → PMNS lepton mixing | manifold **m003** (Meyerhoff, vol=0.981, H1=Z/5) | fitness F=0.01897
-- **A-factor** → CP phases and full flavor spectrum from loxodromic twist angles φ(γ)
+---
 
-Both optimal manifolds have H1=Z/5 (odd-torsion conjecture).
-m003 is the **Meyerhoff manifold** (OrientableClosedCensus[1]); distinct from the
-Weeks manifold (OrientableClosedCensus[0], vol=0.9427).
+## Paper Portfolio
 
-## Submission Portfolio (8 papers)
+### Submitted to journals (15 submissions, 8 journals)
 
-| # | Title | Journal | Status | ID |
-|---|---|---|---|---|
-| 1 | CP Phases from Holonomy | Nuclear Physics B | Under review | NPB-S-26-00539 |
-| 2 | Hyperbolic Log Lattices | Geometriae Dedicata | Under review | rs-9071491 |
-| 3 | Discrete Mixing Operators | Nuclear Physics B | Under review | NPB-S-26-00540 |
-| 4 | Scale-Free Quadratic Forms | Nuclear Physics B | Under review | NPB-S-26-00538 |
-| 5 | CKM from Geodesic Axes | Physical Review D | Under review | es2026mar11_966 |
-| 6 | PMNS from Borel Structure | Physical Review D | Under review | es2026mar13_942 |
-| 7 | CP Violation from A-Factor | Physical Review D | Under review | es2026mar14_722 |
-| 8 | Twist Angle Spectrum | JHEP | Resubmitting (NPB desk-rejected: out of scope) | — |
+| Paper | Journal | ID | SSRN |
+|---|---|---|---|
+| Chirality | PLB | PLB-D-26-01006 | — |
+| Neutrino | JPhysG | JPhysG-105833 | [6631218](https://papers.ssrn.com/abstract=6631218) |
+| Lucas structure | JNT | JNTH-D-26-00538 | [6660598](https://papers.ssrn.com/abstract=6660598) |
+| Covering tower | MMJ | submitted | — |
+| Weeks/Dehn | LMP | MATH-D-26-00263 | — |
+| Mixing Operators | LMP | MATH-D-26-00165 | — |
+| CP Phases | LMP | MATH-D-26-00166 | — |
+| CKM | RiP | RINP-D-26-00327 | [6583550](https://papers.ssrn.com/abstract=6583550) |
+| PMNS | RiP | RINP-D-26-00328 | [6583553](https://papers.ssrn.com/abstract=6583553) |
+| CP A-factor | RiP | RINP-D-26-00329 | [6583551](https://papers.ssrn.com/abstract=6583551) |
+| Twist Spectrum | RiP | RINP-D-26-00330 | [6583549](https://papers.ssrn.com/abstract=6583549) |
+| Homology Asymmetry | AIF | 2026120 | — |
+| Alexander polynomial | JKTR | JKTR-S-26-00044 | — |
 
-## Key Numerical Results
+### Preprints (SSRN only)
 
-### CKM (m006)
-- Words: aaB/AbA/AAb | fitness=0.01729 | J=0
-- Axis angles: θ12=48.2°, θ13=77.5°, θ23=68.4°
-- Triple isospectrality: φ≈92.49° for all three words → explains J_CKM≈0
+| Paper | SSRN | Posted |
+|---|---|---|
+| SU paper: Spectral Universality | [6670778](https://papers.ssrn.com/abstract=6670778) | Apr 28, 2026 |
+| HFG Conjectures (dark sector, cosmology) | [6670398](https://papers.ssrn.com/abstract=6670398) | Apr 28, 2026 |
+| GW phi-lattice / dark matter | [6669600](https://papers.ssrn.com/abstract=6669600) | Apr 28, 2026 |
 
-### PMNS (m003 = Meyerhoff manifold)
-- Words: aa/ab/aB | column perm (0,2,1) | fitness=0.01897
-- CP phase: φ_aa − φ_ab + φ_aB = 203.5° vs PDG 197° (3.3% error, 0 free params)
-
-### Twist Angle Spectrum (Paper 8)
-- m006 word aa: 180°−φ = 67.65° ~ δ_CKM=68.0° (0.51% error)
-- m006 word abbAB: 180°−φ = 33.62° ~ θ12_ν=33.41° (0.63% error)
-- m003 ratio |λ(bbbb)|/|λ(bAbA)| = 3.2910 ~ m̄_b/m̄_c = 3.2913 (0.01%, MS-bar)
-- Length-7 census: spectral gap [0.005°, 1.61°] on m006; θ13_CKM sits inside gap
-- Selberg estimates: λ1(m003)≈2.48, λ1(m006)≈2.82 (first for these manifolds)
+---
 
 ## Repository Structure
+
 ```
-papers/
-  hyperbolic-flavor-ckm/      # Paper 5 (PRD) - CKM from geodesic axes
-  hyperbolic-flavor-pmns/     # Paper 6 (PRD) - PMNS from Borel structure
-  hyperbolic-flavor-cp/       # Paper 7 (PRD) - CP violation from A-factor
-  hyperbolic-flavor-twist/    # Paper 8 (JHEP) - Twist angle spectrum
-code/                         # Utility scripts
+framework/
+├── papers/
+│   ├── spectral-universality/   SU paper (long + short, tex + pdf)
+│   ├── lucas-structure/         Lucas bridge theorem (JNT submitted)
+│   ├── hfg-conjectures/         Conjectures on dark sector + cosmology
+│   ├── hyperbolic-flavor-ckm/   CKM paper (RiP submitted)
+│   ├── hyperbolic-flavor-pmns/  PMNS paper (RiP submitted)
+│   ├── hyperbolic-flavor-cp/    CP paper (EPJC/RiP)
+│   ├── hyperbolic-flavor-twist/ Twist spectrum paper
+│   ├── covering-tower/          Covering tower paper (MMJ)
+│   ├── holonomy-cp/             Holonomy CP paper
+│   ├── neutrino/                Neutrino paper (JPhysG)
+│   ├── chirality/               Chirality paper (PLB)
+│   ├── weeks-dehn/              Weeks/Dehn paper (LMP)
+│   └── lucas-structure/         Lucas structure (JNT)
+├── figures/                     Shared figures directory
+│   ├── fig_effective_rank.pdf/png
+│   ├── fig_kernel_rank.pdf/png
+│   ├── fig_two_tier_schematic.pdf/png
+│   ├── fig_mass_lattice.png
+│   └── fig_phase_transition.png
+└── code/
+    ├── verify_ckm.py
+    ├── verify_mixing.py
+    └── mass_only_eval.py
 ```
 
-Scan scripts and census data: https://github.com/drmlgentry/hyperbolic-flavor-scan
+---
+
+## Core Mathematical Results
+
+### The Lucas-geodesic bridge (exact)
+ℓ = k·log(φ) ⟺ |tr(γ)| = Lₖ = φᵏ + φ⁻ᵏ
+
+### Three-generation threshold (proved algebraically)
+1/6 < (log φ)² < 1/3
+
+Consequently, σ = log(φ) supports exactly 3 active spherical harmonic
+modes on S² — a geometric realisation of three fermion generations.
+
+### Phase transition (computational)
+- n*(m006) = 18 = L₆ exactly (log 18/log φ = 6.006)
+- n*(m003) = 21 (between L₆ and L₇)
+
+### Slope encoding
+p-coordinate encodes log|p| geodesics: 3.20× (|p|=2), 2.29× (|p|=3),
+2.00× (|p|=5). q-coordinate: zero enrichment.
+
+### Kernel rank at σ = log(φ)
+- M_PMNS: R_eff = 3.90
+- M_CKM:  R_eff = 3.24
+
+---
+
+## Key Constants
+```python
+phi = (1 + sqrt(5)) / 2        # = 1.6180339...
+log_phi = log(phi)              # = 0.4812118...  fundamental geodesic unit
+sigma_opt = (3/2) * log_phi    # = 0.7218178...  PMNS fitting parameter
+# L_k = phi^k + phi^(-k):
+# L_0=2, L_1=1, L_2=3, L_3=4, L_4=7, L_5=11, L_6=18, L_7=29, L_8=47
+```
+
+---
+
+## Related Repositories
+- [hyperbolic-flavor-scan](https://github.com/drmlgentry/hyperbolic-flavor-scan)
+  — SnapPy scan scripts and geodesic analysis
+- [latticefit](https://pypi.org/project/latticefit/)
+  — PyPI package for φ-lattice mass fitting (v0.2.0, Lucas mode)
+
+---
 
 ## Author
-
 Marvin L. Gentry | drmlgentry@protonmail.com | ORCID: 0009-0006-4550-2663
+Independent Researcher, Seattle WA
+arXiv endorsement pending: SIQW6F (math.GT)

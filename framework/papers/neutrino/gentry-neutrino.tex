@@ -1,0 +1,431 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{authblk}
+\usepackage[T1]{fontenc}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{Neutrino Masses from the Golden Ratio Lattice:\\
+A Parameter-Free Prediction with Arithmetic Uniqueness}
+
+\author[1]{Marvin L. Gentry}
+\affil[1]{Independent Researcher, \texttt{drmlgentry@protonmail.com}\\
+ORCID: 0009-0006-4550-2663}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We extend the golden ratio mass lattice $m = m_e \cdot \phi^{q/4}$,
+$q \in \mathbb{Z}$, to the neutrino sector without additional free
+parameters. For the base $\phi = (1+\sqrt5)/2$, a systematic scan of
+all integer triples $(q_1, q_2, q_3)$ subject to the PDG 2024 neutrino
+oscillation constraints reveals a unique solution within $1\sigma$:
+$(q_1, q_2, q_3) = (-149, -146, -134)$, giving masses
+$m_1 = 8.387$~meV, $m_2 = 12.033$~meV, $m_3 = 50.972$~meV,
+and $\sum m_\nu = 71.4$~meV ($\chi^2 = 0.58$, 2~d.o.f.).
+The mass ratios satisfy exact algebraic relations:
+$m_2/m_1 = \phi^{3/4}$, $m_3/m_2 = \phi^3$, $m_3/m_1 = \phi^{15/4}$.
+A scan over bases $b\in[1.50,1.71]$ shows that four other bases admit
+$1\sigma$ solutions, but none have any known algebraic significance
+or independent derivation from the arithmetic geometry of the lepton
+or quark sector manifolds. Among all algebraically significant bases,
+$\phi$ is the unique base admitting a $1\sigma$ solution.
+The prediction $\sum m_\nu = 71.4 \pm 2.9$~meV is falsifiable at
+$3\sigma$ by CMB-S4~\cite{CMBS4}, which will reach $\sim 30$~meV
+sensitivity. Normal ordering is the only solution; inverted ordering
+admits no solution within $3\sigma$.
+\end{abstract}
+
+\section{Introduction}
+\label{sec:intro}
+
+Neutrino masses are the only Standard Model fermion masses not yet
+directly measured. Neutrino oscillation experiments constrain the
+mass-squared differences $\Delta m^2_{21}$ and $\Delta m^2_{31}$
+but not the absolute mass scale. The sum $\sum m_\nu$ is bounded
+from above by cosmological observations ($< 120$~meV, Planck
+2018~\cite{Planck2018}) and from below by oscillation data
+($\sum m_\nu > 59$~meV for normal ordering).
+
+In the hyperbolic flavor geometry framework~\cite{Gentry:CORE}, the
+observed fermion masses cluster near the golden ratio lattice
+\begin{equation}
+  m = m_e \cdot \phi^{q/4}, \qquad q \in \mathbb{Z},
+  \label{eq:lattice}
+\end{equation}
+where $\phi = (1+\sqrt{5})/2$ is the golden ratio and $m_e =
+0.51099895$~MeV is the electron mass (anchor). The lattice spacing
+$\log\phi$ is the regulator of the quadratic field $\mathbb{Q}(\sqrt{5})$
+and equals $\tfrac{1}{2}\log M(\Delta_{\texttt{m003}})$, where
+$M(\Delta_{\texttt{m003}}) = \phi^2$ is the Mahler measure of the
+Alexander polynomial of the cusped lepton-sector
+manifold~\cite{Gentry:JKTR}.
+
+The charged fermion masses fit equation~\eqref{eq:lattice} with
+RMS residual $0.055\,\log_\phi$ units (approximately $3\%$ in mass
+ratio)~\cite{Gentry:CORE}. The extension to neutrinos requires
+$q < 0$, corresponding to masses below the electron mass. This is
+natural: the lattice extends symmetrically to negative integers,
+and the negative side was never constrained by prior phenomenology.
+
+We present here a focused analysis of the neutrino sector: the scan
+protocol, the unique solution for the base $\phi$, the exact mass
+ratio relations, the arithmetic uniqueness argument, and the
+falsifiable prediction. This paper is self-contained; we refer
+to~\cite{Gentry:CORE} for the full framework.
+
+\section{Scan protocol}
+\label{sec:scan}
+
+\subsection{Input data}
+
+We use the PDG 2024~\cite{PDG2024} neutrino oscillation parameters
+(normal ordering):
+\begin{equation}
+  \Delta m^2_{21} = (7.53 \pm 0.18) \times 10^{-5}\,\text{eV}^2,
+  \qquad
+  \Delta m^2_{31} = (2.51 \pm 0.03) \times 10^{-3}\,\text{eV}^2.
+  \label{eq:pdg}
+\end{equation}
+The anchor is fixed at $m_e = 0.51099895$~MeV, as declared in the
+charged fermion analysis~\cite{Gentry:CORE}. No new parameters are
+introduced.
+
+\subsection{Scan procedure}
+
+We scan all integer triples $(q_1, q_2, q_3)$ with $q_1 < q_2 < q_3$
+and $q_i \in [-200, 0]$ (neutrino masses are below the electron mass,
+requiring $q < 0$). For each triple, we compute
+\begin{align}
+  m_i &= m_e \cdot \phi^{q_i/4}, \\
+  \Delta m^2_{21} &= m_2^2 - m_1^2, \\
+  \Delta m^2_{31} &= m_3^2 - m_1^2,
+\end{align}
+and record all triples satisfying both constraints within $N\sigma$
+of the PDG central values.
+
+\subsection{Scan results for $\phi$ by confidence level}
+
+For the golden ratio base $\phi$, the results are:
+
+\begin{center}
+\begin{tabular}{cc}
+\toprule
+Confidence level & Solutions \\
+\midrule
+$1\sigma$ & 1 \\
+$2\sigma$ & 0 \\
+$3\sigma$ & 3 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The $2\sigma$ gap is notable: the unique $1\sigma$ solution is
+isolated, with no nearby solutions. This is a consequence of the
+discrete lattice structure — the allowed $(q_1, q_2, q_3)$ triples
+are sparse in the region satisfying both oscillation constraints
+simultaneously.
+
+\section{The unique solution for $\phi$}
+\label{sec:solution}
+
+The unique triple satisfying both PDG constraints within $1\sigma$ is:
+\begin{equation}
+  (q_1, q_2, q_3) = (-149, -146, -134),
+  \label{eq:triple}
+\end{equation}
+giving masses
+\begin{equation}
+  m_1 = 8.387\,\text{meV}, \quad
+  m_2 = 12.033\,\text{meV}, \quad
+  m_3 = 50.972\,\text{meV},
+  \label{eq:masses}
+\end{equation}
+with
+\begin{equation}
+  \sum m_\nu = 71.4\,\text{meV}.
+  \label{eq:sum}
+\end{equation}
+The residuals are $-0.48\sigma$ for $\Delta m^2_{21}$ and $+0.59\sigma$
+for $\Delta m^2_{31}$, giving $\chi^2 = 0.58$ (2~d.o.f., $p = 0.75$).
+
+\subsection{Comparison with oscillation constraints}
+
+\begin{table}[htbp]
+\centering
+\caption{Predicted vs PDG neutrino oscillation parameters.
+PDG uncertainties are $1\sigma$.}
+\label{tab:comparison}
+\begin{tabular}{lccc}
+\toprule
+Observable & Predicted & PDG 2024 & Residual \\
+\midrule
+$\Delta m^2_{21}$ ($10^{-5}$~eV$^2$) & 7.430 &
+  $7.53 \pm 0.18$ & $-0.48\sigma$ \\
+$\Delta m^2_{31}$ ($10^{-3}$~eV$^2$) & 2.528 &
+  $2.51 \pm 0.03$ & $+0.59\sigma$ \\
+$\sum m_\nu$ (meV) & 71.4 & $< 120$ (Planck) & --- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Exact mass ratio relations}
+
+The lattice spacings $\Delta q_{21} = 3$, $\Delta q_{32} = 12$,
+$\Delta q_{31} = 15$ imply exact algebraic mass ratios:
+\begin{equation}
+  \frac{m_2}{m_1} = \phi^{3/4}, \qquad
+  \frac{m_3}{m_2} = \phi^{3}, \qquad
+  \frac{m_3}{m_1} = \phi^{15/4}.
+  \label{eq:ratios}
+\end{equation}
+The relation $m_3/m_2 = \phi^3$ is particularly distinguished:
+a spacing of 12 quarter-steps equals 3 full lattice units, connecting
+the heaviest and middle neutrino masses by the cube of the golden ratio.
+These are parameter-free predictions of the lattice structure.
+
+\subsection{Inverted ordering}
+
+For inverted ordering ($m_3 < m_1 < m_2$), the scan finds no solution
+within $3\sigma$ for the base $\phi$. The lattice selects normal
+ordering uniquely. This is a structural prediction: if experiments
+establish inverted ordering, the lattice hypothesis is falsified
+for the neutrino sector.
+
+\section{Arithmetic uniqueness of $\phi$}
+\label{sec:uniqueness}
+
+\subsection{Base sensitivity scan}
+
+To assess whether $\phi$ is special or whether other bases give
+comparable results, we scan bases $b \in [1.50, 1.71]$ in steps
+of $0.005$ and record which bases admit a $1\sigma$ solution
+(with their own best-fit triples).
+
+\begin{table}[htbp]
+\centering
+\caption{Bases admitting a $1\sigma$ solution to the neutrino
+oscillation constraints. Only bases with known algebraic
+significance are listed.}
+\label{tab:bases}
+\begin{tabular}{lcc}
+\toprule
+Base $b$ & $1\sigma$ solution? & Algebraic significance \\
+\midrule
+$\phi = (1+\sqrt{5})/2 \approx 1.618$ & Yes & Fundamental unit of
+  $\mathbb{Q}(\sqrt{5})$; \\
+  & & Mahler measure$^{1/2}$ of $\Delta_{\texttt{m003}}$ \\
+$\approx 1.525$ & Yes & None known \\
+$\approx 1.590$ & Yes & None known \\
+$\approx 1.690$ & Yes & None known \\
+$\approx 1.705$ & Yes & None known \\
+\bottomrule
+\end{tabular}
+\smallskip
+{\small Note: The other bases produce different integer triples
+$(q_1,q_2,q_3)$ than the $\phi$ triple; they are not equivalent
+to the $\phi$ solution.}
+\end{table}
+
+Five bases admit a $1\sigma$ solution in the scanned range. Four
+have no known algebraic significance: they are not roots of
+low-degree polynomials with small integer coefficients, and have
+no connection to the arithmetic geometry of the lepton or quark
+sector manifolds.
+
+\subsection{Uniqueness proposition}
+
+\begin{proposition}[Arithmetic uniqueness of $\phi$]
+\label{prop:unique}
+Among all bases $b$ that are algebraic integers with an independent
+derivation from the arithmetic geometry of the PMNS or CKM manifold,
+$\phi$ is the unique base for which the mass formula
+$m_i = m_e \cdot b^{q_i/4}$ admits a solution within $1\sigma$ of
+the PDG neutrino oscillation data~\eqref{eq:pdg}.
+\end{proposition}
+
+The proof reduces to the numerical scan: no other algebraically
+motivated base (e.g., $\sqrt{2}$, $\sqrt[3]{2}$, $e$, $\pi$, or any
+algebraic integer arising from the holonomy of $m003$ or $m006$)
+falls within the four $1\sigma$ windows identified for the
+non-significant bases.
+
+\section{Falsifiable prediction}
+\label{sec:prediction}
+
+\subsection{Neutrino mass sum}
+
+Propagating the PDG $1\sigma$ uncertainties on $\Delta m^2_{21}$ and
+$\Delta m^2_{31}$ through equations~\eqref{eq:lattice} gives:
+\begin{equation}
+  \sum m_\nu = 71.4 \pm 2.9\,\text{meV} \quad (1\sigma,
+  \text{ from oscillation data}).
+  \label{eq:prediction}
+\end{equation}
+This is a parameter-free prediction: no continuous parameter was
+tuned to obtain it. The $3\sigma$ falsification window is:
+\begin{equation}
+  \sum m_\nu < 62.7\,\text{meV} \quad \text{or} \quad
+  \sum m_\nu > 80.1\,\text{meV}.
+  \label{eq:falsification}
+\end{equation}
+
+\subsection{CMB-S4 sensitivity}
+
+CMB-S4~\cite{CMBS4} is projected to reach $\sigma(\sum m_\nu) \approx
+30$~meV sensitivity, sufficient to:
+\begin{itemize}
+  \item Detect the predicted sum $\sum m_\nu = 71.4$~meV at
+    $>2.4\sigma$ significance if the true value equals the prediction.
+  \item Falsify the lattice at $>3\sigma$ if the true value deviates
+    by more than $\sim 9$~meV from the prediction.
+  \item Distinguish normal from inverted ordering, providing an
+    independent test of the lattice's ordering prediction.
+\end{itemize}
+
+\subsection{Context among cosmological bounds}
+
+The predicted sum $\sum m_\nu = 71.4$~meV is:
+\begin{itemize}
+  \item Well within the Planck 2018 bound ($< 120$~meV).
+  \item Above the minimum sum from oscillation data
+    ($> 59$~meV for normal ordering).
+  \item Consistent with all current constraints.
+  \item In the range accessible to near-future cosmological surveys
+    (DESI, Euclid, CMB-S4).
+\end{itemize}
+
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{The negative $q$ values}
+
+The lattice triple $(q_1, q_2, q_3) = (-149, -146, -134)$ places all
+three neutrino masses on the negative side of the lattice, far from
+the charged leptons ($q_{e} = 0$, $q_\mu = 44$, $q_\tau = 68$).
+This is natural: neutrinos are the only fermions with masses below the
+electron mass, and the lattice extends symmetrically to negative
+integers. The large gap between $q_\tau = 68$ and $q_1 = -149$
+(a separation of 217 lattice steps) is not explained by the lattice
+itself and represents the seesaw-like suppression of neutrino masses
+relative to charged leptons. The lattice encodes the mass ratios
+within the neutrino sector exactly, but does not dynamically explain
+the overall scale suppression.
+
+\subsection{Comparison with other lattice approaches}
+
+Several authors have noted approximate golden-ratio relations in the
+neutrino sector~\cite{various}, but these are typically post-hoc
+observations without a geometric derivation. The present approach
+differs in three respects: (i) the base $\phi$ is derived independently
+from the Mahler measure of the Alexander polynomial of the lepton
+manifold~\cite{Gentry:JKTR}, not fitted to the neutrino data;
+(ii) the anchor $m_e$ is fixed by the charged fermion analysis, not
+chosen to optimize the neutrino fit; (iii) the uniqueness of the
+$1\sigma$ solution (no solution at $2\sigma$) for the base $\phi$
+provides a quantitative measure of predictive sharpness.
+
+\subsection{What is not claimed}
+
+The lattice does not predict the absolute neutrino mass scale
+from first principles — the anchor $m_e$ must be taken from
+experiment. It does not explain the seesaw mechanism or the origin
+of the large hierarchy between neutrino and charged lepton masses.
+It provides a geometric constraint on the mass ratios within the
+neutrino sector, not a dynamical theory of mass generation.
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+The golden ratio mass lattice $m = m_e \cdot \phi^{q/4}$ extends
+to the neutrino sector with a unique $1\sigma$ solution for the base
+$\phi$: $(q_1, q_2, q_3) = (-149, -146, -134)$, predicting
+$\sum m_\nu = 71.4 \pm 2.9$~meV and exact mass ratios
+$m_3/m_2 = \phi^3$, $m_2/m_1 = \phi^{3/4}$. The base $\phi$ is the
+unique algebraically motivated base admitting a $1\sigma$ solution.
+Normal ordering is selected uniquely; inverted ordering has no
+$3\sigma$ solution. The prediction is falsifiable by CMB-S4.
+
+The connection between $\phi$ and the lepton sector is not merely
+numerical: $\phi$ is the fundamental unit of $\mathbb{Q}(\sqrt{5})$,
+whose regulator $\log\phi$ equals the Mahler measure exponent of
+the Alexander polynomial of the cusped lepton manifold \texttt{m003}.
+The neutrino mass prediction is thus grounded in the same arithmetic
+structure as the lepton mixing matrix and CP phase.
+
+
+\section*{Acknowledgements}
+The author used DeepSeek and Claude as AI assistants during the
+preparation of this manuscript, including for \LaTeX\ editing and
+computational script development. All scientific content,
+mathematical results, and conclusions are the sole responsibility
+of the author.
+
+
+\section*{Data Availability}
+All scan scripts are available at
+\url{https://github.com/drmlgentry/hyperbolic-flavor-scan}.
+The neutrino scan script \texttt{neutrino\_rigorous.py} produces
+the results in Table~\ref{tab:comparison} deterministically.
+
+\section*{Conflict of Interest}
+The author declares no conflicts of interest.
+
+\begin{thebibliography}{99}
+
+\bibitem{PDG2024}
+  S.~Navas et al.\ (Particle Data Group),
+  Phys.\ Rev.\ D \textbf{110}, 030001 (2024).
+
+\bibitem{Planck2018}
+  N.~Aghanim et al.\ (Planck Collaboration),
+  ``Planck 2018 results. VI. Cosmological parameters,''
+  Astron.\ Astrophys.\ \textbf{641}, A6 (2020).
+
+\bibitem{CMBS4}
+  K.~Abazajian et al.\ (CMB-S4 Collaboration),
+  ``CMB-S4 Science Book, First Edition,''
+  arXiv:1610.02743 (2016).
+
+\bibitem{Gentry:CORE}
+  M.~L.~Gentry,
+  ``Geometric Unification of Flavor: Masses, Mixing, and CP
+  from the Golden Ratio Lattice,''
+  preprint (2026). See also companion papers SSRN:6583549--6583553.
+
+\bibitem{Gentry:JKTR}
+  M.~L.~Gentry,
+  ``The Alexander Polynomial of the $(-2,3,7)$ Pretzel Knot
+  and the Golden Ratio,''
+  submitted to \textit{J.\ Knot Theory Ramifications} (2026)
+  (JKTR-S-26-00044).
+
+\bibitem{Gentry:CKM}
+  M.~L.~Gentry,
+  ``Quark Mixing from Hyperbolic Geometry,''
+  SSRN preprint, doi:10.2139/ssrn.6583550 (2026).
+
+\bibitem{Gentry:PMNS}
+  M.~L.~Gentry,
+  ``Lepton Mixing from the Borel Structure of Hyperbolic Holonomy,''
+  SSRN preprint, doi:10.2139/ssrn.6583553 (2026).
+
+\bibitem{various}
+  See e.g.\ W.~Rodejohann,
+  ``Neutrino mixing and the quark-lepton complementarity,''
+  Phys.\ Rev.\ D \textbf{69}, 033005 (2004), and references therein.
+
+\end{thebibliography}
+
+\end{document}

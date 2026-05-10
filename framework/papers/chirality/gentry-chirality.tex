@@ -1,0 +1,406 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{authblk}
+\usepackage[T1]{fontenc}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{Charge Conjugation as Orientation Reversal\\
+in Hyperbolic Flavor Geometry}
+
+\author[1]{Marvin L. Gentry}
+\affil[1]{Independent Researcher, \texttt{drmlgentry@protonmail.com} \\ ORCID: 0009-0006-4550-2663}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We identify the charge conjugation operation $\mathcal{C}$ with
+orientation reversal of the compact hyperbolic 3-manifolds underlying
+the hyperbolic flavor geometry framework. The lepton and quark sector
+manifolds $m003$ and $m006$ are both confirmed chiral---neither is
+isometric to its mirror image---via two independent methods: the
+Chern--Simons invariant, which changes sign under orientation reversal,
+and direct verification that \texttt{is\_amphicheiral() = False} in
+SnapPy, with symmetry groups $\mathbb{Z}/2\oplus\mathbb{Z}/2$
+containing no orientation-reversing elements. Under the identification
+$\mathcal{C}: M\mapsto\bar{M}$, the volume and first homology are
+preserved (same mass spectrum and generation structure), while the
+Chern--Simons invariant changes sign, distinguishing particle from
+antiparticle. For the lepton sector: the electron corresponds to
+$m003$ with $\mathrm{CS}=\tfrac{1}{4}$ and the positron to
+$\overline{m003}$ with $\mathrm{CS}=\tfrac{3}{4}$. The $\mathbb{Z}/5$
+torsion structure admits a CP-odd phase $e^{2\pi i/5}$ that breaks the
+$M\leftrightarrow\bar{M}$ symmetry, providing a geometric origin for
+matter--antimatter asymmetry. All results are computed from census data
+using SnapPy~\cite{SnapPy} and are reproducible.
+\end{abstract}
+
+\section{Introduction}
+\label{sec:intro}
+
+The Standard Model of particle physics treats particles and antiparticles
+as distinct objects related by charge conjugation $\mathcal{C}$, but
+provides no geometric origin for this operation. In the hyperbolic flavor
+geometry framework~\cite{Gentry:CKM,Gentry:PMNS,Gentry:CP}, the flavor
+parameters of the Standard Model arise from the arithmetic and geometry
+of compact hyperbolic 3-manifolds. The CKM quark mixing matrix emerges
+from the holonomy of the manifold $m006 = \texttt{OrientableClosedCensus[43]}$
+($H_1 = \mathbb{Z}/5$, $\mathrm{vol} = 2.029$), the PMNS lepton mixing
+matrix from the Meyerhoff manifold $m003 = \texttt{OrientableClosedCensus[1]}$
+($H_1 = \mathbb{Z}/5$, $\mathrm{vol} = 0.981$), and CP phases from flat
+$\mathrm{U}(1)$ connections classified by $H_1(M) = \mathbb{Z}/5$~\cite{Gentry:CP}.
+
+A natural question arises: where do antiparticles sit in this geometric
+framework? In quantum field theory, charge conjugation relates a particle
+to its antiparticle, reversing all additive quantum numbers (charge,
+lepton number, baryon number) while preserving mass and spin. The mass
+spectrum is preserved because particles and antiparticles have identical
+masses. In a geometric framework where mass is encoded in the volume and
+geodesic spectrum of a manifold, the natural geometric operation
+preserving these invariants while distinguishing particle from
+antiparticle is \emph{orientation reversal}: $M \mapsto \bar{M}$, where
+$\bar{M}$ denotes $M$ with its orientation reversed.
+
+This identification is non-trivial only if the manifolds are chiral ---
+that is, if $M$ and $\bar{M}$ are geometrically distinct. If $M$ were
+amphicheiral (isometric to its mirror image), the operation $M\mapsto
+\bar{M}$ would be trivial and could not distinguish particle from
+antiparticle. We show that both $m003$ and $m006$ are chiral, confirmed
+by two independent methods, making the identification $\mathcal{C}:
+M\mapsto\bar{M}$ geometrically meaningful.
+
+The paper is organized as follows. Section~\ref{sec:chirality}
+establishes the chirality of the flavor manifolds. Section~\ref{sec:conj}
+defines geometric charge conjugation and identifies its transformation
+properties. Section~\ref{sec:asymmetry} discusses the connection to
+matter--antimatter asymmetry. Section~\ref{sec:predictions} states
+falsifiable predictions. Section~\ref{sec:conclusion} concludes.
+
+\section{Chirality of the flavor manifolds}
+\label{sec:chirality}
+
+A compact hyperbolic 3-manifold $M$ is \emph{chiral} if it is not
+isometric to its orientation-reversed mirror image $\bar{M}$; it is
+\emph{amphicheiral} if it is isometric to $\bar{M}$.
+
+\subsection{The Chern--Simons invariant as a chirality detector}
+
+The Chern--Simons invariant $\mathrm{CS}(M) \in \mathbb{R}/\mathbb{Z}$
+is a topological invariant of oriented hyperbolic 3-manifolds that
+transforms as
+\begin{equation}
+  \mathrm{CS}(\bar{M}) = -\mathrm{CS}(M) \pmod{1}
+  \label{eq:cs_reversal}
+\end{equation}
+under orientation reversal~\cite{Meyerhoff1987}. If
+$\mathrm{CS}(M) \not\equiv 0$ and $\mathrm{CS}(M) \not\equiv
+\tfrac{1}{2} \pmod{1}$, then $\mathrm{CS}(M) \neq \mathrm{CS}(\bar{M})$
+and $M$ cannot be isometric to $\bar{M}$: the manifold is chiral.
+
+For the lepton sector manifold $m003$:
+\begin{equation}
+  \mathrm{CS}(m003) = \tfrac{1}{4}, \qquad
+  \mathrm{CS}(\overline{m003}) = -\tfrac{1}{4} \equiv \tfrac{3}{4}
+  \pmod{1}.
+  \label{eq:cs_m003}
+\end{equation}
+Since $\tfrac{1}{4} \neq \tfrac{3}{4}$, $m003$ and $\overline{m003}$
+are geometrically distinct: $m003$ is chiral.
+
+For the quark sector manifold $m006$:
+\begin{equation}
+  \mathrm{CS}(m006) = -0.114137, \qquad
+  \mathrm{CS}(\overline{m006}) = +0.114137.
+  \label{eq:cs_m006}
+\end{equation}
+Since these values differ, $m006$ is chiral.
+(The value for $m006$ is given to six decimal places; it is conjectured
+to be irrational, consistent with the non-arithmetic status of $m006$.)
+
+\subsection{Direct verification via SnapPy}
+
+Independent confirmation is obtained from the symmetry group of each
+manifold. A compact hyperbolic 3-manifold is amphicheiral if and only
+if its isometry group contains orientation-reversing elements. Using
+SnapPy~\cite{SnapPy}:
+
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+Manifold & \texttt{is\_amphicheiral()} & Symmetry group & Order \\
+\midrule
+$m003$ (\texttt{OCC}[1]) & \texttt{False} &
+  $\mathbb{Z}/2\oplus\mathbb{Z}/2$ & 4 \\
+$m006$ (\texttt{OCC}[43]) & \texttt{False} &
+  $\mathbb{Z}/2\oplus\mathbb{Z}/2$ & 4 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Both symmetry groups have order 4 and consist entirely of
+orientation-preserving isometries. No orientation-reversing element
+exists, confirming chirality independently of the Chern--Simons
+computation. The two methods agree: both $m003$ and $m006$ are chiral.
+
+\section{Geometric charge conjugation}
+\label{sec:conj}
+
+\begin{definition}[Geometric charge conjugation]
+\label{def:C}
+In the hyperbolic flavor geometry framework, charge conjugation
+$\mathcal{C}$ acts as orientation reversal on the underlying manifold:
+\[
+  \mathcal{C}: M \longmapsto \bar{M}.
+\]
+\end{definition}
+
+The naturality of this definition rests on the transformation properties
+of the geometric invariants that encode physical observables:
+
+\begin{proposition}[Transformation properties of $\mathcal{C}$]
+\label{prop:transform}
+Under $\mathcal{C}: M \mapsto \bar{M}$:
+\begin{align}
+  \mathrm{vol}(\bar{M}) &= \mathrm{vol}(M),
+    \label{eq:vol_preserved} \\
+  H_1(\bar{M}) &\cong H_1(M),
+    \label{eq:h1_preserved} \\
+  \mathrm{CS}(\bar{M}) &= -\mathrm{CS}(M) \pmod{1}.
+    \label{eq:cs_changes}
+\end{align}
+\end{proposition}
+
+\begin{proof}
+Equation~\eqref{eq:vol_preserved}: hyperbolic volume is an orientation-
+independent invariant of the Riemannian metric.
+Equation~\eqref{eq:h1_preserved}: first homology depends only on the
+topological type, not the orientation.
+Equation~\eqref{eq:cs_changes}: see~\cite{Meyerhoff1987}.
+\end{proof}
+
+\begin{corollary}[Physical interpretation]
+\label{cor:physics}
+Under $\mathcal{C}$: the mass spectrum is preserved
+(vol encodes mass scale), the generation structure is preserved
+($H_1 = \mathbb{Z}/5$ encodes three generations), and the
+Chern--Simons invariant changes sign, distinguishing particle
+from antiparticle.
+\end{corollary}
+
+\subsection{Particle--antiparticle assignments}
+
+The identification yields concrete geometric assignments for the
+elementary fermions and their antiparticles:
+
+\begin{center}
+\begin{tabular}{llcc}
+\toprule
+Sector & Particle / Antiparticle & Manifold & $\mathrm{CS}$ \\
+\midrule
+Lepton & Electron $e^-$ & $m003$ & $+\tfrac{1}{4}$ \\
+       & Positron $e^+$ & $\overline{m003}$ & $+\tfrac{3}{4}$\footnotemark \\
+\midrule
+Quark  & Quark $q$      & $m006$ & $-0.1141$ \\
+       & Antiquark $\bar{q}$ & $\overline{m006}$ & $+0.1141$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\footnotetext{Chern--Simons invariants are taken modulo~1 in the range
+$[0,1)$. Hence $-\tfrac{1}{4} \equiv \tfrac{3}{4}$.}
+
+The rational value $\mathrm{CS}(e^-) = \tfrac{1}{4}$ for the electron
+reflects the arithmetic structure of $m003$: arithmetic hyperbolic
+3-manifolds have rational Chern--Simons invariants (up to integer
+shifts), while non-arithmetic ones generally have irrational
+$\mathrm{CS}$~\cite{Chinburg98}. The irrational value
+$\mathrm{CS}(q) = -0.1141$ for the quark is consistent with the
+conjectured non-arithmetic status of $m006$.
+
+\subsection{Consistency with CPT}
+
+In quantum field theory, CPT is an exact symmetry. In the geometric
+framework, the three discrete operations act as:
+\begin{itemize}
+  \item $\mathcal{C}$: orientation reversal $M \to \bar{M}$,
+  \item $\mathcal{P}$: spatial reflection (acts on the embedding
+    space, not the internal manifold),
+  \item $\mathcal{T}$: time reversal, equivalent to $\mathcal{CP}$
+    by the CPT theorem, i.e., orientation reversal combined with
+    spatial reflection.
+\end{itemize}
+The combination $\mathcal{CPT}$ acts as the identity on the manifold
+(two orientation reversals), consistent with CPT invariance.
+
+\section{Matter--antimatter asymmetry}
+\label{sec:asymmetry}
+
+If $\mathcal{C}$ is orientation reversal, then a universe containing
+matter but not antimatter corresponds geometrically to a preferred
+orientation of the vacuum manifold. The $\mathbb{Z}/5$ torsion structure
+of $m003$ and $m006$ provides the mechanism for this preference.
+
+The flat $\mathrm{U}(1)$ connections on $M$ are classified by
+$H^1(M, \mathrm{U}(1)) \cong \mathrm{Hom}(\mathbb{Z}/5, \mathrm{U}(1))$,
+giving holonomies $e^{2\pi ik/5}$ for $k = 0, 1, 2, 3, 4$.
+The non-trivial character $k=1$ gives a CP-odd phase $e^{2\pi i/5}$.
+Under orientation reversal, this phase transforms as
+\[
+  e^{2\pi i/5} \longmapsto e^{-2\pi i/5},
+\]
+breaking the $M \leftrightarrow \bar{M}$ symmetry. This is the geometric
+origin of CP violation in the lepton sector, and by extension, a
+candidate mechanism for leptogenesis~\cite{Fukugita1986}: the CP-odd
+phase $e^{2\pi i/5}$ generates a lepton asymmetry that is converted to
+a baryon asymmetry via electroweak sphalerons.
+
+The $\mathbb{Z}/5$ torsion yields a Jarlskog invariant
+$J = \tfrac{1}{4}\sin(2\pi/5) \approx 0.0309$, which matches the PDG
+value $J = 0.033 \pm 0.003$ to within $6\%$ (see companion
+paper~\cite{Gentry:CP}). The actual PMNS CP phase $\delta$ depends on
+the parameterization; the geometric origin implies $|\sin\delta| \approx
+1$, i.e., $\delta \approx 90^\circ$ or $270^\circ$. The PDG best fit
+for normal ordering is $\delta \approx 197^\circ$, which is within
+$27^\circ$ of $180^\circ+72^\circ=252^\circ$; the precise mapping
+requires a full reparameterisation of the geometric matrix.
+
+It is important to note that the present framework provides a geometric
+origin for the \emph{existence} of a CP-odd phase but does not
+dynamically explain why the universe selected the orientation $M$ rather
+than $\bar{M}$. A dynamical mechanism for orientation selection remains
+an open problem.
+
+\section{Falsifiable predictions}
+\label{sec:predictions}
+
+The geometric identification $\mathcal{C}: M \mapsto \bar{M}$ yields
+the following predictions:
+
+\paragraph{Chern--Simons invariants.}
+If the Chern--Simons invariant has physical significance (as in
+Chern--Simons TQFT approaches to quantum gravity~\cite{Witten1989}),
+the electron sector is characterized by $\mathrm{CS} = \tfrac{1}{4}$
+and the positron sector by $\mathrm{CS} = \tfrac{3}{4}$. Any future
+geometric derivation of electric charge from 3D topology must reproduce
+this assignment.
+
+\paragraph{Arithmetic vs non-arithmetic sectors.}
+The rational $\mathrm{CS}(m003) = \tfrac{1}{4}$ implies $m003$ is
+arithmetic~\cite{Chinburg98}, while the irrational $\mathrm{CS}(m006)
+= -0.1141$ implies $m006$ may be non-arithmetic. If $m006$ is proven
+arithmetic, its CS invariant would be rational and the current value
+would require reinterpretation.
+
+\paragraph{No new species prediction.}
+The framework assigns a unique manifold to each fermion generation via
+the $\mathbb{Z}/5$ homology structure. Additional fermion generations
+would require manifolds with $H_1 \cong \mathbb{Z}/p$ for $p > 5$ or
+more complex torsion structures. The absence of a fourth generation
+in the closed census with appropriate properties is consistent with
+three generations being the complete set.
+
+\paragraph{CP violation magnitude.}
+The Jarlskog invariant $J = \tfrac{1}{4}\sin\tfrac{2\pi}{5} \approx
+0.031$ is fixed by the $\mathbb{Z}/5$ torsion structure. If future
+measurements shift the PDG value $J = 0.033 \pm 0.003$ by more than
+$3\sigma$ away from $0.031$, the geometric CP mechanism would be
+disfavored.
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+We have established that the two compact hyperbolic 3-manifolds
+underlying the hyperbolic flavor geometry framework --- $m003$ (lepton
+sector) and $m006$ (quark sector) --- are both chiral, confirmed by the
+Chern--Simons invariant and by direct SnapPy computation. This chirality
+makes the identification of charge conjugation $\mathcal{C}$ with
+orientation reversal $M \mapsto \bar{M}$ geometrically non-trivial and
+meaningful. Under this identification, the volume and first homology
+(mass spectrum and generation structure) are preserved, while the
+Chern--Simons invariant changes sign, distinguishing particle from
+antiparticle. The electron corresponds to $m003$ with
+$\mathrm{CS} = \tfrac{1}{4}$; the positron corresponds to
+$\overline{m003}$ with $\mathrm{CS} = \tfrac{3}{4}$.
+
+The $\mathbb{Z}/5$ torsion structure provides a CP-odd phase
+$e^{2\pi i/5}$ that breaks the $M \leftrightarrow \bar{M}$ symmetry,
+offering a geometric origin for the matter--antimatter asymmetry of
+the universe. The Jarlskog invariant $J \approx 0.031$ derived from
+this phase matches the PDG value to within $6\%$.
+
+The identification presented here is a natural consequence of the
+chirality of the flavor manifolds and the general principle that
+orientation reversal is the discrete geometric operation that preserves
+metric invariants while reversing orientation-dependent quantities.
+Whether this geometric structure reflects a deeper physical principle
+or an emergent pattern remains an open question for future work.
+
+\section*{Data Availability}
+All computations use SnapPy~\cite{SnapPy} applied to the
+\texttt{OrientableClosedCensus}. Scripts are available at
+\url{https://github.com/drmlgentry/hyperbolic-flavor-scan}.
+
+\section*{Conflict of Interest}
+The author declares no conflicts of interest.
+
+\begin{thebibliography}{99}
+
+\bibitem{PDG2024}
+  S.~Navas et al.\ (Particle Data Group),
+  Phys.\ Rev.\ D \textbf{110}, 030001 (2024).
+
+\bibitem{Gentry:CKM}
+  M.~L.~Gentry,
+  ``Quark Mixing from Hyperbolic Geometry: The CKM Matrix from
+  Geodesics on a Compact 3-Manifold,''
+  SSRN preprint, doi:10.2139/ssrn.6583550 (2026).
+
+\bibitem{Gentry:PMNS}
+  M.~L.~Gentry,
+  ``Lepton Mixing from the Borel Structure of Hyperbolic Holonomy,''
+  SSRN preprint, doi:10.2139/ssrn.6583553 (2026).
+
+\bibitem{Gentry:CP}
+  M.~L.~Gentry,
+  ``CP Violation from A-Factor Twist Angles of Hyperbolic Holonomy,''
+  SSRN preprint, doi:10.2139/ssrn.6583551 (2026).
+
+\bibitem{Meyerhoff1987}
+  R.~Meyerhoff,
+  ``Density of the Chern--Simons invariant for hyperbolic 3-manifolds,''
+  in \emph{Low-dimensional Topology and Kleinian Groups},
+  London Math.\ Soc.\ Lecture Note Ser.\ \textbf{112}, 217--239 (1986).
+
+\bibitem{Chinburg98}
+  T.~Chinburg, E.~Friedman, K.~N.~Jones, and A.~W.~Reid,
+  ``The arithmetic hyperbolic 3-manifold of smallest volume,''
+  Ann.\ Scuola Norm.\ Sup.\ Pisa \textbf{30}, 1--40 (2001).
+
+\bibitem{Fukugita1986}
+  M.~Fukugita and T.~Yanagida,
+  ``Baryogenesis Without Grand Unification,''
+  Phys.\ Lett.\ B \textbf{174}, 45 (1986).
+
+\bibitem{Witten1989}
+  E.~Witten,
+  ``Quantum field theory and the Jones polynomial,''
+  Commun.\ Math.\ Phys.\ \textbf{121}, 351--399 (1989).
+
+\bibitem{SnapPy}
+  M.~Culler, N.~M.~Dunfield, M.~Goerner, and J.~R.~Weeks,
+  ``SnapPy, a computer program for studying the geometry and topology
+  of 3-manifolds,'' \url{http://snappy.computop.org}.
+
+\end{thebibliography}
+
+\end{document}

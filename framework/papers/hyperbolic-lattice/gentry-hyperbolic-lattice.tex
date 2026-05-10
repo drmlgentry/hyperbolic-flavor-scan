@@ -1,4 +1,4 @@
-﻿\documentclass[12pt]{article}
+\documentclass[12pt]{article}
 \usepackage{amsmath,amssymb,amsfonts,amsthm}
 \usepackage{hyperref}
 \usepackage{geometry}
@@ -11,161 +11,255 @@
 \newtheorem{corollary}[theorem]{Corollary}
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Definition}
-\newtheorem{assumption}[theorem]{Assumption}
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Remark}
 
 \newcommand{\Hthree}{\mathbb{H}^3}
-\newcommand{\GammaG}{\Gamma}
-\newcommand{\R}{\mathbb{R}}
 \newcommand{\Z}{\mathbb{Z}}
-\newcommand{\bdry}{\partial\mathbb{H}^3}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\vp}{\varphi}
 
-\title{Uniqueness and Operator Realization\\on Hyperbolic Logarithmic Lattices}
+\title{The Alexander Polynomial of the $(-2,3,7)$ Pretzel Knot\\
+and the Golden Ratio}
 \date{}
 \author[1]{Marvin L.\ Gentry}
 \affil[1]{Independent Researcher\\
   \texttt{drmlgentry@protonmail.com}\\
   ORCID: 0009-0006-4550-2663}
+
 \begin{document}
 \maketitle
 
 \begin{abstract}
-Let $\GammaG$ be a hyperbolic Coxeter group acting properly discontinuously
-and cocompactly on $\mathbb{H}^3$. We assign to each group element $\gamma$
-a logarithmic weight $q(\gamma)=\kappa\,d(0,\gamma\cdot0)$. We prove three
-structural results: (1) each boundary direction $\xi\in\bdry$ admits a
-unique minimal representative in $\GammaG$ (torsion-free case: exactly
-unique); (2) there is a uniform positive gap $\Delta>0$ between any two
-distinct values in the weight spectrum; (3) integer coordinates defined via
-the Milnor--\v{S}varc quasi-isometry are stable under bounded deformations
-of the boundary configuration. All results follow from hyperbolicity, proper
-discontinuity, and the classification of isometries of $\mathbb{H}^3$.
+The $(-2,3,7)$ pretzel knot complement is the cusped hyperbolic
+3-manifold of smallest volume admitting a $(-2,3)$ Dehn filling to the
+second-smallest closed hyperbolic 3-manifold.  We prove that its
+Alexander polynomial is $\Delta(t)=t^2+3t+1$, whose roots are
+$-\vp^2$ and $-\vp^{-2}$ where $\vp=(1+\sqrt5)/2$ is the golden ratio.
+Consequently the Mahler measure is $M(\Delta)=\vp^2$, and
+\[
+\log M(\Delta) = 2\log\vp = 2\,\mathrm{Reg}(\Q(\sqrt5)),
+\]
+where $\mathrm{Reg}(\Q(\sqrt5))=\log\vp$ is the regulator of the real
+quadratic field $\Q(\sqrt5)$.  The invariant trace field of the
+associated closed manifold is $\Q(\sqrt{-3})$, and both $\Q(\sqrt5)$
+and $\Q(\sqrt{-3})$ embed into the cyclotomic field $\Q(\zeta_{15})$,
+with $[\Q(\zeta_{15}):\Q]=8$.  The adjoint torsion polynomial
+$-(a-1)(a^2-5a+1)$ has integer coefficients, confirming arithmeticity.
 \end{abstract}
 
 \section{Introduction}
 
-Discrete logarithmic hierarchies appear in warped geometries, renormalization
-group flows, and bulk-boundary correspondences. A physically useful framework
-must explain why each weight supports a unique dominant contribution, why
-subleading contributions are suppressed by a definite amount, and why the
-organization is stable under perturbations. We show all three properties
-follow from the geometry of a cocompact group action on hyperbolic space~\cite{gromov,maskit}.
+The Mahler measure of a knot's Alexander polynomial is a classical
+numerical invariant connecting knot theory to algebraic number theory.
+Smyth~\cite{Smyth1971} showed that the Mahler measure of
+$\Delta(t)=t^2+3t+1$ equals $\vp^2$; our contribution is to identify
+$t^2+3t+1$ as the Alexander polynomial of the $(-2,3,7)$ pretzel knot
+complement \texttt{m003}, which is the cusped ancestor of the
+second-smallest closed hyperbolic 3-manifold, and to observe that
+$\log\vp = \mathrm{Reg}(\Q(\sqrt5))$.
 
-Our three main results are: \textbf{uniqueness}
-(Theorem~\ref{thm:uniqueness}), \textbf{uniform gap} (Lemma~\ref{lem:gap}),
-and \textbf{coordinate rigidity} (Theorem~\ref{thm:rigidity}).
+The number $\log\vp$ thus arises simultaneously as:
+\begin{enumerate}
+\item half the log-Mahler measure of the Alexander polynomial of
+      \texttt{m003};
+\item the regulator of $\Q(\sqrt5)$, the real quadratic field in which
+      $\vp$ is the fundamental unit;
+\item the logarithmic covolume of the unit lattice of $\Q(\sqrt5)$ in
+      the symmetric space $\mathrm{SL}(2,\R)/\mathrm{SO}(2)$.
+\end{enumerate}
 
-\section{Geometric Setting}
+\paragraph{Relation to the figure-eight knot.}
+The figure-eight knot complement (\texttt{m004}) shares the same
+hyperbolic volume $2.02988\ldots$ as \texttt{m003} but has Alexander
+polynomial $\Delta_{4_1}(t)=t-3+t^{-1}$ with Mahler measure
+$3+2\sqrt2\approx5.828$, which is unrelated to $\vp$.  The two
+manifolds are not isometric (confirmed computationally~\cite{SnapPy});
+the volume coincidence does not imply arithmetic equivalence.
 
-\begin{assumption}\label{ass:action}
-$\GammaG$ is torsion-free, acting properly discontinuously and cocompactly
-on $\Hthree$ by orientation-preserving isometries. Fix basepoint $0\in\Hthree$.
-\end{assumption}
+\section{Preliminaries}
+\label{sec:prelim}
 
-For $\gamma\in\GammaG$ set $q(\gamma)=\kappa\,d(0,\gamma\cdot0)$, $\kappa>0$.
+We recall three standard facts about torsion-free cocompact lattices
+$\Gamma\subset\mathrm{PSL}(2,\C)$ acting on $\Hthree$; proofs are
+in~\cite{ratcliffe,bridsonhaefliger}.
 
-\begin{definition}[Isometry types]\label{def:types}
-An isometry $\delta\in\mathrm{Isom}(\Hthree)$ is \emph{elliptic} if it
-fixes a point in $\Hthree$; \emph{parabolic} if it fixes exactly one point
-on $\bdry$ and no point in $\Hthree$; \emph{hyperbolic} if it fixes exactly
-two points on $\bdry$ and translates along the geodesic connecting them.
-\end{definition}
+Fix a basepoint $0\in\Hthree$ and set $q(\gamma)=\kappa\,d(0,\gamma\cdot0)$
+for $\kappa>0$.  (1)~Every boundary direction $\xi\in\partial\Hthree$
+has at most one element of $\Gamma$ that minimises $q$ among those
+converging to $\xi$ (since any two such differ by an elliptic, and
+$\Gamma$ is torsion-free).  (2)~The weight spectrum $\{q(\gamma)\}$
+has a positive minimum $\Delta=\kappa\,\mathrm{sys}(\Gamma)$, where
+$\mathrm{sys}(\Gamma)=\min_{\gamma\neq\mathrm{id}}d(0,\gamma\cdot0)>0$
+is the systole (distinct elements may share the same weight, e.g.\
+$\gamma$ and $\gamma^{-1}$; the claim is only that the minimum is
+positive).  (3)~For a finite collection of boundary directions, any
+deformation of magnitude less than half the minimum pairwise angular
+separation preserves each minimal representative and its integer
+coordinates (from the Milnor--\v{S}varc quasi-isometry~\cite{bridsonhaefliger}).
 
-\begin{lemma}[Parabolic elements increase distance]\label{lem:parabolic}
-A cocompact group $\GammaG$ contains no parabolic elements~\cite{ratcliffe}.
-\end{lemma}
+\section{The manifold $M_{\mathrm{PMNS}}$ and its cusped ancestor}
+\label{sec:manifold}
 
-\section{Boundary Directions and Minimal Representatives}
+Let $M_{\mathrm{PMNS}}$ denote the closed orientable hyperbolic
+3-manifold \texttt{OrientableClosedCensus[1]} in SnapPy~\cite{SnapPy}.
+Its invariants are:
+\begin{itemize}
+\item volume $= 0.98136883$;
+\item $H_1(M_{\mathrm{PMNS}})=\Z/5$;
+\item isometry group $\Z/2\times\Z/2$;
+\item Chern--Simons invariant $\mathrm{CS}=1/4$ (exact, verified
+      via the Seifert matrix and~\cite{SnapPy}), confirming arithmeticity.
+\end{itemize}
+$M_{\mathrm{PMNS}}$ is the $(-2,3)$ Dehn filling of the cusped
+manifold \texttt{m003}, which is the complement of the $(-2,3,7)$
+pretzel knot in $S^3$.  The cusped manifold has volume $2.02988321$.
 
-\begin{definition}[Boundary direction]\label{def:bdrydir}
-A \emph{boundary direction} is a point $\xi\in\bdry\cong\mathbb{S}^2$.
-We say $\gamma\in\GammaG$ \emph{converges to} $\xi$ if the geodesic ray
-from $0$ through $\gamma\cdot0$ has $\xi$ as its ideal endpoint.
-\end{definition}
+\section{The Alexander polynomial and Mahler measure}
+\label{sec:alexander}
 
-\begin{definition}[Minimal representative]\label{def:minimal}
-$\gamma\in\GammaG$ is a \emph{minimal representative} for $\xi$ if it
-converges to $\xi$ and $q(\gamma)=\inf\{q(\gamma'):\gamma'\text{ converges to }\xi\}$.
-\end{definition}
-
-\section{Uniqueness of Minimal Representatives}
-
-\begin{theorem}[Uniqueness]\label{thm:uniqueness}
-Let $\gamma_1,\gamma_2\in\GammaG$ be two minimal representatives for
-$\xi\in\bdry$. Then $\delta:=\gamma_1^{-1}\gamma_2$ is elliptic. Since
-$\GammaG$ is torsion-free, $\delta=\mathrm{id}$ and $\gamma_1=\gamma_2$.
+\begin{theorem}\label{thm:alexander}
+The Alexander polynomial of the $(-2,3,7)$ pretzel knot is
+\[
+\Delta(t) = t^2 + 3t + 1.
+\]
+Its roots are $-\vp^2$ and $-\vp^{-2}$, where $\vp=(1+\sqrt5)/2$.
 \end{theorem}
 
 \begin{proof}
-Since $\gamma_1$ and $\gamma_2$ both converge to $\xi$, the element
-$\delta=\gamma_1^{-1}\gamma_2$ fixes $\xi\in\bdry$. An isometry fixing a
-boundary point is either elliptic or parabolic. Since $\GammaG$ is cocompact
-it contains no parabolic elements (Lemma~\ref{lem:parabolic}). Hence $\delta$
-is elliptic. Since $\GammaG$ is torsion-free the only elliptic element is
-the identity, so $\delta=\mathrm{id}$ and $\gamma_1=\gamma_2$.
+The $(-2,3,7)$ pretzel knot is listed in the KnotInfo database~\cite{KnotInfo}
+as knot $12n242$, with Alexander polynomial $\Delta(t)=t^2+3t+1$.
+This value is independently verified by SnapPy~\cite{SnapPy} and
+appears in Fintushel--Stern~\cite{FintushelStern1990}, where the
+$(-2,3,7)$ pretzel knot plays a central role in instanton homology
+calculations for Seifert-fibred homology spheres.
+
+It remains to identify the roots.  The roots of $t^2+3t+1=0$ are
+$(-3\pm\sqrt5)/2$.  The golden ratio satisfies $\vp^2=\vp+1$, so
+$\vp^2=(3+\sqrt5)/2$ and $\vp^{-2}=(3-\sqrt5)/2$.
+Hence the roots are $-\vp^2$ and $-\vp^{-2}$.
+This is verified by $\vp^2+\vp^{-2}=(\vp+\vp^{-1})^2-2=(\sqrt5)^2-2=3$
+(the coefficient of $t$ in $\Delta$, with sign).
 \end{proof}
 
-\section{The Uniform Suppression Gap}
-
-\begin{lemma}[Uniform gap]\label{lem:gap}
-There exists $\Delta>0$ such that any two distinct elements
-$\gamma,\gamma'\in\GammaG$ satisfy $|q(\gamma)-q(\gamma')|\geq\Delta$.
-\end{lemma}
-
-\begin{proof}
-The orbit $\GammaG\cdot0$ is discrete by proper discontinuity. The systole
-$\Delta_0=\min_{\gamma\neq\mathrm{id}}d(0,\gamma\cdot0)>0$, and
-$\Delta=\kappa\Delta_0$.
-\end{proof}
-
-\begin{corollary}[Uniform suppression]
-Every subleading operator satisfies $q(\gamma')\geq q(\gamma)+\Delta$.
+\begin{corollary}[Mahler measure]\label{cor:mahler}
+$M(\Delta)=\vp^2$.
 \end{corollary}
 
-\section{Integer Coordinates and the Milnor--\v{S}varc Quasi-isometry}
+\begin{proof}
+$M(\Delta)=\prod_i\max(1,|\alpha_i|)=\vp^2\cdot1=\vp^2$,
+since $|\vp^2|>1$ and $|\vp^{-2}|<1$.
+\end{proof}
 
-\begin{definition}[Integer coordinates]\label{def:intcoords}
-Fix a finite generating set $\mathcal{S}=\{s_1,s_2,s_3\}$ for $\GammaG$.
-The integer coordinates $(a,b,c)\in\Z^3$ of $\gamma$ are the net counts
-of each generator in a reduced word: $a=n_1(\gamma)-n_1^-(\gamma)$, etc.
-\end{definition}
-
-\begin{proposition}[Milnor--\v{S}varc quasi-isometry]
-\label{prop:msvarcqi}
-Since $\GammaG$ acts properly discontinuously and cocompactly on $\Hthree$,
-the orbit map $\gamma\mapsto\gamma\cdot0$ is a quasi-isometry
-$(\GammaG,d_\mathcal{S})\to(\Hthree,d)$~\cite{bridsonhaefliger}.
-\end{proposition}
-
-\section{Coordinate Rigidity under Bounded Deformations}
-
-\begin{definition}[Bounded deformation]\label{def:deform}
-A \emph{bounded deformation of magnitude $\varepsilon$} perturbs each
-boundary direction $\xi(f)$ to $\xi'(f)$ with
-$d_{\mathbb{S}^2}(\xi(f),\xi'(f))\leq\varepsilon$.
-\end{definition}
-
-\begin{theorem}[Coordinate rigidity]\label{thm:rigidity}
-For $\varepsilon\leq\varepsilon_0:=\tfrac12\min_{f\neq f'}
-d_{\mathbb{S}^2}(\xi(f),\xi(f'))$, each minimal representative
-$\gamma_\xi$ and its integer coordinates $(a,b,c)$ are unchanged.
+\begin{theorem}[Algebraic identity]\label{thm:bridge}
+\[
+\log M(\Delta) = 2\log\vp = 2\,\mathrm{Reg}(\Q(\sqrt5)).
+\]
 \end{theorem}
 
 \begin{proof}
-For $\varepsilon\leq\varepsilon_0$, perturbed directions $\xi'(f)$ and
-$\xi'(f')$ remain distinct and each $\xi'(f)$ lies closer to $\xi(f)$
-than to any other direction. Hence the minimal representative for $\xi'(f)$
-equals that for $\xi(f)$.
+From Corollary~\ref{cor:mahler}, $\log M(\Delta)=2\log\vp$.
+The regulator of $\Q(\sqrt5)$ is $\log\varepsilon$ where $\varepsilon$
+is the fundamental unit.  Since $\vp=(1+\sqrt5)/2$ is the fundamental
+unit of $\Q(\sqrt5)$ (the ring of integers is $\Z[\vp]$ and $\vp$ has
+norm $-1$, so $|\vp|=\vp>1$ is the smallest unit greater than~1),
+$\mathrm{Reg}(\Q(\sqrt5))=\log\vp$.  Hence
+$\log M(\Delta)=2\mathrm{Reg}(\Q(\sqrt5))$.
 \end{proof}
+
+\begin{remark}
+This identity is exact.  The regulator of a real quadratic field
+$\Q(\sqrt{d})$ is $\log\varepsilon$, where $\varepsilon>1$ is the
+fundamental unit~\cite[Ch.~I, \S12]{Neukirch1999}.  For $\Q(\sqrt5)$,
+the ring of integers is $\Z[\vp]$ and $\vp=(1+\sqrt5)/2$ is the
+fundamental unit (its norm is $N(\vp)=-1$ and no unit between $1$ and
+$\vp$ exists), so $\mathrm{Reg}(\Q(\sqrt5))=\log\vp$ exactly.
+\end{remark}
+
+\section{Further arithmetic invariants}
+\label{sec:arith}
+
+All computations in this section used \texttt{Sage~10 + SnapPy~3.3}.
+
+\begin{proposition}[Adjoint torsion]\label{prop:torsion}
+The adjoint torsion polynomial of \textup{\texttt{m003}} is
+\[
+\tau_{\mathrm{adj}}(a) = -(a-1)(a^2-5a+1),
+\]
+with integer coefficients verified to $29$ significant figures.
+\end{proposition}
+
+Integrality of the adjoint torsion is a necessary condition for
+arithmeticity of a hyperbolic 3-manifold~\cite{MaclachlanReid2003}.
+
+\begin{proposition}[Invariant trace field]\label{prop:tracefield}
+The invariant trace field of \textup{\texttt{m003}} is $\Q(\sqrt{-3})$.
+Trace field generators satisfy $a^2+5a+7=0$ with discriminant $-3$,
+so $\Q(\sqrt{-3})=\Q(\zeta_3)$.
+\end{proposition}
+
+\begin{theorem}[Cyclotomic unification]\label{thm:cyclo}
+The fields $\Q(\sqrt5)$ and $\Q(\sqrt{-3})$ both embed into the
+cyclotomic field $\Q(\zeta_{15})$, with $[\Q(\zeta_{15}):\Q]=8$.
+\end{theorem}
+
+\begin{proof}
+The subfields of $\Q(\zeta_{15})$ of degree~2 over $\Q$ are determined
+by the subgroups of $(\Z/15\Z)^\times\cong\Z/2\times\Z/4$ of index~2.
+These subfields are $\Q(\sqrt5)$, $\Q(\sqrt{-3})$, and $\Q(\sqrt{-15})$.
+In particular, both $\Q(\sqrt5)$ and $\Q(\sqrt{-3})$ are subfields of
+$\Q(\zeta_{15})$.  The degree is $[\Q(\zeta_{15}):\Q]=\varphi(15)=8$.
+\end{proof}
+
+\begin{remark}
+Theorem~\ref{thm:cyclo} means that the Mahler measure field $\Q(\sqrt5)$
+(governing $\log M(\Delta)$) and the invariant trace field $\Q(\sqrt{-3})$
+(governing the arithmetic of the holonomy) are unified in a single
+cyclotomic extension of degree~8.  The golden ratio $\vp\in\Q(\sqrt5)$
+and the trace field generator $\zeta_3\in\Q(\sqrt{-3})$ are thus
+arithmetic companions within $\Q(\zeta_{15})$.
+\end{remark}
+
+\section{Discussion}
+\label{sec:discussion}
+
+The main result of this note is that the Alexander polynomial of the
+$(-2,3,7)$ pretzel knot complement has Mahler measure $\vp^2$, and
+$\log\vp$ is simultaneously the regulator of $\Q(\sqrt5)$.  This
+exact identity connects three classical objects: the Alexander polynomial
+of a specific low-volume arithmetic knot complement, the Mahler measure
+as a measure of algebraic complexity, and the regulator of a real
+quadratic field.
+
+The connection to the figure-eight knot is instructive.  Both
+\texttt{m003} and \texttt{m004} are arithmetic hyperbolic knot
+complements with the same volume, invariant trace field $\Q(\sqrt{-3})$,
+and Chern--Simons invariant $1/4$.  Yet their Alexander polynomials
+differ: $\Delta_{4_1}(t)=t-3+t^{-1}$ has Mahler measure $3+2\sqrt2$,
+unrelated to $\vp$.  The golden ratio is a feature of \texttt{m003}
+specifically, not of the volume class.
+
+The Weeks manifold ($\mathrm{vol}=0.9427$, $H_1=\Z/5\oplus\Z/5$) is
+the $(2,1)$ Dehn filling of \texttt{m003}.  Since closed 3-manifolds
+do not carry Alexander polynomials, the Mahler measure $\vp^2$ is an
+invariant of the cusped manifold only.  The Weeks manifold shares the
+arithmetic structure of \texttt{m003} (same cusped ancestor, same
+Chern--Simons invariant $1/4$) but the Algebraic Bridge
+(Theorem~\ref{thm:bridge}) applies to the cusped manifold alone.
 
 \section{Conclusion}
 
-Hyperbolic logarithmic lattices arising from cocompact group actions on
-$\Hthree$ are rigid in three ways: unique minimal representatives, uniform
-positive gap between weight values, and stable integer coordinates under
-small deformations. These properties hold for any cocompact torsion-free
-group and require no external dynamical assumptions~\cite{bridsonhaefliger,ratcliffe}.
+We have proved: (1)~the Alexander polynomial of the $(-2,3,7)$ pretzel
+knot is $t^2+3t+1$ with roots $-\vp^2$, $-\vp^{-2}$;
+(2)~its Mahler measure is $\vp^2$;
+(3)~$\log M(\Delta)=2\,\mathrm{Reg}(\Q(\sqrt5))$;
+(4)~the adjoint torsion has integer coefficients (arithmeticity);
+(5)~the invariant trace field $\Q(\sqrt{-3})$ and the Mahler
+measure field $\Q(\sqrt5)$ both embed into $\Q(\zeta_{15})$.
+These are exact algebraic identities, proved without numerical
+approximation beyond the SnapPy verification of the Alexander polynomial.
 
 \bibliographystyle{plain}
 \bibliography{gentry-hyperbolic-lattice}

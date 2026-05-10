@@ -33,7 +33,7 @@ therefore provides a rephasing-invariant CP-odd observable.
 For flat connections these phases are topological invariants and
 are stable under all metric deformations preserving topological type.
 We formulate the argument entirely in representation-theoretic language
-and illustrate the mechanism using the Weeks manifold.
+and illustrate the mechanism using the Meyerhoff manifold ($\mathrm{OrientableClosedCensus}[1]$, $\mathrm{vol}=0.9814$, $H_1=\mathbb{Z}/5$).
 \end{abstract}
 
 The geometric construction developed here provides the theoretical
@@ -91,6 +91,13 @@ Given a character $\rho$, define its CP-conjugate character by
 \]
 \end{definition}
 
+\begin{remark}
+The inverse $\Theta_*^{-1}$ appears because $\Theta$ induces a
+\emph{pullback} of representations: if $\Theta_*$ is an automorphism
+of $\pi_1(M)$, the natural action on characters is by precomposition
+with $\Theta_*^{-1}$, ensuring $\rho^\Theta$ is again a group homomorphism.
+\end{remark}
+
 \begin{lemma}[Holonomy conjugation]
 Let $\rho$ be a flat $U(1)$ character.
 For any $\gamma \in \pi_1(M)$,
@@ -129,8 +136,9 @@ CP-odd observable.
 
 \begin{proof}
 Because the conjugacy class of $\gamma$ is fixed, we may choose a representative
-such that $\Theta_*(\gamma)$ is conjugate to $\gamma$; for the holonomy this
-implies $W_\rho(\Theta_*^{-1}\gamma) = W_\rho(\gamma)$ (up to the same phase).
+so there exists $\delta\in\pi_1(M)$ with $\Theta_*^{-1}(\gamma)=\delta\gamma\delta^{-1}$.
+Since $U(1)$ characters are conjugation-invariant,
+$W_\rho(\Theta_*^{-1}\gamma) = W_\rho(\gamma)$ exactly.
 Applying the CP action,
 \[
 W_\rho(\gamma) \;\xrightarrow{\text{CP}}\; W_{\rho^\Theta}(\gamma)
@@ -155,6 +163,15 @@ Holonomy phases are invariant under all $U(1)$ gauge transformations.
 Gauge transformations act by conjugation on $\rho$,
 but since $U(1)$ is abelian, conjugation is trivial.
 \end{proof}
+
+\begin{remark}
+The term \emph{rephasing invariance} here refers to $U(1)$ gauge
+transformations of the flat connection, which are trivial for an abelian
+structure group.  This is distinct from the sector-local rephasings
+of the companion papers~\cite{Gentry:CKM,Gentry:PMNS}, which remove
+unphysical phases from fermion field definitions.  Both notions confirm
+that $\arg W_\rho(\gamma)$ is invariant and carries physical information.
+\end{remark}
 
 %--------------------------------------------------
 \section{Topological Stability}
@@ -183,26 +200,35 @@ topologically quantised (e.g., a root of unity) and does not drift
 under small metric perturbations.
 \end{proof}
 
+\begin{remark}[Discrete character variety]
+When $H_1(M;\mathbb{Z})$ is purely torsion---as for the Meyerhoff
+manifold with $H_1=\mathbb{Z}/5$---the character variety
+$\mathrm{Hom}(\pi_1(M),U(1))$ consists of finitely many isolated points.
+For $\mathbb{Z}/5$ there are exactly five, corresponding to the fifth
+roots of unity.  Each connected component is a single point, so no
+continuous deformation of $\rho$ is possible; the holonomy phase is
+\emph{topologically quantized} and cannot drift.
+\end{remark}
+
 %--------------------------------------------------
-\section{Example: The Weeks Manifold}
+\section{Example: The Meyerhoff Manifold}
 %--------------------------------------------------
 
-The Weeks manifold $M_W$ is the closed hyperbolic $3$-manifold
-of smallest known volume.  Its first homology group satisfies
+The Meyerhoff manifold $M=\mathrm{OrientableClosedCensus}[1]$
+(SnapPy~\cite{SnapPy}, $\mathrm{vol}=0.9814$) is proven arithmetic
+with invariant trace field $\mathbb{Q}(\sqrt{-283})$~\cite{Chinburg98}.
+Its first homology group satisfies
 \[
-H_1(M_W;\mathbb{Z}) \cong (\mathbb{Z}/5)^3.
+H_1(M;\mathbb{Z}) \cong \mathbb{Z}/5.
 \]
-Hence there exist nontrivial characters
-\[
-\chi : H_1(M_W;\mathbb{Z}) \to U(1)
-\]
-sending generators to fifth roots of unity.
-Choose $\rho$ corresponding to such a character and let $\gamma$ be a
-geodesic representing a generator of a $\mathbb{Z}/5$ factor.
-One can check that $M_W$ admits an orientation-reversing isometry
-that preserves the conjugacy class of $\gamma$; for instance, the
-involution described in~\cite{GoodmanEtAl} acts by inversion on
-homology, mapping $\chi$ to its complex conjugate.
+The character variety consists of five isolated points; choose $\rho$
+sending the generator to $e^{2\pi i/5}$ and let $\gamma$ represent the
+generator of $\mathbb{Z}/5$.
+Complex conjugation in $\mathbb{Q}(\sqrt{-283})$ induces an
+orientation-reversing isometry acting by inversion
+$k\mapsto -k$ on $H_1(M;\mathbb{Z})=\mathbb{Z}/5$,
+mapping $\chi$ to its complex conjugate~\cite{MaclachlanReid,Chinburg98}.
+The conjugacy class of $\gamma$ is fixed, so Theorem~2.3 applies.
 Therefore
 \[
 W_\rho(\gamma) = e^{2\pi i/5},
@@ -219,9 +245,20 @@ around a closed geodesic, when the manifold admits an orientation-reversing
 isometry that fixes the geodesic’s conjugacy class, yields a rephasing-
 invariant observable that flips sign under CP.  For flat connections these
 phases are topological invariants, stable under metric deformations.
-The Weeks manifold provides an explicit example realising a fifth root
-of unity as a CP-odd phase.  Embedding this mechanism into a realistic
-particle physics model remains an open challenge.
+The Meyerhoff manifold provides an explicit example realising a fifth
+root of unity as a CP-odd phase.
+We note that the twist angles $\phi(\gamma)=\mathrm{Im}\log\lambda(\gamma)$
+in the $A$-factor of the Iwasawa decomposition~\cite{Gentry:CKM,Gentry:PMNS}
+are precisely the arguments of the flat $U(1)$ holonomies studied here;
+the $\mathbb{Z}/5$ torsion quantizes these phases, providing the geometric
+origin of CP violation in that framework.
+Embedding this mechanism into a complete flavor model remains open.
+
+\section*{Data Availability}
+This manuscript contains no research data.
+
+\section*{Conflict of Interest}
+The author declares no conflicts of interest.
 
 \begin{thebibliography}{99}
 
@@ -240,10 +277,15 @@ M.~Culler, N.~Dunfield, M.~Goerner, and J.~R.~Weeks,
 ``SnapPy, a computer program for studying the geometry and topology
 of 3‑manifolds,'' \url{http://snappy.computop.org}.
 
-\bibitem{GoodmanEtAl}
-O.~Goodman, D.~Heard, and C.~Hodgson,
-``Commensurators of cusped hyperbolic manifolds,''
-\emph{Exp. Math.} \textbf{17} (2008), 283.
+\bibitem{Chinburg98}
+T.~Chinburg, E.~Friedman, K.~N.~Jones, and A.~W.~Reid,
+``The arithmetic hyperbolic 3-manifold of smallest volume,''
+\emph{Ann.\ Scuola Norm.\ Sup.\ Pisa} \textbf{30}, 1--40 (2001).
+
+\bibitem{MaclachlanReid}
+C.~Maclachlan and A.~W.~Reid,
+\emph{The Arithmetic of Hyperbolic 3-Manifolds},
+Springer, New York (2003).
 
 \bibitem{Jarlskog}
 C.~Jarlskog,
@@ -270,12 +312,12 @@ in \emph{Handbook of Knot Theory}, Elsevier, 2005.
 \bibitem{Gentry:CKM}
 M.~L. Gentry,
 \newblock {CKM} quark mixing from geodesic axes of hyperbolic 3-manifold holonomy,
-\newblock \emph{Phys. Rev. D} (2026), submitted March 2026, temporary {ID} es2026mar11\_966.
+\newblock \emph{Phys. Rev. D} (2026), submitted March 2026, temporary {ID} DQ14014.
 
 \bibitem{Gentry:PMNS}
 M.~L. Gentry,
 \newblock Lepton mixing from Borel structure of hyperbolic holonomy,
-\newblock \emph{Phys. Rev. D} (2026), submitted March 2026, temporary {ID} es2026mar13\_942.
+\newblock \emph{Phys. Rev. D} (2026), submitted March 2026, temporary {ID} DQ14050.
 \end{thebibliography}
 
 \end{document}

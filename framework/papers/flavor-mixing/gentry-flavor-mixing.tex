@@ -44,7 +44,7 @@ we prove that the resulting mixing matrices are uniquely determined,
 up to sector-local rephasings, by the underlying boundary configuration.
 Our main result (Theorem~\ref{thm:discrete-classes}) establishes that the
 set of admissible mixing matrices is discrete in $\U(n)$ modulo
-$\U(1)^{2n}$, and that no continuous deformation of parameters can
+$\U(1)^n\times\U(1)^n$, and that no continuous deformation of parameters can
 produce continuous drift in any rephasing-invariant mixing observable.
 Rephasing-invariant quantities depend only on the discrete boundary data
 and are stable under bounded deformations preserving the assignment rule.
@@ -126,10 +126,25 @@ Each fermion flavor $f\in F$ is assigned a unique boundary direction
 $\xi(f)\in\Sphere$ by a deterministic, discrete selection rule:
 the image $\Xi=\{\xi(f):f\in F\}$ is finite, and the assignment is
 locally rigid.
-A concrete realization uses the ideal endpoint of the geodesic ray to
-the minimal representative $\gamma_f\cdot o$; uniqueness and rigidity
-follow from~\cite{bridsonhaefliger}.
 \end{assumption}
+
+\begin{remark}[Geometric realization of the assignment]
+A concrete realization is as follows.
+Fix a basepoint $o\in\Hthree$.
+For each fermion $f$, let $\gamma_f\in\GammaG$ be the unique
+minimal representative, i.e.\ the element minimizing
+$d(o,\gamma\cdot o)$ among all $\gamma$ in the assignment class of~$f$.
+(Uniqueness follows from the torsion-free cocompact action:
+proper discontinuity implies the orbit $\GammaG\cdot o$ is discrete,
+so for any class of elements the infimum $\inf_\gamma d(o,\gamma\cdot o)$
+is realized; torsion-freeness then forces the minimizer to be unique.
+See~\cite{Gentry:lattice} for the detailed proof in this setting.)
+The boundary direction $\xi(f)$ is then the ideal endpoint of the
+geodesic ray from $o$ through $\gamma_f\cdot o$.
+The orbit $\GammaG\cdot o$ is discrete by proper discontinuity,
+so the set of ideal endpoints is discrete in $\Sphere$;
+this gives local rigidity of the assignment.
+\end{remark}
 
 %--------------------------------------------------
 \section{Boundary Hilbert Space and Localized States}
@@ -143,12 +158,24 @@ admitting a continuous family of normalized vectors $\ket{\xi}$ suffices.
 \begin{definition}[Boundary-localized state]\label{def:localized}
 For each $\xi\in\Sphere$, fix a normalized vector $\ket{\xi}\in\calH$
 such that the map $\xi\mapsto\ket{\xi}$ is continuous and
-$\braket{\xi|\zeta}=1$ if and only if $\xi=\zeta$.
+$\braket{\xi|\xi}=1$ and $|\braket{\xi|\zeta}|<1$ for $\xi\neq\zeta$.
 \end{definition}
 
 The continuity condition ensures that nearby boundary directions give
 nearly parallel states; the normalization condition implies that distinct
 directions produce linearly independent vectors.
+
+\begin{remark}[Poisson kernel realization]
+An explicit family satisfying Definition~\ref{def:localized} can be
+constructed using the Poisson kernel for $\Hthree$.
+For $\xi\in\Sphere$ and a basepoint $o\in\Hthree$, set
+$\ket{\xi}$ to be the $L^2(\Sphere)$ function proportional to the
+Poisson kernel $P(\cdot,\xi)$, normalized in $L^2(\Sphere)$.
+The resulting family is continuous in $\xi$, satisfies
+$\braket{\xi|\xi}=1$, and $|\braket{\xi|\zeta}|<1$ for $\xi\neq\zeta$~\cite{ratcliffe}.
+In particular, distinct boundary directions produce linearly independent
+vectors, which is the property required by Definition~\ref{def:localized}.
+\end{remark}
 
 %--------------------------------------------------
 \section{Sector Subspaces and Preferred Bases}
@@ -177,9 +204,16 @@ in the fixed sector ordering, with all pivot coefficients real and positive.
 The resulting basis is denoted $\{\ket{S,1},\ldots,\ket{S,n}\}$.
 \end{definition}
 
-The preferred basis depends on the sector ordering, but different orderings
-yield unitarily equivalent mixing matrices up to permutations, which can
-be absorbed into the rephasing freedom.
+The choice of real positive pivot coefficients in the Gram--Schmidt process
+removes the $\U(1)^n$ phase ambiguity in the definition of the preferred
+basis: every other ONB of $\calHS$ differs from the preferred one by a
+diagonal phase matrix $D_S\in\U(1)^n$.
+This phase freedom is precisely the sector-local rephasing freedom
+reintroduced in Section~\ref{sec:rephasing} when comparing with physical
+observables.
+The preferred basis also depends on the sector ordering, but different
+orderings yield unitarily equivalent mixing matrices up to permutations,
+which can be absorbed into the rephasing freedom.
 
 %--------------------------------------------------
 \section{Mixing Matrices as Overlap Operators}
@@ -252,6 +286,10 @@ The following are invariant under sector-local rephasings:
 
 The quantities in (ii) generalize the Jarlskog invariant~\cite{Jarlskog}
 to the present geometric setting.
+For $n=3$ and the standard CKM or PMNS convention, the imaginary part
+$\mathrm{Im}(J_{ji,j'i'})$ for any valid quartet $(i,j,i',j')$ reduces
+to the standard Jarlskog invariant $J_{\rm CP}$~\cite{Jarlskog},
+which is basis-independent and rephasing-invariant by construction.
 
 %--------------------------------------------------
 \section{Stability and Discreteness of Mixing Classes}
@@ -274,18 +312,31 @@ bases and the same mixing matrix $U_{ST}$.
 \end{theorem}
 
 \begin{proof}
+Here $d_{\Sphere}$ denotes the round metric on $\Sphere=\partial\Hthree$,
+and the assignment is the labeling $f\mapsto\xi(f)$ given by
+Definition~\ref{def:bdrydir} and Assumption~\ref{ass:discrete}.
 For $\varepsilon\leq\varepsilon_0$, each perturbed point $\xi'(f)$ remains
-closer to $\xi(f)$ than to any other $\xi(g)$ with $g\neq f$.
-In particular, the $\xi'(f)$ remain distinct, so linear independence is
-preserved.  Since Gram--Schmidt coefficients depend continuously on inner
-products, and since $\braket{\xi'(f)|\xi'(g)}$ varies continuously with
-$\varepsilon$, the preferred ONBs vary continuously.
-However, the discrete assignment rule (Assumption~\ref{ass:discrete}) is
-unchanged: each $\xi'(f)$ belongs to the same assignment class as $\xi(f)$.
-By Theorem~\ref{thm:geom}, the mixing matrix is a function of the
-configuration alone, and since the configuration class is unchanged,
-$U_{ST}$ is unchanged.
+closer to $\xi(f)$ than to any other $\xi(g)$ with $g\neq f$;
+hence the $\xi'(f)$ are distinct and each carries the same label as $\xi(f)$.
+Linear independence is therefore preserved.
+Since Gram--Schmidt coefficients depend continuously on inner products,
+and $\braket{\xi'(f)|\xi'(g)}$ varies continuously with $\varepsilon$,
+the preferred ONBs vary continuously.
+The discrete assignment rule (Assumption~\ref{ass:discrete}) is unchanged:
+each $\xi'(f)$ belongs to the same assignment class as $\xi(f)$.
+By Theorem~\ref{thm:geom}, $U_{ST}$ depends only on the configuration
+class, which is unchanged, so $U_{ST}$ is unchanged.
 \end{proof}
+
+\begin{remark}[Geometric stability]
+In the geometric realization of Remark~2.1, the boundary direction
+$\xi(f)$ is the ideal endpoint of a geodesic ray, which depends
+continuously on the basepoint $o$.
+A small perturbation of $o$ (or of the group element $\gamma_f$)
+moves $\xi(f)$ continuously on $\Sphere$;
+for perturbations of magnitude $\varepsilon\leq\varepsilon_0$ this
+stays within the stability threshold and the assignment is unchanged.
+\end{remark}
 
 \begin{theorem}[Discreteness of mixing classes]\label{thm:discrete-classes}
 Under Assumption~\ref{ass:discrete}, the set of accessible mixing matrices
@@ -304,8 +355,13 @@ $\mathcal{M}_{ST}$ is a finite---hence discrete---subset of the quotient.
 \end{proof}
 
 \begin{corollary}[No continuous drift]\label{cor:nodrift}
-No continuous deformation of physical parameters can produce continuous
-drift in any rephasing-invariant mixing observable.
+For any continuous deformation of the boundary points $\xi(f)$ of
+magnitude $\varepsilon\leq\varepsilon_0$ (in the sense of
+Theorem~\ref{thm:stability}),
+no continuous drift occurs in any rephasing-invariant mixing observable.
+For larger deformations that change the configuration class, the mixing
+matrix can change, but only by a discrete jump to another element of
+$\mathcal{M}_{ST}$.
 \end{corollary}
 
 \begin{proof}
@@ -342,7 +398,62 @@ Future work could investigate whether the observed CKM and PMNS matrices
 belong to the discrete set for natural choices of boundary directions, or
 whether additional geometric structure is required~\cite{PDGreview}.
 
-\bibliographystyle{plain}
-\bibliography{gentry-flavor-mixing}
+\section*{Data Availability}
+This manuscript contains no research data. No data availability statement is required.
+
+\section*{Conflict of Interest}
+The author declares no conflicts of interest.
+
+\begin{thebibliography}{99}
+
+\bibitem{AltarelliFeruglio}
+G.~Altarelli and F.~Feruglio,
+``Discrete Flavor Symmetries and Models of Neutrino Mixing,''
+\emph{Rev. Mod. Phys.} \textbf{82}, 2701 (2010).
+
+\bibitem{bridsonhaefliger}
+M.~R.~Bridson and A.~Haefliger,
+\emph{Metric Spaces of Non-Positive Curvature},
+Springer, 1999.
+
+\bibitem{Jarlskog}
+C.~Jarlskog,
+``A basis independent formulation of the connection between quark mass
+matrices, {CP} violation and experiment,''
+\emph{Z. Phys. C} \textbf{29}, 491 (1985).
+
+\bibitem{KingLuhn}
+S.~F.~King and C.~Luhn,
+``Neutrino Mass and Mixing with Discrete Symmetry,''
+\emph{Rept. Prog. Phys.} \textbf{76}, 056201 (2013).
+
+\bibitem{PDGreview}
+R.~L.~Workman \emph{et al.}\ (Particle Data Group),
+``Review of Particle Physics,''
+\emph{Prog. Theor. Exp. Phys.} \textbf{2022}, 083C01 (2022).
+
+\bibitem{ratcliffe}
+J.~G.~Ratcliffe,
+\emph{Foundations of Hyperbolic Manifolds},
+Springer, 2006.
+
+\bibitem{Gentry:lattice}
+M.~L.~Gentry,
+``Discrete Weight Spectra and Coordinate Rigidity in Cocompact Hyperbolic
+Group Actions,''
+\emph{Geom. Dedicata}, under review (2026).
+
+\bibitem{Gentry:CKM}
+M.~L.~Gentry,
+``{CKM} quark mixing from geodesic axes of compact hyperbolic
+3-manifold holonomy,''
+\emph{Phys. Rev. D}, submitted March 2026 (DQ14014).
+
+\bibitem{Gentry:PMNS}
+M.~L.~Gentry,
+``Lepton mixing from Borel structure of hyperbolic holonomy,''
+\emph{Phys. Rev. D}, submitted March 2026 (DQ14050).
+
+\end{thebibliography}
 
 \end{document}

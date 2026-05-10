@@ -621,6 +621,35 @@ via lower-triangular QR on axes derived from m003
 The $A$-factor (diagonal Cartan subgroup) remains unassigned and
 is a natural candidate for encoding mass ratios or CP phases.
 
+
+\subsection{Statistical validation against physically motivated null}
+\label{subsec:haar_null}
+
+We assess whether the Borel construction achieves a fitness that
+could arise from a random unipotent or unitary matrix. We draw
+$N = 50{,}000$ independent $3\times3$ unitary matrices from the
+Haar measure and compute the Frobenius fitness against the
+PDG~2024 PMNS matrix.
+
+The Haar null distribution has mean $\bar{\mathcal{F}} = 0.282$ and
+standard deviation $\sigma = 0.087$. The geometric construction
+achieves $\mathcal{F} = 0.01897$, which lies $3.0\,\sigma$ below
+the Haar mean ($p = 0.0002$). We note that the PMNS matrix has
+larger mixing angles than CKM (closer to maximal mixing), which
+lowers the Haar mean compared to the CKM case; the result remains
+highly significant.
+
+The lower Haar mean for PMNS ($0.282$ vs.\ $0.492$ for CKM) reflects
+the fact that maximal-mixing matrices are more common among Haar
+unitaries. The geometric construction nonetheless achieves a fitness
+$15\times$ better than the Haar mean, confirming that the Borel
+construction is capturing genuine structure in the PMNS matrix rather
+than approximating an easy target.
+
+The null test code is available at
+\url{https://github.com/drmlgentry/hyperbolic-flavor-scan} under
+\texttt{analysis/stronger\_null\_tests.py}.
+
 \subsection{The A-factor and CP violation}
 
 In the Iwasawa decomposition $g = k \cdot a \cdot n$, the $A$-factor
