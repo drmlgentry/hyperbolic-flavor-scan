@@ -121,3 +121,21 @@ sigma_opt = (3/2) * log_phi    # = 0.7218178...  PMNS fitting parameter
 Marvin L. Gentry | drmlgentry@protonmail.com | ORCID: 0009-0006-4550-2663
 Independent Researcher, Seattle WA
 arXiv endorsement pending: SIQW6F (math.GT)
+
+
+## Paper Status (May 2026)
+
+| Paper | Journal | ID | Status |
+|-------|---------|-----|--------|
+| CKM (corrected) | Results in Physics | RINP-D-26-00327 | Correction submitted |
+| PMNS (corrected) | Results in Physics | RINP-D-26-00328 | Correction submitted |
+| CP Phases | Results in Physics | RINP-D-26-00329 | Under review |
+| Twist Spectrum | Results in Physics | RINP-D-26-00330 | Under review |
+| Weeks/Dehn | JGP | JGP13023 | With editor |
+| Mixing Operators | Transformation Groups | TRGR-D-26-00059 | Submitted |
+| CP Phases (math) | Annales Henri Poincare | AHPO-D-26-00231 | Submitted |
+| Qubit Gates | JMP | JMP26-AR-01272 | With editor |
+| Chirality | PLB | PLB-D-26-01006 | Under review |
+| Neutrino | J. Phys. G | JPhysG-105833 | Submitted |
+| Alexander poly | JKTR | JKTR-S-26-00044 | With editor |
+| Covering Tower | MMJ | -- | Submitted |

@@ -1,0 +1,38 @@
+﻿Dear Editors,
+
+We are writing to submit a correction to our manuscripts RINP-D-26-00327 
+(CKM) and RINP-D-26-00328 (PMNS) currently under review at Results in Physics.
+
+During post-submission verification, we identified an error in the PMNS 
+target matrix used in the fitness computation of RINP-D-26-00328. The 
+matrix employed in the original submission was not consistent with the 
+standard PDG parametrization of the PMNS unitary matrix. We have corrected 
+this to use the PDG 2024 values:
+
+  theta_12 = 33.65 deg (sin^2 theta_12 = 0.307)
+  theta_23 = 47.64 deg (sin^2 theta_23 = 0.546)  
+  theta_13 = 8.57  deg (sin^2 theta_13 = 0.02219)
+  delta_CP = 197 deg
+
+The corrected computation yields an improved result: fitness = 0.005087 
+(vs. 0.013785 in the original submission), with mixing angles:
+
+  theta_12 = 33.7 deg  (PDG: 33.65 deg, diff 0.05 deg)
+  theta_23 = 47.6 deg  (PDG: 47.64 deg, diff 0.04 deg)
+  theta_13 = 8.4  deg  (PDG: 8.57  deg, diff 0.17 deg)
+
+This result is stronger than originally reported. The corrected fitness 
+is 2.7x better than the published value, and all three mixing angles now 
+agree with PDG 2024 to within 0.2 degrees.
+
+For RINP-D-26-00327 (CKM), the target matrix used PDG values from an 
+earlier year (max difference from PDG 2024: 0.001). The CKM fitness value 
+of 0.017290 is unchanged under the updated PDG values.
+
+We attach a corrected version of RINP-D-26-00328 with the updated fitness 
+value, mixing angle table, and corrected target matrix specification. We 
+apologize for the error and appreciate the opportunity to submit a corrected 
+version.
+
+Sincerely,
+Marvin L. Gentry

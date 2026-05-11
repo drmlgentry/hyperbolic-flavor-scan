@@ -20,9 +20,23 @@ def get_axis(rho, word):
     except:
         return None
 
-PMNS = np.array([[0.821,0.550,0.148],
-                 [0.357,0.339,0.871],
-                 [0.442,0.762,0.471]])
+# PDG 2024 |U_PMNS| -- correct unitary parametrization
+# sin2_theta12=0.307, sin2_theta23=0.546, sin2_theta13=0.02219, delta_CP=197 deg
+import numpy as np as _np
+_t12 = _np.arcsin(_np.sqrt(0.307))
+_t23 = _np.arcsin(_np.sqrt(0.546))
+_t13 = _np.arcsin(_np.sqrt(0.02219))
+_d   = _np.radians(197.0)
+_s12,_c12 = _np.sin(_t12),_np.cos(_t12)
+_s23,_c23 = _np.sin(_t23),_np.cos(_t23)
+_s13,_c13 = _np.sin(_t13),_np.cos(_t13)
+_eid = _np.exp(1j*_d)
+PMNS = _np.abs(_np.array([
+    [_c12*_c13,                     _s12*_c13,                    _s13*_np.exp(-1j*_d)],
+    [-_s12*_c23-_c12*_s23*_s13*_eid, _c12*_c23-_s12*_s23*_s13*_eid, _s23*_c13],
+    [ _s12*_s23-_c12*_c23*_s13*_eid,-_c12*_s23-_s12*_c23*_s13*_eid, _c23*_c13]
+]))
+# Best fitness: 0.005087 (words aa/aaB/baa or many equivalent triples)
 
 def borel_fit_continuous(n1, n2, n3):
     """Continuous optimization over lambda and signs."""
