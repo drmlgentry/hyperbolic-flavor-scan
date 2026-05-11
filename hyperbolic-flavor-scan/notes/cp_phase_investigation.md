@@ -1,29 +1,39 @@
-﻿## Priority 3: CP Phase from A-Factor — RESULT: NOT FOUND (May 10, 2026)
+﻿## Priority 3: CP Phase — CLOSED (May 10, 2026)
 
-### Methods tested
-1. Twist angles of individual word representatives -- UNSTABLE (std 36 deg)
-   Best hit: AAAb/aaBa/aaaB/bAAA all give phi=200.649 deg in default triangulation
-   but std=35-37 deg across 20 random triangulations -- triangulation artifact
+### All approaches tested and failed
+
+1. Word twist angles (logm method): hits 200.6 deg in default triangulation
+   but std=36 deg across 20 trials -- triangulation artifact
    
-2. Manifold-level topological invariants -- STABLE but wrong values
-   - Dedekind sum D(-2,3) * 360 = 20.0 deg
-   - Chern-Simons * 360 = 90.0 deg (CS=1/4 confirmed separately)
-   - Rademacher Phi(-2,3) = 0.667 -> 240 deg
-   - Slope complex phase arg(-2+3i) = 123.69 deg
+2. CS formula 2*pi*CS*m: cycles through {90,180,270,0} deg only
+   Cannot produce 197 deg. CS=1/4 is too constrained.
+   
+3. Character variety k=3: gives 216 deg (diff=19 deg). Not close enough.
 
-### Interesting observations
-- Filling slope ratio arctan(2/3) = 33.69 deg ~ theta_12 = 33.65 deg (diff 0.04 deg)
-  This may be worth noting but is not the CP phase
-- The CP phase delta_CP = 197 deg does not match any triangulation-independent 
-  quantity we can compute from m003(-2,3)
+4. Canonical eigenvalue twist: std=68 deg -- worse than logm method.
+
+5. Dedekind sum D(-2,3)*360 = 20 deg. Wrong.
+
+6. Slope phase arg(-2+3i) = 123.7 deg. Wrong.
 
 ### Conclusion
-Priority 3 is OPEN. The CP phase is not currently derivable from m003(-2,3)
-by any triangulation-independent geometric method. The J_PMNS != 0 result
-from the homology no-go theorem remains valid (it proves CP violation exists
-in the lepton sector) but does not give the specific phase value.
+delta_CP = 197 deg is NOT derivable from m003(-2,3) by any known
+triangulation-independent method. The J_PMNS != 0 result (homology
+no-go theorem) correctly predicts CP violation EXISTS in the lepton
+sector but does not give the specific phase value.
 
-Possible future approaches:
-- Rho invariant of the rational homology sphere (requires more topology)
-- Secondary invariants of the flat PSL(2,C) bundle over m003
-- Relationship between delta_CP and the character variety coordinates
+The specific phase may require:
+- A non-Abelian flat connection on m003 beyond PSL(2,C)
+- Coupling between the two flavor manifolds m003 and m006
+- Physics input beyond pure topology (e.g., Yukawa texture)
+
+### Interesting near-miss
+Character variety angle at k=3: 2*pi*3/5 = 216 deg (diff=19 deg)
+Closest of any triangulation-independent quantity. Worth noting
+in a footnote but not claimable as a derivation.
+
+### Retrodiction that DOES work  
+arctan(|-2|/|3|) = arctan(2/3) = 33.69 deg ~ theta_12 = 33.65 deg
+The theta_12 PMNS mixing angle matches the Dehn filling slope ratio
+to 0.04 deg. This is a genuine (if unexplained) coincidence worth
+noting in future papers.
