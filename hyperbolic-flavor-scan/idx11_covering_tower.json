@@ -1,0 +1,49 @@
+{
+  "completed": {
+    "2": {
+      "primes": [],
+      "non_lucas": [],
+      "pure": true
+    },
+    "3": {
+      "primes": [],
+      "non_lucas": [],
+      "pure": true
+    },
+    "4": {
+      "primes": [],
+      "non_lucas": [],
+      "pure": true
+    },
+    "5": {
+      "primes": [
+        11
+      ],
+      "non_lucas": [],
+      "pure": true
+    },
+    "6": {
+      "primes": [],
+      "non_lucas": [],
+      "pure": true
+    },
+    "7": {
+      "primes": [],
+      "non_lucas": [],
+      "pure": true
+    },
+    "8": {
+      "primes": [],
+      "non_lucas": [],
+      "pure": true
+    },
+    "9": {
+      "primes": [],
+      "non_lucas": [],
+      "pure": true
+    }
+  },
+  "all_primes": [
+    11
+  ]
+}
