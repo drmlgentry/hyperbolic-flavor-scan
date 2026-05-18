@@ -134,30 +134,3 @@ Blacklisted slopes (computation time >10 min at cutoff=4.5):
 ## Author
 Marvin L. Gentry | drmlgentry@protonmail.com | ORCID: 0009-0006-4550-2663
 Independent Researcher, Seattle WA
-
-
-## Verification Protocol (established May 2026)
-
-All geometric results must pass triangulation independence before reporting.
-Run M.randomize() 20 times; require std < 0.01 for any claimed invariant.
-
-Stable (triangulation-independent): trace values, geodesic lengths,
-fitness values using polished_holonomy() + minimal triangulation.
-
-Not stable: axis dot products from axis_imlogm() -- these are
-presentation-dependent and should not be used for physical claims.
-
-## Canonical Triangulations
-
-- m006(-5,2) [CKM]:  3 tetrahedra, isosig dLQacccjnjs_aBbB(-5,2), unique
-- m003(-2,3) [PMNS]: 2 tetrahedra, isosig cPcbbbdxm_BaBb(-2,3), unique
-
-Both verified unique across 200 random retriangulations (May 2026).
-
-## Corrected Fitness Values (May 2026)
-
-- CKM  fitness vs PDG 2024: 0.01648 (words aaB/AbA/AAb, sigma=0.49)
-- PMNS fitness vs PDG 2024: 0.00509 (words aa/aaB/baa, Borel construction)
-
-Previous PMNS value (0.013785) was against a non-unitary, non-physical
-target matrix and has been superseded.
