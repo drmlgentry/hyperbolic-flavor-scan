@@ -1,276 +1,369 @@
-HANDOFF: Hyperbolic Flavor Geometry Project
-Date: 2026-03-10
-Author: Marvin L. Gentry
-Purpose: Provide complete context for continuing research in a new session, including all scripts, data, and next steps.
+# HFG Research Program — Master Handoff Document
+**Author:** Marvin L. Gentry  
+**Last updated:** May 19, 2026  
+**Repository:** https://github.com/drmlgentry/hyperbolic-flavor-scan
 
-1. Project Overview
-We are numerically scanning the SnapPy closed orientable census to find hyperbolic 3‑manifolds whose boundary geometry yields mixing matrices close to the CKM matrix. The pipeline:
+---
 
-Extract 
-S
-L
-(
-2
-,
-C
-)
-SL(2,C) holonomy representation via polished_holonomy().
+## What This Program Is
 
-Compute attracting fixed points of chosen group elements (first two generators and their product, or shortest hyperbolic words).
+The Hyperbolic Flavor Geometry (HFG) program proposes that Standard
+Model flavor parameters arise from the arithmetic geometry of two
+specific compact hyperbolic 3-manifolds. This document is the
+authoritative record of what has been established, what is open,
+and how to reproduce every result.
 
-Build a Gram matrix from Gaussian overlaps (width σ) and QR‑orthogonalize to get a unitary mixing matrix.
+---
 
-Compare the moduli matrix with the PDG CKM matrix using a fitness function (moduli error + 0.1 × Jarlskog error).
+## The Two Manifolds — Complete Portrait
 
-The Jarlskog remains zero because the overlap kernel is real; future work will add U(1) phases via abelianization.
+### M_PMNS = m003(−2,3)
+```
+SnapPy:       OrientableClosedCensus[1]   ← ALWAYS USE INDEX
+Volume:       0.98136883
+H₁:           ℤ/5
+Tetrahedra:   2
+Orientable:   True
+Chern-Simons: 1/4
+Relators:     ababAbbAb, abAbaabAbaBAB
+Trace field:  ℚ(√−3)  [imaginary quadratic]
+  Ring Z[ω], ω = e^{2πi/3}, norm a²−ab+b²
+  Discriminant −3 < 0 → loxodromic holonomy → large CP violation
+Dehn slope:   (−2,3) on cusped manifold m003
+```
 
-2. File & Folder Structure
-All work is in C:\dev\hyperbolic-flavor-scan\.
-Virtual environment: .venv (Python 3.13.12).
-Activate with:
+### M_CKM = m006(−5,2)
+```
+SnapPy:       OrientableClosedCensus[43]  ← ALWAYS USE INDEX
+Volume:       2.02885309
+H₁:           ℤ/5
+Tetrahedra:   3
+Orientable:   True
+Relators:     ababbAAbb, abbAbbaBabbAbbAbbaB
+Trace field:  ℚ(√17)  [real quadratic]
+  Ring Z[√17], norm a²−17b²
+  Discriminant +17 > 0 → real/hyperbolic holonomy → CP suppression
+  Verified: tr(ρ(aa)) = 3−√17 (MSbar)
+Dehn slope:   (−5,2) on cusped manifold m006
+```
 
-powershell
-.\.venv\Scripts\Activate.ps1
-Key scripts:
-Script	Purpose
-scan_flavors_working.py	Uses first two generators + their product. Works, produced top‑5 list.
-scan_flavors_shortest.py	Selects three shortest hyperbolic words (max length adjustable). Latest version.
-analyze_top.py	Reads CSV and displays top 5 mixing matrices.
-analyze_sigma.py	Finds best σ for a given manifold (e.g., m007).
-analyze_shortest.py	Prints three shortest hyperbolic words for top candidates.
-run_sigma_scan.ps1	Batch runs sigma scans (parallel or sequential).
-shortest_elements.py	Debug script to find shortest words (now integrated into analyze_shortest.py).
-Data files:
-scan_results.csv – results from the working scanner (first two generators).
+### Slope Arithmetic
+```
+Filling slopes: v_PMNS = (−2,3),  v_CKM = (−5,2)
+Farey intersection: det[(−2,−5),(3,2)] = −4+15 = 11 = L₅ (Lucas prime)
+PMNS slope norm: ‖(−2,3)‖² = 4+9 = 13  (prime, NOT Lucas)
+CKM slope norm:  ‖(−5,2)‖² = 25+4 = 29 = L₇ (Lucas prime)
+```
 
-scan_results_shortest.csv – results from the shortest‑word scanner (latest run).
+---
 
-scan_results_sigma_*.csv – sigma‑scan outputs (0.3–0.9).
+## Generator Holonomy Data
 
-results_m007_scan.csv – custom run with σ=0.3, word length 5.
+### m003(−2,3) — verified at 150-bit via polished_holonomy()
 
-3. Key Results (as of last run)
-3.1. Working scanner (first two generators + product)
-Top 5 (σ=0.5):
+| word | ℓ | φ (°) | \|λ\| |
+|---|---|---|---|
+| a   | 0.88944 | 84.278  | 1.56006 |
+| b   | 1.04032 | 28.143  | 1.68229 |
+| aa  | 1.77889 | 168.556 | 2.43377 |
+| bb  | 2.08063 | 56.286  | 2.83011 |
+| aaB | 1.73425 | −176.731| 2.38006 |
+| baa | 1.99665 | −167.362| 2.71373 |
+| AbA | 1.73425 | −176.731| 2.38006 |  ← isospectral to aaB
+| AAb | 1.73425 | −176.731| 2.38006 |  ← isospectral to aaB
+| bAbA| 1.77889 | 168.556 | 2.43377 |  ← isospectral to aa
 
-text
-m007  vol 1.8436  score 0.1349  J 0.00e+00
-m011  vol 1.8319  score 0.2437  J 0.00e+00
-m011  vol 1.9122  score 0.2560  J 0.00e+00
-m019  vol 2.0299  score 0.2775  J 0.00e+00
-m004  vol 1.3985  score 0.3497  J 0.00e+00
-m007 mixing matrix at σ=0.3:
+### m006(−5,2) — verified at 150-bit
 
-text
-[[0.9802 0.08   0.181 ]
- [0.0191 0.9487 0.3157]
- [0.1969 0.306  0.9314]]
-(Note: (1,3) and (2,3) are too large, (1,2) too small.)
+| word  | ℓ | φ (°) | \|λ\| |
+|---|---|---|---|
+| a    | 0.94160 | 56.173  | 1.60127 |
+| b    | 0.49057 | −90.844 | 1.27799 |
+| aa   | 1.88319 | 112.346 | 2.56407 |
+| aaB  | 1.77172 | −87.513 | 2.42506 |
+| AbA  | 1.77172 | −87.513 | 2.42506 |  ← isospectral to aaB
+| AAb  | 1.77172 | −87.513 | 2.42506 |  ← isospectral to aaB
+| aaabb| 3.46544 | 2.132   | 5.65601 |
+| abbAB| 1.72900 | 33.620  | 2.37382 |
 
-3.2. Shortest hyperbolic words (from analyze_shortest.py)
-| Manifold | Three shortest words (by |trace|) |
-|----------|----------------------------------|
-| m007 | 11g2⁻¹2 (|tr|=2.000, L=0), g1⁻¹2g1⁻¹ (2.646, L=1.567), 22g1⁻¹ (2.828, L=1.763) |
-| m011 | g2⁻¹1g1⁻¹2 (2.000, L=0), 21g2⁻¹2 (2.236, L=0.962), 11g2⁻¹ (2.659, L=1.582) |
-| m019 | 12 (2.000, L=0), 22g2⁻¹2 (2.646, L=1.567), g1⁻¹g1⁻¹g2⁻¹g2⁻¹ (3.000, L=1.925) |
-| m004 | g1⁻¹g2⁻¹g2⁻¹ (2.206, L=0.899), 2222 (2.306, L=1.093), g1⁻¹g2⁻¹g2⁻¹g2⁻¹ (2.384, L=1.220) |
+**CKM isospectrality:** aaB = AbA = AAb have identical complex lengths.
+Spread = 0.000000° exactly. This is a theorem from H₁ class collision
+[AbA] = [AAb] = 2 in H₁ = ℤ/5, forcing J_CKM = 0.
 
-The first two generators are not the shortest hyperbolic elements (they have |tr| ≤ 2, hence not hyperbolic). Therefore, the shortest‑word scanner is more physically motivated.
+---
 
-3.3. Shortest‑word scanner (σ=0.3, max_len=5) – preliminary
-Top 5 (from scan_results_shortest.csv):
+## Twist Angle Convention
 
-text
-m006  vol 1.6496  score 0.1472  J 0.00e+00
-m003  vol 1.2637  score 0.1860  J 0.00e+00
-m004  vol 1.4638  score 0.2587  J 0.00e+00
-m015  vol 2.0299  score 0.2810  J 0.00e+00
-m007  vol 1.5436  score 0.2821  J 0.00e+00
-Note: m007 now has a different volume because the elements are different (shortest words, not generators). Its fitness (0.2821) is worse than the generator‑based score (0.1349), but the mixing matrix may be more realistic. We need to examine the actual matrix.
+**Positive-branch convention** (used in twist census):
+```
+φ(γ) = Im(log λ)  where λ chosen so Im(log λ) ≥ 0
+φ ∈ [0°, 180°]
+Implementation: G.SL2C(word), select eigenvalue with Im ≥ 0
+```
 
-4. Next Steps (Resume Here)
-Examine the mixing matrix for m007 from the shortest‑word scan
-Run:
+**Polished holonomy convention** (used in CP phase):
+```
+φ(γ) = Im(log λ)  where λ is dominant eigenvalue |λ| > 1
+φ can be negative, ∈ (−180°, 180°]
+Implementation: M.polished_holonomy() at 150-bit
+```
 
-powershell
-python -c "import pandas as pd; df=pd.read_csv('scan_results_shortest.csv'); row=df[df['name']=='m007'].iloc[0]; print(row[['u11','u12','u13','u21','u22','u23','u31','u32','u33']])"
-Compare with the CKM matrix. If it's still off, adjust σ or max word length.
+Both conventions are consistent: φ_positive = 180° − |φ_polished|
+when the polished angle is negative near −180°.
 
-Optimize σ for each top candidate
-Use run_sigma_scan.ps1 (modify to call scan_flavors_shortest.py). Currently it calls scan_flavors_working.py – change the script variable accordingly.
+---
 
-Implement U(1) phases to obtain non‑zero Jarlskog
+## Verified Results — Strength Hierarchy
 
-Use M.homology() to get the free abelian quotient.
+### TIER 1: Exact theorems (algebraically verified)
 
-For each of the three words, compute the image in homology (sum of generator images).
+**T1.1 CKM isospectrality**
+All three CKM axis words have identical complex lengths on m006:
+- ℓ(aaB) = ℓ(AbA) = ℓ(AAb) = 1.77172, φ = −87.513° (spread = 0)
+- Proof: H₁ class collision [AbA] = [AAb] = 2 mod 5 forces conjugacy
+- J_CKM = 0 follows geometrically
 
-Assign a small random phase to each free generator.
+**T1.2 Covering tower prime**
+M_PMNS has a unique degree-5 algebraic cover with H₁ = ℤ/11 + ℤ/11.
+New prime introduced: 11 = L₅.
+Verified by M_PMNS.covers(5) returning exactly one cover.
+Farey intersection of the two filling slopes = 11 = L₅ (same prime).
 
-Multiply the Gaussian overlap by exp(i * (phase_i - phase_j)).
+**T1.3 Power law**
+ℓ(γⁿ) = n·ℓ(γ) and φ(γⁿ) = n·φ(γ) mod 360° exactly.
+All integer ratios in the length spectrum follow from this.
 
-Debugging: M.fundamental_group().homology() might work; test on m007:
+**T1.4 Trace field verification**
+tr(ρ(aa) on m006) = 3−√17 verified to 16-bit holonomy precision.
+Satisfies x² − 6x − 8 = 0 (roots 3 ± √17).
 
-python
-G = M.fundamental_group()
-print(G.homology())   # may return a list of integer vectors
-Expand search to more manifolds
-Increase the limit in the scanner (currently 50). The census has thousands.
+---
 
-5. Essential Commands
-Reactivate environment:
-powershell
+### TIER 2: Computationally verified, structurally motivated
+
+**T2.1 CP phase**
+δ_CP = π + φ(aaB) + φ(baa) mod 360° = 195.91°
+PDG 2024: 197.0°, error 0.55%, zero free parameters.
+Sign fixed geometrically: det[n̂(aa), n̂(aaB), n̂(baa)] = +0.079 > 0.
+Formula: `(180 + phi_aaB + phi_baa) % 360` using polished holonomy.
+
+**T2.2 PMNS Borel fitness**
+Borel (lower-triangular N-factor) construction on m003:
+- Word triple {aa, aaB, baa}: fitness 0.005087
+- Global minimum: verified over 50,000 Haar-random unitaries (p < 10⁻⁴)
+- Symmetric QR floor: 0.300 (Borel is required, not optional)
+
+**T2.3 CKM Gaussian fitness**
+Gaussian overlap (K-factor) on m006:
+- Word triple {aaB, AbA, AAb}: fitness 0.016482, σ = 0.49
+- Cabibbo angle error: 0.19%
+
+**T2.4 Twist angle census coincidences**
+Verified values (positive-branch convention on m006 unless noted):
+| Observable | Word | Value | PDG | Error |
+|---|---|---|---|---|
+| δ_CKM | aa (m006) | 180°−φ = 67.65° | 68.0° | 0.51% |
+| θ₂₃_CKM | aaabb (m006) | φ = 2.132° | 2.38° | 0.25° |
+| θ₁₂_ν solar | abbAB (m006) | 180°−φ = 33.62° | 33.41° | 0.63% |
+| θ₁₂_CKM | AAB (m003) | 180°−φ = 12.64° | 13.04° | 0.31° |
+| θ₁₃_ν | BaBBBBB (m006) | 180°−φ = 8.546° | 8.54° | 0.007° |
+
+Statistical note: census enrichment factor ~1.27x over random.
+Individual matches are suggestive but not statistically significant
+without geometric selection principle (folding is ad hoc without
+orientation justification as in T2.1).
+
+---
+
+### TIER 3: Numerically striking, not yet structurally explained
+
+**T3.1 mb/mc from generator lengths (m003)**
+|λ_b²/λ_a|² = 3.290986 vs PDG mb/mc = 3.291339
+Error: 0.011%, within 0.006σ of experimental central value.
+
+Key facts:
+- Reduces to: 2ℓ_b − ℓ_a = ln(mb/mc) at 0.011%
+- Algebraically: |λ_b²/λ_a|² = exp(2ℓ_b − ℓ_a)
+- Slope-specific: adjacent slopes give 47-83% errors
+- High-precision test (1000-bit): 13.2 bits agreement
+- Exactness: NOT RULED OUT (within experimental mb/mc uncertainty)
+- Status: striking coincidence demanding geometric explanation
+
+**T3.2 Generator length ratio**
+ℓ_b/ℓ_a = 1.04032/0.88944 = 1.16963 on m003
+≈ 7/6 to 0.25% — no geometric explanation yet
+
+---
+
+### TIER 4: Disconfirmed or ruled out
+
+**T4.1 mτ/mμ cross-manifold** — 0.24-0.32% error, 8-9 bits precision
+Significantly below calibration precision (16 bits). Likely approximate.
+
+**T4.2 mt/mb from generator lengths** — 1.25% error. Coincidental.
+
+**T4.3 MZ/MW statistical significance** — does not survive null test
+on distinct geodesic lengths. p = 0.32 (not significant).
+
+**T4.4 "Prime dictionary" from slope arithmetic** — conflates
+algebraic covering spaces with census volume coincidences.
+Census manifolds at n·vol are commensurable neighbors, NOT covers.
+Algebraic covers through degree 6: only one (degree 5, prime 11).
+
+---
+
+## Covering Tower — Corrected Picture
+
+### Method A: Algebraic (M.covers())
+Finds ALL finite-sheeted covering spaces algebraically.
+Through degree 6, M_PMNS has ONE cover:
+- Degree 5: H₁ = ℤ/11 + ℤ/11, new prime = 11 = L₅
+
+M_PMNS is arithmetically rigid.
+
+### Method B: Census volume matching
+Finds census manifolds with volume = n·vol(M_PMNS).
+These are commensurable neighbors, NOT algebraic covers.
+- Degree 2: H₁ primes {5,11} and {7} — all Lucas primes
+- Degree 3: H₁ primes {2,3,5,7} — all Lucas primes
+
+### The genuine connection
+- Algebraic cover prime 11 = L₅
+- Farey intersection of slopes = det[(−2,−5),(3,2)] = 11 = L₅
+- CKM slope norm = 29 = L₇
+This is the correct framing for the covering tower paper.
+
+---
+
+## Canonical Reproduction Commands
+
+```bash
+# Environment
+conda activate sage
 cd C:\dev\hyperbolic-flavor-scan
-.\.venv\Scripts\Activate.ps1
-Run shortest‑word scanner (σ=0.5, max_len=4):
-powershell
-python scan_flavors_shortest.py
-To change parameters:
 
-powershell
-python scan_flavors_shortest.py 0.3 5 my_results.csv
-Batch sigma scan (modify script to use shortest‑word scanner first):
-powershell
-.\run_sigma_scan.ps1
-Analyze results:
-powershell
-python analyze_sigma.py        # for m007 (change variable in script)
-python analyze_shortest.py     # shows shortest words for top candidates
-6. Notes on U(1) Implementation
-The current scan_flavors_shortest.py uses a real kernel. To add U(1) phases, modify build_mixing_matrix to accept a list of phases (complex numbers of unit modulus). In get_three_shortest_matrices, after obtaining the matrices, also compute the homology images for each word and assign a phase:
+# PMNS Borel fitness (0.005087) and CKM Gaussian fitness (0.016482)
+conda run -n sage python reproduce/hfg_reproduce.py
 
-python
-# After obtaining the three matrices, also compute phases
-hom = M.homology()   # might need to parse
-# For each word, sum the abelianization images of its letters
-phase = np.exp(1j * np.dot(word_vector, free_angles))
-We need to determine the exact format of M.homology() for closed manifolds in SnapPy 3.3.2. Test with:
+# CP phase (195.91°, zero free parameters)
+conda run -n sage python reproduce/cp_reproduce.py
 
-python
-M = snappy.OrientableClosedCensus['m007']
-print(M.homology())
-If it returns something like 'Z^0 + Z/5 + Z/5 + Z/5', we must parse the free rank from the string. Alternatively, use M.fundamental_group().homology().
+# Twist angle census (9 claims, PASS/FAIL table, ~3 min)
+conda run -n sage python reproduce/twist_reproduce.py
 
-7. Handoff File
-This markdown file should be saved as HANDOFF.md in the project folder. All scripts are present; if any are missing, the full code is included in the conversation history and can be re‑extracted.
+# Manifold elucidation (geometry, spectrum, ratios)
+conda run -n sage python elucidate_simple.py
 
-To resume in a new session, simply read this file, activate the environment, and continue from Section 4 (Next Steps).
+# Tower reconciliation (algebraic vs census covers)
+conda run -n sage python tower_reconcile.py
 
-End of Handoff
+# Slope survey (mb/mc across Dehn fillings)
+conda run -n sage python slope_survey.py
 
-To break the real-symmetry of the overlap kernel and generate a non-zero Jarlskog invariant (
-J
-J), we must implement the "Geometric Origin of CP Phases" logic from your fourth paper.
+# High-precision test (mb/mc exactness, 1000-bit)
+conda run -n sage sage high_precision_test.sage
 
-In SnapPy, M.homology() for a manifold like m007 returns 
-(
-Z
-/
-5
-)
-3
-(Z/5) 
-3
- . We will map each word to its image in this homology group and assign a phase based on a 
-U
-(
-1
-)
-U(1) character.
+# Algebraic number recognition
+conda run -n sage sage algdep_focused.sage
+```
 
-Updated Script Fragment: abelianize_word
-Add this to your scan_flavors_shortest.py:
+Expected runtimes: hfg_reproduce ~2 min, twist_reproduce ~3 min,
+slope_survey ~5 min, high_precision_test ~3 min.
 
-python
-def get_word_homology_image(M, word_str):
-    """
-    Maps a word (e.g., 'g1g2G1') to its image in H1(M, Z).
-    """
-    G = M.fundamental_group()
-    # SnapPy's abelianization map
-    ab_map = G.abelian_dilation() 
-    
-    # Initialize zero vector for homology
-    image = np.zeros(len(ab_map[0]))
-    
-    # Parse word letters (g1=0, g2=1, G1=-0, G2=-1)
-    for char in word_str:
-        if char.isdigit():
-            idx = int(char) - 1
-            image += ab_map[idx]
-        elif char.isupper(): # Inverse
-            idx = ord(char) - ord('A')
-            image -= ab_map[idx]
-        elif char.islower(): # Forward
-            idx = ord(char) - ord('a')
-            image += ab_map[idx]
-            
-    return image
+---
 
-def compute_complex_overlap(z1, z2, phase1, phase2, sigma):
-    """Geometric overlap with U(1) holonomy phases."""
-    dist = 2.0 * np.abs(z1 - z2) / (np.sqrt(1 + np.abs(z1)**2) * np.sqrt(1 + np.abs(z2)**2))
-    gaussian = np.exp(-(dist**2) / (2 * sigma**2))
-    return gaussian * np.exp(1j * (phase1 - phase2))
-   ...   3. Proposed Revised Scanner: scan_flavors_cp.py
-This script integrates the shortest-word selection with homology-based CP phases.
+## Active Submission Portfolio (May 19, 2026)
 
-python
-import snappy
-import numpy as np
-from scipy.linalg import qr
+| ID | Journal | Paper | Status |
+|---|---|---|---|
+| DS14327 | PRD | Unified HFG | With editors |
+| PLB-D-26-01341 | PLB | CP phase | With editor |
+| PLB-D-26-01006 | PLB | Charge conjugation | Under review |
+| AHPO-D-26-00255 | AHP | PMNS mixing | New submission |
+| AHPO-D-26-00231 | AHP | CP holonomy | New submission |
+| JGP13076 | JGP | CKM mixing | Submitted |
+| JPhysA-124843 | JPA | Discrete mixing operators | Submitted |
+| TRGR → rejected | — | Discrete mixing (old) | Rejected |
+| JMP26-AR-01272 | JMP | Qubit gates | 17+ days |
+| JKTR | JKTR | Alexander polynomial | Submitted |
 
-def run_cp_scan(limit=100, sigma=0.3):
-    # PDG Targets
-    V_CKM = np.array([[0.974, 0.225, 0.003], [0.225, 0.973, 0.041], [0.008, 0.040, 0.999]])
-    J_TARGET = 3.0e-5
+**Strategy:** Hold all new submissions pending PRD response.
+Use waiting time to complete manifold description and fix papers
+with verified values.
 
-    results = []
-    
-    for i in range(limit):
-        M = snappy.OrientableClosedCensus[i]
-        G = M.fundamental_group()
-        # Define random phases for the generators of H1
-        # In a real study, we'd scan these or use roots of unity for torsion
-        h1 = M.homology()
-        num_gens = len(G.generators())
-        gen_phases = np.random.uniform(0, 2*np.pi, num_gens)
+---
 
-        # Get 3 shortest hyperbolic words
-        # (Assuming your logic for 'get_shortest_words' is available)
-        words = get_shortest_words(M, max_len=5, num=3)
-        
-        # Build Complex Overlap Matrix
-        M_overlap = np.zeros((3,3), dtype=complex)
-        phases = []
-        fixed_points = []
-        
-        for w in words:
-            # 1. Fixed Point
-            mat = rho(w) 
-            fp = attracting_fixed_point(mat)
-            fixed_points.append(fp)
-            # 2. Homology Phase
-            img = get_word_homology_image(M, w)
-            phases.append(np.dot(img, gen_phases))
-            
-        for r in range(3):
-            for c in range(3):
-                M_overlap[r,c] = compute_complex_overlap(
-                    fixed_points[r], fixed_points[c], 
-                    phases[r], phases[c], sigma
-                )
-        
-        # QR Orthogonalization to get Unitary U
-        U, R = qr(M_overlap)
-        
-        # Calculate Jarlskog
-        J = np.imag(U[0,0]*U[1,1]*np.conj(U[0,1])*np.conj(U[1,0]))
-        
-        # Fitness
-        moduli_err = np.linalg.norm(np.abs(U) - V_CKM)
-        score = moduli_err + 0.1 * np.abs(J - J_TARGET)
-        
-        results.append([M.name(), score, J])
-        
-    return results
+## Papers Needing Updates Before Next Submission
+
+| Paper | Issue | Action |
+|---|---|---|
+| Twist spectrum (RINP-D-26-00330) | Old CP formula (203.5°), wrong MZ/MW words, wrong θ₁₃ source | Rewrite with verified values |
+| Dehn filling slopes (SSRN 6761981) | Conflates algebraic covers with census coincidences | Reframe: algebraic cover prime = Farey intersection = L₅ |
+| Lucas structure (SSRN 6754501, removed) | Tower primes {2,3,7,11,29} → {2,3,11} | Correct and repost |
+
+---
+
+## Open Questions (prioritized)
+
+1. **mb/mc exactness** — Requires either SnapPy `snap()` exact
+   arithmetic or a theoretical derivation from slope (−2,3) geometry.
+   Currently: 0.011% match, within experimental uncertainty, not ruled out.
+
+2. **Why 11 = Farey = cover prime?** — Is there a theorem connecting
+   the Farey intersection of filling slopes to the first new prime in
+   the algebraic covering tower? Pure mathematics question.
+
+3. **Why these two manifolds?** — Minimal volume + H₁=ℤ/5 + specific
+   slopes. Is there a moduli-space characterization that selects them?
+
+4. **Folding justification** — The twist angle census uses 180°−φ
+   without systematic geometric justification (except for the CP phase,
+   where the determinant argument fixes the sign). A geometric selection
+   principle for the census folding would strengthen Paper B.
+
+5. **Algebraic covers at degree 7-19** — tower_extended.py found
+   primes {2,3,11} through degree 19. Do primes 7 and 29 ever appear?
+   If not, the Lucas-purity claim is strong through all computed degrees.
+
+---
+
+## Key File Locations
+
+```
+C:\dev\hyperbolic-flavor-scan\
+  reproduce/
+    hfg_reproduce.py     ← CKM + PMNS fitness (canonical)
+    cp_reproduce.py      ← CP phase 195.91°
+    twist_reproduce.py   ← twist census 9 claims
+  
+  HFG_ELUCIDATION_MAY2026.md  ← geometric findings
+  HFG_PRECISION_ADDENDUM.md   ← precision analysis
+  HANDOFF.md                  ← this document
+  REPRODUCE.md                ← referee instructions
+  
+  slope_survey.py         ← mass ratios across Dehn fillings
+  tower_reconcile.py      ← algebraic vs census covers
+  elucidate_simple.py     ← manifold portrait
+  high_precision_test.sage← mb/mc exactness test
+  algdep_focused.sage     ← algebraic number recognition
+
+C:\dev\framework\papers\
+  hfg-unified\            ← PRD submission (DS14327)
+  hyperbolic-flavor-ckm-v2\  ← JGP submission (JGP13076)
+  hyperbolic-flavor-pmns\    ← AHP submission (AHPO-D-26-00255)
+  hyperbolic-flavor-cp-v2\   ← PLB submission (PLB-D-26-01341)
+  discrete-mixing-jpa\       ← JPA submission (JPhysA-124843)
+```
+
+---
+
+## Session Log Summary
+
+| Date | Key findings |
+|---|---|
+| Mar 2026 | Initial four RINP submissions; m003/m006 identified |
+| Apr-May 2026 | All four HFG pillars established: CKM, PMNS, CP, mass norms |
+| May 16 | PRD unified paper submitted (DS14327) |
+| May 17 | PLB CP phase submitted; AHP PMNS submitted; JGP CKM submitted |
+| May 18 | SSRN updates; TRGR rejection; JPA discrete mixing submitted |
+| May 19 | Deep geometric elucidation: generator length equations, tower reconciliation, precision analysis. mb/mc: 0.011%, slope-specific, exactness inconclusive. |
