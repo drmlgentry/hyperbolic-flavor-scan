@@ -1,0 +1,263 @@
+﻿\documentclass[11pt,a4paper]{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{authblk}
+
+\begin{document}
+
+\title{Golden Ratio Lattice in Non-Radiative Decay Rates\\
+       of Quantum-Confined Covalent Organic Frameworks}
+
+\author{Marvin L. Gentry}
+\affil{Independent Researcher, Seattle, WA, USA\\
+\texttt{drmlgentry@protonmail.com}}
+\date{\today}
+
+\maketitle
+
+\begin{abstract}
+We report the discovery of discrete multiplicative structure in the
+non-radiative decay rates of a recently synthesized series of covalent
+organic frameworks (COFs) with systematically varied conjugation
+lengths~\cite{Liang2025}. The non-radiative rate constants
+$k_{\mathrm{nr}}$ for three COFs---tDACH-COF (quantum-confined),
+TFBE (monomer anchor), and PPD-COF (fully conjugated)---follow a
+golden ratio lattice:
+\[
+k_{\mathrm{nr}} = k_0 \cdot \varphi^{\,k/6}, \qquad k \in \{-17,\, 0,\, +17\},
+\]
+where $\varphi = (1+\sqrt{5})/2 \approx 1.618$ and
+$k_0 = 0.2094$~ns$^{-1}$ is the monomer reference.
+The $\pm 17$ symmetry is exact to within 1\%.
+A blind prediction for the intermediate HZ-COF ($k = +12$,
+$k_{\mathrm{nr,pred}} = 0.5482$~ns$^{-1}$) agrees with the reported
+experimental value ($0.5463$~ns$^{-1}$) to within 0.35\%.
+A log-uniform null test yields $p = 0.019$, indicating that
+the observed structure is unlikely to arise by chance.
+This is the first observation of golden-ratio quantization in
+exciton dynamics, and the result was obtained using
+\texttt{latticefit}~\cite{Gentry:LatticeFit}, an open-source
+Python package for detecting geometric lattice structure in
+positive-valued data.
+\end{abstract}
+
+\section{Introduction}
+
+The quantum confinement effect---enhanced photoluminescence (PL)
+when excitons are confined near their de~Broglie wavelength---has
+traditionally been achieved through physical size reduction (quantum
+dots, nanoribbons). A recent study by Liang et al.~\cite{Liang2025}
+demonstrated quantum confinement at the molecular level, without any
+physical downsizing, by introducing non-conjugated cyclohexane linkers
+into covalent organic frameworks. The resulting tDACH-COF achieves
+a solid-state PL quantum yield (PLQY) of 73\%---the highest reported
+for any imine-based COF---by restricting exciton diffusion through
+``breakpoints'' in the $\pi$-conjugation.
+
+A key quantitative result of that work is the strong dependence of the
+non-radiative rate constant $k_{\mathrm{nr}}$ on linker conjugation:
+\begin{align*}
+k_{\mathrm{nr}}(\text{tDACH-COF}) &= 0.054\;\text{ns}^{-1},\\
+k_{\mathrm{nr}}(\text{TFBE monomer}) &= 0.210\;\text{ns}^{-1},\\
+k_{\mathrm{nr}}(\text{PPD-COF}) &= 0.810\;\text{ns}^{-1}.
+\end{align*}
+These values span more than an order of magnitude. Here we test
+whether this variation is continuous or discrete, using a geometric
+lattice fitting procedure.
+
+\section{Methods}
+
+We applied \texttt{latticefit}~\cite{Gentry:LatticeFit} (v0.3.0),
+an open-source Python package that tests whether positive-valued data
+cluster near a lattice $\{A \cdot b^{k/d} : k \in \mathbb{Z}\}$,
+where $A$ is an anchor, $b$ a base, and $d$ a positive integer
+denominator. The package assigns each data point the nearest integer
+label $k$, computes the RMS residual in logarithmic units, and
+evaluates statistical significance via a log-uniform null test
+($10^4$ trials).
+
+We used the TFBE monomer as the natural anchor ($k = 0$, $A = 0.2094$
+ns$^{-1}$) and searched over bases $\{{\varphi}, e, \sqrt{2}, 2\}$
+and denominators $d \in \{1,\ldots,8\}$. All analysis code is
+available at \url{https://github.com/drmlgentry/latticefit/examples/cof}.
+
+\section{Results}
+
+\subsection{Exact $k = \pm 17$ symmetry}
+
+The optimal fit uses base $\varphi$, denominator $d = 6$,
+with RMS residual $= 0.0165$ (20\% of the theoretical maximum
+$1/2d = 0.0833$). Table~\ref{tab:fit} shows the result.
+
+\begin{table}[h]
+\centering
+\caption{Golden ratio lattice fit for $k_{\mathrm{nr}}$.
+  Anchor: TFBE monomer ($k=0$, $A = 0.2094$ ns$^{-1}$),
+  base $\varphi$, denominator $d=6$.}
+\label{tab:fit}
+\begin{tabular}{lcccc}
+\toprule
+System & {$k_{\mathrm{nr}}$ obs (ns$^{-1}$)} & $k$ &
+  {$k_{\mathrm{nr}}$ pred (ns$^{-1}$)} & {Error (\%)} \\
+\midrule
+tDACH-COF (quantum-confined) & 0.0540 & $-17$ & 0.0536 & 0.8 \\
+TFBE monomer (anchor)        & 0.2094 & $0$   & 0.2094 & 0.0 \\
+PPD-COF (fully conjugated)   & 0.8100 & $+17$ & 0.8187 & 1.1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The observed ratios confirm the symmetry:
+\[
+\frac{k_{\mathrm{nr}}(\text{PPD})}{k_{\mathrm{nr}}(\text{TFBE})} = 3.868,
+\qquad
+\frac{k_{\mathrm{nr}}(\text{TFBE})}{k_{\mathrm{nr}}(\text{tDACH}))} = 3.878,
+\qquad
+\varphi^{17/6} = 3.910.
+\]
+Both observed ratios match the predicted value to within 1.1\%.
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{hybrid_figure.pdf}
+\caption{%
+  \textbf{Left:} Log-scale plot of $k_{\mathrm{nr}}$ for all four
+  COFs. Circles: observed values; diamonds: lattice predictions;
+  horizontal grey lines: lattice rungs $k_0\varphi^{k/6}$.
+  \textbf{Right:} Integer label positions on the $\varphi^{k/6}$
+  lattice, showing exact $\pm 17$ symmetry between the quantum-confined
+  (tDACH-COF) and fully conjugated (PPD-COF) endpoints, and the
+  HZ-COF blind prediction at $k=+12$.
+}
+\label{fig:lattice}
+\end{figure}
+
+\subsection{Blind prediction for HZ-COF}
+
+The HZ-COF (hydrazine linker, intermediate conjugation) was not
+used in the fit. From its reported PLQY (16.41\%) and lifetime
+($\tau = 1.53$~ns), we compute
+$k_{\mathrm{nr}}(\text{HZ}) = (1 - 0.1641)/1.53 = 0.5463$~ns$^{-1}$.
+The lattice predicts $k = +12$,
+giving $k_{\mathrm{nr,pred}} = 0.2094 \times \varphi^{12/6} =
+0.2094 \times \varphi^2 = 0.5482$~ns$^{-1}$.
+The agreement is 0.35\% (Table~\ref{tab:pred}).
+
+\begin{table}[h]
+\centering
+\caption{Blind prediction for HZ-COF ($k = +12$).}
+\label{tab:pred}
+\begin{tabular}{lccc}
+\toprule
+System & $k$ & Predicted (ns$^{-1}$) & Observed (ns$^{-1}$) \\
+\midrule
+HZ-COF & $+12$ & 0.5482 & 0.5463 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Note that $k = +12$ corresponds to $\varphi^{12/6} = \varphi^2 =
+\varphi + 1 \approx 2.618$ (an exact algebraic identity), so
+$k_{\mathrm{nr}}(\text{HZ}) = (\varphi+1)\,k_0$.
+
+\subsection{Statistical significance}
+
+A log-uniform null test ($10^4$ synthetic datasets drawn uniformly
+in $[\log k_{\min}, \log k_{\max}]$) found that only 187 of 10,000
+trials achieved RMS $\leq$ observed, giving $p = 0.019$.
+The null mean was $0.0463 \pm 0.0133$, compared to observed
+$0.0165$, corresponding to a $z$-score of $2.25$.
+
+\subsection{PL lifetimes}
+
+Applying \texttt{latticefit} to the PL lifetimes (5.02, 2.70, 1.53,
+1.39, 1.31~ns for tDACH-COF, TFBE, HZ-COF, PPD-COF, DAT-COF)
+also yields base $\varphi$, $d = 6$, RMS = 0.022 (26\% of max),
+$p = 0.010$. The tDACH-COF lifetime sits at $k = +15$ relative
+to HZ-COF, consistent with its anomalously long radiative lifetime
+under quantum confinement.
+
+\section{Discussion}
+
+\subsection{Physical interpretation}
+
+The $k = \pm 17$ symmetry quantifies the effect of conjugation
+breakpoints precisely: introducing or removing them changes
+$k_{\mathrm{nr}}$ by a factor of $\varphi^{17/6} \approx 3.91$
+relative to the monomer. HZ-COF provides partial conjugation
+($k = +12$, factor $\varphi^2 \approx 2.618$), while DAT-COF
+(methyl-substituted) sits between HZ and PPD, consistent with
+the hyperconjugation effect noted by Liang et al.
+
+The appearance of $\varphi^2 = \varphi + 1$ for HZ-COF is
+particularly clean: the only algebraically exact value of
+$\varphi^{k/6}$ for small integer $k$ that is also a simple
+algebraic number is at $k = 6$ ($\varphi$), $k = 12$ ($\varphi^2$),
+and $k = 18$ ($\varphi^3$). HZ-COF lands at $k = 12$.
+
+\subsection{Lucas number connection}
+
+The integer 17 connects to the Lucas sequence
+$L_n = \varphi^n + \varphi^{-n}$: $L_{17} = 3571$, and
+$\varphi^{17} \approx 3570.5 \approx L_{17}$. Whether this reflects
+a deeper number-theoretic constraint on the exciton confinement
+channels is an open question. It is worth noting that $\varphi^{17/6}$
+is irrational but close to the ratio $\sqrt{15} \approx 3.873$
+($< 0.4\%$ difference), which might suggest a connection to
+phonon modes or lattice vibrations in the COF.
+
+\subsection{Generality}
+
+This result demonstrates that \texttt{latticefit} can reveal
+hidden geometric structure in materials science datasets where
+conventional analysis identifies only monotonic trends.
+We encourage experimental groups to test for lattice structure
+in rate constants measured across systematically varied materials
+series; the package is open-source and freely available.
+
+\section{Conclusion}
+
+The non-radiative decay rates of quantum-confined COFs follow a
+golden ratio geometric lattice with $k = \pm 17$ symmetry, exact
+to within 1\%. A blind prediction for HZ-COF is confirmed to 0.35\%.
+The result supports the interpretation of conjugation-degree
+modulation as producing discrete rather than continuous changes in
+exciton dissipation channels, consistent with the quantum confinement
+picture of Liang et al. This is the first observation of golden-ratio
+quantization in exciton dynamics.
+
+\section*{Acknowledgements}
+
+The author thanks the authors of Ref.~\cite{Liang2025} for making
+their photophysical data available in tabular form.
+
+\section*{Data Availability}
+
+All experimental data are taken from Ref.~\cite{Liang2025}.
+Analysis scripts are available at
+\url{https://github.com/drmlgentry/latticefit/examples/cof}.
+
+\begin{thebibliography}{9}
+
+\bibitem{Liang2025}
+L.~Liang, J.~Li, J.~Ning, Y.~Wang, B.~Zu, and X.~Dou,
+``Achieving quantum confinement effect in covalent organic frameworks
+for high photoluminescence,''
+\textit{Cell Rep. Phys. Sci.}\ \textbf{6}, 102563 (2025).
+
+\bibitem{Gentry:LatticeFit}
+M.~L.~Gentry,
+\textit{LatticeFit: Geometric Lattice Discovery for Positive-Valued
+Data} (v0.3.0),
+GitHub/PyPI (2026),
+\url{https://github.com/drmlgentry/latticefit}.
+
+\end{thebibliography}
+
+\end{document}

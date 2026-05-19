@@ -1,0 +1,285 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+\newtheorem{observation}{Observation}
+\usepackage{authblk}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{booktabs}
+
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\CKM}{V_{\mathrm{CKM}}}
+
+\begin{document}
+
+\title{Quark Mixing from Hyperbolic Geometry:\\
+The CKM Matrix from a Compact Arithmetic 3-Manifold}
+
+\author[1]{Marvin L. Gentry}
+\affil[1]{Independent Researcher, Seattle, WA, USA;
+\texttt{drmlgentry@protonmail.com};
+ORCID: 0009-0006-4550-2663}
+\date{\today}
+
+\begin{abstract}
+We show that the CKM quark mixing matrix is encoded in the holonomy
+geometry of the compact hyperbolic 3-manifold $M_{\mathrm{CKM}} =
+m006(-5,2)$ (SnapPy \texttt{OrientableClosedCensus[43]}, volume
+$2.029$, $H_1=\mathbb{Z}/5$).
+The construction has two independent components.
+First, the \emph{arithmetic}: the invariant trace field is
+$K_{\mathrm{CKM}}=\mathbb{Q}(\sqrt{17})$ (real quadratic), verified
+from $\operatorname{tr}(\rho(aa))=3-\sqrt{17}$ satisfying
+$x^2-6x-8=0$ (discriminant $68=4\cdot17$).
+The real trace field explains CP suppression geometrically: the
+Jarlskog invariant vanishes ($J=0$) via a homological class collision
+($[\mathrm{AbA}]=[\mathrm{AAb}]=2$ in $H_1=\mathbb{Z}/5$).
+Second, the \emph{mixing}: the word triple
+$\{\mathrm{aaB},\mathrm{AbA},\mathrm{AAb}\}$ has geodesic axis angles
+$\theta_{12}=48.16^\circ$, $\theta_{13}=77.48^\circ$,
+$\theta_{23}=68.43^\circ$; Gaussian overlap with $\sigma=0.49$ and QR
+orthogonalization gives Frobenius fitness $0.016482$ and Cabibbo angle
+error $0.19\%$.
+All six quark mass ratios approximate norms
+in $\mathbb{Z}[\sqrt{17}]$ within $5.7\%$ ($b$: $0.012\%$, $t$:
+$0.007\%$), with permutation null-test $p<0.002$.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+\label{sec:intro}
+
+The CKM quark mixing matrix~\cite{Cabibbo1963,KobayashiMaskawa1973}
+encodes the mismatch between quark mass eigenstates and weak
+interaction eigenstates. Its parameters---three mixing angles and a
+CP-violating phase---have no derivation from first principles.
+
+We present evidence that the CKM matrix is encoded in the holonomy
+representation of a single compact hyperbolic 3-manifold,
+$M_{\mathrm{CKM}} = m006(-5,2)$, at two levels.
+At the \emph{arithmetic} level, the trace field
+$K_{\mathrm{CKM}} = \mathbb{Q}(\sqrt{17})$ (real quadratic) explains
+CP suppression geometrically.
+At the \emph{kinematic} level, geodesic axis directions of short
+holonomy words reproduce the CKM mixing angles via an overlap-matrix
+construction.
+All numerical values are verified using SnapPy~\cite{SnapPy} at
+150-bit precision.
+
+\section{The Manifold}
+\label{sec:manifold}
+
+\subsection{Basic invariants}
+
+\begin{table}[htbp]
+\centering
+\caption{Basic invariants of $M_{\mathrm{CKM}} = m006(-5,2)$.}
+\label{tab:invariants}
+\begin{tabular}{ll}
+\toprule
+Invariant & Value \\
+\midrule
+Census index & \texttt{OrientableClosedCensus[43]} \\
+Dehn filling & $m006(-5,2)$ \\
+Volume & $2.02885$ \\
+First homology & $H_1 = \mathbb{Z}/5$ \\
+Chern-Simons & $-0.11414$ \\
+Symmetry & $\mathbb{Z}/2\times\mathbb{Z}/2$ \\
+Chirality & chiral \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Trace field}
+
+\begin{proposition}[CKM trace field]
+The invariant trace field of $M_{\mathrm{CKM}}$ is
+$K_{\mathrm{CKM}} = \mathbb{Q}(\sqrt{17})$,
+with ring of integers $\mathcal{O}_K = \mathbb{Z}[\sqrt{17}]$,
+norm form $N(a+b\sqrt{17}) = |a^2-17b^2|$.
+\end{proposition}
+
+\begin{proof}[Computational verification]
+The SnapPy polished holonomy at 150-bit precision gives
+$\operatorname{tr}(\rho(aa)) = -1.12311844\ldots$,
+satisfying $x^2-6x-8=0$ to $10^{-5}$
+(verified: $(-1.12312)^2-6(-1.12312)-8\approx0$).
+The roots $x=3\pm\sqrt{17}$ give
+$\operatorname{tr}(\rho(aa))=3-\sqrt{17}$;
+discriminant $\Delta=68=4\cdot17$.
+\end{proof}
+
+\subsection{Geometric CP suppression}
+
+\begin{proposition}
+The Jarlskog invariant vanishes ($J=0$) in the geometric construction.
+\end{proposition}
+
+\begin{proof}
+The abelianization $\pi_1(M_{\mathrm{CKM}})\to H_1=\mathbb{Z}/5$
+gives $[a]=2$, $[b]=1$, so:
+\[
+  [\mathrm{aaB}]=3,\quad
+  [\mathrm{AbA}]=2,\quad
+  [\mathrm{AAb}]=2.
+\]
+Since $[\mathrm{AbA}]=[\mathrm{AAb}]$, every flat $\mathrm{U}(1)$
+character satisfies $\chi_k(\mathrm{AbA})=\chi_k(\mathrm{AAb})$,
+making two columns of the overlap matrix identical.
+QR of a matrix with two equal columns yields $J=0$.
+\end{proof}
+
+\begin{remark}
+The physical value $|J_{\mathrm{CKM}}|\approx3\times10^{-5}$ is
+nonzero but suppressed---consistent with the geometric floor $J=0$.
+The flat $\mathrm{U}(1)$ mechanism ($k=1$) predicts
+$\delta_{\mathrm{CKM}}=72^\circ$ (PDG: $68^\circ$, error $5.9\%$).
+\end{remark}
+
+\section{Mixing Matrix Construction}
+\label{sec:mixing}
+
+\subsection{Geodesic axis extraction}
+
+For $\gamma\in\pi_1(M_{\mathrm{CKM}})$, the axis direction
+$\hat{n}(\gamma)\in S^2$ is extracted from the Pauli decomposition:
+\[
+  \log\rho(\gamma)
+  = \tfrac{\eta}{2}I
+  + \tfrac{i}{2}(n_x\sigma_x+n_y\sigma_y+n_z\sigma_z),
+  \qquad
+  \hat{n}=\frac{(n_x,n_y,n_z)}{\|(n_x,n_y,n_z)\|},
+\]
+where $\eta=\ell(\gamma)+i\varphi(\gamma)$ is the complex translation
+length.
+
+\subsection{Overlap matrix and QR construction}
+
+Pairwise axis angles $\theta_{ij}=\arccos|\hat{n}_i\cdot\hat{n}_j|$
+define $O_{ij}=\exp(-\theta_{ij}^2/(2\sigma^2))$.
+QR orthogonalization gives unitary $Q$; the Frobenius fitness is:
+\[
+  \mathcal{F}
+  = \bigl\|\mathrm{sort}(|Q|)-\mathrm{sort}(|\CKM|_{\mathrm{PDG}})\bigr\|_F.
+\]
+
+\subsection{Canonical triple}
+
+Axis vectors (unit, from SnapPy):
+\begin{align*}
+  \hat{n}_{\mathrm{aaB}} &= [0.00000,\;0.00000,\;1.00000],\\
+  \hat{n}_{\mathrm{AbA}} &= [0.74496,\;0.00000,\;0.66711],\\
+  \hat{n}_{\mathrm{AAb}} &= [0.29949,\;0.92916,\;0.21672].
+\end{align*}
+Angles: $\theta_{12}=48.1554^\circ$, $\theta_{13}=77.4835^\circ$,
+$\theta_{23}=68.4272^\circ$.
+
+At $\sigma=0.49$:
+\[
+  |Q| = \begin{pmatrix}
+    0.97439 & 0.22458 & 0.01097 \\
+    0.22381 & 0.97342 & 0.04871 \\
+    0.02161 & 0.04501 & 0.99875
+  \end{pmatrix},
+  \quad \mathcal{F}=0.016482.
+\]
+Predicted $|V_{us}|=0.22458$, Cabibbo angle $12.978^\circ$
+(PDG: $13.003^\circ$), error $0.19\%$.
+
+\subsection{Spherical triangle}
+
+The three axis vectors form a spherical triangle with sides
+$48.16^\circ$, $77.48^\circ$, $68.43^\circ$ and interior angles
+$A=72.13^\circ$, $B=92.36^\circ$, $C=49.68^\circ$,
+giving spherical excess $E=34.18^\circ$.
+The Cabibbo angle emerges from $\theta_{12}$ via the Gaussian kernel;
+the excess is an independent geometric invariant of the triangle.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{ckm_combined_figure.pdf}
+\caption{Left: geodesic axis vectors on $S^2$;
+shaded region is the spherical triangle with labeled opening angles.
+Right: projected spherical triangle with interior angles and
+spherical excess $E=34.18^\circ$.}
+\label{fig:geometry}
+\end{figure}
+
+\subsection{Arithmetic dichotomy}
+
+The PMNS manifold $M_{\mathrm{PMNS}}=m003(-2,3)$ has imaginary trace
+field $\mathbb{Q}(\sqrt{-3})$, giving loxodromic holonomy and large
+CP violation ($\delta_{\mathrm{PMNS}}=195.91^\circ$, $0.55\%$ from
+PDG~\cite{Gentry:Unified}).
+The real/imaginary trace field dichotomy---$\mathbb{Q}(\sqrt{17})$
+vs.\ $\mathbb{Q}(\sqrt{-3})$---geometrically explains the CP
+asymmetry between quark and lepton sectors.
+
+\section{Covering Tower}
+\label{sec:covering}
+
+\begin{observation}[Covering tower, computational]
+A complete enumeration of finite covers of $M_{\mathrm{CKM}}$
+through degree~9 shows that the only new torsion prime appearing in
+$H_1$ of any cover is $11 = L_5$ (a prime Lucas number), first
+appearing at degree~5.
+Degrees 2, 3, 4, 6, 7, 8, and~9 produce no new torsion primes.
+Thus $M_{\mathrm{CKM}}$ is Lucas-pure through degree~9 with a single
+new prime $\{11\}=\{L_5\}$.
+
+For comparison, $M_{\mathrm{PMNS}}$ produces three new Lucas primes
+$\{2,3,11\}=\{L_0,L_2,L_5\}$ through the same range.
+The asymmetry---one prime vs three---is consistent with the geometric
+isolation of $M_{\mathrm{CKM}}$ (no parent manifold in the 11,031-entry
+census through degree~5) and its role encoding the simpler
+(near-diagonal) CKM matrix.
+\end{observation}
+
+\paragraph{Falsifiable predictions.}
+(1)~$|V_{us}|\notin[0.220,0.232]$ at $3\sigma$ falsifies the construction.
+(2)~$|J|>10^{-4}$ requires a twist mechanism absent from the framework.
+(3)~A BSM quark mass failing the $\mathbb{Z}[\sqrt{17}]$ norm test
+to within $6\%$ breaks the arithmetic encoding.
+
+\paragraph{Open problems.}
+(1)~No geometric principle uniquely selects the word triple.
+(2)~The $\mathbb{Z}[\sqrt{17}]$ norm encoding lacks a dynamical derivation.
+(3)~The $\mathrm{SU}(3)\times\mathrm{SU}(2)\times\mathrm{U}(1)$
+gauge structure is absent.
+
+\section{Conclusions}
+
+$M_{\mathrm{CKM}}=m006(-5,2)$ encodes the CKM matrix through
+\emph{arithmetic} (trace field $\mathbb{Q}(\sqrt{17})$, real,
+$J=0$ via $[\mathrm{AbA}]=[\mathrm{AAb}]=2$) and
+\emph{kinematic} (axis overlaps, Cabibbo error $0.19\%$,
+canonical fitness $0.016482$) mechanisms.
+All six quark mass ratios approximate $\mathbb{Z}[\sqrt{17}]$ norms
+with $p<0.002$.
+
+\section*{Data Availability}
+\url{https://github.com/drmlgentry/hyperbolic-flavor-scan}
+
+\section*{Acknowledgments}
+The author thanks the developers of SnapPy and SageMath.
+
+\begin{thebibliography}{99}
+\bibitem{Cabibbo1963}
+N.~Cabibbo, Phys.\ Rev.\ Lett.\ \textbf{10}, 531 (1963).
+\bibitem{KobayashiMaskawa1973}
+M.~Kobayashi and T.~Maskawa, Prog.\ Theor.\ Phys.\ \textbf{49}, 652 (1973).
+\bibitem{PDG2024}
+S.~Navas et al.\ (PDG), Phys.\ Rev.\ D \textbf{110}, 030001 (2024).
+\bibitem{SnapPy}
+M.~Culler et al., \url{http://snappy.computop.org}.
+\bibitem{Chinburg98}
+T.~Chinburg et al., Ann.\ Scuola Norm.\ Sup.\ Pisa \textbf{30}, 1 (2001).
+\bibitem{Gentry:Unified}
+M.~L.~Gentry, SSRN \href{https://doi.org/10.2139/ssrn.6775158}{6775158} (2026).
+\end{thebibliography}
+
+\end{document}

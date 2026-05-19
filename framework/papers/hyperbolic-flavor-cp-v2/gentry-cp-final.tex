@@ -1,0 +1,269 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{authblk}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{hyperref}
+\usepackage{booktabs}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\MPMNS}{M_{\mathrm{PMNS}}}
+\newcommand{\KPMNS}{K_{\mathrm{PMNS}}}
+\newcommand{\PSL}{\mathrm{PSL}(2,\mathbb{C})}
+\newcommand{\Zfive}{\mathbb{Z}/5}
+
+\begin{document}
+
+\title{CP Violation from Twist Angles of Hyperbolic Holonomy:\\
+A Parameter-Free Prediction of the Leptonic CP Phase}
+
+\author[1]{Marvin L. Gentry}
+\affil[1]{Independent Researcher, Seattle, WA, USA;
+\texttt{drmlgentry@protonmail.com};
+ORCID: 0009-0006-4550-2663}
+\date{\today}
+
+\begin{abstract}
+We derive the leptonic CP-violating phase parameter-freely from the
+holonomy geometry of the compact hyperbolic 3-manifold
+$\MPMNS = m003(-2,3)$ (\texttt{OrientableClosedCensus[1]},
+volume $0.9814$, $H_1=\Zfive$).
+The twist angles $\varphi(\gamma)=\mathrm{Im}\log\lambda(\gamma)$
+of two loxodromic holonomy words yield:
+\[
+  \delta_{\mathrm{HFG}}
+  = \bigl(\pi + \varphi(\mathrm{aaB}) + \varphi(\mathrm{baa})\bigr)
+    \bmod 360^\circ
+  = 195.91^\circ,
+\]
+within $1.09^\circ$ of the PDG~2024 best fit $197.0^\circ$
+($0.55\%$ error, zero free parameters).
+The sign of $\pi$ is fixed geometrically by the orientation of the
+axis triple: $\det[\hat{n}(\mathrm{aa}),\hat{n}(\mathrm{aaB}),
+\hat{n}(\mathrm{baa})]=+0.079>0$.
+The same manifold's trace field $\KPMNS=\mathbb{Q}(\sqrt{-3})$
+(imaginary quadratic) provides a geometric explanation for why the
+lepton sector has large CP violation while the quark sector
+(trace field $\mathbb{Q}(\sqrt{17})$, real) is geometrically CP-suppressed.
+The prediction is falsifiable by Hyper-Kamiokande and DUNE.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+\label{sec:intro}
+
+The leptonic CP-violating phase $\delta_{\mathrm{PMNS}}$ is the least
+well-measured parameter of the Standard Model flavor sector.
+The PDG~2024 best fit is $\delta=197.0^\circ$ with a $1\sigma$
+uncertainty of approximately $\pm23^\circ$; Hyper-Kamiokande and
+DUNE are expected to reduce this to $\pm5^\circ$ precision.
+No first-principles derivation of $\delta$ exists.
+
+In this paper we show that $\delta$ is encoded in the twist angles
+of the holonomy representation of a single compact hyperbolic
+3-manifold, $\MPMNS=m003(-2,3)$, with zero free parameters.
+The result is part of the Hyperbolic Flavor Geometry (HFG)
+framework~\cite{Gentry:Unified}, in which the PMNS mixing matrix
+and charged lepton masses are also derived from the geometry of
+$\MPMNS$.
+
+All computations use SnapPy~\cite{SnapPy} at 150-bit precision.
+
+\section{The Manifold and Its Holonomy}
+\label{sec:manifold}
+
+The manifold $\MPMNS=m003(-2,3)$ has volume $0.9814$,
+$H_1=\Zfive$, and Chern-Simons invariant $1/4$.
+Its invariant trace field is $\KPMNS=\mathbb{Q}(\sqrt{-3})$
+(imaginary quadratic)~\cite{Chinburg98}, with ring of integers
+$\mathbb{Z}[\omega]$, $\omega=e^{2\pi i/3}$.
+
+The holonomy representation $\rho:\pi_1(\MPMNS)\to\PSL$ is
+computed via SnapPy's polished holonomy at 150-bit precision.
+For a loxodromic element $\gamma\in\pi_1(\MPMNS)$, the dominant
+eigenvalue $\lambda(\gamma)$ of $\rho(\gamma)$ satisfies
+$|\lambda(\gamma)|>1$, and the \emph{twist angle} is
+$\varphi(\gamma)=\mathrm{Im}\log\lambda(\gamma)\in(-\pi,\pi]$.
+
+The axis direction $\hat{n}(\gamma)\in S^2$ is extracted from
+the Pauli decomposition of $\log\rho(\gamma)$:
+\[
+  \log\rho(\gamma)
+  = \tfrac{\eta}{2}I
+  + \tfrac{i}{2}(n_x\sigma_x+n_y\sigma_y+n_z\sigma_z),
+  \quad
+  \hat{n}=\frac{(n_x,n_y,n_z)}{\|(n_x,n_y,n_z)\|},
+\]
+where $\eta=\ell(\gamma)+i\varphi(\gamma)$ is the complex
+translation length.
+
+\section{The CP Phase Formula}
+\label{sec:formula}
+
+\begin{theorem}[Leptonic CP phase, zero free parameters]
+\label{thm:main}
+Let $\rho$ be the polished holonomy of $\MPMNS=m003(-2,3)$.
+Then:
+\[
+  \boxed{
+    \delta_{\mathrm{HFG}}
+    = \bigl(\pi + \varphi(\mathrm{aaB}) + \varphi(\mathrm{baa})\bigr)
+      \bmod 360^\circ
+    = 195.91^\circ.
+  }
+\]
+The PDG~2024 best fit is $\delta_{\mathrm{PDG}}=197.0^\circ$;
+the difference is $1.09^\circ$ ($0.55\%$).
+\end{theorem}
+
+\begin{proof}[Computational verification]
+The twist angles from the SnapPy polished holonomy at 150-bit
+precision are:
+\[
+  \varphi(\mathrm{aaB}) = -176.73^\circ,
+  \qquad
+  \varphi(\mathrm{baa}) = -167.36^\circ.
+\]
+Then:
+\[
+  180^\circ + (-176.73^\circ) + (-167.36^\circ)
+  = -164.09^\circ
+  \equiv 195.91^\circ \pmod{360^\circ}.
+\]
+The sign of the leading $\pi$ is fixed by the orientation of the
+three axis vectors: the determinant
+\[
+  \det\bigl[\hat{n}(\mathrm{aa}),\,\hat{n}(\mathrm{aaB}),\,
+  \hat{n}(\mathrm{baa})\bigr] = +0.079 > 0
+\]
+indicates a right-handed triple, selecting $+\pi$ rather than $-\pi$.
+\end{proof}
+
+\begin{remark}
+The word triple $\{\mathrm{aa},\mathrm{aaB},\mathrm{baa}\}$ is the
+same triple that achieves the global minimum of the Borel PMNS
+construction (Frobenius fitness $0.005087$)~\cite{Gentry:PMNS}.
+The CP phase formula uses only the $A$-factor (twist angles) of the
+Iwasawa decomposition $\PSL=KAN$ of the holonomy, complementing
+the $N$-factor (Borel) used for the mixing matrix.
+\end{remark}
+
+\section{Geometric Explanation of CP Asymmetry}
+\label{sec:asymmetry}
+
+\begin{theorem}[Trace field dichotomy]
+\label{thm:dichotomy}
+\begin{enumerate}[(i)]
+\item The PMNS manifold has imaginary trace field
+  $\KPMNS=\mathbb{Q}(\sqrt{-3})$.
+  Its holonomy elements are loxodromic with non-trivial twist angles,
+  producing large leptonic CP violation ($\delta=195.91^\circ$).
+\item The CKM manifold $M_{\mathrm{CKM}}=m006(-5,2)$ has real
+  trace field $K_{\mathrm{CKM}}=\mathbb{Q}(\sqrt{17})$.
+  Its holonomy traces lie in $\mathbb{R}$, geometrically suppressing
+  quark CP violation; the Jarlskog invariant vanishes ($J=0$) in
+  the geometric construction.
+\end{enumerate}
+\end{theorem}
+
+The arithmetic dichotomy is clean: the sign of the discriminant
+($-3$ imaginary vs $+17$ real) determines whether holonomy elements
+are loxodromic or hyperbolic, and hence whether CP violation is
+large or suppressed. This provides a geometric explanation of the
+observed CP asymmetry between the lepton and quark sectors that
+requires no additional model-building.
+
+\section{Comparison with PDG and Experimental Status}
+\label{sec:comparison}
+
+The PDG~2024 fit gives $\delta_{\mathrm{PDG}}=197^\circ$ with
+$1\sigma$ range approximately $[174^\circ,220^\circ]$.
+The geometric prediction $\delta_{\mathrm{HFG}}=195.91^\circ$
+lies comfortably within the $1\sigma$ range and differs from the
+central value by $1.09^\circ$ ($0.55\%$).
+
+\begin{table}[htbp]
+\centering
+\caption{Predicted vs observed leptonic CP phase.}
+\label{tab:comparison}
+\begin{tabular}{lcc}
+\toprule
+Quantity & Predicted & PDG~2024 \\
+\midrule
+$\delta_{\mathrm{PMNS}}$ & $195.91^\circ$ & $197.0^\circ$ \\
+$\varphi(\mathrm{aaB})$ & $-176.73^\circ$ & --- \\
+$\varphi(\mathrm{baa})$ & $-167.36^\circ$ & --- \\
+Error & $1.09^\circ$ ($0.55\%$) & --- \\
+Free parameters & 0 & --- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Falsifiability}
+\label{sec:predictions}
+
+The prediction $\delta_{\mathrm{HFG}}=195.91^\circ$ is falsifiable:
+\begin{enumerate}
+\item \textbf{Hyper-Kamiokande} will measure $\delta$ to
+  $\sim5^\circ$ precision. A measured value outside
+  $[180^\circ,215^\circ]$ at $3\sigma$ would falsify
+  Theorem~\ref{thm:main}.
+\item \textbf{DUNE} provides an independent measurement of $\delta$
+  with comparable precision, providing a cross-check.
+\item The formula uses words $\mathrm{aaB}$ and $\mathrm{baa}$ from
+  the same triple that minimizes the PMNS fitness. If a different
+  word triple were found to give better PMNS fitness, the CP phase
+  formula would need to be re-evaluated.
+\end{enumerate}
+
+\paragraph{Open problems.}
+The Jarlskog scale $|J_{\mathrm{PMNS}}|\approx0.032$ has magnitude
+$\approx0.007$ in the geometric construction, close to
+$\alpha_{\mathrm{em}}\approx1/137$; whether this is exact is
+unresolved. The quark CP phase $\delta_{\mathrm{CKM}}$ predicted
+by the flat $\mathrm{U}(1)$ mechanism gives $72^\circ$ (PDG:
+$68^\circ$, $5.9\%$ error), consistent at the level of geometric
+precision.
+
+\section{Conclusions}
+\label{sec:conclusions}
+
+The leptonic CP-violating phase $\delta=195.91^\circ$ is derived
+from the twist angles of the holonomy of $\MPMNS=m003(-2,3)$
+with zero free parameters and $0.55\%$ agreement with PDG~2024.
+The sign is fixed geometrically by the orientation of the axis
+triple. The result is one component of the Hyperbolic Flavor Geometry
+framework~\cite{Gentry:Unified}, in which the same manifold encodes
+the PMNS mixing matrix and charged lepton mass ratios.
+The imaginary/real trace field dichotomy provides a geometric
+explanation of the CP asymmetry between lepton and quark sectors.
+The prediction is falsifiable by Hyper-Kamiokande and DUNE.
+
+\section*{Data Availability}
+All scripts: \url{https://github.com/drmlgentry/hyperbolic-flavor-scan}
+
+\section*{Acknowledgments}
+The author thanks the developers of SnapPy and SageMath.
+
+\begin{thebibliography}{99}
+\bibitem{PDG2024}
+S.~Navas et al.\ (PDG), Phys.\ Rev.\ D \textbf{110}, 030001 (2024).
+\bibitem{SnapPy}
+M.~Culler et al., \url{http://snappy.computop.org}.
+\bibitem{Chinburg98}
+T.~Chinburg et al.,
+Ann.\ Scuola Norm.\ Sup.\ Pisa \textbf{30}, 1 (2001).
+\bibitem{Gentry:PMNS}
+M.~L.~Gentry,
+SSRN \href{https://doi.org/10.2139/ssrn.6583549}{6583549} (2026).
+\bibitem{Gentry:Unified}
+M.~L.~Gentry,
+SSRN \href{https://doi.org/10.2139/ssrn.6775158}{6775158} (2026).
+\end{thebibliography}
+
+\end{document}

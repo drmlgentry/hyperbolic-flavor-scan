@@ -35,8 +35,9 @@ three manifolds: the Weeks manifold carries enhanced symmetry
 ($D_6$, order~12) and rank-2 torsion $H_1 = \mathbb{Z}/5\oplus
 \mathbb{Z}/5$; the $(-2,3)$ surgery reduces this to $H_1 =\mathbb{Z}/5$
 and symmetry group $\mathbb{Z}/2\oplus\mathbb{Z}/2$ (order~4), yielding
-$M_\mathrm{PMNS}$. The Chern--Simons invariant $\mathrm{CS}=\tfrac{1}{4}$
-is preserved under both fillings (Dedekind sum $s(2,1)=s(-2,3)=0$).
+$M_\mathrm{PMNS}$. The cusped ancestor \texttt{m003} has Chern--Simons invariant $\mathrm{CS}(\texttt{m003})=\tfrac{1}{4}$.
+The $(2,1)$ filling (Weeks manifold) preserves this value since $s(2,1)=0$;
+the $(-2,3)$ filling ($M_{\mathrm{PMNS}}$) does not, since $s(-2,3)=\tfrac{1}{18}\neq 0$.
 We compute the semiclassical Chern--Simons partition functions at level
 $k=5$ (matching the $\mathbb{Z}/5$ torsion) and find that the amplitude
 ratios equal the square roots of the volume ratios to five and six
@@ -121,9 +122,9 @@ $\mathrm{CS}(M_W) = \tfrac{1}{4}$.
 
 \paragraph{The PMNS filling $(-2,3)$.}
 For $(p,q) = (-2,3)$: $s(3,-2) = 0$~\cite{KirkKlassen}, so
-$\mathrm{CS}(M_\mathrm{PMNS}) = \tfrac{1}{4}$.
+$\mathrm{CS}(M_\mathrm{PMNS}) \neq \tfrac{1}{4}$.
 
-Both fillings preserve the Chern--Simons invariant at the exact
+The $(2,1)$ filling preserves the Chern--Simons invariant at the exact
 rational value $\tfrac{1}{4}$, a hallmark of arithmetic manifolds.
 The verification $\mathrm{vol}(M_\mathrm{PMNS}) = 0.98136883$ from
 SnapPy confirms equation~\eqref{eq:pmns_filling}.
@@ -351,7 +352,7 @@ reproducible:
   \item The Weeks manifold and the PMNS manifold are both Dehn fillings
     of the cusped \texttt{m003} (equations~\eqref{eq:weeks_filling}--
     \eqref{eq:pmns_filling}).
-  \item Both fillings preserve $\mathrm{CS} = \tfrac{1}{4}$ exactly,
+  \item The $(2,1)$ filling preserves $\mathrm{CS} = \tfrac{1}{4}$ (since $s(2,1)=0$); the $(-2,3)$ filling does not, since $s(-2,3)=\tfrac{1}{18}\neq 0$,
     confirmed by vanishing Dedekind sums.
   \item The $(-2,3)$ surgery reduces $H_1 = \mathbb{Z}/5\oplus
     \mathbb{Z}/5$ to $H_1 = \mathbb{Z}/5$ and $D_6$ to
@@ -382,7 +383,7 @@ We have established a precise topological hierarchy connecting the
 Weeks manifold (smallest-volume hyperbolic 3-manifold), the PMNS
 lepton-sector manifold, and the CKM quark-sector manifold through
 Dehn surgery on a common cusped ancestor. The Chern--Simons invariant
-$\mathrm{CS} = \tfrac{1}{4}$ is preserved throughout the hierarchy.
+$\mathrm{CS}(\texttt{m003}) = \tfrac{1}{4}$ (cusped ancestor) is preserved by the $(2,1)$ filling but not the $(-2,3)$ filling.
 The semiclassical Chern--Simons partition functions at level $k=5$
 have amplitude ratios equaling the square roots of the volume ratios
 to 5--6 significant figures, and a phase difference of $11.08^\circ$
