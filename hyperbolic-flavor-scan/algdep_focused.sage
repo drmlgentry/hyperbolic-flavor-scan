@@ -1,0 +1,282 @@
+#!/usr/bin/env sage
+"""
+algdep_focused.sage
+===================
+Focused algebraic number recognition on the key HFG quantities.
+Uses PSLQ/LLL via algdep() to find minimal polynomials.
+
+Key quantities:
+1. |lambda_b^2 / lambda_a| on m003 -- is this sqrt(mb/mc)?
+2. Re(tr(aa)) on m006 -- is this 3-sqrt(17)?
+3. ell_b/ell_a on m003 -- algebraic ratio?
+4. Traces of generators on m003 -- in Q(sqrt(-3))?
+
+Run: conda run -n sage sage algdep_focused.sage
+"""
+
+import snappy
+
+print("="*60)
+print("FOCUSED ALGEBRAIC NUMBER RECOGNITION")
+print("="*60)
+
+# High precision
+prec = 200
+CC = ComplexField(prec)
+RR = RealField(prec)
+
+M_P = snappy.OrientableClosedCensus[1]
+M_C = snappy.OrientableClosedCensus[43]
+rho_P = M_P.polished_holonomy()
+rho_C = M_C.polished_holonomy()
+
+def get_mat(rho, word):
+    mat = matrix(CC, [[CC(rho(word)[i,j]) for j in range(2)] for i in range(2)])
+    d = mat.det()
+    return mat / d.sqrt()
+
+def dominant_eig(rho, word):
+    mat = get_mat(rho, word)
+    e = mat.eigenvalues()
+    return max(e, key=abs)
+
+def tr(rho, word):
+    return get_mat(rho, word).trace()
+
+print("\nLoading eigenvalues...")
+lam_a = dominant_eig(rho_P, 'a')
+lam_b = dominant_eig(rho_P, 'b')
+lam_a_C = dominant_eig(rho_C, 'a')
+lam_b_C = dominant_eig(rho_C, 'b')
+
+print(f"m003 lam_a = {lam_a}")
+print(f"m003 lam_b = {lam_b}")
+
+# THE KEY ALGEBRAIC NUMBER
+ratio = lam_b^2 / lam_a
+ratio_abs = abs(ratio)
+print(f"\n|lambda_b^2/lambda_a| = {ratio_abs}")
+print(f"sqrt(mb/mc) = {RR(4.18/1.27).sqrt()}")
+print(f"Difference  = {abs(ratio_abs - RR(4.18/1.27).sqrt())}")
+
+print()
+print("="*60)
+print("1. algdep ON |lambda_b^2/lambda_a|")
+print("="*60)
+
+val = RealField(150)(ratio_abs)
+for deg in [2, 4, 6, 8, 10, 12]:
+    p = algdep(val, deg)
+    # Evaluate polynomial at our value
+    x = polygen(QQ)
+    pval = p(CC(val))
+    print(f"  deg {deg:>2}: {p}")
+    print(f"          |p(val)| = {abs(pval):.3e}")
+    # Check if roots of p are close to val
+    try:
+        rts = p.roots(CC, multiplicities=False)
+        for r in rts:
+            if abs(abs(r) - abs(val)) < 0.01:
+                print(f"          root near val: {r}  |r|={abs(r):.8f}")
+    except:
+        pass
+    print()
+
+print("="*60)
+print("2. algdep ON ell_b/ell_a (generator length ratio)")
+print("="*60)
+
+ell_a = 2*abs(log(lam_a))
+ell_b = 2*abs(log(lam_b))
+ratio_ell = ell_b/ell_a
+print(f"\nell_a = {ell_a}")
+print(f"ell_b = {ell_b}")
+print(f"ell_b/ell_a = {ratio_ell}")
+print(f"7/6 = {RR(7/6)}, diff = {abs(ratio_ell - RR(7/6))}")
+print()
+
+val2 = RealField(150)(ratio_ell)
+for deg in [2, 4, 6, 8]:
+    p = algdep(val2, deg)
+    pval = p(CC(val2))
+    print(f"  deg {deg:>2}: {p}  |p(val)|={abs(pval):.3e}")
+print()
+
+print("="*60)
+print("3. algdep ON Re(tr(a)) for m003")
+print("="*60)
+
+tr_a = tr(rho_P, 'a')
+re_tr_a = real(tr_a)
+im_tr_a = imag(tr_a)
+print(f"\nRe(tr(a)) = {re_tr_a}")
+print(f"Im(tr(a)) = {im_tr_a}")
+
+val3 = RealField(150)(re_tr_a)
+val4 = RealField(150)(im_tr_a)
+for deg in [2, 4, 6]:
+    p = algdep(val3, deg)
+    pval = p(CC(val3))
+    print(f"  Re: deg {deg}: {p}  |p|={abs(pval):.3e}")
+print()
+for deg in [2, 4, 6]:
+    p = algdep(val4, deg)
+    pval = p(CC(val4))
+    print(f"  Im: deg {deg}: {p}  |p|={abs(pval):.3e}")
+
+print()
+print("="*60)
+print("4. algdep ON Re(tr(aa)) for m006 -- should give 3-sqrt(17)")
+print("="*60)
+
+tr_aa_C = tr(rho_C, 'aa')
+re_tr_aa = real(tr_aa_C)
+print(f"\nRe(tr(aa on m006)) = {re_tr_aa}")
+print(f"3 - sqrt(17)       = {3 - RR(17).sqrt()}")
+print(f"Difference         = {abs(re_tr_aa - (3 - RR(17).sqrt()))}")
+print()
+
+val5 = RealField(150)(re_tr_aa)
+for deg in [2, 3, 4]:
+    p = algdep(val5, deg)
+    pval = p(CC(val5))
+    print(f"  deg {deg}: {p}  |p|={abs(pval):.3e}")
+    # Should find x^2 - 6x - 8 = 0 (roots 3 +/- sqrt(17))
+    try:
+        rts = p.roots(RealField(50), multiplicities=False)
+        print(f"  real roots: {[float(r) for r in rts]}")
+    except:
+        pass
+
+print()
+print("="*60)
+print("5. algdep ON Im(tr(aa)) for m006 -- should this be algebraic?")
+print("="*60)
+
+im_tr_aa = imag(tr_aa_C)
+print(f"\nIm(tr(aa on m006)) = {im_tr_aa}")
+print(f"sqrt(3)            = {RR(3).sqrt()}")
+print(f"2*sqrt(3)          = {2*RR(3).sqrt()}")
+print(f"sqrt(17)           = {RR(17).sqrt()}")
+print()
+
+val6 = RealField(150)(im_tr_aa)
+for deg in [2, 3, 4, 6]:
+    p = algdep(val6, deg)
+    pval = p(CC(val6))
+    print(f"  deg {deg}: {p}  |p|={abs(pval):.3e}")
+    try:
+        rts = p.roots(RealField(50), multiplicities=False)
+        print(f"  real roots: {[float(r) for r in rts]}")
+    except:
+        pass
+
+print()
+print("="*60)
+print("6. DIRECT CHECK: does lambda_b^2/lambda_a satisfy a")
+print("   polynomial with coefficients in Q(sqrt(-3))?")
+print("="*60)
+print()
+
+# lambda_b^2/lambda_a is an algebraic number
+# Its minimal polynomial over Q has some degree d
+# If d=2 and the polynomial is x^2 - (mb/mc) = 0
+# then |lambda_b^2/lambda_a| = sqrt(mb/mc) EXACTLY
+
+# The polynomial of lambda_b^2/lambda_a over Q:
+# lambda satisfies lambda^2 - tr*lambda + 1 = 0
+# where tr is in the trace field Q(sqrt(-3)) extension
+
+# Compute: what is lambda_b^2/lambda_a as a complex number?
+print(f"lambda_b^2/lambda_a = {ratio}")
+print(f"|ratio|  = {ratio_abs}")
+print(f"arg(ratio) = {CC(ratio).argument()} rad")
+print(f"         = {CC(ratio).argument()*180/RR(pi)} deg")
+print()
+
+# The argument of lambda_b^2/lambda_a
+# = 2*phi(b) - phi(a) (where phi is the twist angle)
+phi_a = RR(84.2781) * RR(pi/180)  # in radians
+phi_b = RR(28.1429) * RR(pi/180)
+print(f"2*phi(b) - phi(a) = {(2*phi_b - phi_a) * 180/RR(pi)} deg")
+print(f"arg(lambda_b^2/lambda_a) actual = {CC(ratio).argument()*180/RR(pi)} deg")
+print()
+
+# Try algdep on the complex number directly
+# by treating real and imaginary parts as a 2D vector
+re_ratio = real(ratio)
+im_ratio = imag(ratio)
+print(f"Re(ratio) = {re_ratio}")
+print(f"Im(ratio) = {im_ratio}")
+print()
+
+print("algdep on Re(lambda_b^2/lambda_a):")
+val7 = RealField(150)(re_ratio)
+for deg in [2, 4, 6]:
+    p = algdep(val7, deg)
+    pval = p(CC(val7))
+    print(f"  deg {deg}: {p}  |p|={abs(pval):.3e}")
+
+print()
+print("algdep on Im(lambda_b^2/lambda_a):")
+val8 = RealField(150)(im_ratio)
+for deg in [2, 4, 6]:
+    p = algdep(val8, deg)
+    pval = p(CC(val8))
+    print(f"  deg {deg}: {p}  |p|={abs(pval):.3e}")
+
+print()
+print("="*60)
+print("7. PSLQ on (ell_a, ell_b, ln(mb/mc))")
+print("="*60)
+print()
+# Check if there's an INTEGER RELATION between ell_a, ell_b, ln(mb/mc)
+# i.e., c1*ell_a + c2*ell_b + c3*ln(mb/mc) = 0 for small integers
+
+from sage.modules.free_module_element import vector
+
+ln_mbmc = log(RR(4.18/1.27))
+ln_mtaumu = log(RR(1.7769/0.10566))
+
+print(f"ell_a     = {RR(ell_a)}")
+print(f"ell_b     = {RR(ell_b)}")
+print(f"ln(mb/mc) = {ln_mbmc}")
+print(f"ln(mtau/mmu) = {ln_mtaumu}")
+print()
+
+# LLL-reduce to find integer relations
+# Form matrix with these values and run LLL
+try:
+    # Use integer relation finding
+    v = [RealField(100)(ell_a), RealField(100)(ell_b),
+         RealField(100)(ln_mbmc)]
+    rel = linear_relation(v)  # may not exist as a sage function
+    print(f"Linear relation: {rel}")
+except Exception as e:
+    print(f"linear_relation not available: {e}")
+    
+    # Manual: check known relations
+    print("\nChecking known integer relations:")
+    for c1,c2,c3 in [(-1,2,-1),(2,1,-1),(3,1,-1)]:
+        val = c1*RR(ell_a) + c2*RR(ell_b) + c3*ln_mbmc
+        print(f"  {c1}*ell_a + {c2}*ell_b + ({c3})*ln(mb/mc) = {val}")
+    
+    print()
+    print("Checking against ln(mtau/mmu):")
+    for c1,c2,c3 in [(2,1,-1),(0,3,-1)]:
+        val_m = c1*RR(ell_a) + c2*RR(ell_b) + c3*ln_mtaumu
+        val_C = c1*RR(2*abs(log(lam_a_C))) + c2*RR(2*abs(log(lam_b_C))) + c3*ln_mtaumu
+        print(f"  m003: {c1}*ell_a + {c2}*ell_b + ({c3})*ln(mtau/mmu) = {val_m}")
+        print(f"  m006: {c1}*ell_a + {c2}*ell_b + ({c3})*ln(mtau/mmu) = {val_C}")
+
+print()
+print("="*60)
+print("SUMMARY")
+print("="*60)
+print()
+print("If algdep returns a LOW-DEGREE polynomial with SMALL")
+print("coefficients and |p(val)| < 1e-20, the value is")
+print("genuinely algebraic and the polynomial is exact.")
+print()
+print("If algdep returns high-degree polynomials with large")
+print("coefficients, the match is numerical approximation.")
