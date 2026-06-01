@@ -1,0 +1,15 @@
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}%
+\contentsline {section}{\numberline {2}The Two Manifolds}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Selection of $M_{\mathrm {PMNS}}$}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Trace fields}{2}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Mixing Matrices}{2}{section.3}%
+\contentsline {paragraph}{CKM.}{2}{section*.2}%
+\contentsline {paragraph}{PMNS.}{2}{section*.3}%
+\contentsline {section}{\numberline {4}Geometric CP Phase}{2}{section.4}%
+\contentsline {section}{\numberline {5}Arithmetic Mass Encoding}{3}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Statistical validation}{3}{subsection.5.1}%
+\contentsline {section}{\numberline {6}Covering Tower and Lucas-Purity}{3}{section.6}%
+\contentsline {section}{\numberline {7}Predictions and Open Problems}{4}{section.7}%
+\contentsline {paragraph}{Falsifiable predictions.}{4}{section*.4}%
+\contentsline {paragraph}{Open problems.}{4}{section*.5}%
+\contentsline {section}{\numberline {8}Conclusions}{4}{section.8}%

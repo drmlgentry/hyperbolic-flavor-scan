@@ -1,0 +1,25 @@
+\begin{thebibliography}{1}
+
+\bibitem{SnapPy}
+M.~Culler, N.~Dunfield, M.~Goerner, and J.~R. Weeks.
+\newblock {SnapPy}, a computer program for studying the geometry and topology
+  of 3-manifolds.
+\newblock \url{http://snappy.computop.org}.
+
+\bibitem{GoodmanEtAl}
+O.~Goodman, D.~Heard, and C.~Hodgson.
+\newblock Commensurators of cusped hyperbolic manifolds.
+\newblock {\em Exp. Math.}, 17:283, 2008.
+
+\bibitem{Jarlskog}
+C.~Jarlskog.
+\newblock A basis independent formulation of the connection between quark mass
+  matrices, {CP} violation and experiment.
+\newblock {\em Z. Phys. C}, 29:491, 1985.
+
+\bibitem{Weeks}
+J.~R. Weeks.
+\newblock Computation of hyperbolic structures in knot theory.
+\newblock In {\em Handbook of Knot Theory}. Elsevier, 2005.
+
+\end{thebibliography}

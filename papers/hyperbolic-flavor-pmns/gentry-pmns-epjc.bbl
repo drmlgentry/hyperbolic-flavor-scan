@@ -1,0 +1,39 @@
+\begin{thebibliography}{7}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{DOI~\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{DOI~\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem[{Cabibbo(1963)}]{Cabibbo:1963yz}
+Cabibbo N (1963) Unitary symmetry and leptonic decays. Phys Rev Lett
+  10:531--533, \doi{10.1103/PhysRevLett.10.531}
+
+\bibitem[{Culler et~al(2024)Culler, Dunfield, Goerner, and Weeks}]{snappy}
+Culler M, Dunfield NM, Goerner M, Weeks JR (2024) {SnapPy}, a computer program
+  for studying the geometry and topology of 3-manifolds.
+  \urlprefix\url{http://snappy.computop.org}
+
+\bibitem[{Gentry(2026)}]{Gentry:CKM}
+Gentry ML (2026) Ckm quark mixing from geodesic axes of hyperbolic 3-manifold
+  holonomy. Phys Rev D Submitted March 2026, temporary ID es2026mar11\_966
+
+\bibitem[{Group et~al(2024)Group, Navas et~al}]{PDG2024}
+Group PD, Navas S, et~al (2024) Review of particle physics. Phys Rev D
+  110:030001, \doi{10.1103/PhysRevD.110.030001}
+
+\bibitem[{Kobayashi and Maskawa(1973)}]{Kobayashi:1973fv}
+Kobayashi M, Maskawa T (1973) Cp violation in the renormalizable theory of weak
+  interaction. Prog Theor Phys 49:652--657, \doi{10.1143/PTP.49.652}
+
+\bibitem[{Maki et~al(1962)Maki, Nakagawa, and Sakata}]{Maki:1962mu}
+Maki Z, Nakagawa M, Sakata S (1962) Remarks on the unified model of elementary
+  particles. Prog Theor Phys 28:870--880, \doi{10.1143/PTP.28.870}
+
+\bibitem[{Pontecorvo(1957)}]{Pontecorvo:1957cp}
+Pontecorvo B (1957) Mesonium and anti-mesonium. Sov Phys JETP 6:429
+
+\end{thebibliography}

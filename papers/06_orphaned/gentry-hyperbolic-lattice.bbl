@@ -1,0 +1,45 @@
+\begin{thebibliography}{1}
+
+\bibitem{bridsonhaefliger}
+M.~R. Bridson and A.~Haefliger.
+\newblock {\em Metric Spaces of Non-Positive Curvature}.
+\newblock Springer, 1999.
+
+\bibitem{SnapPy}
+M.~Culler, N.~M. Dunfield, M.~Goerner, and J.~R. Weeks.
+\newblock {SnapPy}, a computer program for studying the geometry and topology
+  of 3-manifolds, 2024.
+
+\bibitem{FintushelStern1990}
+R.~Fintushel and R.~J. Stern.
+\newblock Instanton homology of {S}eifert fibred homology three spheres.
+\newblock {\em Proc. London Math. Soc.}, 61(1):109--137, 1990.
+
+\bibitem{KnotInfo}
+C.~Livingston and A.~H. Moore.
+\newblock {KnotInfo}: Table of knot invariants.
+\newblock \url{https://www.indiana.edu/~knotinfo}, 2024.
+\newblock Knot 12n242, Alexander polynomial $t^2+3t+1$.
+
+\bibitem{MaclachlanReid2003}
+C.~Maclachlan and A.~W. Reid.
+\newblock {\em The Arithmetic of Hyperbolic 3-Manifolds}.
+\newblock Springer, 2003.
+
+\bibitem{Neukirch1999}
+J.~Neukirch.
+\newblock {\em Algebraic Number Theory}.
+\newblock Springer, 1999.
+
+\bibitem{ratcliffe}
+J.~G. Ratcliffe.
+\newblock {\em Foundations of Hyperbolic Manifolds}.
+\newblock Springer, 3rd edition, 2019.
+
+\bibitem{Smyth1971}
+C.~J. Smyth.
+\newblock On the product of the conjugates outside the unit circle of an
+  algebraic integer.
+\newblock {\em Bull. London Math. Soc.}, 3:169--175, 1971.
+
+\end{thebibliography}

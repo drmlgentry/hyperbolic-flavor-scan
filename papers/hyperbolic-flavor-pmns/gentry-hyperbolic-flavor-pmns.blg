@@ -1,0 +1,72 @@
+This is BibTeX, Version 0.99d (TeX Live 2025)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: gentry-hyperbolic-flavor-pmns.aux
+The style file: apsrev4-2.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: gentry-hyperbolic-flavor-pmnsNotes.bib
+Database file #2: gentry-pmns.bib
+Warning--entry type for "SnapPy" isn't style-file defined
+--line 115 of file gentry-pmns.bib
+control{REVTEX42Control}, control.key{N/A}, control.author{N/A}, control.editor{N/A}, control.title{N/A}, control.pages{N/A}, control.year{N/A}, control.eprint{N/A}, 
+control{apsrev42Control}, control.key{N/A}, control.author{08}, control.editor{1}, control.title{0}, control.pages{0}, control.year{1}, control.eprint{N/A}, 
+Warning--jnrlst (dependency: not reversed) set 1
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+apsrev4-2.bst 2019-01-14 (MD) hand-edited version of apsrev4-1.bst
+Control: key (0) 
+Control: author (8) initials jnrlst
+Control: editor formatted (1) identically to author
+Control: production of article title (0) allowed
+Control: page (0) single
+Control: year (1) truncated
+Control: production of eprint (0) enabled
+You've used 9 entries,
+            6079 wiz_defined-function locations,
+            1686 strings with 16138 characters,
+and the built_in function-call counts, 7585 in all, are:
+= -- 539
+> -- 153
+< -- 64
++ -- 52
+- -- 50
+* -- 1073
+:= -- 733
+add.period$ -- 7
+call.type$ -- 9
+change.case$ -- 36
+chr.to.int$ -- 19
+cite$ -- 9
+duplicate$ -- 753
+empty$ -- 502
+format.name$ -- 77
+if$ -- 1476
+int.to.chr$ -- 1
+int.to.str$ -- 16
+missing$ -- 124
+newline$ -- 73
+num.names$ -- 21
+pop$ -- 316
+preamble$ -- 1
+purify$ -- 35
+quote$ -- 0
+skip$ -- 342
+stack$ -- 0
+substring$ -- 164
+swap$ -- 668
+text.length$ -- 14
+text.prefix$ -- 0
+top$ -- 10
+type$ -- 104
+warning$ -- 1
+while$ -- 30
+width$ -- 0
+write$ -- 113
+(There were 2 warnings)

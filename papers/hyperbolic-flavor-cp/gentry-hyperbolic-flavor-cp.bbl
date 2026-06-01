@@ -1,0 +1,18 @@
+﻿\begin{thebibliography}{3}
+
+\bibitem{Gentry:CKM}
+M.~L. Gentry,
+\newblock {CKM} quark mixing from geodesic axes of hyperbolic 3-manifold holonomy,
+\newblock \emph{Phys. Rev. D} (2026), submitted March 2026, temporary {ID} es2026mar11\_966.
+
+\bibitem{Gentry:PMNS}
+M.~L. Gentry,
+\newblock Lepton mixing from Borel structure of hyperbolic holonomy,
+\newblock \emph{Phys. Rev. D} (2026), submitted March 2026, temporary {ID} es2026mar13\_942.
+
+\bibitem{snappy}
+M.~Culler, N.~M. Dunfield, M.~Goerner, and J.~R. Weeks,
+\newblock {SnapPy}, a computer program for studying the geometry and topology of 3-manifolds (2024),
+\newblock \url{http://snappy.computop.org}.
+
+\end{thebibliography}

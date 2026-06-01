@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d (TeX Live 2025)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: gentry-pmns-epjc.aux
+The style file: spbasic.bst
+Database file #1: gentry-pmns.bib
+Warning--entry type for "SnapPy" isn't style-file defined
+--line 115 of file gentry-pmns.bib
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+You've used 7 entries,
+            3269 wiz_defined-function locations,
+            718 strings with 5862 characters,
+and the built_in function-call counts, 6001 in all, are:
+= -- 552
+> -- 144
+< -- 4
++ -- 52
+- -- 45
+* -- 487
+:= -- 858
+add.period$ -- 7
+call.type$ -- 7
+change.case$ -- 50
+chr.to.int$ -- 7
+cite$ -- 7
+duplicate$ -- 533
+empty$ -- 555
+format.name$ -- 62
+if$ -- 1249
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 66
+newline$ -- 31
+num.names$ -- 28
+pop$ -- 141
+preamble$ -- 1
+purify$ -- 42
+quote$ -- 0
+skip$ -- 109
+stack$ -- 0
+substring$ -- 625
+swap$ -- 135
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 63
+warning$ -- 0
+while$ -- 50
+width$ -- 0
+write$ -- 89
+(There was 1 warning)

@@ -1,0 +1,23 @@
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
+\contentsline {section}{\numberline {2}Geometric Setup}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}The two manifolds}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Holonomy and twist angles}{2}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Census methodology}{3}{subsection.2.3}%
+\contentsline {section}{\numberline {3}A-Factor Twist Angle: Derivation and Geometric Meaning}{3}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Iwasawa decomposition}{3}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Conjugacy invariance}{3}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Folding convention and CP combinations}{3}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Census Results and SM Coincidences}{3}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Headline coincidences}{3}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}The $m_b/m_c$ mass ratio}{3}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}The CKM CP phase at length 2}{4}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}The PMNS solar angle from the CKM manifold}{4}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}The generator twist and CKM isospectrality}{4}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Full coincidence table}{5}{subsection.4.6}%
+\contentsline {section}{\numberline {5}Null Result: $\theta _{13}^{\rm CKM}$}{6}{section.5}%
+\contentsline {section}{\numberline {6}Selberg Zeta Function and Spectral Interpretation}{6}{section.6}%
+\contentsline {subsection}{\numberline {6.1}First Laplace eigenvalues}{6}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Large spectral gap and SM-scale flavor parameters}{6}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Twist angles in the Selberg Euler factors}{7}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Odd-torsion conjecture and the Selberg zeta function}{7}{subsection.6.4}%
+\contentsline {section}{\numberline {7}Discussion and Outlook}{7}{section.7}%

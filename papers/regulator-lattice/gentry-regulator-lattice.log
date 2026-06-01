@@ -1,0 +1,39 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2026.1.2)  6 MAR 2026 11:39
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**gentry-regulator-lattice.tex
+(./gentry-regulator-lattice.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2025-12-29>
+
+! LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \\d
+       ocumentclass[12pt]{article}\n\\usepackage{amsmath,amssymb,amsfonts,am...
+
+? 
+! Emergency stop.
+ ...                                              
+                                                  
+l.1 \\d
+       ocumentclass[12pt]{article}\n\\usepackage{amsmath,amssymb,amsfonts,am...
+
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+ 
+Here is how much of TeX's memory you used:
+ 15 strings out of 467538
+ 548 string characters out of 5423726
+ 433733 words of memory out of 5000000
+ 29018 multiletter control sequences out of 15000+600000
+ 627721 words of font info for 40 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 12i,0n,13p,766b,14s stack positions out of 10000i,1000n,20000p,200000b,200000s
+!  ==> Fatal error occurred, no output PDF file produced!
