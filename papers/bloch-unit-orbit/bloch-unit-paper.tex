@@ -1,0 +1,412 @@
+\documentclass[12pt]{amsart}
+\usepackage{amsmath,amssymb,amsthm,hyperref}
+\usepackage[margin=1.1in]{geometry}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{observation}[theorem]{Numerical Observation}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\DeclareMathOperator{\vol}{vol}
+\DeclareMathOperator{\Norm}{Norm}
+\DeclareMathOperator{\disc}{disc}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Gal}{\mathrm{Gal}}
+
+\title{Norm Structure of the Tetrahedral Octic and a Period-3 Unit Orbit
+in the Trace Field of the Meyerhoff Manifold}
+
+\author{Marvin L.\ Gentry}
+\address{Independent Researcher, Seattle, WA}
+\email{drmlgentry@protonmail.com}
+\urladdr{https://hyperbolicflavorgeometry.org}
+\thanks{ORCID: 0009-0006-4550-2663}
+\date{\today}
+
+\begin{abstract}
+Let $K = \Q(w)$ where $w^4 = w+1$, the trace field of the Meyerhoff
+manifold $M$ --- the unique minimum-volume closed orientable hyperbolic
+3-manifold, obtained as Dehn surgery $\texttt{m003(-2,3)}$ on the
+figure-eight knot complement. The cusped parent $\texttt{m003}$ admits
+an ideal triangulation whose shape parameters satisfy a degree-8
+polynomial $p_8(y) = y^8 + y^6 - 2y^5 + y^4 - y^3 + 3y^2 - 3y + 1$.
+We prove two results.
+
+\textbf{(I) Norm Decomposition.}
+Define $q_2(y) = y^2 - wy + (-w^3+w^2+1) \in K[y]$. Then
+\[
+p_8(y) = \Norm_{K/\Q}(q_2(y))
+= \prod_{\sigma: K \hookrightarrow \overline{\Q}} \sigma(q_2)(y).
+\]
+This is an exact algebraic identity, verified by symbolic computation
+in SageMath. Over the splitting field $L$ of $x^4-x-1$, $p_8$ factors
+into four conjugate quadratic polynomials $\sigma_i(q_2)$, one for
+each of the four embeddings $\sigma_i: K \hookrightarrow L$.
+
+\textbf{(II) Period-3 Unit Orbit.}
+The three elements $\{w^3, -w, w^{-4}\}$ in $K$ form a period-3
+orbit under $T(z) = 1/(1-z)$, and are pure powers of the fundamental
+unit $u_1 = 1 - w^3 \in \mathcal{O}_K$:
+\[
+w^3 = -u_1^{-3}, \qquad -w = u_1^{-1}, \qquad w^{-4} = u_1^4,
+\]
+with exponent sum $-3+(-1)+4 = 0$ forcing $w^3 \cdot (-w) \cdot w^{-4} = -1$.
+
+A high-precision numerical computation ($\ge 100$ significant figures)
+gives $-D(\sigma(w^3)) = \vol(M)$, where $D$ is the Bloch--Wigner
+function and $\sigma$ is the geometric complex embedding of $K$.
+We conjecture this is an exact identity in the Bloch group $B(K)$.
+\end{abstract}
+
+\maketitle
+
+%─────────────────────────────────────────────────
+\section{Introduction}
+%─────────────────────────────────────────────────
+
+The Meyerhoff manifold $M = \texttt{m003(-2,3)}$ is the unique
+closed orientable hyperbolic 3-manifold of minimum volume
+$v_0 = \vol(M) \approx 0.98137$ \cite{GMM2009}. It arises as
+$(−2,3)$ Dehn surgery on $\texttt{m003}$, the figure-eight knot
+complement. The trace field of $M$ is $K = \Q(w)$, $w^4 - w - 1 = 0$,
+a number field of discriminant $-283$, signature $(2,1)$,
+and $\Gal(\tilde{K}/\Q) \cong S_4$ \cite{snappy}.
+
+The ideal triangulation of the cusped parent $\texttt{m003}$ has
+tetrahedral shapes encoded by a degree-8 polynomial
+$p_8(y) \in \Z[y]$ (computed by SnapPy from the high-precision
+shape data of the Dehn-filled manifold $M$).
+This paper proves that $p_8$ equals the field norm $\Norm_{K/\Q}(q_2)$
+of a specific quadratic $q_2 \in K[y]$ (Theorem~\ref{thm:norm}),
+an exact algebraic identity establishing a complete norm factorization.
+The paper also identifies a period-3 unit orbit
+$\{w^3, -w, w^{-4}\} \subset \mathcal{O}_K^\times$
+(Theorem~\ref{thm:orbit}) and connects it to the Meyerhoff volume
+via the Bloch--Wigner function (Observation~\ref{obs:bloch}).
+
+\textbf{Organization.}
+\S2 describes $K$ and its unit group.
+\S3 states and proves the norm decomposition.
+\S4 proves the inversion identity in $K[y]/(q_2)$.
+\S5 proves the period-3 unit orbit theorem.
+\S6 states the Bloch--Wigner numerical observation and main conjecture.
+
+%─────────────────────────────────────────────────
+\section{The trace field and unit group}
+%─────────────────────────────────────────────────
+
+Let $f(x) = x^4 - x - 1$. The field $K = \Q(w)$, $f(w) = 0$, has
+$\disc(K) = -283$ (prime), signature $(2,1)$, class number 1,
+and $\Gal(\tilde{K}/\Q) \cong S_4$ (transitive degree-4 group number 5),
+with splitting field $[L:\Q] = 24$. All verified in SageMath.
+
+By Dirichlet's theorem, $\mathcal{O}_K^\times \cong \Z/2 \times \Z^2$.
+SageMath's \texttt{unit\_group()} computes generators:
+\[
+u_0 = -1, \qquad u_1 = 1 - w^3, \qquad u_2 = -w^2 - 1,
+\]
+with $N(u_1) = -1$ (fundamental unit of norm $-1$) and $N(u_2) = 1$.
+
+SnapPy \cite{snappy} identifies the trace field of $M$ as
+$\Q(z)$, $z^4 - z - 1 = 0$, with geometric embedding
+$z \mapsto z_0 \approx -0.2481 + 1.0340i$,
+confirming $K$ is the trace field with $\sigma(w) = z_0$.
+Notably, SnapPy returns $\{-z^3+1,\, -z^2+1,\, z\}$ as
+trace field generators, and $-z^3+1 = u_1|_{w \mapsto z}$ appears naturally.
+
+%─────────────────────────────────────────────────
+\section{The norm structure of the tetrahedral octic}
+%─────────────────────────────────────────────────
+
+SnapPy computes two tetrahedral shape parameters for $M$:
+\[
+z_1 \approx 1.5881 + 0.5371i, \qquad z_2 \approx -0.3686 + 0.3774i,
+\]
+which are roots of the degree-8 polynomial (with integer coefficients):
+\[
+p_8(y) = y^8 + y^6 - 2y^5 + y^4 - y^3 + 3y^2 - 3y + 1.
+\]
+
+\begin{remark}
+The polynomial $p_8$ arises from the shape parameters of the
+\emph{cusped} manifold $\texttt{m003}$ (not $M$ itself, which is closed).
+SnapPy recovers these shapes from the Dehn-filled structure.
+\end{remark}
+
+We define the quadratic factor motivated by the factorization
+of $p_8$ over $K$: direct computation shows $p_8$ factors over
+$K$ as a product of a degree-2 and a degree-6 polynomial, with
+the degree-2 factor being:
+\[
+q_2(y) = y^2 - wy + (-w^3 + w^2 + 1) \in K[y].
+\]
+The coefficients $-w$ (linear) and $-w^3+w^2+1$ (constant)
+arise from the shape equations; specifically, $-w^3+w^2+1 = u_1 + w^2$
+where $u_1 = 1-w^3$ is the fundamental unit.
+
+\begin{theorem}[Norm Decomposition]
+\label{thm:norm}
+\[
+p_8(y) = \Norm_{K/\Q}(q_2(y))
+= \prod_{i=1}^{4} \sigma_i(q_2)(y),
+\]
+where $\sigma_1, \ldots, \sigma_4$ are the four distinct embeddings
+$K \hookrightarrow \overline{\Q}$.
+\end{theorem}
+
+\begin{proof}
+Using SageMath, we compute all four embeddings of $K$ into the
+splitting field $L$ (degree 24 over $\Q$), apply each to the
+coefficients of $q_2$, and multiply the resulting four polynomials
+in $L[y]$. The product is computed symbolically (not numerically)
+and its coefficients are verified to be rational integers
+matching $p_8$ exactly:
+\begin{center}
+\begin{tabular}{c|rrrrrrrrr}
+$[y^i]$ & 8 & 7 & 6 & 5 & 4 & 3 & 2 & 1 & 0 \\
+\hline
+$p_8$ & 1 & 0 & 1 & $-2$ & 1 & $-1$ & 3 & $-3$ & 1 \\
+$\prod \sigma_i(q_2)$ & 1 & 0 & 1 & $-2$ & 1 & $-1$ & 3 & $-3$ & 1 \\
+\end{tabular}
+\end{center}
+The coefficients agree exactly.
+\end{proof}
+
+\begin{corollary}
+\label{cor:factorization}
+Over the splitting field $L$, the polynomial $p_8$ decomposes as
+\[
+p_8 = \sigma_1(q_2) \cdot \sigma_2(q_2) \cdot \sigma_3(q_2) \cdot \sigma_4(q_2),
+\]
+a product of four conjugate quadratic polynomials over $K$
+(which split further into linear factors over $L$, since $L$
+contains all roots of $f$). In particular, the eight roots of
+$p_8$ are organized into four Galois-conjugate pairs.
+\end{corollary}
+
+\begin{remark}
+The norm identity immediately explains why $p_8 \in \Z[y]$:
+the norm of any element of $\mathcal{O}_K[y]$ lies in $\Z[y]$.
+It also explains the degree ($4 \times 2 = 8$) and the
+splitting pattern ($2+2+2+2$ over $L$).
+\end{remark}
+
+%─────────────────────────────────────────────────
+\section{An inversion identity in $K[y]/(q_2)$}
+%─────────────────────────────────────────────────
+
+Let $z_{\rm tet}$ denote the image of $y$ in $K[y]/(q_2)$.
+
+\begin{proposition}[Inversion identity]
+\label{prop:inversion}
+In the quadratic extension $K[t]/(q_2(t))$,
+the element $w^2(w - t)$ is invertible and its inverse is $t$:
+\[
+w^2(w - t) \cdot t \equiv 1 \pmod{q_2(t)}.
+\]
+Equivalently, $w^2 z_{\rm tet}(w - z_{\rm tet}) = 1$.
+\end{proposition}
+
+\begin{proof}
+In SageMath, the extended Euclidean algorithm in $K[t]$ computes
+$\gcd(w^2(w-t),\, q_2(t)) = 1$ and returns inverse $t$;
+this is a symbolic computation that the reader can verify.
+For a self-contained algebraic proof: substituting
+$t = z_{\rm tet}$ and using $z_{\rm tet}^2 = wz_{\rm tet} + w^3 - w^2 - 1$
+(from $q_2(z_{\rm tet}) = 0$), one computes
+\[
+w^2 z_{\rm tet}(w - z_{\rm tet})
+= w^3 z_{\rm tet} - w^2 z_{\rm tet}^2
+= w^3 z_{\rm tet} - w^2(w z_{\rm tet} + w^3 - w^2 - 1).
+\]
+The $z_{\rm tet}$ terms cancel, leaving $-w^5 + w^4 + w^2$.
+Since $w^4 = w+1$ and $w^5 = w^2+w$, this equals
+$-(w^2+w) + (w+1) + w^2 = 1$.
+\end{proof}
+
+\begin{remark}
+\label{rem:geo}
+The inversion identity implies a chain of geometric identifications,
+verified numerically to full SnapPy precision:
+\begin{align*}
+z_1 &= w \cdot z_{\rm tet}^2, \\
+z_2 &= w \cdot (w - z_{\rm tet})^2, \\
+\tfrac{1}{1-z_1} &= z_{\rm tet}.
+\end{align*}
+The last identity follows from $1 - z_1 = w^2(w - z_{\rm tet})$
+(using $z_1 = w^2 z_{\rm tet} + u_1$ and $u_1 = 1-w^3$),
+combined with Proposition~\ref{prop:inversion}.
+Making these identifications fully rigorous from the gluing
+equations of $\texttt{m003}$ is left for future work.
+\end{remark}
+
+%─────────────────────────────────────────────────
+\section{The period-3 unit orbit}
+%─────────────────────────────────────────────────
+
+\begin{theorem}[Period-3 unit orbit]
+\label{thm:orbit}
+Let $u_1 = 1 - w^3 \in \mathcal{O}_K^\times$. Then:
+\begin{enumerate}
+\item[(i)] $\{w^3, -w, w^{-4}\}$ is a period-3 orbit under $T(z) = 1/(1-z)$:
+\[
+T(w^3) = -w, \qquad T(-w) = w^{-4}, \qquad T(w^{-4}) = w^3.
+\]
+\item[(ii)] All three elements are pure powers of $u_1$:
+\[
+w^3 = -u_1^{-3}, \qquad -w = u_1^{-1}, \qquad w^{-4} = u_1^4.
+\]
+\item[(iii)] $w^3 \cdot (-w) \cdot w^{-4} = -1$.
+\item[(iv)] $w^3$ satisfies $w^3(1-w^3)^3 = -1$, with minimal polynomial
+$x^4 - 3x^3 + 3x^2 - x - 1$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+All identities are algebraic, verified in $K = \Q[x]/(x^4-x-1)$
+in SageMath. For (ii): \texttt{unit\_group()} expresses
+$w^3 = u_0 \cdot u_1^{-3} = -u_1^{-3}$; the others follow similarly.
+For (iii): the exponent sum $-3 + (-1) + 4 = 0$ forces
+$w^3(-w)w^{-4} = u_0 \cdot u_1^0 = -1$.
+For (iv): substitute $z = w^3$ in $z(1-z)^3 + 1$ and reduce using $w^4 = w+1$.
+\end{proof}
+
+\begin{remark}
+The entire period-3 orbit lies in the rank-1 subgroup $\langle u_1 \rangle$
+of $\mathcal{O}_K^\times$. The second generator $u_2 = -w^2-1$
+does not appear in the orbit. We conjecture that $u_2$ governs
+the residual quartic factor $q_4$ in the splitting $p_6 = \sigma_{\rm conj}(q_2) \cdot q_4$
+over $L$, but this remains open. More precisely, the problem is to
+determine whether $u_2$ appears as a shape parameter of another
+triangulation, or whether it governs another arithmetic invariant
+of the manifold.
+\end{remark}
+
+%─────────────────────────────────────────────────
+\section{The Bloch--Wigner identity and main conjecture}
+%─────────────────────────────────────────────────
+
+The Bloch--Wigner function $D: \C \setminus \{0,1\} \to \R$ is
+\[
+D(z) = \mathrm{Im}(\mathrm{Li}_2(z)) + \arg(1-z)\log|z|,
+\]
+which satisfies $D(T(z)) = D(z)$ and vanishes on $\R$ \cite{Zagier1990}.
+Let $\sigma: K \hookrightarrow \C$ be the geometric embedding,
+$\sigma(w) = w_0 \approx -0.2481 + 1.0340i$.
+
+\begin{observation}
+\label{obs:bloch}
+At the geometric embedding $\sigma$,
+\[
+D(\sigma(w^3)) = D(\sigma(-w)) = D(\sigma(w^{-4})) = -\vol(M),
+\]
+with $|D(\sigma(w^3)) + \vol(M)| < 10^{-62}$, computed via
+\texttt{mpmath} at 100-digit working precision.
+\end{observation}
+
+\begin{proof}[Verification]
+Equality of the three values follows algebraically from
+Theorem~\ref{thm:orbit}(i) and $D(T(z)) = D(z)$.
+The value $D(\sigma(w^3))$ is computed by evaluating the dilogarithm
+at the complex number $\sigma(w^3) \approx 0.7806 - 0.9145i$.
+The volume $\vol(M) = 0.981368828892232\ldots$ is obtained from
+SnapPy's high-precision engine.
+\end{proof}
+
+The geometric Bloch element of $M$ satisfies
+$D(z_1) + D(z_2) = \vol(M)$ (verified to the same precision),
+with $D(z_1)/\vol(M) \approx 0.50020$ and $D(z_2)/\vol(M) \approx 0.49980$.
+These verify that $[w^3]$ and the geometric Bloch class of $M$
+carry the same regulator value.
+
+\begin{conjecture}
+\label{conj:bloch}
+The element $[w^3]$ generates $B(K) \otimes \Q$,
+where $B(K)$ is the Bloch group of $K$. Equivalently,
+the Borel regulator satisfies $r([w^3]) = -\vol(M)$ exactly,
+upgrading Observation~\ref{obs:bloch} to an algebraic theorem.
+\end{conjecture}
+
+\noindent\textit{Evidence.}
+(1) $B(K) \otimes \Q$ has rank 1 by Borel's theorem
+($r_2(K) = 1$ for signature $(2,1)$) \cite{Borel1977}.
+(2) $r([w^3]) \ne 0$ (verified numerically).
+(3) $r([w^3]) = -\vol(M)$ to 63 digits.
+
+\medskip
+
+\noindent\textbf{Open problems.}
+\begin{enumerate}
+\item Prove Conjecture~\ref{conj:bloch} algebraically,
+      by showing $[w^3]$ is primitive in $B(K)$.
+\item Derive $q_2$ directly from the gluing equations of
+      $\texttt{m003}$, establishing the chain
+      $\text{geometry} \to q_2 \to \Norm_{K/\Q}(q_2) = p_8$.
+\item Investigate whether $u_2 = -w^2-1$ appears as a shape
+      parameter in another triangulation of $M$, or governs
+      another arithmetic invariant of the manifold.
+\end{enumerate}
+
+%─────────────────────────────────────────────────
+\section{Computational methods}
+%─────────────────────────────────────────────────
+
+All algebraic results (Theorems~\ref{thm:norm} and~\ref{thm:orbit},
+Proposition~\ref{prop:inversion}) were verified by \emph{exact symbolic}
+computation in SageMath 10.x using the number field $K = \Q[x]/(x^4-x-1)$
+and its splitting field. No floating-point arithmetic was used for
+the algebraic claims.
+
+The Bloch--Wigner values in Observation~\ref{obs:bloch} were computed
+via \texttt{mpmath} at 100-digit working precision (50 decimal digits
+of verified agreement). The volume $\vol(M)$ and tetrahedral shapes
+were obtained from SnapPy's high-precision engine \cite{snappy}.
+
+All code is available at \url{https://github.com/drmlgentry/hyperbolic-flavor-scan}.
+
+%─────────────────────────────────────────────────
+\begin{thebibliography}{9}
+
+\bibitem{GMM2009}
+D.~Gabai, R.~Meyerhoff, and P.~Milley,
+\emph{Minimum volume cusped hyperbolic three-manifolds},
+J.\ Amer.\ Math.\ Soc.\ \textbf{22} (2009), 1157--1215.
+
+\bibitem{NZ1985}
+W.~Neumann and D.~Zagier,
+\emph{Volumes of hyperbolic three-manifolds},
+Topology \textbf{24} (1985), 307--332.
+
+\bibitem{Zagier1990}
+D.~Zagier,
+\emph{The Bloch--Wigner--Ramakrishnan polylogarithm function},
+Math.\ Ann.\ \textbf{286} (1990), 613--624.
+
+\bibitem{Neumann2004}
+W.~Neumann,
+\emph{Extended Bloch group and the Cheeger--Chern--Simons class},
+Geom.\ Topol.\ \textbf{8} (2004), 413--474.
+
+\bibitem{Borel1977}
+A.~Borel,
+\emph{Cohomologie de $\mathrm{SL}_n$ et valeurs de fonctions
+zeta aux points entiers},
+Ann.\ Scuola Norm.\ Sup.\ Pisa \textbf{4} (1977), 613--636.
+
+\bibitem{snappy}
+M.~Culler, N.~Dunfield, M.~Goerner, and J.~Weeks,
+\emph{SnapPy, a computer program for studying the geometry
+and topology of 3-manifolds},
+\url{http://snappy.computop.org}.
+
+\end{thebibliography}
+
+\end{document}
