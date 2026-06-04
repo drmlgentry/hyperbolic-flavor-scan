@@ -1,4 +1,4 @@
-"""
+﻿"""
 elucidate_manifolds.py
 ======================
 Comprehensive invariant portrait of m003(-2,3) and m006(-5,2).
@@ -83,7 +83,7 @@ for manifold, M, label in [
     print("="*65)
 
     print()
-    print("── TOPOLOGICAL INVARIANTS ──────────────────────────────────")
+    print("â”€â”€ TOPOLOGICAL INVARIANTS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€")
     print(f"  Name (SnapPy):     {M.name()}")
     print(f"  Volume:            {float(M.volume()):.8f}")
     print(f"  H1:                {M.homology()}")
@@ -96,7 +96,7 @@ for manifold, M, label in [
     print(f"  Is orientable:     {M.is_orientable()}")
 
     print()
-    print("── FUNDAMENTAL GROUP ────────────────────────────────────────")
+    print("â”€â”€ FUNDAMENTAL GROUP â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€")
     fg = M.fundamental_group()
     gens = list(fg.generators())
     rels = fg.relators()
@@ -106,7 +106,7 @@ for manifold, M, label in [
         print(f"  Relator {i+1}: {r}")
 
     print()
-    print("── HOLONOMY TRACES (key words) ──────────────────────────────")
+    print("â”€â”€ HOLONOMY TRACES (key words) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€")
     key_words = ['a','b','aa','ab','aB','bb','aaB','baa','AbA','AAb']
     print(f"  {'word':>8}  {'ell':>10}  {'phi(deg)':>10}  {'|lambda|':>10}  {'tr':>20}")
     print(f"  {'-'*8}  {'-'*10}  {'-'*10}  {'-'*10}  {'-'*20}")
@@ -120,7 +120,7 @@ for manifold, M, label in [
                    +str(round(complex(tr).imag,4))+'i':>20}")
 
     print()
-    print("── GEODESIC LENGTH SPECTRUM (distinct, length 1-5) ─────────")
+    print("â”€â”€ GEODESIC LENGTH SPECTRUM (distinct, length 1-5) â”€â”€â”€â”€â”€â”€â”€â”€â”€")
     spectrum = get_distinct_spectrum(G, max_len=5)
     print(f"  Total distinct complex lengths: {len(spectrum)}")
     print()
@@ -132,7 +132,7 @@ for manifold, M, label in [
               f"{mod_lam:>10.6f}  {w:>10}  {L:>4}")
 
     print()
-    print("── INJECTIVITY RADIUS ───────────────────────────────────────")
+    print("â”€â”€ INJECTIVITY RADIUS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€")
     if spectrum:
         ell_min = spectrum[0][0]
         inj_rad = ell_min / 2
@@ -140,7 +140,7 @@ for manifold, M, label in [
         print(f"  Injectivity radius        = {inj_rad:.6f}")
 
     print()
-    print("── EIGENVALUE RATIOS (length spectrum ratios) ───────────────")
+    print("â”€â”€ EIGENVALUE RATIOS (length spectrum ratios) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€")
     # Print all pairwise ratios of geodesic lengths
     ells = [(s[0], s[4]) for s in spectrum]  # (ell, word)
     print(f"  Computing all {len(ells)*(len(ells)-1)//2} ratios...")
@@ -158,7 +158,7 @@ for manifold, M, label in [
         print(f"  {r:>10.6f}  {wn:>12}  {wd:>12}")
 
     print()
-    print("── TWIST ANGLE DISTRIBUTION ─────────────────────────────────")
+    print("â”€â”€ TWIST ANGLE DISTRIBUTION â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€")
     phis = sorted([abs(s[1]) for s in spectrum])
     print(f"  Min |phi|: {min(phis):.4f} deg")
     print(f"  Max |phi|: {max(phis):.4f} deg")
@@ -170,7 +170,7 @@ for manifold, M, label in [
         print(f"    {i+1:>3}. {p:>8.4f} deg")
 
     print()
-    print("── HOMOLOGY CLASSES OF SHORT WORDS ─────────────────────────")
+    print("â”€â”€ HOMOLOGY CLASSES OF SHORT WORDS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€")
     # Compute H1 class of each generator word
     try:
         # Get H1 = Z/5, find generator class
@@ -228,3 +228,4 @@ print()
 print("Note: Trace field Q(sqrt(-3)) for m003 [imaginary quadratic]")
 print("      Trace field Q(sqrt(17))  for m006 [real quadratic]")
 print("      This arithmetic dichotomy is the key distinction.")
+

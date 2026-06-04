@@ -23,3 +23,5 @@ for r in range(1,46,2):
         a,t,e = test_wrt(r)
         if a>1e-10: print(f"{r}\t{a:.6f}\t{t:.6f}\t{e:.4f}%")
     except: pass
+# NOTE: Naive eta product collapses at roots of unity (exact zeros in product).
+# The Z-hat conjecture requires a different computational approach (GPPV formula).
