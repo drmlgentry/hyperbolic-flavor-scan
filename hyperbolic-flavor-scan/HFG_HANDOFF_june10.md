@@ -1,4 +1,4 @@
-# HFG Handoff — June 9, 2026
+﻿# HFG Handoff â€” June 9, 2026
 
 ## Session Summary
 
@@ -11,130 +11,130 @@ Four Substack articles published. RNTB paper approved. Website updated.
 
 ### 1. Corrected Abelianization for CKM Manifold
 
-The H₁ map for m006(-5,2) is NOT simply nb mod 5.
+The Hâ‚ map for m006(-5,2) is NOT simply nb mod 5.
 From relators ababbAAbb and abbAbbaBabbAbbAbbaB:
-  5[b] = 0  and  [a] + 8[b] = 0  →  [a] = 2[b] mod 5
+  5[b] = 0  and  [a] + 8[b] = 0  â†’  [a] = 2[b] mod 5
 
-Correct map: H1(word) = (2·na + nb) mod 5
+Correct map: H1(word) = (2Â·na + nb) mod 5
 
-CKM triple H₁ classes (corrected):
-  aaB: H₁ = 3
-  AbA: H₁ = 2
-  AAb: H₁ = 2
+CKM triple Hâ‚ classes (corrected):
+  aaB: Hâ‚ = 3
+  AbA: Hâ‚ = 2
+  AAb: Hâ‚ = 2
 
 ### 2. PMNS vs CKM Structural Duality
 
-PMNS — Axis configuration (0, c, −c):
-  Triple: {aa(H₁=0), aaB(H₁=4), baa(H₁=1)}
-  H₁(aaB·baa) = 4+1 = 0 mod 5  ← inverse pair
-  Two distinct geodesic classes (φ=-176.73° and -167.36°)
-  Resonance θ* = -180°  →  Borel factorization  →  large mixing
+PMNS â€” Axis configuration (0, c, âˆ’c):
+  Triple: {aa(Hâ‚=0), aaB(Hâ‚=4), baa(Hâ‚=1)}
+  Hâ‚(aaBÂ·baa) = 4+1 = 0 mod 5  â† inverse pair
+  Two distinct geodesic classes (Ï†=-176.73Â° and -167.36Â°)
+  Resonance Î¸* = -180Â°  â†’  Borel factorization  â†’  large mixing
 
-CKM — Anchor configuration (c, −c, −c):
-  Triple: {aaB(H₁=3), AbA(H₁=2), AAb(H₁=2)}
-  H₁(aaB·AbA) = 3+2 = 0 mod 5  ← anchor+partner
-  H₁(aaB·AAb) = 3+2 = 0 mod 5  ← anchor+partner
-  H₁(AbA·AAb) = 2+2 = 4 ≠ 0    ← partners NOT inverse to each other
-  One geodesic class (φ=+92.49° for all three)
-  Resonance θ* = +90°  →  Iwasawa factorization  →  small mixing
+CKM â€” Anchor configuration (c, âˆ’c, âˆ’c):
+  Triple: {aaB(Hâ‚=3), AbA(Hâ‚=2), AAb(Hâ‚=2)}
+  Hâ‚(aaBÂ·AbA) = 3+2 = 0 mod 5  â† anchor+partner
+  Hâ‚(aaBÂ·AAb) = 3+2 = 0 mod 5  â† anchor+partner
+  Hâ‚(AbAÂ·AAb) = 2+2 = 4 â‰  0    â† partners NOT inverse to each other
+  One geodesic class (Ï†=+92.49Â° for all three)
+  Resonance Î¸* = +90Â°  â†’  Iwasawa factorization  â†’  small mixing
 
 The duality: 3+2 = 0 mod 5, twice. Emerged from fixing abelianization.
 
 ### 3. CKM Selection: System of Distinct Representatives (SDR)
 
-The conjugacy class at φ=+92.49°, len=1.77172 contains 6 words:
-  H₁=3: {aaB, aBa, Baa}   (three cyclic rotations)
-  H₁=2: {bAA, AbA, AAb}   (their inverses)
+The conjugacy class at Ï†=+92.49Â°, len=1.77172 contains 6 words:
+  Hâ‚=3: {aaB, aBa, Baa}   (three cyclic rotations)
+  Hâ‚=2: {bAA, AbA, AAb}   (their inverses)
 
 Three inverse pairs:
-  aaB ↔ bAA  (3+2=0 mod 5)
-  aBa ↔ AbA  (3+2=0 mod 5)
-  Baa ↔ AAb  (3+2=0 mod 5)
+  aaB â†” bAA  (3+2=0 mod 5)
+  aBa â†” AbA  (3+2=0 mod 5)
+  Baa â†” AAb  (3+2=0 mod 5)
 
 Valid triples = Systems of Distinct Representatives:
-  one word per inverse pair, H₁ pattern (3,2,2):
+  one word per inverse pair, Hâ‚ pattern (3,2,2):
 
-  Triple 1: {aaB, AbA, AAb}  tr(product)=18.43-13.02j  |tr|=22.56  ← CKM
+  Triple 1: {aaB, AbA, AAb}  tr(product)=18.43-13.02j  |tr|=22.56  â† CKM
   Triple 2: {aBa, bAA, AAb}  tr(product)=-27.39+9.52j  |tr|=28.99
   Triple 3: {Baa, bAA, AbA}  tr(product)=18.43-13.02j  |tr|=22.56
 
-Triples 1 and 3 give IDENTICAL product traces → same Iwasawa K factor.
+Triples 1 and 3 give IDENTICAL product traces â†’ same Iwasawa K factor.
 Triple 2 is isolated.
-WHY T1=T3: open question — related by outer automorphism (not yet identified).
+WHY T1=T3: open question â€” related by outer automorphism (not yet identified).
 
 ### 4. Phase Resonance Mechanism (CONFIRMED FOR BOTH)
 
-PMNS: θ* = -180° selected by systole phase (-95.72°) pulling toward -180°
-CKM:  θ* = +90°  selected by systole `b` at φ=+89.16° ≈ +90°
+PMNS: Î¸* = -180Â° selected by systole phase (-95.72Â°) pulling toward -180Â°
+CKM:  Î¸* = +90Â°  selected by systole `b` at Ï†=+89.16Â° â‰ˆ +90Â°
 
 The resonance is NOT determined by the Chern-Simons invariant:
-  CS(m006 cusped) = -0.1141366530 ≈ -5/44  (no clean relation to +90°)
+  CS(m006 cusped) = -0.1141366530 â‰ˆ -5/44  (no clean relation to +90Â°)
 
-Current best hypothesis: θ* determined by the systole eigenphase,
+Current best hypothesis: Î¸* determined by the systole eigenphase,
 rounded to nearest torsion order of the eigenvalue unit part:
-  order 2 (λ/|λ| = -1) → θ* = -180°
-  order 4 (λ/|λ| = i)  → θ* = +90°
+  order 2 (Î»/|Î»| = -1) â†’ Î¸* = -180Â°
+  order 4 (Î»/|Î»| = i)  â†’ Î¸* = +90Â°
 
 ### 5. Fricke Invariants
 
-tr(aaB) = tr(AbA) = tr(AAb) = -0.123 + 2.011i  (identical — same conjugacy class)
+tr(aaB) = tr(AbA) = tr(AAb) = -0.123 + 2.011i  (identical â€” same conjugacy class)
 Pairwise traces all different:
-  tr(aaB·AbA) = -1.460 + 4.547i  |tr| = 4.776
-  tr(aaB·AAb) = -10.178 - 2.971i |tr| = 10.603
-  tr(AbA·AAb) = -2.568 - 5.042i  |tr| = 5.658
+  tr(aaBÂ·AbA) = -1.460 + 4.547i  |tr| = 4.776
+  tr(aaBÂ·AAb) = -10.178 - 2.971i |tr| = 10.603
+  tr(AbAÂ·AAb) = -2.568 - 5.042i  |tr| = 5.658
 Triple product cyclically invariant:
-  tr(g1·g2·g3) = tr(g2·g3·g1) = tr(g3·g1·g2) = 18.43-13.02j  ✓
-  tr(g1·g2·g3) ≠ tr(g1·g3·g2): difference = 30.21
+  tr(g1Â·g2Â·g3) = tr(g2Â·g3Â·g1) = tr(g3Â·g1Â·g2) = 18.43-13.02j  âœ“
+  tr(g1Â·g2Â·g3) â‰  tr(g1Â·g3Â·g2): difference = 30.21
 
 ---
 
 ## PUBLICATIONS (June 9)
 
 Substack posts published:
-  1. "The CP Phase Is a Geometric Invariant" — live
-  2. "A Unified Selection Principle for PMNS and CKM" — live
-  3. "The HFG Programme: From Derivation to Selection" — live
-  4. "The Complete CKM Selection Rule: A Latin Square in Hyperbolic Space" — live
+  1. "The CP Phase Is a Geometric Invariant" â€” live
+  2. "A Unified Selection Principle for PMNS and CKM" â€” live
+  3. "The HFG Programme: From Derivation to Selection" â€” live
+  4. "The Complete CKM Selection Rule: A Latin Square in Hyperbolic Space" â€” live
 
 Desk rejections received:
-  PLB-D-26-01448 (PMNS/Borel) — Kitano, no comment → reroute to Annals of Physics
-  PLB-D-26-01449 (Torsion)    — Kitano, no comment → reroute to EPJC
-  PLB-D-26-01463 (CKM)        — Kitano, no comment → reroute to PRD
-  MATH-D-26-00372 (BPS/X0(11)) — Warzel/LMP → needs more development
+  PLB-D-26-01448 (PMNS/Borel) â€” Kitano, no comment â†’ reroute to Annals of Physics
+  PLB-D-26-01449 (Torsion)    â€” Kitano, no comment â†’ reroute to EPJC
+  PLB-D-26-01463 (CKM)        â€” Kitano, no comment â†’ reroute to PRD
+  MATH-D-26-00372 (BPS/X0(11)) â€” Warzel/LMP â†’ needs more development
 
-RNTB-D-26-00299 (sextic-octic) — NEW SUBMISSION ✓ June 8
+RNTB-D-26-00299 (sextic-octic) â€” NEW SUBMISSION âœ“ June 8
 
 ---
 
 ## OPEN QUESTIONS (priority order)
 
-1. **Third manifold** — find H₁=ℤ/5 manifold with θ* ≠ {-180°,+90°}
+1. **Third manifold** â€” find Hâ‚=â„¤/5 manifold with Î¸* â‰  {-180Â°,+90Â°}
    This is the NEXT computation session focus.
    The disc=-283 census has 16 cusped manifolds.
-   OrientableClosedCensus has many more with H₁=ℤ/5.
-   Method: scan for systole phase ≠ {-95°, +89°}
+   OrientableClosedCensus has many more with Hâ‚=â„¤/5.
+   Method: scan for systole phase â‰  {-95Â°, +89Â°}
 
-2. **Why T1=T3?** — identify the outer automorphism relating
+2. **Why T1=T3?** â€” identify the outer automorphism relating
    {aaB,AbA,AAb} and {Baa,bAA,AbA} with identical K factors.
-   No conjugator found in words of length ≤4.
-   Try length ≤6 or look for automorphism of the group presentation.
+   No conjugator found in words of length â‰¤4.
+   Try length â‰¤6 or look for automorphism of the group presentation.
 
-3. **What determines θ*?** — prove connection between
+3. **What determines Î¸*?** â€” prove connection between
    arithmetic of trace field and resonance angle.
    CS not it. Systole phase is best candidate.
 
-4. **D(w³) = v₀ algebraically** — still open from June 6.
-   Claim (a): vol(m019) = 3·D(w³) nearly provable.
-   Claim (b): vol(m003(-2,3)) = v₀ requires commensurability.
+4. **D(wÂ³) = vâ‚€ algebraically** â€” still open from June 6.
+   Claim (a): vol(m019) = 3Â·D(wÂ³) nearly provable.
+   Claim (b): vol(m003(-2,3)) = vâ‚€ requires commensurability.
 
-5. **Lucas paper → Ramanujan Journal** — resubmit (MRL rejected).
+5. **Lucas paper â†’ Ramanujan Journal** â€” resubmit (MRL rejected).
 
-6. **Fermion masses** — Lucas structure gives muon/tau mass ratios.
-   L₁₁=199 ≈ m_μ/mₑ (0.003%), L₁₇=3571 ≈ m_τ/mₑ (0.000%).
+6. **Fermion masses** â€” Lucas structure gives muon/tau mass ratios.
+   Lâ‚â‚=199 â‰ˆ m_Î¼/mâ‚‘ (0.003%), Lâ‚â‚‡=3571 â‰ˆ m_Ï„/mâ‚‘ (0.000%).
    This deserves a standalone paper.
 
-7. **σ₃ vs σ₂ verification** — confirm geometric embedding
-   is consistently σ₂ throughout all computations.
+7. **Ïƒâ‚ƒ vs Ïƒâ‚‚ verification** â€” confirm geometric embedding
+   is consistently Ïƒâ‚‚ throughout all computations.
 
 ---
 
@@ -143,35 +143,35 @@ RNTB-D-26-00299 (sextic-octic) — NEW SUBMISSION ✓ June 8
 PMNS: m003(-2,3) = OrientableClosedCensus[1]
   words {aa, aaB, baa}, Borel, col perm (1,0,2)
   fitness 0.005087
-  θ₁₂=33.67°/θ₂₃=47.63°/θ₁₃=8.37° vs PDG 33.65°/47.64°/8.57°
+  Î¸â‚â‚‚=33.67Â°/Î¸â‚‚â‚ƒ=47.63Â°/Î¸â‚â‚ƒ=8.37Â° vs PDG 33.65Â°/47.64Â°/8.57Â°
 
 CKM: m006(-5,2) = OrientableClosedCensus[43]
   words {aaB, AbA, AAb}, Iwasawa
   fitness 0.016482
 
-CP phase: δ = π + φ(aaB) + φ(baa) = 195.91° vs PDG 197.0°
-  φ(aaB) = -176.731°, φ(baa) = -167.362°
+CP phase: Î´ = Ï€ + Ï†(aaB) + Ï†(baa) = 195.91Â° vs PDG 197.0Â°
+  Ï†(aaB) = -176.731Â°, Ï†(baa) = -167.362Â°
 
 ---
 
-## THIRD MANIFOLD SEARCH — PLAN
+## THIRD MANIFOLD SEARCH â€” PLAN
 
 Target: closed hyperbolic 3-manifold M with:
-  - H₁(M) = ℤ/5
-  - Systole phase θ_sys ≠ {-95°, +89°}
-  - Short geodesics clustering near new θ*
-  - θ* not in {-180°, +90°}
+  - Hâ‚(M) = â„¤/5
+  - Systole phase Î¸_sys â‰  {-95Â°, +89Â°}
+  - Short geodesics clustering near new Î¸*
+  - Î¸* not in {-180Â°, +90Â°}
 
-Candidate θ* values (torsion orders):
-  order 3: θ* = +60° or -60° (cube roots of unity)
-  order 6: θ* = +30° or -30°
-  order 8: θ* = +45° or -45°
+Candidate Î¸* values (torsion orders):
+  order 3: Î¸* = +60Â° or -60Â° (cube roots of unity)
+  order 6: Î¸* = +30Â° or -30Â°
+  order 8: Î¸* = +45Â° or -45Â°
 
 Search strategy:
-  1. Scan OrientableClosedCensus for H₁=ℤ/5
+  1. Scan OrientableClosedCensus for Hâ‚=â„¤/5
   2. For each: compute systole phase
   3. Cluster analysis of short geodesic phases
-  4. Flag manifolds with θ* outside known zones
+  4. Flag manifolds with Î¸* outside known zones
 
 Sage code skeleton (paste into sage terminal):
 ```python
@@ -206,8 +206,8 @@ for idx in range(500):
         if phi is None: continue
         known = abs(phi+95.7)<10 or abs(phi-89.2)<10
         results.append((idx, phi, length, known))
-        marker = '' if known else ' ← NEW THETA*'
-        print(f"idx={idx:4d}  H1=Z/5  systole_phi={phi:+.2f}°  len={length:.4f}{marker}")
+        marker = '' if known else ' â† NEW THETA*'
+        print(f"idx={idx:4d}  H1=Z/5  systole_phi={phi:+.2f}Â°  len={length:.4f}{marker}")
     except: pass
 ```
 
@@ -218,7 +218,7 @@ for idx in range(500):
 - WSL conda sage: conda activate sage
 - Canonical script: /mnt/c/dev/hyperbolic-flavor-scan/hfg_reproduce.py
 - Website: C:\dev\hyperbolic-flavor-geometry\docs\
-- GitHub token: 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
+- GitHub token: [REDACTED]
 - PMNS needs WSL/sage; CKM works on Windows too
 
 
@@ -228,88 +228,88 @@ for idx in range(500):
 
 ### Manifold: m206(1,2) = OrientableClosedCensus[209]
 
-Volume: 2.828122 = 2.882 × v₀ (not a clean multiple)
-H₁ = ℤ/5, [a]=1, [b]=1
-Resonance θ* = −60° (order-6 torsion, Eisenstein sector)
-Systole: abAB, φ = −93.29°, len = 0.72979
+Volume: 2.828122 = 2.882 Ã— vâ‚€ (not a clean multiple)
+Hâ‚ = â„¤/5, [a]=1, [b]=1
+Resonance Î¸* = âˆ’60Â° (order-6 torsion, Eisenstein sector)
+Systole: abAB, Ï† = âˆ’93.29Â°, len = 0.72979
 
 ### Exact Arithmetic
 
 Cusped parent m206:
-  trace field = Q(√−3), disc = −3  ← EXACT EISENSTEIN
-  cusp shape = i√3 (purely imaginary, in Q(√−3))
-  tr(a) satisfies x² + 3x + 3 = 0  ← EXACT
+  trace field = Q(âˆšâˆ’3), disc = âˆ’3  â† EXACT EISENSTEIN
+  cusp shape = iâˆš3 (purely imaginary, in Q(âˆšâˆ’3))
+  tr(a) satisfies xÂ² + 3x + 3 = 0  â† EXACT
 
 Closed filling m206(1,2):
-  tr(a) + tr(b) = 0  ← EXACT Z/2 symmetry
-  λ_b / λ_a = −1    ← EXACT (eigenvalues are negatives)
-  tr(a)² satisfies: x² − (235115/48036)x + 160022/16873 = 0
-  disc of this poly = −9183165546402989879 = −47·359·544252091886623
-  Field Q(tr(a)²) is NOT Q(√−3) — Dehn filling deforms the field
-  16873 = 47×359, 48036 = 4×3×4003 (factor of 3 present)
+  tr(a) + tr(b) = 0  â† EXACT Z/2 symmetry
+  Î»_b / Î»_a = âˆ’1    â† EXACT (eigenvalues are negatives)
+  tr(a)Â² satisfies: xÂ² âˆ’ (235115/48036)x + 160022/16873 = 0
+  disc of this poly = âˆ’9183165546402989879 = âˆ’47Â·359Â·544252091886623
+  Field Q(tr(a)Â²) is NOT Q(âˆšâˆ’3) â€” Dehn filling deforms the field
+  16873 = 47Ã—359, 48036 = 4Ã—3Ã—4003 (factor of 3 present)
 
 ### Key: The Eisenstein Structure
 
-The θ*=−60° resonance is INHERITED from the cusped parent.
-The cusped parent is pure Eisenstein (Q(√−3), disc=−3).
+The Î¸*=âˆ’60Â° resonance is INHERITED from the cusped parent.
+The cusped parent is pure Eisenstein (Q(âˆšâˆ’3), disc=âˆ’3).
 The Dehn filling m206(1,2) deforms this to a larger field.
-The Z/2 symmetry tr(a)=−tr(b) has NO analogue in PMNS or CKM.
+The Z/2 symmetry tr(a)=âˆ’tr(b) has NO analogue in PMNS or CKM.
 
-### Closest Geodesics to θ*=−60°
+### Closest Geodesics to Î¸*=âˆ’60Â°
 
-H₁=3: aaa   φ=−59.016°  D=0.984°  len=2.53080  ← most resonant
-H₁=4: aBB   φ=−64.002°  D=4.002°  len=3.12697
-H₁=0: ababb φ=−71.269°  D=11.269° len=2.67500
+Hâ‚=3: aaa   Ï†=âˆ’59.016Â°  D=0.984Â°  len=2.53080  â† most resonant
+Hâ‚=4: aBB   Ï†=âˆ’64.002Â°  D=4.002Â°  len=3.12697
+Hâ‚=0: ababb Ï†=âˆ’71.269Â°  D=11.269Â° len=2.67500
 
 ### Mixing Matrix
 
-Best H₁-trivial triple: {aab(H₁=3), aaa(H₁=3), aBB(H₁=4)}
-H₁ sum = 3+3+4 = 10 = 0 mod 5  ✓
-Mixing angle: 67.9°–81.4° across orderings
-Standard deviation: 4.79° (stable)
-CP analog: ~−2.5° (small, nearly CP-conserving)
+Best Hâ‚-trivial triple: {aab(Hâ‚=3), aaa(Hâ‚=3), aBB(Hâ‚=4)}
+Hâ‚ sum = 3+3+4 = 10 = 0 mod 5  âœ“
+Mixing angle: 67.9Â°â€“81.4Â° across orderings
+Standard deviation: 4.79Â° (stable)
+CP analog: ~âˆ’2.5Â° (small, nearly CP-conserving)
 
-PMNS comparison: 33.7° (large but not maximal)
-CKM comparison:  ~13° (small)
-NEW:             ~74° (near-maximal)
+PMNS comparison: 33.7Â° (large but not maximal)
+CKM comparison:  ~13Â° (small)
+NEW:             ~74Â° (near-maximal)
 
 ### Torsion Taxonomy (Complete)
 
-| Manifold     | Matrix | θ*    | Torsion order | λ relation    | Field      | Mixing  |
+| Manifold     | Matrix | Î¸*    | Torsion order | Î» relation    | Field      | Mixing  |
 |-------------|--------|-------|---------------|---------------|------------|---------|
-| m003(−2,3)  | PMNS   | −180° | 2             | none          | disc=−283  | 33.7°   |
-| m006(−5,2)  | CKM    | +90°  | 4             | none          | disc=?     | ~13°    |
-| m206(1,2)   | BSM?   | −60°  | 6             | λ_b=−λ_a     | disc=−9.2e18 | ~74° |
+| m003(âˆ’2,3)  | PMNS   | âˆ’180Â° | 2             | none          | disc=âˆ’283  | 33.7Â°   |
+| m006(âˆ’5,2)  | CKM    | +90Â°  | 4             | none          | disc=?     | ~13Â°    |
+| m206(1,2)   | BSM?   | âˆ’60Â°  | 6             | Î»_b=âˆ’Î»_a     | disc=âˆ’9.2e18 | ~74Â° |
 
 ### Physical Interpretation
 
-Maximal mixing (45°–90°) appears in:
+Maximal mixing (45Â°â€“90Â°) appears in:
   - Sterile neutrino mixing
   - Dark matter sector
   - Mirror matter / left-right symmetric extension
   - Kaluza-Klein extra dimensions
 
 The Z/2 symmetry could signal a discrete parity symmetry.
-The −60° resonance is Eisenstein — related to cube roots of unity.
+The âˆ’60Â° resonance is Eisenstein â€” related to cube roots of unity.
 
 ### FALSIFIABLE PREDICTION
 
-If a BSM sector with θ_mix ~ 74° is discovered,
+If a BSM sector with Î¸_mix ~ 74Â° is discovered,
 its mixing matrix should be reproduced by m206(1,2).
 If no such sector is found, the third manifold prediction is falsified.
 
-### Factorization Method for θ*=−60°
+### Factorization Method for Î¸*=âˆ’60Â°
 
-OPEN: What factorization corresponds to −60°?
-  θ*=−180° → Borel (lower triangular)
-  θ*=+90°  → Iwasawa (KAN)
-  θ*=−60°  → ??? (new decomposition needed)
+OPEN: What factorization corresponds to âˆ’60Â°?
+  Î¸*=âˆ’180Â° â†’ Borel (lower triangular)
+  Î¸*=+90Â°  â†’ Iwasawa (KAN)
+  Î¸*=âˆ’60Â°  â†’ ??? (new decomposition needed)
 
 ### Open Questions
 
-1. What factorization method corresponds to θ*=−60°?
-2. Why does the cusped parent have Q(√−3) but the filling doesn't?
-3. Are there manifolds with θ*=+120°, +45°, −45°, etc.?
-4. Scan census[300:1000] for more H₁=ℤ/5 novel manifolds
-5. Compute full 3×3 unitary (not just 2×2) for the mixing matrix
+1. What factorization method corresponds to Î¸*=âˆ’60Â°?
+2. Why does the cusped parent have Q(âˆšâˆ’3) but the filling doesn't?
+3. Are there manifolds with Î¸*=+120Â°, +45Â°, âˆ’45Â°, etc.?
+4. Scan census[300:1000] for more Hâ‚=â„¤/5 novel manifolds
+5. Compute full 3Ã—3 unitary (not just 2Ã—2) for the mixing matrix
 
