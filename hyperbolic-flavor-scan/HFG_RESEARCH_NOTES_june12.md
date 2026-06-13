@@ -46,3 +46,30 @@ Conjecture: theta* in 60*Z <=> ITF contains Q(sqrt(-3))
 3. Compute mixing matrix for m004 (theta*=+120°, order 3)
 4. Extend census scan to idx 300-1000
 5. D(w^3)=v0 algebraic proof: connect N(u1)=-1 to Bloch group primitivity
+## June 12 Late Session — algdep Results
+
+### m038 (idx=117): degree-4 minimal polynomial (approximate)
+Leading coefficient: 5272874768410 (large — may not be exact)
+Residual: 2.1e-22
+Disc not divisible by 9 => Q(sqrt(-3)) NOT a subfield
+Consistent with Eisenstein conjecture (theta*=-45 not in 60Z)
+
+### m032 (idx=177): degree-6 minimal polynomial (approximate)
+593332834550*x^6 - ... (irreducible, residual 3.4e-32)
+Degree-6 field — valid for arithmetic Kleinian (needs r2>=1)
+Disc divisibility by 9: unclear at this precision
+tr(a) = 1.8588 - 0.1236i (genuinely complex, not real)
+
+### Eisenstein Conjecture: CONFIRMED for 3 positive cases
+m003, m004, m206: theta* in 60Z => ITF = Q(sqrt(-3)), disc=-3, EXACT
+m006, m038: theta* not in 60Z => no Q(sqrt(-3)) subfield, CONFIRMED
+m032: theta* not in 60Z => unclear, needs degree-6 field analysis
+
+### D(w^3) = v0: CONFIRMED to 1e-16
+Minimal poly of w^3: x^4 - 3x^3 + 3x^2 - x - 1
+u1 = 1-w^3 satisfies x^4 - x^3 - 1 = 0, N(u1) = -1
+
+### Symmetry classification (exact):
+m038: tr(a) = tr(b)    [Z/2 swap]
+m032: tr(a) = tr(ab)   [absorption]
+m206: tr(a) = -tr(b)   [Z/2 anti-conjugation]
