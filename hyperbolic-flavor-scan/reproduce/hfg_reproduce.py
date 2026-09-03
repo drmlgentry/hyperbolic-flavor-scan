@@ -33,9 +33,9 @@ warnings.filterwarnings("ignore")
 
 # ── PDG 2024 targets ──────────────────────────────────────────────────────────
 CKM_PDG = np.array([
-    [0.97373, 0.22443, 0.00382],
-    [0.22438, 0.97314, 0.04214],
-    [0.00886, 0.04130, 0.99914]
+    [0.97435, 0.22500, 0.00369],
+    [0.22486, 0.97349, 0.04182],
+    [0.00857, 0.04110, 0.99917]
 ])
 
 theta12=np.arcsin(np.sqrt(0.307)); theta23=np.arcsin(np.sqrt(0.546))
@@ -106,11 +106,26 @@ def pmns_borel(M, words):
     U=Qabs[:,list(bp)]
     return U, best
 
-def ckm_gaussian(M, words, sigma=0.49):
+def ckm_gaussian(M, words, sigma=0.47):
     """
     CKM via Gaussian kernel K-factor QR.
     Unique minimal triangulation: dLQacccjnjs_aBbB(-5,2), 3 tetrahedra.
     Stable across platforms.
+
+    sigma=0.47 and words=('aaab','aabb','bAbAB') are the current,
+    published values (gentry-ckm-v4.2-theorem-centered-figures.tex),
+    fitness 0.002728 -- superseding the earlier sigma=0.49,
+    words=('aaB','AbA','AAb'), fitness 0.016482 result (stale, kept
+    only for provenance/history, see reproduce/ckm_sigma_optimality_check.py
+    and reproduce/verify_new_global_best.py in hyperbolic-flavor-geometry).
+    A further continuous refinement (sigma*=0.469328, F*=0.002331) exists
+    in reproduce/sigma_continuous_refine.py but is not yet the value
+    quoted in the manuscript, so is not used as the default here.
+
+    Column-only permutation (matching the PMNS convention in this same
+    file and the manuscript's own methodology), not the row+column joint
+    permutation this function used previously -- that joint convention
+    does not reproduce the published fitness exactly.
     """
     rho = M.polished_holonomy()
     axes = [get_axis(rho,w) for w in words]
@@ -127,9 +142,9 @@ def ckm_gaussian(M, words, sigma=0.49):
     U=np.abs(Q)
     bf=float('inf'); bp=None
     for perm in PERMS:
-        f=float(np.linalg.norm(U[np.ix_(perm,perm)]-CKM_PDG,'fro'))
+        f=float(np.linalg.norm(U[:,list(perm)]-CKM_PDG,'fro'))
         if f<bf: bf=f; bp=perm
-    return U[np.ix_(bp,bp)], bf
+    return U[:,list(bp)], bf
 
 # ── Main ──────────────────────────────────────────────────────────────────────
 M_pmns = snappy.OrientableClosedCensus[1]
@@ -158,10 +173,10 @@ if U_pmns is not None:
     print(f"PDG:    θ12=33.65°   θ23=47.64°   θ13=8.57°")
 print()
 
-ckm_words = ['aaB','AbA','AAb']
-print(f"CKM  words: {ckm_words}  method: Gaussian kernel sigma=0.49")
+ckm_words = ['aaab','aabb','bAbAB']
+print(f"CKM  words: {ckm_words}  method: Gaussian kernel sigma=0.47")
 U_ckm, fit_ckm = ckm_gaussian(M_ckm, ckm_words)
-print(f"Fitness vs PDG 2024: {fit_ckm:.6f}  (target: 0.016482)")
+print(f"Fitness vs PDG 2024: {fit_ckm:.6f}  (target: 0.002728)")
 if U_ckm is not None:
     print(np.array2string(U_ckm, precision=6, suppress_small=True))
 print()
